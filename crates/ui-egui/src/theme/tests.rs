@@ -1,4 +1,5 @@
 use super::*;
+use egui::TextStyle;
 
 fn text_sizes(ctx: &egui::Context) -> Vec<egui::Vec2> {
     let mut sizes = Vec::new();

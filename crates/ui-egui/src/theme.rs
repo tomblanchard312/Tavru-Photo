@@ -20,7 +20,7 @@
 
 mod typography;
 
-use egui::{Color32, CornerRadius, FontData, FontDefinitions, FontFamily, FontId, Stroke, TextStyle, Visuals};
+use egui::{Color32, CornerRadius, FontData, FontDefinitions, FontFamily, FontId, Stroke, Visuals};
 use photocraft_engine::prefs::UiFontSize;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;

@@ -362,3 +362,19 @@ fn breeze_themes_parse_and_meet_text_contrast() {
         assert!(contrast(t.caption_close_text, t.caption_close) >= 4.5, "{kind:?}: close button glyph");
     }
 }
+
+#[test]
+fn eridu_roles_preserve_weights_and_zoom_across_themes() {
+    for kind in ThemeKind::ALL {
+        for zoom in [1.0, 1.25, 1.5, 2.0] {
+            let ctx = egui::Context::default();
+            ctx.set_zoom_factor(zoom);
+            apply(&ctx, kind);
+            let style = ctx.style_of(egui::Theme::Dark);
+            assert_eq!(style.text_styles[&TextStyle::Button].family, FontFamily::Name("medium".into()));
+            assert_eq!(style.text_styles[&TextStyle::Heading].family, FontFamily::Name("semibold".into()));
+            assert_eq!(style.text_styles[&TextStyle::Monospace].family, FontFamily::Monospace);
+            assert_eq!(ctx.zoom_factor(), zoom);
+        }
+    }
+}

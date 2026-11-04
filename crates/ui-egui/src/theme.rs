@@ -18,6 +18,8 @@
 //!
 //! Widgets read [`Tokens::get`] instead of hard-coding colours, so every theme applies everywhere.
 
+mod typography;
+
 use egui::{Color32, CornerRadius, FontData, FontDefinitions, FontFamily, FontId, Stroke, TextStyle, Visuals};
 use photocraft_engine::prefs::UiFontSize;
 use serde::{Deserialize, Serialize};
@@ -894,6 +896,13 @@ pub fn install_fonts_with(ctx: &egui::Context, cjk: crate::cjk_fonts::Sources) {
         stack.extend(fallback.iter().cloned());
         fonts.families.insert(FontFamily::Name(fam.into()), stack);
     }
+    for (name, mono, weight) in
+        [("Inter", false, "regular"), ("Inter-Medium", false, "medium"), ("Inter-SemiBold", false, "demibold"), ("JetBrainsMono", true, "regular")]
+    {
+        if let Some(data) = typography::system_font(mono, weight) {
+            fonts.font_data.insert(name.into(), Arc::new(data));
+        }
+    }
     let size = ui_font_size(ctx);
     for (name, data) in &mut fonts.font_data {
         size_ui_font(ctx, name, Arc::make_mut(data));
@@ -1064,14 +1073,7 @@ pub fn apply(ctx: &egui::Context, kind: ThemeKind) {
     }
     ctx.set_visuals(v);
     ctx.global_style_mut(|s| {
-        s.text_styles = [
-            (TextStyle::Small, FontId::proportional(10.5)),
-            (TextStyle::Body, FontId::proportional(if t.pro { 12.0 } else { 12.5 })),
-            (TextStyle::Button, FontId::proportional(if t.pro { 12.0 } else { 12.5 })),
-            (TextStyle::Heading, semibold(15.0)),
-            (TextStyle::Monospace, FontId::monospace(12.0)),
-        ]
-        .into();
+        s.text_styles = typography::styles();
         s.spacing.item_spacing = egui::vec2(8.0, 6.0);
         s.spacing.button_padding = egui::vec2(10.0, 4.0);
         s.spacing.interact_size = egui::vec2(24.0, 24.0);

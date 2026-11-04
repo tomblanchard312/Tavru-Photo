@@ -1,4 +1,4 @@
-use super::{PhotocraftApp, Sense, Tokens, icons, theme, vec2, widgets};
+use super::{PhotocraftApp, Sense, Tokens, icons, vec2, widgets};
 
 // ----------------------------------------------------------------------------- title bar
 
@@ -132,7 +132,7 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
             if system {
                 return;
             }
-            let font = theme::medium(13.0);
+            let font = egui::TextStyle::Name("windowTitle".into()).resolve(ui.style());
             let galley = ui.painter().layout_job(title_job(&title, font.clone(), t.text_dim));
             if let Some(x) = title_x(full.center().x, free.0, free.1, galley.size().x) {
                 ui.painter().galley(egui::pos2(x, full.center().y - galley.size().y / 2.0), galley, t.text_dim);

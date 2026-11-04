@@ -369,6 +369,7 @@ fn eridu_roles_preserve_weights_and_zoom_across_themes() {
         for zoom in [1.0, 1.25, 1.5, 2.0] {
             let ctx = egui::Context::default();
             ctx.set_zoom_factor(zoom);
+            ctx.run_ui(Default::default(), |_| {}).textures_delta.clear();
             apply(&ctx, kind);
             let style = ctx.style_of(egui::Theme::Dark);
             assert_eq!(style.text_styles[&TextStyle::Button].family, FontFamily::Name("medium".into()));

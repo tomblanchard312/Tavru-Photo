@@ -16,14 +16,13 @@
   <img alt="License: MIT OR Apache-2.0" src="https://img.shields.io/badge/license-MIT%20%2F%20Apache--2.0-3a3a3a?style=flat-square">
   <img alt="Status: early alpha" src="https://img.shields.io/badge/status-early%20alpha-d69e2e?style=flat-square">
   <br>
-  <a href="https://sonarcloud.io/project/overview?id=storytold_photocraft"><img alt="Scanned by SonarCloud" src="https://img.shields.io/badge/Scanned_by-SonarCloud-4b9fd5?style=flat-square&logo=sonarqubecloud&logoColor=white"></a>
   <a href="https://coderabbit.ai"><img alt="Reviewed by CodeRabbit" src="https://img.shields.io/coderabbit/prs/github/tomblanchard312/lumafoundry?style=flat-square&label=Reviewed%20by%20CodeRabbit&logo=coderabbit"></a>
 </p>
 
 
 
 <p align="center">
-  <a href="https://github.com/tomblanchard312/lumafoundry"><b>LumaFoundry on GitHub</b></a> ·
+  <a href="https://github.com/tomblanchard312/lumafoundry"><b>LumaFoundry on GitHub</b></a>
 </p>
 
 <br>
@@ -43,7 +42,7 @@
   <a href="#under-the-hood">Under the hood</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="#downloads">Downloads</a> ·
-  <a href="#the-crafting-apps">Crafting Apps</a> ·
+  <a href="#lumafoundry-and-enki">Enki image tools</a> ·
   <a href="https://github.com/tomblanchard312/lumafoundry/issues">Support</a>
 </p>
 
@@ -71,6 +70,23 @@
 </table>
 
 <br>
+
+## LumaFoundry and Enki
+
+LumaFoundry is an independent fork of PhotoCraft with its own LF icon, dark blue branding and local Enki image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
+
+The Linux integration provides these editing workflows through native dialogs and engine commands.
+
+- Generate images or a background beneath a masked subject, with model, prompt and seed controls.
+- Fill a selection or remove an object using the original image and surrounding context. Results become new masked layers with undo support and protected pixels preserved.
+- Expand the canvas while preserving the original image region. Current support covers static pixel layers and groups within the editing model's size limits.
+- Select a subject with Enki's U2Net worker, refine its edges, create a masked background-removal copy, or replace the background while protecting the subject.
+- Match generated edges for fill, removal and expansion. Background replacement defaults to edge matching off to avoid spreading subject colors into the new background.
+- Add solid, gradient or image backgrounds beneath a masked subject with the Background Fill tool.
+
+Enki and compatible models must be installed and configured separately. Learned subject selection requires the segmentation worker and its model. Native Enki transport currently supports Linux. Other desktop platforms and the web build do not yet provide these runtime-backed tools. Local CPU and Vulkan inference and native offscreen workflows have been exercised; broader image-quality and interactive desktop validation remain open. See the implementation notes and setup boundaries in [generative tools](docs/features/generative-tools.md).
+
+LumaFoundry is also registered in EriduOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Enki integration validation remain pending.
 
 ## Features
 
@@ -244,7 +260,7 @@ The desktop app also offers an authenticated, loopback-only control channel (`ph
 
 ```sh
 git clone https://github.com/tomblanchard312/lumafoundry
-cd photocraft
+cd lumafoundry
 cargo run --release -p photocraft -- image.psd   # the desktop app
 cargo test --workspace                           # the test suite
 ```
@@ -290,7 +306,7 @@ photocraft
 Maintainers: [`docs/releasing.md`](docs/releasing.md) explains how releases are built, signed and published.
 
 > [!IMPORTANT]
-> **Status:** LumaFoundry is in early alpha, and we want to be straight about where it stands: much of Photoshop's feature surface exists in some form, but **it is not yet a Photoshop replacement for daily professional work**. The biggest gaps are AI/generative features, 15 missing tools, depth in typography and pro workflows, and plug-in compatibility. Every Photoshop menu item is wired to a command ([`docs/parity-checklist.md`](docs/parity-checklist.md)), but that measures wiring, not behaviour. The honest, dimension-by-dimension picture and where we're going next are in the [roadmap](ROADMAP.md) and [parity assessment](docs/target-app-parity.md). Expect rough edges, and please file issues (include your OS, document size, layer count and a screenshot). You can also tell us what broke on [GitHub](https://github.com/tomblanchard312/lumafoundry/issues).
+> **Status:** LumaFoundry is in early alpha, and we want to be straight about where it stands: much of Photoshop's feature surface exists in some form, but **it is not yet a Photoshop replacement for daily professional work**. Remaining gaps include broader generative model and platform support, advanced typography and professional workflows, and plug-in compatibility. Every Photoshop menu item is wired to a command ([`docs/parity-checklist.md`](docs/parity-checklist.md)), but that measures wiring, not behaviour. The honest, dimension-by-dimension picture and where we're going next are in the [roadmap](ROADMAP.md) and [parity assessment](docs/target-app-parity.md). Expect rough edges, and please file issues (include your OS, document size, layer count and a screenshot). You can also tell us what broke on [GitHub](https://github.com/tomblanchard312/lumafoundry/issues).
 
 ## Community packages
 
@@ -318,15 +334,15 @@ Security architecture, threat modeling, parser hardening, fuzzing, and vulnerabi
 ## Test corpora
 
 LumaFoundry is tested against real files: our own Photoshop-authored oracle PSDs in
-[photocraft-corpus](https://github.com/tomblanchard312/lumafoundry-corpus) plus the psd-tools, ag-psd and PngSuite sets, pinned and
+[photocraft-corpus](https://github.com/storytold/photocraft-corpus) plus the psd-tools, ag-psd and PngSuite sets, pinned and
 sha256-verified. Fetch them with `cargo xtask corpus --all` and run the tests with
 `cargo xtask test-corpus` (details in [docs/development.md](docs/development.md#test-corpora)).
 
 ## Downloads
 
-**New to LumaFoundry?** Download it from the [LumaFoundry releases page](https://github.com/tomblanchard312/lumafoundry). That's the easiest way to install it.
+**New to LumaFoundry?** Check the [LumaFoundry releases page](https://github.com/tomblanchard312/lumafoundry/releases) for published builds, or use the source-build instructions above.
 
-**Want a specific build or format?** On GitHub, the [latest release](https://github.com/tomblanchard312/lumafoundry/releases/latest) has every build listed below, and [all releases](https://github.com/tomblanchard312/lumafoundry/releases) have earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
+**Want a specific build or format?** The tables below describe packaging targets. Check the assets on the [latest release](https://github.com/tomblanchard312/lumafoundry/releases/latest) for availability; [all releases](https://github.com/tomblanchard312/lumafoundry/releases) have earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
 
 ### Windows
 

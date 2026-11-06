@@ -36,5 +36,12 @@ are reviewed. Previous PR #9 validation applies only to its previous head.
 - Engine/UI all-target Clippy with warnings denied: pass. Layering: 31 crates, pass.
 - Offscreen 1440x900 dark home capture inspected: branding, home controls, and docked
   workspace preserved. This does not establish native accessibility acceptance.
-- Wasm, corpus, expanded integration checks and hosted CI remain pending at the
-  merge checkpoint. Corpus download required a network-enabled retry.
+- Wasm: 24 crates plus HEIF pass. Parity and scorecard regeneration produce no drift.
+- Expanded UI validation: 187 integration tests pass, 1 ignored; four supporting
+  tests also pass. The repeated unit phase passes 5,128 tests, 22 ignored.
+- Corpus release-mode compilation and hosted CI remain pending. Corpus download
+  succeeded on the network-enabled retry. Current hosted documentation, packaging
+  lint, installation policy, AppImage input, Nix and Sonar checks pass; platform
+  builds, Linux gate, corpus and web checks are still running.
+- No native accessibility, FreeBSD acceptance, performance sweep or release
+  acceptance is claimed for this nightly merge.

@@ -87,7 +87,6 @@ pub fn body(ui: &mut egui::Ui, f: &mut Map<String, Value>) {
         if r.changed() {
             f.insert("name".into(), json!(name));
         }
-        crate::field_tab::register(ui.ctx(), r.id);
         // Photoshop opens the dialog with the name selected, so typing replaces it.
         if !f.contains_key("__focused") {
             f.insert("__focused".into(), json!(true));

@@ -86,7 +86,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Git dependencies come from storytold
+      - name: Git dependencies use approved public sources
         run: |
           set -euo pipefail
           test -f Cargo.lock || { echo "Cargo.lock is missing"; exit 1; }
@@ -112,9 +112,10 @@ jobs:
           lock = tomllib.load(open("Cargo.lock", "rb"))
           bad = sorted({p["source"] for p in lock.get("package", [])
                         if p.get("source", "").startswith("git+")
-                        and not p["source"].startswith("git+https://github.com/storytold/")})
+                        and not p["source"].startswith("git+https://github.com/storytold/")
+                        and p["source"] != "git+https://github.com/tomblanchard312/craft-fonts?rev=5f5a41f19aa4e098187b633c2767c21f1fc79de9#5f5a41f19aa4e098187b633c2767c21f1fc79de9"})
           if bad:
-              print("Git dependencies outside github.com/storytold:", *bad, sep="\n")
+              print("Unapproved Git dependencies:", *bad, sep="\n")
               sys.exit(1)
           PY
       - id: pick

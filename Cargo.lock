@@ -1479,6 +1479,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "craft-ui-fonts"
+version = "0.1.0"
+source = "git+https://github.com/tomblanchard312/craft-fonts?rev=5f5a41f19aa4e098187b633c2767c21f1fc79de9#5f5a41f19aa4e098187b633c2767c21f1fc79de9"
+
+[[package]]
 name = "craft-update"
 version = "0.1.0"
 source = "git+https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb5f9049f9270955caffb5bee5997aebf7"
@@ -2154,14 +2159,6 @@ name = "equivalent"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
-
-[[package]]
-name = "eridu-style"
-version = "0.1.0"
-source = "git+https://github.com/tomblanchard312/eridu-style?rev=d3b4cdc03706ac100fae2de907282575652b76ad#d3b4cdc03706ac100fae2de907282575652b76ad"
-dependencies = [
- "egui",
-]
 
 [[package]]
 name = "errno"
@@ -5576,13 +5573,13 @@ dependencies = [
  "chrono",
  "craft-print",
  "craft-ui",
+ "craft-ui-fonts",
  "craft-update",
  "eframe",
  "egui",
  "egui_extras",
  "egui_kittest",
  "epaint_default_fonts",
- "eridu-style",
  "flate2",
  "log",
  "photocraft-algo",

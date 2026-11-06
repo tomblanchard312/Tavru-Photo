@@ -408,8 +408,8 @@ fn eridu_display_and_numeric_roles_are_bound_and_digits_align() {
         let numeric_font = numeric(&ctx, 14.0);
         ui.fonts_mut(|fonts| {
             let defs = fonts.definitions();
-            assert_eq!(defs.families[&display(28.0).family][0], eridu_style::fonts::DISPLAY);
-            assert_eq!(defs.families[&numeric_font.family][0], eridu_style::fonts::NUMERIC);
+            assert_eq!(defs.families[&display(28.0).family][0], ui_fonts::DISPLAY);
+            assert_eq!(defs.families[&numeric_font.family][0], ui_fonts::NUMERIC);
             let widths: Vec<_> = (0..10).map(|n| fonts.layout_no_wrap(n.to_string(), numeric_font.clone(), Color32::WHITE).size().x).collect();
             assert!(widths.iter().all(|width| (width - widths[0]).abs() < 0.01), "tabular digits: {widths:?}");
         });

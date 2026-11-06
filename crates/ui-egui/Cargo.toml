@@ -8,7 +8,7 @@ license.workspace = true
 workspace = true
 
 [dependencies]
-eridu-style = { workspace = true }
+craft-ui-fonts = { workspace = true }
 chrono = { workspace = true }
 craft-print = { workspace = true }
 craft-ui = { workspace = true }

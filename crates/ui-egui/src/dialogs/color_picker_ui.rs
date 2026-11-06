@@ -683,7 +683,6 @@ fn fields(ui: &mut egui::Ui, f: &mut Map<String, Value>, mode: &str, now: &Compo
                 // While the field has focus it shows what is being typed, not the colour: rebuilding it from
                 // the colour every frame would throw away every keystroke until six valid digits were in.
                 let id = ui.scope_id().with("cp-hex");
-                crate::field_tab::register(ui.ctx(), id);
                 if !f.contains_key("__focused") {
                     f.insert("__focused".into(), json!(true));
                     crate::field_tab::focus(ui.ctx(), id);

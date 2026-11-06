@@ -78,9 +78,18 @@ fn dropdown_with<T: PartialEq + Clone>(
     let mut reveal = wheel && ui.data_mut(|d| d.remove_temp::<bool>(reveal_id)).unwrap_or(false);
     // The list opens on the press: press, drag onto an option and release to choose it (#2735).
     let (press, close) = crate::press_menu::PressCombo::before(ui, id);
+    let was_open = craft_ui::ComboBox::is_open(ui.ctx(), ui.make_persistent_id(egui::IdSalt::new(id)));
+    let keyboard_close = was_open && ui.input(|i| i.key_pressed(egui::Key::Escape) || i.key_pressed(egui::Key::Enter));
     let texts: Vec<String> = options.iter().map(|(_, l)| shown(l)).collect();
     let response =
         craft_ui::ComboBox::from_id_salt(id).selected_text(label).width(width).height(420.0).icon(chevron_icon).close_behavior(close).show_ui(ui, |ui| {
+            // The key opening the list must not also choose an item or confirm its dialog.
+            if !was_open {
+                ui.input_mut(|i| {
+                    i.consume_key(egui::Modifiers::NONE, egui::Key::Enter);
+                    i.consume_key(egui::Modifiers::NONE, egui::Key::Space);
+                });
+            }
             fit_widest_option(ui, texts.iter().map(|l| l.as_str()));
             // A typed letter jumps to the next option starting with it, ↩ closes the list (#1481).
             let labels: Vec<&str> = texts.iter().map(|l| l.as_str()).collect();
@@ -136,6 +145,10 @@ fn dropdown_with<T: PartialEq + Clone>(
         None => response.response.accessible_name(name),
     };
     press.after(&response);
+    if keyboard_close {
+        crate::field_tab::focus(ui.ctx(), response.id);
+        ui.ctx().request_repaint();
+    }
     if combo_box_arrow_keys(ui, &response, current, options) {
         chosen.push(current.clone());
     }

@@ -406,10 +406,6 @@ fn number_edit(
     if ui.data_mut(|d| d.remove_temp::<bool>(first_field_id())).unwrap_or(false) {
         ui.memory_mut(|m| m.request_focus(id));
     }
-    // Tab in a dialog goes from one of these to the next (field_tab.rs).
-    if ui.is_enabled() {
-        crate::field_tab::register(&ctx, id);
-    }
     // Esc, Tab, a click on the pasteboard, the title bar or an open menu, and a window that lost the
     // keyboard leave what was typed unapplied (zoom_field.rs). This runs before the field registers its interest in
     // the focus: Tab would otherwise already have handed the focus on to the next widget.

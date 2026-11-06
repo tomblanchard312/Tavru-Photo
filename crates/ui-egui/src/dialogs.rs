@@ -561,6 +561,31 @@ fn default_max_width(d: &Dialog, compact: bool, curves: bool, about_tabs: bool, 
     }
 }
 
+// Keep the opener per modal so closing nested dialogs restores the right control.
+fn restore_dialog_focus(app: &PhotocraftApp, ctx: &egui::Context) -> Option<egui::Id> {
+    let mut restore = None;
+    let key = egui::Id::unique("dialog-openers");
+    let previous = ctx.data_mut(|d| d.remove_temp::<Vec<(u64, Option<egui::Id>)>>(key)).unwrap_or_default();
+    for (id, opener) in previous.iter().rev() {
+        if !app.ui.dialogs.iter().any(|d| d.id == *id)
+            && let Some(opener) = opener
+        {
+            restore = Some(*opener);
+        }
+    }
+    let current: Vec<_> = app
+        .ui
+        .dialogs
+        .iter()
+        .map(|d| {
+            let opener = previous.iter().find(|(id, _)| *id == d.id).map(|(_, opener)| *opener).unwrap_or_else(|| ctx.memory(|m| m.focused()));
+            (d.id, opener)
+        })
+        .collect();
+    ctx.data_mut(|d| d.insert_temp(key, current));
+    restore
+}
+
 pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
     if crate::guide_edit::sync(app) {
         ctx.request_repaint();
@@ -568,6 +593,8 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
     crate::layer_style::color_picker::prune(app);
     crate::type_panels_ui::color_picker::prune(app);
     crate::edit_history::track_dialogs(app, ctx);
+    let restore_focus = restore_dialog_focus(app, ctx);
+    crate::field_tab::apply_pending(ctx);
     let dialogs = app.ui.dialogs.clone();
     let top = dialogs.last().map(|d| d.id);
     let mut shown = Vec::new();
@@ -611,8 +638,6 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
         if color_picker {
             modal = modal.frame(egui::Frame::popup(&ctx.global_style()).inner_margin(16));
         }
-        // Tab / ⇧Tab walk the topmost dialog's text fields, not every widget (field_tab.rs).
-        let tab = if top == Some(d.id) && !egui::Popup::is_any_open(ctx) { crate::field_tab::take_step(ctx) } else { 0 };
         // Photoshop doesn't dim the window behind dialogs: previews must be judged at true contrast.
         let web = fields.contains_key("__web");
         let web_popup_open = web && egui::Popup::is_any_open(ctx);
@@ -685,11 +710,9 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
             ui.add_space(4.0);
             crate::widgets::hairline(ui);
             ui.add_space(8.0);
-            crate::field_tab::begin(ui.ctx());
             if let Some(done) = dialog_body(app, ui, &d, &mut fields, id, interactive) {
                 outcome = Some(done);
             }
-            crate::field_tab::end(ui.ctx(), tab);
             if let Some(Value::String(key)) = fields.remove(BROWSE_FIELD) {
                 browse_field(app, d.id, &fields, &key);
             }
@@ -780,6 +803,10 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
         }
     }
     if crate::guide_edit::sync(app) {
+        ctx.request_repaint();
+    }
+    if let Some(id) = restore_focus {
+        crate::field_tab::focus(ctx, id);
         ctx.request_repaint();
     }
     ctx.data_mut(|m| m.insert_temp(egui::Id::unique(RECTS), shown));

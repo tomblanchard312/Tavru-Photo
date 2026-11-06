@@ -4,7 +4,7 @@ LumaFoundry serves people editing layered images and agents driving the same com
 
 ## Shared design contract
 
-The Eridu workspace palettes use semantic surfaces, text, River accents, Copper primary actions and status colors from the EriduOS design-system tokens. The stored proMedium/proLight and studio/studioLight identifiers remain compatible with saved preferences. The docked workspace remains the default; the project's dark-first preference is retained as an explicit exception to EDS's initial light default. Users can select light or system-following appearance in Preferences. Typography uses the current logical-pixel roles (12 caption, 13 control, 14 body, 20 section heading), system font preferences and display scaling. Document fonts remain independently editable.
+The Eridu workspace palettes use semantic surfaces, text, River accents, Copper primary actions and status colors from the EriduOS design-system tokens. The stored proMedium/proLight and studio/studioLight identifiers remain compatible with saved preferences. The docked workspace remains the default; the project's dark-first preference is retained as an explicit exception to EDS's initial light default. Users can select light or system-following appearance in Preferences. Typography uses the current logical-pixel roles (12 caption, 13 control, 14 body, 20 section heading), installed or bundled Eridu fonts and display scaling. Document fonts remain independently editable.
 
 Canonical guidance lives in https://github.com/tomblanchard312/EriduOs/tree/main/design-system and its INTERFACE_RULES.md, ADOPTION.md and patterns/enki.md. Palette choices remain user-controlled.
 

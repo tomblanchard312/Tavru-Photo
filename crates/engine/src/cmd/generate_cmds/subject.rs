@@ -78,13 +78,16 @@ fn run(s: &mut Session, p: &Value, remove: bool) -> Result<Value> {
             let mut mask = Surface::new(photocraft_color::PixelFormat::GRAY8);
             mask.write_region(r, &image.to_normalized());
             if radius > 0.0 {
-                ctx.progress(0.85, "Refining subject edges");
                 let params = photocraft_algo::matting::RefineParams { radius, smart_radius: true, ..Default::default() };
-                let region = crate::smartselect_cmds::with_doc_sampler(&snapshot, None, true, |sampler, _| {
-                    photocraft_algo::matting::refine_mask(sampler, &photocraft_algo::matting::surface_reader(&mask), r, r, &params)
-                });
-                if let Some(region) = region {
-                    mask = photocraft_algo::matting::region_surface(&region);
+                let refined = ctx
+                    .stage(0.85, 0.98, "Refining subject edges", |interrupt| {
+                        crate::smartselect_cmds::with_doc_sampler(&snapshot, None, true, |sampler, _| {
+                            photocraft_algo::matting::refine_surface_with_interrupt(sampler, &mask, r, &params, None, interrupt)
+                        })
+                    })
+                    .map_err(|e| bad(e.to_string()))?;
+                if let Some(refined) = refined {
+                    mask = refined;
                 }
             }
             ctx.check()?;

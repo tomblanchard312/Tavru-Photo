@@ -50,7 +50,12 @@ pub fn status_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 if !app.ui.status.is_empty() {
                     widgets::vline(ui, 16.0);
                     let is_err = app.ui.status_error || app.ui.status.starts_with("Couldn");
-                    ui.label(RichText::new(&app.ui.status).color(if is_err { t.warning } else { t.text_faint }));
+                    let status = ui.label(RichText::new(&app.ui.status).color(if is_err { t.warning } else { t.text_faint }));
+                    ui.ctx().accesskit_node_builder(status.id, |node| {
+                        node.set_role(egui::accesskit::Role::Status);
+                        node.set_label(app.ui.status.clone());
+                        node.set_live(egui::accesskit::Live::Polite);
+                    });
                 }
                 ui.with_layout(crate::direction::trailing(), |ui| {
                     if app.session.active().is_some()

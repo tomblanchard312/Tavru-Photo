@@ -163,3 +163,10 @@ Shape Tools changes from that branch are not included.
 | Path | Title | Author | Source | License |
 |---|---|---|---|---|
 | `assets/app-icon/photocraft*.svg`, `photocraft-1024.png`, `photocraft.ico`, `photocraft.icns`, `hicolor/` | LumaFoundry LF monogram | OpenAI Codex for LumaFoundry | Original geometric vector artwork | MIT OR Apache-2.0, [`LICENSE.txt`](assets/app-icon/LICENSE.txt) |
+
+## Eridu design system assets
+
+| Path | Title | Author | Source | License |
+|---|---|---|---|---|
+| `assets/icons/eridu/**/*.svg` | Phosphor regular and fill icons exported from eridu-style d3b4cdc03706ac100fae2de907282575652b76ad (Phosphor web 2.1.1); application aliases in `assets/icons/eridu-map.json` | Phosphor Icons | https://github.com/phosphor-icons/web | MIT; `assets/icons/eridu/LICENSE`. Dashed ellipse adapted by vertical scaling. Font outlines converted to SVG by `scripts/import-eridu-icons.py`; no font binaries copied. |
+| `eridu-style` dependency display/numeric font roles | Source Serif 4 Display Semibold and Inter Tabular | Adobe (Source Serif); Rasmus Andersson (Inter) | https://github.com/tomblanchard312/eridu-style/tree/d3b4cdc03706ac100fae2de907282575652b76ad/fonts | SIL OFL 1.1; original licenses retained in the pinned dependency. |

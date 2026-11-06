@@ -444,6 +444,7 @@ fn cell(ui: &mut egui::Ui, numeric: bool, text: &str) {
     let layout = if numeric { egui::Layout::right_to_left(egui::Align::Center) } else { egui::Layout::left_to_right(egui::Align::Center) };
     ui.with_layout(layout, |ui| {
         ui.add_space(CELL_PAD);
+        let text = if numeric { egui::RichText::new(text).family(crate::theme::numeric(ui.ctx(), 14.0).family) } else { egui::RichText::new(text) };
         ui.add(egui::Label::new(text).selectable(false));
     });
 }

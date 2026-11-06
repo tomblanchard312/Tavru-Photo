@@ -461,7 +461,7 @@ fn value_field_digits_ink_is_centred_and_level_with_the_unit() {
         let unit = ink(suffix_left, field.right() - 2.0);
         let what = format!("{kind:?}: field {field:?}, digits {digits:?}, unit {unit:?}");
         assert!(((digits.0 + digits.1) / 2.0 - field.center().y).abs() <= 0.25, "{what}");
-        assert!((digits.0 - unit.0).abs() <= 0.25, "{what}");
+        assert!((digits.1 - unit.1).abs() <= 0.25, "{what}");
     }
 }
 
@@ -502,7 +502,7 @@ fn value_field_number_slot_stops_at_its_measured_suffix() {
                 let before = ui.cursor().min;
                 super::compact_value_field(ui, &mut s.0, 0.0..=3200.0, suffix, 64.0, 18.0).accessible_name("Zoom");
                 s.1 = egui::Rect::from_min_size(before, egui::vec2(64.0, 18.0));
-                s.2 = ui.painter().layout_no_wrap(suffix.to_owned(), crate::theme::mono(11.0), egui::Color32::WHITE).size().x;
+                s.2 = ui.painter().layout_no_wrap(suffix.to_owned(), crate::theme::numeric(ui.ctx(), 11.0), egui::Color32::WHITE).size().x;
             },
             (33.33, egui::Rect::NOTHING, 0.0),
         );

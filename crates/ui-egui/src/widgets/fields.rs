@@ -151,12 +151,12 @@ fn value_field_box(
     }
     // The number's slot ends 1 pt left of the suffix, by its measured width (the suffix is drawn
     // 6 pt from the right edge), so a one-character unit like `%` leaves the number room (#3040).
-    let suffix_font = theme::mono(11.0);
+    let suffix_font = theme::numeric(ui.ctx(), 11.0);
     let suffix_w = if suffix.is_empty() { 0.0 } else { ui.painter().layout_no_wrap(suffix.to_owned(), suffix_font.clone(), t.text_faint).size().x + 3.0 };
     // Centred: the digits' ink then sits within 0.2 pt of the box's centre, where a 1 pt lift
     // (#1322) put it 0.9 pt high and the focus outline off-centre (#5150). The slot is at least
     // one text row tall, so a slim box's number isn't pushed out of it (#2823).
-    let font = theme::mono(12.0);
+    let font = theme::numeric(ui.ctx(), 12.0);
     let row_h = ui.painter().layout_no_wrap("0".into(), font.clone(), t.text).size().y;
     let slot_h = (rect.height() - 4.0).max(row_h).min(rect.height() - 2.0);
     let cy = rect.center().y;

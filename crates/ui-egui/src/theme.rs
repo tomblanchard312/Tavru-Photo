@@ -925,6 +925,17 @@ pub fn install_fonts_with(ctx: &egui::Context, cjk: crate::cjk_fonts::Sources) {
         }
     }
     let size = ui_font_size(ctx);
+    let eridu = eridu_style::fonts::definitions();
+    for family in [eridu_style::fonts::display(), eridu_style::fonts::numeric(), eridu_style::fonts::numeric_semibold()] {
+        if let Some(stack) = eridu.families.get(&family) {
+            for name in stack {
+                if let Some(data) = eridu.font_data.get(name) {
+                    fonts.font_data.entry(name.clone()).or_insert_with(|| data.clone());
+                }
+            }
+            fonts.families.insert(family, stack.clone());
+        }
+    }
     for (name, data) in &mut fonts.font_data {
         size_ui_font(ctx, name, Arc::make_mut(data));
     }
@@ -1040,6 +1051,14 @@ pub fn medium(size: f32) -> FontId {
 }
 pub fn semibold(size: f32) -> FontId {
     FontId::new(size, FontFamily::Name("semibold".into()))
+}
+pub fn display(size: f32) -> FontId {
+    FontId::new(size, eridu_style::fonts::display())
+}
+pub fn numeric(ctx: &egui::Context, size: f32) -> FontId {
+    let family = eridu_style::fonts::numeric();
+    // Font installation takes effect next pass; standalone widgets must also remain usable.
+    if ctx.fonts(|fonts| fonts.families().contains(&family)) { FontId::new(size, family) } else { FontId::proportional(size) }
 }
 pub fn mono(size: f32) -> FontId {
     FontId::monospace(size)

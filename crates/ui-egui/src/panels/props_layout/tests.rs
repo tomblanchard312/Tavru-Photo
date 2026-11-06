@@ -189,7 +189,15 @@ fn type_controls_fill_the_panel_at_every_width_and_scale() {
             let lead = h.get_by_role_and_label(egui::accesskit::Role::SpinButton, "Leading (set to the font size × auto-leading when Auto)").rect();
             assert!((chevron.right() - header.right()).abs() < 0.5, "{what}: Character controls end at {}, panel {}", chevron.right(), header.right());
             let (t_suffix, lead_suffix) = (header.right() - t_right, chevron.left() - lead.right());
-            assert!((t_suffix - lead_suffix).abs() < 0.5, "{what}: Transform's suffix slot {t_suffix}, the leading field's {lead_suffix} (overlap or gap)");
+            let unit_font = crate::theme::numeric(&h.ctx, 11.0);
+            let unit_difference = h.ctx.fonts_mut(|f| {
+                f.layout_no_wrap("px".into(), unit_font.clone(), egui::Color32::WHITE).size().x
+                    - f.layout_no_wrap("pt".into(), unit_font, egui::Color32::WHITE).size().x
+            });
+            assert!(
+                (t_suffix - lead_suffix - unit_difference).abs() < 0.5,
+                "{what}: Transform's suffix slot {t_suffix}, the leading field's {lead_suffix} (overlap or gap)"
+            );
             // Quick Actions buttons span the panel too.
             let qa = h.get_by_label("Rasterize Type").rect();
             assert!(qa.right() >= header.right() - 2.0 && qa.right() <= header.right() + 1.0, "{what}: {qa:?}");

@@ -290,6 +290,7 @@ impl eframe::App for PhotocraftApp {
             self.ui.status = error;
             self.ui.status_error = true;
         }
+        ui.ctx().accesskit_node_builder(egui::accesskit_root_id(), |node| node.set_label("LumaFoundry"));
         self.ui_frame(ui, frame);
         self.finish_type_reset_pass(ui.ctx());
     }
@@ -297,3 +298,6 @@ impl eframe::App for PhotocraftApp {
 
 #[cfg(test)]
 mod clipboard_tests;
+
+#[cfg(test)]
+mod accessibility_tests;

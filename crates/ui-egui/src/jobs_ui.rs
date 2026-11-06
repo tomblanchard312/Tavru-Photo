@@ -793,7 +793,7 @@ fn print_status_progress(app: &PhotocraftApp, ui: &mut egui::Ui, j: &JobInfo) {
     }
     crate::icons::paint(ui, xr, "x", 11.0, if xresp.hovered() { t.text } else { t.text_dim });
     xresp.on_hover_text(tl!("Manage submitted jobs in the system print queue"));
-    ui.label(RichText::new(percent(j)).color(t.text_dim).size(11.5).monospace());
+    ui.label(RichText::new(percent(j)).color(t.text_dim).font(crate::theme::numeric(ui.ctx(), 11.5)));
     let (br, _) = ui.allocate_exact_size(vec2(bar_w, bar_h), Sense::hover());
     bar(ui, br, shown_fraction(j), &t);
     let label = if more > 0 { format!("{} (+{more})", tl!(&j.label)) } else { tl!(&j.label).to_owned() };
@@ -850,7 +850,7 @@ pub fn status_progress(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
     crate::icons::paint(ui, xr, "x", 11.0, if xresp.hovered() { t.text } else { t.text_dim });
     let xresp = xresp.on_hover_text(tl!("Cancel (Esc)"));
     if !saving {
-        ui.label(RichText::new(percent(&j)).color(t.text_dim).size(11.5).monospace());
+        ui.label(RichText::new(percent(&j)).color(t.text_dim).font(crate::theme::numeric(ui.ctx(), 11.5)));
     }
     let (br, _) = ui.allocate_exact_size(vec2(bar_w, bar_h), Sense::hover());
     bar(ui, br, shown_fraction(&j), &t);

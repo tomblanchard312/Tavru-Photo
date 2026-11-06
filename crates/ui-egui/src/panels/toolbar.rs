@@ -294,12 +294,13 @@ pub fn toolbar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                                                                 t.text,
                                                             );
                                                         }
-                                                        icons::paint(
+                                                        icons::paint_selected(
                                                             ui,
                                                             Rect::from_center_size(pos2(r.left() + 26.0, r.center().y), vec2(18.0, 18.0)),
                                                             icons::tool_icon(item),
                                                             14.0,
                                                             t.icon,
+                                                            item == tool,
                                                         );
                                                         ui.painter().text(
                                                             pos2(r.left() + 42.0, r.center().y),
@@ -530,6 +531,12 @@ pub(super) fn color_chips(app: &mut PhotocraftApp, ui: &mut egui::Ui, two_column
     // Photoshop: clicking a chip opens the Color Picker for that colour.
     let bg_resp = ui.interact(bg, ui.scope_id().with("bgchip"), Sense::click());
     let fg_resp = ui.interact(fg, ui.scope_id().with("fgchip"), Sense::click());
+    for (response, label) in [(&fg_resp, tl!("Set foreground color")), (&bg_resp, tl!("Set background color"))] {
+        response.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Button, true, label));
+        if response.has_focus() {
+            ui.painter().rect_stroke(response.rect.expand(2.0), radius, Stroke::new(2.0, t.accent), StrokeKind::Outside);
+        }
+    }
     if fg_resp.on_hover_text(tl!("Set foreground color")).clicked() {
         crate::color_picker_ui::open(app, "foreground");
     } else if bg_resp.on_hover_text(tl!("Set background color")).clicked() {

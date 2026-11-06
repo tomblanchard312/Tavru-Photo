@@ -7,7 +7,9 @@ fn text_sizes(ctx: &egui::Context) -> Vec<egui::Vec2> {
     ctx.run_ui(Default::default(), |_| {}).textures_delta.clear();
     ctx.run_ui(Default::default(), |ui| {
         // Include custom painter fonts and explicit RichText sizes, not just text styles.
-        for font in [FontId::proportional(11.5), medium(12.0), semibold(15.0), mono(12.0), TextStyle::Body.resolve(ui.style())] {
+        for font in
+            [FontId::proportional(11.5), medium(12.0), semibold(15.0), mono(12.0), display(28.0), numeric(ctx, 14.0), TextStyle::Body.resolve(ui.style())]
+        {
             sizes.push(ui.painter().layout_no_wrap("Interface 123".into(), font, Color32::WHITE).size());
         }
         sizes.push(ui.label(egui::RichText::new("Interface 123").size(13.0)).rect.size());
@@ -395,4 +397,34 @@ fn eridu_palettes_use_semantic_action_and_surface_colors() {
     for palette in [light, dark] {
         assert_eq!((palette.radius_sm, palette.radius, palette.radius_lg), (4.0, 8.0, 12.0));
     }
+}
+
+#[test]
+fn eridu_display_and_numeric_roles_are_bound_and_digits_align() {
+    let ctx = egui::Context::default();
+    install_fonts(&ctx);
+    ctx.run_ui(Default::default(), |_| {}).textures_delta.clear();
+    ctx.run_ui(Default::default(), |ui| {
+        let numeric_font = numeric(&ctx, 14.0);
+        ui.fonts_mut(|fonts| {
+            let defs = fonts.definitions();
+            assert_eq!(defs.families[&display(28.0).family][0], eridu_style::fonts::DISPLAY);
+            assert_eq!(defs.families[&numeric_font.family][0], eridu_style::fonts::NUMERIC);
+            let widths: Vec<_> = (0..10).map(|n| fonts.layout_no_wrap(n.to_string(), numeric_font.clone(), Color32::WHITE).size().x).collect();
+            assert!(widths.iter().all(|width| (width - widths[0]).abs() < 0.01), "tabular digits: {widths:?}");
+        });
+    })
+    .textures_delta
+    .clear();
+}
+
+#[test]
+fn numeric_role_is_safe_before_font_installation_takes_effect() {
+    let ctx = egui::Context::default();
+    ctx.run_ui(Default::default(), |ui| {
+        assert_eq!(numeric(&ctx, 14.0).family, FontFamily::Proportional);
+        ui.label(egui::RichText::new("0123456789").font(numeric(&ctx, 14.0)));
+    })
+    .textures_delta
+    .clear();
 }

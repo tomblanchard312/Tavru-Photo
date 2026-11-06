@@ -164,7 +164,7 @@ pub fn status_bar_pro(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
         crate::zoom_levels::set_from_field(&mut app.ui.views[i], field.dragged() || field.drag_started(), pct, animated);
     }
     ui.add_space(12.0);
-    ui.label(RichText::new(tl!(&text)).color(t.text_dim).size(12.0));
+    ui.label(RichText::new(tl!(&text)).color(t.text_dim).font(crate::theme::numeric(ui.ctx(), 12.0)));
     let (r, resp) = ui.allocate_exact_size(vec2(18.0, 18.0), Sense::click());
     if resp.hovered() {
         ui.painter().rect_filled(r, t.radius_sm, t.hover);
@@ -235,7 +235,12 @@ fn status_message(app: &PhotocraftApp, ui: &mut egui::Ui, t: &Tokens) {
     let (r, _) = ui.allocate_exact_size(vec2(17.0, 16.0), Sense::hover());
     ui.painter().line_segment([r.center_top(), r.center_bottom()], Stroke::new(1.0, t.separator));
     let is_err = app.ui.status_error || app.ui.status.starts_with("Couldn");
-    ui.label(RichText::new(&app.ui.status).color(if is_err { t.warning } else { t.text_faint }));
+    let status = ui.label(RichText::new(&app.ui.status).color(if is_err { t.warning } else { t.text_faint }));
+    ui.ctx().accesskit_node_builder(status.id, |node| {
+        node.set_role(egui::accesskit::Role::Status);
+        node.set_label(app.ui.status.clone());
+        node.set_live(egui::accesskit::Live::Polite);
+    });
 }
 
 /// Home button at the very start of Photoshop 2026's options bar: toggles the Home (start)
@@ -575,7 +580,9 @@ mod tests {
         let mut h = Harness::builder().with_size(vec2(900.0, 40.0)).build_ui_state(|ui, app| status_bar_pro(app, ui), app);
         h.run_steps(2);
         assert!(h.query_by_label("No document").is_some());
-        assert!(h.query_by_label(&e).is_some(), "status bar shows {e:?}");
+        use egui_kittest::kittest::NodeT;
+        let status = h.get_by_role_and_label(egui::accesskit::Role::Status, &e);
+        assert_eq!(status.accesskit_node().live(), egui::accesskit::Live::Polite);
     }
 
     #[test]

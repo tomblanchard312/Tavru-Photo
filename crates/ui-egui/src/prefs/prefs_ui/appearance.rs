@@ -35,7 +35,7 @@ pub(super) fn selected_theme(interface: &prefs::Interface, system: Option<egui::
     let light = match interface.appearance_mode {
         AppearanceMode::Light => true,
         AppearanceMode::Dark => false,
-        AppearanceMode::Auto => system != Some(egui::Theme::Dark),
+        AppearanceMode::Auto => system == Some(egui::Theme::Light),
     };
     if light {
         match interface.light_theme {

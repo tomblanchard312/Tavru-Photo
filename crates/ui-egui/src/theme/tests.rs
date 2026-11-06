@@ -113,11 +113,11 @@ fn saved_ui_font_size_survives_first_frame_install() {
 #[test]
 fn pro_light_gray_and_light_themes() {
     // #2661: Photoshop's third and fourth brightness levels, with the Pro layout.
-    for (kind, panel, id, label) in [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 240, "proLight", "Pro (Light)")]
+    for (kind, panel, id, label) in [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 255, "proLight", "Eridu (Light)")]
     {
         let t = Tokens::for_kind(kind);
         assert!(t.pro && !t.dark() && !t.bevel && kind.is_pro(), "{kind:?}");
-        assert_eq!((t.kind, t.card, t.chrome), (kind, Color32::from_gray(panel), Color32::from_gray(panel)));
+        assert_eq!((t.kind, t.card), (kind, Color32::from_gray(panel)));
         assert_eq!((kind.id(), kind.label()), (id, label));
         assert_eq!(ThemeKind::from_name(id), Some(kind));
         assert_eq!(ThemeKind::from_name(label), Some(kind));
@@ -133,7 +133,7 @@ fn pro_light_gray_and_light_themes() {
     }
     // The four Pro levels step from darkest to lightest, as in Photoshop.
     let cards = [ThemeKind::Pro, ThemeKind::ProMedium, ThemeKind::ProLightGray, ThemeKind::ProLight].map(|k| Tokens::for_kind(k).card.r());
-    assert!(cards.windows(2).all(|w| w[0] < w[1]), "{cards:?}");
+    assert!(cards[1] < cards[2] && cards[2] < cards[3], "{cards:?}");
     assert!(!ThemeKind::Studio.is_pro() && !ThemeKind::StudioLight.is_pro() && !ThemeKind::Classic.is_pro());
     assert_eq!(ThemeKind::from_name("light gray"), Some(ThemeKind::ProLightGray));
     assert_eq!(ThemeKind::from_name("lightest"), Some(ThemeKind::ProLight));
@@ -144,7 +144,7 @@ fn field_selection_is_grey_only_for_the_monochrome_pro_themes() {
     // #3789: a text field's selection is a subtle grey in the monochrome Pro themes, not a
     // second blue accent; coloured themes keep their accent.
     assert_eq!(Tokens::for_kind(ThemeKind::Pro).field_selection(), Color32::from_gray(96));
-    assert_eq!(Tokens::for_kind(ThemeKind::ProLight).field_selection(), Color32::from_gray(201));
+    assert_eq!(Tokens::for_kind(ThemeKind::ProLight).field_selection(), Tokens::for_kind(ThemeKind::ProLight).accent_soft);
     assert_eq!(Tokens::for_kind(ThemeKind::Studio).field_selection(), Tokens::for_kind(ThemeKind::Studio).accent_soft);
     assert_eq!(Tokens::for_kind(ThemeKind::Classic).field_selection(), Tokens::for_kind(ThemeKind::Classic).accent_soft);
 }
@@ -160,7 +160,7 @@ fn theme_names_parse() {
     assert_eq!(ThemeKind::from_name("Solarized Dark"), Some(ThemeKind::SolarizedDark));
     assert_eq!(ThemeKind::from_name("solarized"), Some(ThemeKind::SolarizedDark));
     let m = Tokens::for_kind(ThemeKind::ProMedium);
-    assert!(m.pro && m.dark() && m.kind == ThemeKind::ProMedium && m.card == Color32::from_rgb(83, 83, 83));
+    assert!(m.pro && m.dark() && m.kind == ThemeKind::ProMedium && m.card == Color32::from_rgb(32, 44, 51));
     let s = Tokens::for_kind(ThemeKind::SolarizedDark);
     assert!(s.dark() && !s.bevel && s.kind == ThemeKind::SolarizedDark && s.card == Color32::from_rgb(7, 54, 66));
     assert_eq!(ThemeKind::from_name("neon"), None);

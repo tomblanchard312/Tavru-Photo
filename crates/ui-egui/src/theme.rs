@@ -30,13 +30,13 @@ pub enum ThemeKind {
     /// Photoshop-style Spectrum dark: flat charcoal panels, tab strips, blue accents (darkest brightness).
     Pro,
     /// Photoshop's default (second) interface brightness: #535353 panels, #282828 canvas (default).
+    #[default]
     ProMedium,
     /// Photoshop's third interface brightness: #B8B8B8 panels (#2661).
     ProLightGray,
     /// Photoshop's fourth (lightest) interface brightness: #F0F0F0 panels (#2661).
     ProLight,
     Studio,
-    #[default]
     StudioLight,
     Classic,
     /// GNOME's libadwaita light style.
@@ -76,11 +76,11 @@ impl ThemeKind {
     pub fn label(self) -> &'static str {
         match self {
             ThemeKind::Pro => "Pro (Dark)",
-            ThemeKind::ProMedium => "Pro (Medium Gray)",
+            ThemeKind::ProMedium => "Eridu (Dark)",
             ThemeKind::ProLightGray => "Pro (Light Gray)",
-            ThemeKind::ProLight => "Pro (Light)",
-            ThemeKind::Studio => "Eridu (Dark)",
-            ThemeKind::StudioLight => "Eridu (Light)",
+            ThemeKind::ProLight => "Eridu (Light)",
+            ThemeKind::Studio => "Eridu Studio (Dark)",
+            ThemeKind::StudioLight => "Eridu Studio (Light)",
             ThemeKind::Classic => "Classic",
             ThemeKind::Adwaita => "Adwaita (Light)",
             ThemeKind::AdwaitaDark => "Adwaita (Dark)",
@@ -139,11 +139,11 @@ impl ThemeKind {
     pub fn from_name(s: &str) -> Option<Self> {
         match s.to_ascii_lowercase().replace([' ', '_', '-', '(', ')'], "").as_str() {
             "pro" | "prodark" | "photoshop" | "dark" => Some(ThemeKind::Pro),
-            "promedium" | "promediumgray" | "medium" | "mediumgray" => Some(ThemeKind::ProMedium),
+            "eridudark" | "promedium" | "promediumgray" | "medium" | "mediumgray" => Some(ThemeKind::ProMedium),
             "prolightgray" | "lightgray" | "mediumlight" => Some(ThemeKind::ProLightGray),
-            "prolight" | "prolightest" | "lightest" | "light" => Some(ThemeKind::ProLight),
-            "studio" | "studiodark" => Some(ThemeKind::Studio),
-            "studiolight" => Some(ThemeKind::StudioLight),
+            "eridulight" | "prolight" | "prolightest" | "lightest" | "light" => Some(ThemeKind::ProLight),
+            "eridustudiodark" | "studio" | "studiodark" => Some(ThemeKind::Studio),
+            "eridustudiolight" | "studiolight" => Some(ThemeKind::StudioLight),
             "classic" | "win2000" | "retro" => Some(ThemeKind::Classic),
             "adwaita" | "adwaitalight" | "gnome" | "gnomelight" => Some(ThemeKind::Adwaita),
             "adwaitadark" | "gnomedark" => Some(ThemeKind::AdwaitaDark),
@@ -226,22 +226,34 @@ impl Tokens {
             // Sampled from Photoshop 2026's default brightness (raw display values).
             ThemeKind::ProMedium => Tokens {
                 kind,
-                chrome: Color32::from_rgb(83, 83, 83),
-                dock: Color32::from_rgb(66, 66, 66),
-                card: Color32::from_rgb(83, 83, 83),
-                card_border: Color32::from_rgb(66, 66, 66),
-                field: Color32::from_rgb(69, 69, 69),
-                field_border: Color32::from_rgb(104, 104, 104),
-                hover: Color32::from_rgb(98, 98, 98),
-                pressed: Color32::from_rgb(112, 112, 112),
-                text: Color32::from_rgb(238, 238, 238),
-                text_dim: Color32::from_rgb(212, 212, 212),
-                text_faint: Color32::from_rgb(160, 160, 160),
-                icon: Color32::from_rgb(226, 226, 226),
-                accent_soft: Color32::from_rgb(110, 110, 110),
-                separator: Color32::from_rgb(62, 62, 62),
-                tab_strip: Color32::from_rgb(74, 74, 74),
-                row_selected: Color32::from_rgb(107, 107, 107),
+                radius_lg: 12.0,
+                radius: 8.0,
+                radius_sm: 4.0,
+                warning: Color32::from_rgb(242, 196, 107),
+                danger: Color32::from_rgb(255, 157, 153),
+                primary_text: Color32::from_rgb(16, 35, 45),
+                primary_bg: Color32::from_rgb(224, 164, 114),
+                accent_text: Color32::from_rgb(247, 247, 244),
+                accent_border: Color32::from_rgb(131, 201, 224),
+                accent: Color32::from_rgb(131, 201, 224),
+                canvas_dot: Color32::from_rgb(23, 35, 43),
+                canvas: Color32::from_rgb(23, 35, 43),
+                chrome: Color32::from_rgb(41, 58, 67),
+                dock: Color32::from_rgb(23, 35, 43),
+                card: Color32::from_rgb(32, 44, 51),
+                card_border: Color32::from_rgb(113, 129, 138),
+                field: Color32::from_rgb(41, 58, 67),
+                field_border: Color32::from_rgb(113, 129, 138),
+                hover: Color32::from_rgb(37, 55, 64),
+                pressed: Color32::from_rgb(48, 80, 95),
+                text: Color32::from_rgb(247, 247, 244),
+                text_dim: Color32::from_rgb(208, 217, 222),
+                text_faint: Color32::from_rgb(208, 217, 222),
+                icon: Color32::from_rgb(247, 247, 244),
+                accent_soft: Color32::from_rgb(48, 80, 95),
+                separator: Color32::from_rgb(113, 129, 138),
+                tab_strip: Color32::from_rgb(41, 58, 67),
+                row_selected: Color32::from_rgb(48, 80, 95),
                 ..Tokens::for_kind(ThemeKind::Pro)
             },
             // Photoshop's medium-light brightness: #B8B8B8 panels, dark text, a mid-grey canvas.
@@ -272,26 +284,35 @@ impl Tokens {
             // Photoshop's lightest brightness: #F0F0F0 panels, dark text, a light-grey canvas.
             ThemeKind::ProLight => Tokens {
                 kind,
-                chrome: Color32::from_rgb(240, 240, 240),
-                canvas: Color32::from_rgb(214, 214, 214),
-                canvas_dot: Color32::from_rgb(214, 214, 214),
-                dock: Color32::from_rgb(226, 226, 226),
-                card: Color32::from_rgb(240, 240, 240),
-                card_border: Color32::from_rgb(214, 214, 214),
-                field: Color32::WHITE,
-                field_border: Color32::from_rgb(186, 186, 186),
-                hover: Color32::from_rgb(226, 226, 226),
-                pressed: Color32::from_rgb(206, 206, 206),
-                text: Color32::from_rgb(20, 20, 20),
-                text_dim: Color32::from_rgb(64, 64, 64),
-                text_faint: Color32::from_rgb(120, 120, 120),
-                icon: Color32::from_rgb(46, 46, 46),
-                accent_soft: Color32::from_rgb(214, 214, 214),
-                accent_text: Color32::from_rgb(16, 98, 196),
-                separator: Color32::from_rgb(214, 214, 214),
+                radius_lg: 12.0,
+                radius: 8.0,
+                radius_sm: 4.0,
+                warning: Color32::from_rgb(138, 90, 0),
+                danger: Color32::from_rgb(163, 41, 41),
+                primary_text: Color32::from_rgb(255, 255, 255),
+                primary_bg: Color32::from_rgb(148, 89, 44),
+                accent_border: Color32::from_rgb(36, 107, 131),
+                accent: Color32::from_rgb(36, 107, 131),
+                chrome: Color32::from_rgb(241, 238, 232),
+                canvas: Color32::from_rgb(250, 249, 246),
+                canvas_dot: Color32::from_rgb(250, 249, 246),
+                dock: Color32::from_rgb(250, 249, 246),
+                card: Color32::from_rgb(255, 255, 255),
+                card_border: Color32::from_rgb(199, 205, 208),
+                field: Color32::from_rgb(241, 238, 232),
+                field_border: Color32::from_rgb(199, 205, 208),
+                hover: Color32::from_rgb(238, 243, 244),
+                pressed: Color32::from_rgb(227, 238, 241),
+                text: Color32::from_rgb(32, 44, 51),
+                text_dim: Color32::from_rgb(71, 89, 98),
+                text_faint: Color32::from_rgb(71, 89, 98),
+                icon: Color32::from_rgb(32, 44, 51),
+                accent_soft: Color32::from_rgb(227, 238, 241),
+                accent_text: Color32::from_rgb(32, 44, 51),
+                separator: Color32::from_rgb(199, 205, 208),
                 shadow: Color32::from_black_alpha(50),
-                tab_strip: Color32::from_rgb(226, 226, 226),
-                row_selected: Color32::from_rgb(204, 204, 204),
+                tab_strip: Color32::from_rgb(241, 238, 232),
+                row_selected: Color32::from_rgb(227, 238, 241),
                 ..Tokens::for_kind(ThemeKind::Pro)
             },
             ThemeKind::Pro => Tokens {
@@ -826,7 +847,7 @@ impl Tokens {
     /// [`crate::widgets::text_field`], because `Visuals::selection` also fills selected list rows
     /// and slider trails, which must keep the theme's.
     pub fn field_selection(&self) -> Color32 {
-        if self.pro { Color32::from_gray(if self.dark() { 96 } else { 201 }) } else { self.accent_soft }
+        if matches!(self.kind, ThemeKind::Pro | ThemeKind::ProLightGray) { Color32::from_gray(if self.dark() { 96 } else { 201 }) } else { self.accent_soft }
     }
 
     /// The 1 px ring round a slider knob, if the theme draws one: the Pro layouts' dark ring, and

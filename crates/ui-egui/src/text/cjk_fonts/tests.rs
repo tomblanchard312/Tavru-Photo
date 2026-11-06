@@ -549,6 +549,13 @@ fn layer_names_in_other_scripts_load_a_covering_font_once() {
     let ctx = egui::Context::default();
     for _ in 0..2 {
         crate::theme::install_fonts_with(&ctx, script_sources());
+        // Served-font tests populate a process-wide cache; this fixture tests only its script sources.
+        ctx.run_ui(Default::default(), |_| {}).textures_delta.clear();
+        let mut fonts = ctx.fonts(|f| f.definitions().clone());
+        for stack in fonts.families.values_mut() {
+            stack.retain(|name| !name.starts_with("served-"));
+        }
+        ctx.set_fonts(fonts);
         assert!(render(&ctx, "Layer 1 – café"));
         ctx.with_plugin::<CjkFontPlugin, _>(|p| assert!(p.0.scripts_tried.is_empty(), "Latin text reads no font")).unwrap();
         assert!(fallback_files(&ctx).is_empty());

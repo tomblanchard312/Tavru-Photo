@@ -269,7 +269,11 @@ pub(super) fn web_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, f: &mut Map<S
     // fraction of a pixel too wide at a fractional scale widened it on every repaint (#10675).
     let ppp = ui.ctx().pixels_per_point();
     let floor = |v: f32| (v * ppp).floor() / ppp;
-    let area = egui::vec2(floor((ui.available_width() - 270.0 - ui.spacing().item_spacing.x).max(260.0)), floor((ui.available_height() - 48.0).max(180.0)));
+    let settings_width = 250.0 * egui::TextStyle::Body.resolve(ui.style()).size / 12.0 * crate::theme::ui_font_scale(ui.ctx());
+    let area = egui::vec2(
+        floor((ui.available_width() - settings_width - 20.0 - ui.spacing().item_spacing.x).max(260.0)),
+        floor((ui.available_height() - 48.0).max(180.0)),
+    );
     let (half_w, half_h) = (floor(area.x / 2.0 - 4.0), floor(area.y / 2.0 - 4.0));
     ui.horizontal_top(|ui| {
         // Previews grow with the dialog; settings retain their compact width.
@@ -301,7 +305,7 @@ pub(super) fn web_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, f: &mut Map<S
         ui.add_space(10.0);
         // Settings scroll independently on smaller windows.
         ui.vertical(|ui| {
-            ui.set_width(250.0);
+            ui.set_width(settings_width);
             egui::ScrollArea::vertical().id_salt("web-settings").max_height(area.y).show(ui, |ui| {
                 ui.label(egui::RichText::new(tl!("Preset")).color(t.text_dim));
                 let mut preset = s(f, "__preset", "");

@@ -323,6 +323,8 @@ emerge --ask media-gfx/photocraft-bin
 
 ## Documentation
 
+The [Eridu interface brief](docs/eridu-ui.md) records the design contract, workspace behavior and adoption gaps.
+
 Developer, architecture, automation, format, and security documentation is maintained in the [LumaFoundry documentation book](book/).
 
 To self-host the browser version with Docker, see [Docker web hosting](packaging/web/README.md#docker).

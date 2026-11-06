@@ -10,8 +10,16 @@ fn app(doc: bool) -> PhotocraftApp {
     app
 }
 
+// Other tests install plug-ins globally; document-state assertions need a fixed menu inventory.
+fn document_menu_items(app: &PhotocraftApp) -> Vec<MenuItem> {
+    let mut items = crate::menus::menu_items(app);
+    let plugin_path = items.iter().find(|i| i.id == "plugin.install").map(|i| i.path.clone());
+    items.retain(|i| !i.id.starts_with("plugin.filter.") && !(i.id == "---" && Some(&i.path) == plugin_path.as_ref()));
+    items
+}
+
 fn layout(doc: bool) -> Layout {
-    photocraft_layout(&crate::menus::menu_items(&app(doc)), Lang::EN, "auto")
+    photocraft_layout(&document_menu_items(&app(doc)), Lang::EN, "auto")
 }
 
 fn ids(nodes: &[Node]) -> Vec<String> {
@@ -147,7 +155,7 @@ fn menu_rows_show_the_shortcut_that_runs_them() {
 /// documents gains a row, which rebuilds only the Window menu.
 #[test]
 fn opening_a_document_changes_state_not_structure() {
-    let (a, b) = (crate::menus::menu_items(&app(false)), crate::menus::menu_items(&app(true)));
+    let (a, b) = (document_menu_items(&app(false)), document_menu_items(&app(true)));
     let kind = |items: &[MenuItem]| items.iter().map(|i| (i.id.clone(), i.checked.is_some())).collect::<HashMap<_, _>>();
     let (ka, kb) = (kind(&a), kind(&b));
     let flips: Vec<&String> = ka.iter().filter(|(id, k)| kb.get(*id).is_some_and(|o| o != *k)).map(|(id, _)| id).collect();
@@ -167,14 +175,14 @@ fn the_documents_follow_bring_all_to_front() {
     let mut a = app(true);
     a.run("file.new", json!({"width": 32, "height": 32})).unwrap();
     a.sync_views();
-    let bar = photocraft_layout(&crate::menus::menu_items(&a), Lang::EN, "auto").bar;
+    let bar = photocraft_layout(&document_menu_items(&a), Lang::EN, "auto").bar;
     let window = ids(&bar.menu(MenuRole::Window).unwrap().children);
     assert_eq!(window[window.len() - 4..], ["<BringAllToFront>", "---", "window.document.0", "window.document.1"]);
     assert_eq!(bar.find("window.document.1").and_then(|i| i.checked), Some(true));
     assert_eq!(bar.find("window.document.0").and_then(|i| i.checked), Some(false));
 
     a.session.set_active(0);
-    let switched = photocraft_layout(&crate::menus::menu_items(&a), Lang::EN, "auto").bar;
+    let switched = photocraft_layout(&document_menu_items(&a), Lang::EN, "auto").bar;
     assert_eq!(switched.find("window.document.0").and_then(|i| i.checked), Some(true));
     assert_eq!((structure_key(&switched), window_key(&switched)), (structure_key(&bar), window_key(&bar)), "a check moves in place");
 }

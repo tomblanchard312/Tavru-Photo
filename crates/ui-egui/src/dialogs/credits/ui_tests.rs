@@ -9,7 +9,7 @@ use egui_kittest::kittest::{NodeT, Queryable};
 use super::*;
 
 /// The About window's width (`dialogs.rs` gives its tabs 700 pt).
-const WIDTH: f32 = 700.0;
+const WIDTH: f32 = 760.0;
 
 fn leak(s: String) -> &'static str {
     Box::leak(s.into_boxed_str())

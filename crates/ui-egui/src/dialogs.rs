@@ -543,7 +543,7 @@ fn default_max_width(d: &Dialog, compact: bool, curves: bool, about_tabs: bool, 
     if d.kind == DialogKind::NewDocument {
         800.0
     } else if about_tabs {
-        700.0
+        760.0
     } else if d.kind == DialogKind::LayerStyle || d.fields.contains_key("__export") || crate::color_picker_ui::owns(&d.fields) {
         600.0
     } else if compact {
@@ -641,7 +641,7 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
             // The About window: room for the contributor table, the same width on every tab.
             let about_tabs = d.kind == DialogKind::About && d.fields.get("systemInfo").and_then(Value::as_bool) != Some(true);
             if about_tabs {
-                ui.set_min_width(700.0);
+                ui.set_min_width(760.0);
             }
             ui.set_max_width(wide.unwrap_or_else(|| default_max_width(&d, compact, curves, about_tabs, available.x)));
             if web || fixed.is_some() {

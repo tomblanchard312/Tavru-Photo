@@ -2,16 +2,16 @@
 //! Canonical contract: tomblanchard312/EriduOs, packages/eridu-typography.
 use egui::{FontData, FontId, TextStyle};
 
-const PT: f32 = 96.0 / 72.0;
+// Canonical EDS v1 sizes are already logical pixels.
 
 pub(super) fn styles() -> std::collections::BTreeMap<TextStyle, FontId> {
     [
-        (TextStyle::Small, FontId::proportional(10.5 * PT)),
-        (TextStyle::Body, FontId::proportional(11.0 * PT)),
-        (TextStyle::Button, super::medium(10.5 * PT)),
-        (TextStyle::Heading, super::semibold(15.0 * PT)),
-        (TextStyle::Monospace, FontId::monospace(11.0 * PT)),
-        (TextStyle::Name("windowTitle".into()), super::semibold(11.0 * PT)),
+        (TextStyle::Small, FontId::proportional(12.0)),
+        (TextStyle::Body, FontId::proportional(14.0)),
+        (TextStyle::Button, super::medium(13.0)),
+        (TextStyle::Heading, super::semibold(20.0)),
+        (TextStyle::Monospace, FontId::monospace(14.0)),
+        (TextStyle::Name("windowTitle".into()), super::semibold(14.0)),
     ]
     .into()
 }

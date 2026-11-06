@@ -312,10 +312,10 @@ pub struct Interface {
 impl Default for Interface {
     fn default() -> Self {
         Self {
-            theme: Theme::ProMedium,
-            appearance_mode: AppearanceMode::Dark,
-            dark_theme: DarkTheme::ProMedium,
-            light_theme: LightTheme::ProLight,
+            theme: Theme::StudioLight,
+            appearance_mode: AppearanceMode::Auto,
+            dark_theme: DarkTheme::Studio,
+            light_theme: LightTheme::StudioLight,
             favorite_themes: Vec::new(),
             canvas_color: CanvasColor::Default,
             canvas_custom_color: "#282828".into(),

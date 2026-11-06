@@ -380,3 +380,18 @@ fn eridu_roles_preserve_weights_and_zoom_across_themes() {
         }
     }
 }
+
+#[test]
+fn eridu_palettes_use_semantic_action_and_surface_colors() {
+    let light = Tokens::for_kind(ThemeKind::StudioLight);
+    let dark = Tokens::for_kind(ThemeKind::Studio);
+    assert_eq!(light.canvas, Color32::from_rgb(250, 249, 246));
+    assert_eq!(light.accent, Color32::from_rgb(36, 107, 131));
+    assert_eq!(light.primary_bg, Color32::from_rgb(148, 89, 44));
+    assert_eq!(dark.canvas, Color32::from_rgb(23, 35, 43));
+    assert_eq!(dark.accent, Color32::from_rgb(131, 201, 224));
+    assert_eq!(dark.primary_bg, Color32::from_rgb(224, 164, 114));
+    for palette in [light, dark] {
+        assert_eq!((palette.radius_sm, palette.radius, palette.radius_lg), (4.0, 8.0, 12.0));
+    }
+}

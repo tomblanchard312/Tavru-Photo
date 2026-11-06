@@ -12,12 +12,14 @@ colour change or renamed theme alone would not establish clearance.
 
 ## Themes
 
+The [Eridu interface brief](eridu-ui.md) defines the shared design baseline and records adoption gaps.
+
 | Theme | Intent |
 |---|---|
 | Pro | Inherited flat charcoal panels (#323232), dark tab strips, blue accent (#378ef0), pill buttons, checkboxes, compact 12 px type; provenance and combined appearance require release review |
 | Pro Medium | Photoshop-style medium-gray panels and a dark canvas |
-| Studio | Dark studio style: near-black, rounded cards, pill tabs, violet accent, toggles |
-| Studio Light | Studio on light surfaces |
+| Eridu Dark (stored as Studio) | Eridu semantic dark surfaces, River selection, Copper primary actions and 4/8/12 px radii |
+| Eridu Light (stored as Studio Light) | Warm light surfaces with accessible River and Copper actions |
 | Classic | Windows-2000 bevels, square corners, navy selection |
 | Adwaita | GNOME's libadwaita light palette on the Studio layout: white header bar and cards on a grey sidebar, GNOME blue accent (#3584e4), 6 / 9 / 12 px radii, grey (not red) close button |
 | Adwaita Dark | The libadwaita dark palette on the same layout |

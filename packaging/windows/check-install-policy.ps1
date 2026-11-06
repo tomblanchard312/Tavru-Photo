@@ -88,7 +88,7 @@ try {
     $directories[$row[0]] = @($row[1], $row[2])
   }
   if ($directories['INSTALLFOLDER'][0] -ne 'CraftSuiteFolder' -or
-      $directories['CraftSuiteFolder'][1] -ne 'LumaFoundry') { throw 'Expected the app under the LumaFoundry suite folder.' }
+      ($directories['CraftSuiteFolder'][1] -split '\|')[-1] -ne 'LumaFoundry') { throw 'Expected the app under the LumaFoundry suite folder.' }
   $programs = $directories['CraftSuiteFolder'][0]
   if ($programs -eq 'ProgramFiles6432Folder') { $programs = $directories[$programs][0] }
   if ($programs -notin 'ProgramFilesFolder', 'ProgramFiles64Folder') {

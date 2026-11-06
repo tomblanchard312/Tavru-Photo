@@ -9,6 +9,7 @@ workspace = true
 
 [dependencies]
 eridu-style = { workspace = true }
+chrono = { workspace = true }
 craft-print = { workspace = true }
 craft-ui = { workspace = true }
 photocraft-geom = { workspace = true }
@@ -80,3 +81,7 @@ flate2 = { workspace = true }
 epaint_default_fonts = { version = "0.37", features = ["monochrome_emoji_fonts"] }
 serde_json = { workspace = true }
 toml = "1"
+
+[[example]]
+name = "flat_open_bench"
+test = true

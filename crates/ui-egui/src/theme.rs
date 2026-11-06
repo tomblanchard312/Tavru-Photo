@@ -24,6 +24,7 @@ use egui::{Color32, CornerRadius, FontData, FontDefinitions, FontFamily, FontId,
 use photocraft_engine::prefs::UiFontSize;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
+mod ui_fonts;
 
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ThemeKind {
@@ -925,8 +926,8 @@ pub fn install_fonts_with(ctx: &egui::Context, cjk: crate::cjk_fonts::Sources) {
         }
     }
     let size = ui_font_size(ctx);
-    let eridu = eridu_style::fonts::definitions();
-    for family in [eridu_style::fonts::display(), eridu_style::fonts::numeric(), eridu_style::fonts::numeric_semibold()] {
+    let eridu = ui_fonts::definitions();
+    for family in [ui_fonts::display(), ui_fonts::numeric(), ui_fonts::numeric_semibold()] {
         if let Some(stack) = eridu.families.get(&family) {
             for name in stack {
                 if let Some(data) = eridu.font_data.get(name) {
@@ -1053,10 +1054,10 @@ pub fn semibold(size: f32) -> FontId {
     FontId::new(size, FontFamily::Name("semibold".into()))
 }
 pub fn display(size: f32) -> FontId {
-    FontId::new(size, eridu_style::fonts::display())
+    FontId::new(size, ui_fonts::display())
 }
 pub fn numeric(ctx: &egui::Context, size: f32) -> FontId {
-    let family = eridu_style::fonts::numeric();
+    let family = ui_fonts::numeric();
     // Font installation takes effect next pass; standalone widgets must also remain usable.
     if ctx.fonts(|fonts| fonts.families().contains(&family)) { FontId::new(size, family) } else { FontId::proportional(size) }
 }

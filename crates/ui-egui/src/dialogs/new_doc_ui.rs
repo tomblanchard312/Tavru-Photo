@@ -651,7 +651,6 @@ pub fn body(app: &mut crate::PhotocraftApp, ui: &mut egui::Ui, f: &mut Map<Strin
             if r.changed() {
                 f.insert("name".into(), json!(name));
             }
-            crate::field_tab::register(ui.ctx(), r.id);
             // Photoshop opens the dialog with the name selected, so typing replaces it and Tab goes
             // straight on to Width. (`__focused` marks that this instance has had its turn.)
             if !f.contains_key("__focused") {

@@ -73,7 +73,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Eridu design system assets
 
 Phosphor regular/fill SVG outlines: MIT. Source Serif 4 Display Semibold and
-Inter Tabular fonts, supplied by the pinned eridu-style dependency: SIL OFL 1.1.
+Inter Tabular fonts, supplied by the pinned public craft-ui-fonts dependency: SIL OFL 1.1.
 Full notices follow (also retained in the source dependency).
 
 MIT License

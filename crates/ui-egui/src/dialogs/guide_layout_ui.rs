@@ -213,9 +213,6 @@ fn optional(ui: &mut egui::Ui, f: &mut Map<String, Value>, key: &str, label: egu
     let response = ui
         .add(egui::TextEdit::singleline(&mut value).id_salt(key).desired_width(60.0).font(crate::theme::mono(12.0)).background_color(t.field))
         .labelled_by(label);
-    if ui.is_enabled() {
-        crate::field_tab::register(ui.ctx(), response.id);
-    }
     if response.gained_focus() {
         crate::field_tab::select_all(ui.ctx(), response.id, &value);
     }

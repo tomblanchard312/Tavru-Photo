@@ -3,6 +3,8 @@
 Validation performed on 2026-11-06 against the icon/display-font follow-up to PR #9.
 This is an application validation record, not full EriduOS release certification.
 
+The prior keyboard-delivery blocker below is superseded by the [native keyboard fixes and public-font validation](dialog-accessibility-fixes.md).
+
 ## Implemented and checked
 
 - 176 application icon aliases use pinned Phosphor regular/fill SVGs; selected toolbar, flyout and rail controls use fill. Regeneration reproduced all 302 generated/catalog/license files exactly. All 11 icon tests pass, including rasterization of both styles. Calibrated precision cursor artwork remains separate from toolbar glyphs.

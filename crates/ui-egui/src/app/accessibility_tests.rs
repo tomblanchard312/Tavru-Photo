@@ -24,8 +24,38 @@ fn shell_semantics_and_keyboard_new_document() {
         h.state().session.documents().len(),
         h.ctx.memory(|m| m.focused())
     );
+    for modifiers in [egui::Modifiers::NONE, egui::Modifiers::SHIFT] {
+        let mut reached = std::collections::BTreeSet::new();
+        for _ in 0..80 {
+            h.key_press_modifiers(modifiers, egui::Key::Tab);
+            h.run_steps(2);
+            for (role, label) in [(Role::Button, "Create"), (Role::Button, "Close"), (Role::ComboBox, "Units"), (Role::CheckBox, "Artboards")] {
+                if h.query_all_by_role_and_label(role, label).any(|n| n.is_focused()) {
+                    reached.insert(label);
+                }
+            }
+            assert!(!h.get_by_role_and_label(Role::Button, "New document…     Ctrl+N").is_focused(), "focus escaped modal");
+        }
+        assert_eq!(reached.len(), 4, "Tab must reach all control kinds: {reached:?}");
+    }
+    h.get_by_role_and_label(Role::ComboBox, "Units").focus();
+    h.run_steps(2);
+    h.key_press(egui::Key::Enter);
+    h.run_steps(2);
+    assert_eq!(h.state().ui.dialogs.len(), 1, "dropdown activation must not confirm the dialog");
+    assert!(egui::Popup::is_any_open(&h.ctx), "Enter opens the focused dropdown");
+    h.key_press(egui::Key::Escape);
+    h.run_steps(2);
+    assert_eq!(h.state().ui.dialogs.len(), 1, "Escape first closes only the dropdown");
+    assert!(h.get_by_role_and_label(Role::ComboBox, "Units").is_focused(), "dropdown close restores its button");
+    let nested = h.state_mut().ui.open_dialog(crate::state::DialogKind::Error, serde_json::json!({"message":"Test error"}).as_object().unwrap().clone());
+    h.run_steps(3);
+    crate::dialogs::cancel(h.state_mut(), nested).unwrap();
+    h.run_steps(3);
+    assert!(h.get_by_role_and_label(Role::ComboBox, "Units").is_focused(), "nested cancel restores parent control");
     h.key_press(egui::Key::Escape);
     h.run_steps(3);
     assert!(h.state().ui.dialogs.is_empty(), "Escape cancels without creating a document");
     assert!(h.state().session.documents().is_empty());
+    assert!(h.get_by_role_and_label(Role::Button, "New document…     Ctrl+N").is_focused(), "cancel restores opener");
 }

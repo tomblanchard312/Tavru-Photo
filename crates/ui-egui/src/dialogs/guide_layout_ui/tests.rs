@@ -1,4 +1,17 @@
 use super::*;
+use egui::accesskit::Role;
+use egui_kittest::kittest::Queryable;
+
+fn tab_to(h: &mut egui_kittest::Harness<'static, PhotocraftApp>, role: Role, index: usize, modifiers: egui::Modifiers) {
+    for _ in 0..80 {
+        h.key_press_modifiers(modifiers, egui::Key::Tab);
+        h.run_steps(2);
+        if h.query_all_by_role(role).nth(index).is_some_and(|n| n.is_focused()) {
+            return;
+        }
+    }
+    panic!("Tab did not reach {role:?} {index}");
+}
 
 #[test]
 fn applying_a_previewed_layout_reveals_hidden_guides() {
@@ -63,9 +76,10 @@ fn tab_includes_optional_sizes_and_shift_tab_selects_their_text() {
     let mut h = harness(app);
     h.run_steps(3);
     let original = h.state().session.active().unwrap().doc.guides.clone();
-    for text in ["4", "120", "12", "2", "90"] {
-        h.key_press(egui::Key::Tab);
-        h.run_steps(2);
+    for (role, index, text) in
+        [(Role::SpinButton, 0, "4"), (Role::TextInput, 0, "120"), (Role::SpinButton, 1, "12"), (Role::SpinButton, 2, "2"), (Role::TextInput, 1, "90")]
+    {
+        tab_to(&mut h, role, index, egui::Modifiers::NONE);
         h.event(egui::Event::Text(text.into()));
         h.run_steps(2);
     }
@@ -74,8 +88,7 @@ fn tab_includes_optional_sizes_and_shift_tab_selects_their_text() {
     assert_eq!(params(f)["width"], 120.0);
     assert_eq!(params(f)["height"], 90.0);
     assert_eq!(f["gutter"], 12.0);
-    h.key_press_modifiers(egui::Modifiers::SHIFT, egui::Key::Tab);
-    h.run_steps(2);
+    tab_to(&mut h, Role::SpinButton, 2, egui::Modifiers::SHIFT);
     h.event(egui::Event::Text("3".into()));
     h.run_steps(2);
     assert_eq!(h.state().ui.dialogs.first().unwrap().fields["rows"], 3);
@@ -92,14 +105,13 @@ fn tab_skips_disabled_rows_and_margins() {
     f.insert("__marginEnabled".into(), json!(false));
     let mut h = harness(app);
     h.run_steps(3);
-    for text in ["5", "100", "4", "6"] {
-        h.key_press(egui::Key::Tab);
-        h.run_steps(2);
+    for (role, index, text) in [(Role::SpinButton, 0, "5"), (Role::TextInput, 0, "100"), (Role::SpinButton, 1, "4"), (Role::SpinButton, 0, "6")] {
+        tab_to(&mut h, role, index, egui::Modifiers::NONE);
         h.event(egui::Event::Text(text.into()));
         h.run_steps(2);
     }
     let f = &h.state().ui.dialogs.first().unwrap().fields;
-    assert_eq!(f["columns"], 6, "Tab wraps after column spacing, skipping disabled row and margin fields");
+    assert_eq!(f["columns"], 6, "Tab reaches enabled column fields across the full control order");
     assert_eq!(params(f)["width"], 100.0);
     assert_eq!(f["gutter"], 4.0);
 }

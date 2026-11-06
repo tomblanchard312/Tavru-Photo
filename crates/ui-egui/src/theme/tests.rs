@@ -113,7 +113,8 @@ fn saved_ui_font_size_survives_first_frame_install() {
 #[test]
 fn pro_light_gray_and_light_themes() {
     // #2661: Photoshop's third and fourth brightness levels, with the Pro layout.
-    for (kind, panel, id, label) in [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 255, "proLight", "Eridu (Light)")]
+    for (kind, panel, id, label) in
+        [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 255, "proLight", "Eridu (Light)")]
     {
         let t = Tokens::for_kind(kind);
         assert!(t.pro && !t.dark() && !t.bevel && kind.is_pro(), "{kind:?}");

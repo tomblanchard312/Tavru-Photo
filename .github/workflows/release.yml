@@ -31,7 +31,7 @@ jobs:
     uses: storytold/craft-common-actions/.github/workflows/refresh-contributors.yml@main
   release:
     needs: credits
-    uses: tomblanchard312/craft-common-actions/.github/workflows/private-release.yml@b8680be5cf185c014537b81281c009692af9930d
+    uses: tomblanchard312/craft-common-actions/.github/workflows/private-release.yml@44b245123b4e4dad896decb7e7689d887c57d95f
     with:
       app-name: photocraft
       app-title: LumaFoundry

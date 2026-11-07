@@ -1,5 +1,5 @@
 //! Eridu Typography v1, shared roles expressed in logical pixels (96 DPI).
-//! Canonical contract: tomblanchard312/EriduOs, packages/eridu-typography.
+//! Canonical contract: tomblanchard312/TavruOS, packages/eridu-typography.
 use egui::{FontData, FontId, TextStyle};
 
 // Canonical EDS v1 sizes are already logical pixels.

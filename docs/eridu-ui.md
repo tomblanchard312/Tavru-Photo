@@ -6,7 +6,7 @@ LumaFoundry serves people editing layered images and agents driving the same com
 
 The Eridu workspace palettes use semantic surfaces, text, River accents, Copper primary actions and status colors from the EriduOS design-system tokens. The stored proMedium/proLight and studio/studioLight identifiers remain compatible with saved preferences. The docked workspace remains the default; the project's dark-first preference is retained as an explicit exception to EDS's initial light default. Users can select light or system-following appearance in Preferences. Typography uses the current logical-pixel roles (12 caption, 13 control, 14 body, 20 section heading), installed or bundled Inter and display scaling. The Home page title uses Source Serif 4 Display Semibold; numeric fields, progress, document status and credit counts use Inter Tabular. Code and hexadecimal color values retain the technical monospace role. Document fonts remain independently editable.
 
-Canonical guidance lives in https://github.com/tomblanchard312/EriduOs/tree/main/design-system and its INTERFACE_RULES.md, ADOPTION.md and patterns/enki.md. Palette choices remain user-controlled.
+Canonical guidance lives in https://github.com/tomblanchard312/TavruOS/tree/main/design-system and its INTERFACE_RULES.md, ADOPTION.md and patterns/enki.md. Palette choices remain user-controlled.
 
 ## Workspace and interaction
 

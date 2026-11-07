@@ -1,6 +1,6 @@
 # Eridu Typography Standard v1
 
-Adopt **Inter** (SIL OFL) as the default application UI font, in coordination with [Eridu OS issue #27](https://github.com/tomblanchard312/EriduOs/issues/27).
+Adopt **Inter** (SIL OFL) as the default application UI font, in coordination with [Eridu OS issue #27](https://github.com/tomblanchard312/TavruOS/issues/27).
 
 - Use Inter 400 for body, 500 for controls, 600 for headings. Define semantic typography tokens for font family, size, weight, line height and spacing.
 - Current EDS logical-pixel roles supersede the initial point-size proposal: 12 caption, 13 label/control, 14 body, 16 card heading, 20 section heading and 28 page heading. Apply desktop scaling once. See the [interface brief](eridu-ui.md) for this adapter and adoption gaps.

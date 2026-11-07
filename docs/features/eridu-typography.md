@@ -6,4 +6,4 @@ On Linux, Fontconfig locates installed Inter regular, medium and semibold and Je
 
 Install system fonts using the distribution packages documented in EriduOs PR #28. LumaFoundry downloads no fonts and adds no font binaries. System packages retain their licenses; portable font attribution remains in ATTRIBUTION.md and craft-fonts. Without the Eridu font packages, the app uses its portable Inter and JetBrains Mono stack. Native FreeBSD and illumos adapters remain outside this Linux implementation.
 
-Canonical contract: https://github.com/tomblanchard312/EriduOs/pull/28
+Canonical contract: https://github.com/tomblanchard312/TavruOS/pull/28

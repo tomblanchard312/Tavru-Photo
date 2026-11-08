@@ -86,6 +86,7 @@
 	Right	Høyre
 	Open Recent	Åpne nylig brukte
 	Clear Recent Files	Tøm nylig brukte filer
+	Clear Recent File List	Tøm nylig brukte filer
 	Remove from Recent	Fjern fra nylig brukte
 	Remove {name} from Recent	Fjern {name} fra nylig brukte
 	Close	Lukk
@@ -94,6 +95,10 @@
 	Restore	Gjenopprett
 	Close All	Lukk alle
 	Close Others	Lukk andre
+	New Document…	Nytt dokument…
+	Open Document…	Åpne…
+	Consolidate All to Here	Samle alle her
+	Move to New Window	Flytt til nytt vindu
 	Save	Lagre
 	Save As…	Lagre som…
 	Save a Copy…	Lagre en kopi…
@@ -106,7 +111,6 @@
 	Export As…	Eksporter som…
 	Export	Eksporter
 	Export…	Eksporter…
-	Quick Export As PNG	Hurtigeksport som PNG
 	Quick Export as PNG	Hurtigeksport som PNG
 	Place Embedded…	Plasser innebygd…
 	Place Linked…	Plasser koblet…
@@ -310,7 +314,6 @@
 	All	Alle
 	Deselect	Opphev utvalg
 	Reselect	Velg på nytt
-	Inverse Selection	Inverter utvalget
 	Inverse	Inverter
 	Color Range…	Fargeområde…
 	Select and Mask…	Velg og masker…
@@ -508,7 +511,6 @@
 	Match Location	Samkjør plassering
 	Match Rotation	Samkjør rotasjon
 	Match All	Samkjør alle
-	New Window for Document	Nytt vindu for dokument
 	Workspace	Arbeidsområde
 	Extensions	Utvidelser
 	Panels	Paneler
@@ -538,15 +540,21 @@
 	Timeline	Tidslinje
 	Tool Presets	Verktøyforvalg
 	Tools	Verktøy
+	Contextual Task Bar	Kontekstavhengig oppgavelinje
+	Hide bar	Skjul linjen
+	Reset bar position	Tilbakestill linjens plassering
+	Pin bar position	Fest linjens plassering
+	Move bar	Flytt linjen
+	More options	Flere alternativer
 	Libraries	Biblioteker
 	3D	3D
 	Toolbars	Verktøylinjer
 	Hide All	Skjul alt
 
 # Help
-	About PhotoCraft	Om PhotoCraft
-	PhotoCraft Website	PhotoCrafts nettsted
-	PhotoCraft on GitHub	PhotoCraft på GitHub
+	About LumaFoundry	Om LumaFoundry
+	LumaFoundry Website	LumaFoundrys nettsted
+	LumaFoundry on GitHub	LumaFoundry på GitHub
 	Report an Issue…	Rapporter et problem…
 	ArtCraft Website	ArtCraft-nettstedet
 	Join the ArtCraft Discord…	Bli med i ArtCraft-Discord…
@@ -596,8 +604,8 @@
 	Background	Bakgrunn
 	Set foreground color	Angi forgrunnsfarge
 	Set background color	Angi bakgrunnsfarge
-	Swap colours (X)	Bytt farger (X)
-	Default colours (D)	Standardfarger (D)
+	Switch Foreground and Background Colors (X)	Bytt forgrunns- og bakgrunnsfarge (X)
+	Default Foreground and Background Colors (D)	Standard forgrunns- og bakgrunnsfarge (D)
 	Brush Tool Options	Alternativer for penselverktøy
 	Opacity	Dekkevne
 	Flow	Flyt
@@ -627,11 +635,11 @@
 	Import Shortcuts…	Importer hurtigtaster…
 	Load a keyboard shortcut set saved as .kys	Last inn et hurtigtastsett lagret som .kys
 	Imported {n} shortcuts from {file}. Click OK to keep them.	Importerte {n} hurtigtaster fra {file}. Klikk OK for å beholde dem.
-	{n} commands are not in PhotoCraft.	{n} kommandoer finnes ikke i PhotoCraft.
+	{n} commands are not in LumaFoundry.	{n} kommandoer finnes ikke i LumaFoundry.
 	Keyboard shortcuts imported	Hurtigtaster importert
 	Your keyboard shortcut set {set} is in use here: {n} shortcuts differ from the defaults. Edit › Keyboard Shortcuts shows them; Reset All to Defaults undoes this.	Hurtigtastsettet ditt {set} er i bruk her: {n} hurtigtaster avviker fra standard. Rediger › Hurtigtaster viser dem; Tilbakestill alle til standard angrer dette.
 	Import keyboard shortcuts?	Importere hurtigtaster?
-	PhotoCraft found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from PhotoCraft's. Import it?	PhotoCraft fant hurtigtastsettet {set} fra et annet bilderedigeringsprogram på denne datamaskinen: {n} av hurtigtastene avviker fra PhotoCrafts. Importere det?
+	LumaFoundry found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from LumaFoundry's. Import it?	LumaFoundry fant hurtigtastsettet {set} fra et annet bilderedigeringsprogram på denne datamaskinen: {n} av hurtigtastene avviker fra LumaFoundrys. Importere det?
 	Edit › Keyboard Shortcuts › Reset All to Defaults undoes an import.	Rediger › Hurtigtaster › Tilbakestill alle til standard angrer en import.
 	Don't Import	Ikke importer
 	The keyboard shortcut set was not imported: {error}	Hurtigtastsettet ble ikke importert: {error}
@@ -686,6 +694,7 @@
 	Units & Rulers…	Enheter og linjaler…
 	Guides, Grid & Slices…	Hjelpelinjer, rutenett og segmenter…
 	Plug-ins…	Programtillegg…
+	Plugins…	Programtillegg…
 	Technology Previews	Teknologiforhåndsvisninger
 	Scratch Disks…	Arbeidsdisker…
 	Export Preferences…	Eksportinnstillinger…
@@ -920,8 +929,8 @@
 	ACES	ACES
 	Industry Standard	Bransjestandard
 	Web	Web
-	Internet Standard RGB	Internettstandard RGB
-	Legacy Macintosh RGB	Eldre Macintosh RGB
+	Internet Standard RGB (sRGB)	Internettstandard RGB (sRGB)
+	Legacy Macintosh RGB (Gamma 1.8)	Eldre Macintosh RGB (Gamma 1.8)
 	Monitor RGB	Skjerm-RGB
 	Windows LCD	Windows LCD
 	Coated CMYK	Bestrøket CMYK
@@ -935,7 +944,7 @@
 	Embed Color Profile	Bygg inn fargeprofil
 	Assign Profile…	Tilordne profil…
 	Convert to Profile…	Konverter til profil…
-	PhotoCraft Manages Colors	PhotoCraft styrer farger
+	LumaFoundry Manages Colors	LumaFoundry styrer farger
 	Printer Manages Colors	Skriveren styrer farger
 	(print to the printer)	(skriv ut på skriveren)
 	Absolute Colorimetric	Absolutt kolorimetrisk
@@ -1209,6 +1218,7 @@
 	Path to Illustrator…	Bane til Illustrator…
 	Make Work Path	Opprett arbeidsbane
 	Make Selection	Opprett utvalg
+	Make Shape	Opprett form
 	Fill Path	Fyll bane
 	Stroke Path	Strek opp bane
 	Clipping Path	Klippebane
@@ -1538,15 +1548,15 @@
 	Use File › Open, or paste a copied image with {paste}.	Bruk Fil › Åpne, eller lim inn et kopiert bilde med {paste}.
 	Native file drag-and-drop is unavailable	Innebygd dra-og-slipp av filer er ikke tilgjengelig
 	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or copy the image in your file manager and paste it with {paste}.	Innebygd dra-og-slipp av filer støttes ikke på Wayland ennå. Bruk Fil › Åpne, eller kopier bildet i filbehandleren og lim det inn med {paste}.
-	To drop files, start PhotoCraft under XWayland: `{command}`	For å slippe filer, start PhotoCraft under XWayland: `{command}`
-	Or set Preferences › Performance › Linux display server to X11: PhotoCraft then always starts under XWayland.	Eller sett Innstillinger › Ytelse › Linux-skjermtjener til X11: da starter PhotoCraft alltid under XWayland.
+	To drop files, start LumaFoundry under XWayland: `{command}`	For å slippe filer, start LumaFoundry under XWayland: `{command}`
+	Or set Preferences › Performance › Linux display server to X11: LumaFoundry then always starts under XWayland.	Eller sett Innstillinger › Ytelse › Linux-skjermtjener til X11: da starter LumaFoundry alltid under XWayland.
 	Edit › Paste	Rediger › Lim inn
 	Photo	Foto
 	Print	Skriv ut
 	Art & Illustration	Kunst og illustrasjon
 	Mobile	Mobil
 	Film & Video	Film og video
-	Default PhotoCraft Size	Standard PhotoCraft-størrelse
+	Default LumaFoundry Size	Standard LumaFoundry-størrelse
 	Clipboard	Utklippstavle
 	Photo (2 × 3 in)	Foto (2 × 3 tommer)
 	Photo (4 × 6 in)	Foto (4 × 6 tommer)
@@ -1602,7 +1612,7 @@
 	Revert “{name}” to the last saved version? Your changes will be lost.	Tilbakestille «{name}» til sist lagrede versjon? Endringene dine går tapt.
 	{key} to subtract	{key} for å trekke fra
 	↑↓ navigate   {key} run   esc close	↑↓ naviger   {key} kjør   esc lukk
-	Click to restore the current colour	Klikk for å gjenopprette gjeldende farge
+	Click to restore the current color	Klikk for å gjenopprette gjeldende farge
 	Click with the Note tool to add a note.	Klikk med notatverktøyet for å legge til et notat.
 	Drag a rectangle around the object	Dra et rektangel rundt objektet
 	Drag on the image to add a constraint; Shift for horizontal/vertical; right-click a constraint to change or delete it.	Dra på bildet for å legge til en begrensning. Shift for vannrett/loddrett. Høyreklikk på en begrensning for å endre eller slette den.
@@ -1626,6 +1636,7 @@
 	Move Tool	Flytteverktøy
 	Could not use the move tool because the layer is locked.	Kunne ikke bruke flytteverktøyet fordi laget er låst.
 	Could not complete the Free Transform command because the layer is locked.	Kunne ikke fullføre Fri transformering fordi laget er låst.
+	Could not transform because the layer is locked.	Kunne ikke transformere fordi laget er låst.
 	Rectangular Marquee Tool	Rektangulær markeringsramme
 	Elliptical Marquee Tool	Elliptisk markeringsramme
 	Single Row Marquee Tool	Markeringsramme for enkeltrad
@@ -1683,10 +1694,10 @@
 	Drag to move the active layer	Dra for å flytte det aktive laget
 	Drag to pan  ·  hold Space with any tool	Dra for å panorere  ·  hold mellomrom med et hvilket som helst verktøy
 	Drag to draw a gradient	Dra for å tegne en gradient
-	Click to fill similar colours	Klikk for å fylle lignende farger
+	Click to fill similar colors	Klikk for å fylle lignende farger
 	Click to add text	Klikk for å legge til tekst
 	Drag (lasso) or click points (polygonal) · {add} add · {sub} subtract	Dra (lasso) eller klikk punkter (polygon) · {add} legg til · {sub} trekk fra
-	Drag a crop box · drag inside to move · edges resize ({ratio} ratio, {centre} centre) · Space moves while drawing · arrows nudge · X swaps orientation · {commit} commits · Esc cancels	Dra en beskjæringsramme · dra innenfor for å flytte · kantene endrer størrelse ({ratio} forhold, {centre} midtpunkt) · mellomrom flytter under tegning · piltaster forskyver · X bytter retning · {commit} bekrefter · Esc avbryter
+	Drag a crop box · drag inside to move · edges resize ({ratio} ratio, {centre} center) · Space moves while drawing · arrows nudge · X swaps orientation · {commit} commits · Esc cancels	Dra en beskjæringsramme · dra innenfor for å flytte · kantene endrer størrelse ({ratio} forhold, {centre} midtpunkt) · mellomrom flytter under tegning · piltaster forskyver · X bytter retning · {commit} bekrefter · Esc avbryter
 	{mode} Color · {bits} bit	{mode}-farge · {bits} biter
 	Drag to move the layer	Dra for å flytte laget
 	Fit Screen	Tilpass til skjerm
@@ -1698,7 +1709,7 @@
 	Reverse	Snu rekkefølgen
 	Align with layer	Juster etter lag
 	Join us on Discord	Bli med oss på Discord
-	PhotoCraft website	PhotoCrafts nettsted
+	LumaFoundry website	LumaFoundrys nettsted
 	ArtCraft	ArtCraft
 	GitHub	GitHub
 	No character style	Ingen tegnstil
@@ -1718,15 +1729,15 @@
 	Appearance	Utseende
 	Text Position:	Tekstplassering:
 	Text color	Tekstfarge
-	Uses the foreground and background colours.	Bruker forgrunns- og bakgrunnsfargene.
+	Uses the foreground and background colors.	Bruker forgrunns- og bakgrunnsfargene.
 	Answer the unsaved-changes prompt first	Svar først på spørsmålet om ulagrede endringer
 	Unsaved changes	Ulagrede endringer
 	Don't Save	Ikke lagre
 	No	Nei
 	Yes	Ja
-	These settings aren't available in PhotoCraft yet.	Disse innstillingene er ikke tilgjengelige i PhotoCraft ennå.
+	These settings aren't available in LumaFoundry yet.	Disse innstillingene er ikke tilgjengelige i LumaFoundry ennå.
 	Shortcut removed.	Hurtigtasten er fjernet.
-	All shortcuts reset to PhotoCraft defaults.	Alle hurtigtaster er tilbakestilt til PhotoCraft-standard.
+	All shortcuts reset to LumaFoundry defaults.	Alle hurtigtaster er tilbakestilt til LumaFoundry-standard.
 	Add Shortcut	Legg til hurtigtast
 	Delete Shortcut	Slett hurtigtast
 	Press keys…	Trykk på taster…
@@ -1738,10 +1749,11 @@
 	name	navn
 	new	ny
 	Go to Layer	Gå til lag
-	Open a document to select a colour range.	Åpne et dokument for å velge et fargeområde.
+	Open a document to select a color range.	Åpne et dokument for å velge et fargeområde.
 	Saved	Lagret
 	Reveal in Finder	Vis i Finder
 	Show in Explorer	Vis i Utforsker
+	Reveal in Explorer	Vis i Utforsker
 	Show in Folder	Vis i mappe
 	Before (Y)	Før (Y)
 	Save Settings…	Lagre innstillinger…
@@ -1915,12 +1927,14 @@
 	Character Styles Panel	Tegnstilpanel
 	Clear Canvas Guides	Fjern lerrethjelpelinjer
 	Clear Selected Artboard Guides	Fjern hjelpelinjer på valgt tegneflate
-	Color Blindness — Deuteranopia-type	Fargeblindhet: deuteranopi-type
-	Color Blindness — Protanopia-type	Fargeblindhet: protanopi-type
+	Color Blindness - Deuteranopia-type	Fargeblindhet: deuteranopi-type
+	Color Blindness - Protanopia-type	Fargeblindhet: protanopi-type
 	Color Table…	Fargetabell…
 	Combine Shapes	Kombiner former
 	Contract…	Trekk sammen…
 	Convert to Embedded	Konverter til innebygd
+	Embed Linked	Bygg inn koblet
+	Embed All Linked	Bygg inn alle koblede
 	Convert to Layers	Konverter til lag
 	Convert to Linked…	Konverter til koblet…
 	Count	Telling
@@ -2008,6 +2022,7 @@
 	Pixelate	Pikseler
 	Place Scale Marker…	Plasser skalamarkør…
 	Plug-ins	Programtillegg
+	Plugins	Programtillegg
 	Print One Copy	Skriv ut ett eksemplar
 	Print…	Skriv ut…
 	Range	Område
@@ -2052,7 +2067,7 @@
 	Vertical Centers	Loddrette sentre
 	Video Frames to Layers…	Videorammer til lag…
 	WIA Support…	WIA-støtte…
-	Working CMY Plate	Arbeidsplate for CMY
+	Working CMY Plates	Arbeidsplater for CMY
 
 # tl! literals (third pass)
 	Absolute	Absolutt
@@ -2087,7 +2102,7 @@
 	Canvas	Lerret
 	Capture	Opptak
 	Center Crop Marks	Sentrerte beskjæringsmerker
-	Centre the gradient (offset 0, 0)	Sentrer gradienten (forskyvning 0, 0)
+	Center the gradient (offset 0, 0)	Sentrer gradienten (forskyvning 0, 0)
 	Change Screen Mode  (F)	Bytt skjermmodus  (F)
 	Change To:	Endre til:
 	Clear All	Fjern alle
@@ -2209,8 +2224,8 @@
 	Output:	Utdata:
 	Paint Overlay	Malingsoverlegg
 	Pattern Size	Mønsterstørrelse
-	PhotoCraft	PhotoCraft
-	PhotoCraft — an open-source, native image editor written in Rust.	PhotoCraft: et bilderedigeringsprogram med åpen kildekode, skrevet i Rust.
+	LumaFoundry	LumaFoundry
+	LumaFoundry — an open-source, native image editor written in Rust.	LumaFoundry: et bilderedigeringsprogram med åpen kildekode, skrevet i Rust.
 	Position and Size	Posisjon og størrelse
 	Preserve Details	Bevar detaljer
 	Preserve Luminosity	Bevar luminositet
@@ -2239,7 +2254,7 @@
 	Roughness	Ruhet
 	Roundness	Rundhet
 	Rulers & Grids	Linjaler og rutenett
-	Sample: foreground colour	Prøve: forgrunnsfarge
+	Sample: foreground color	Prøve: forgrunnsfarge
 	Sampling: Background Swatch	Prøvetaking: bakgrunnsfargeprøve
 	Sampling: Continuous	Prøvetaking: kontinuerlig
 	Sampling: Once	Prøvetaking: én gang
@@ -2338,6 +2353,11 @@
 	Show canvas dots	Vis lerretprikker
 	Clip thumbnails to layer bounds	Klipp miniatyrer til laggrensene
 	Clip Thumbnails to Layer Bounds	Klipp miniatyrer til laggrensene
+	No Thumbnails	Ingen miniatyrer
+	Small Thumbnails	Små miniatyrer
+	Medium Thumbnails	Middels miniatyrer
+	Large Thumbnails	Store miniatyrer
+	Clip Thumbnails to Document Bounds	Klipp miniatyrer til dokumentgrensene
 	Canvas color	Lerretfarge
 	Canvas custom color	Egendefinert lerretfarge
 	Classic	Klassisk
@@ -2464,7 +2484,6 @@
 	Show only crosshair while painting	Vis bare trådkors under maling
 	Show slice numbers	Vis segmentnumre
 	Show tooltips	Vis verktøytips
-	Enable animations	Aktiver animasjoner
 	Show highlight on rollover	Vis utheving ved pekerberøring
 	Show bounding box when dragging layer	Vis avgrensningsboks når lag dras
 	System title bar	Systemets tittellinje
@@ -2508,7 +2527,7 @@
 	Alt-click to define a source point to clone from	Alt-klikk for å angi et kildepunkt å klone fra
 	No path to make a selection from: draw one with the Pen tool or select one in the Paths panel.	Ingen bane å lage et utvalg fra: tegn en med pennverktøyet eller velg en i banepanelet.
 	Cancel opening	Avbryt åpning
-	Cancelled opening {name}	Avbrøt åpning av {name}
+	Canceled opening {name}	Avbrøt åpning av {name}
 	Damaged Photoshop document	Skadet Photoshop-dokument
 	The document “{name}” may be damaged.	Dokumentet «{name}» kan være skadet.
 	Some layers, pixels or masks could not be read. Do you want to continue opening it?	Noen lag, piksler eller masker kunne ikke leses. Vil du fortsette å åpne det?
@@ -2518,7 +2537,7 @@
 	The document “{name}” has an embedded color profile that does not match the current {mode} working space.	Dokumentet «{name}» har en innebygd fargeprofil som ikke samsvarer med gjeldende {mode}-arbeidsfargerom.
 	Working: {working}	Arbeidsfargerom: {working}
 	Developing {name}	Fremkaller {name}
-	Cancelled {label}	Avbrøt {label}
+	Canceled {label}	Avbrøt {label}
 	Esc to cancel	Esc for å avbryte
 	Opened {name}	Åpnet {name}
 	Opening {name}	Åpner {name}
@@ -2526,7 +2545,7 @@
 	Saving {name}	Lagrer {name}
 	Saving {percent}	Lagrer {percent}
 	A save to {name} is still running; try again when it finishes	En lagring til {name} pågår fortsatt. Prøv igjen når den er ferdig
-	{label} is writing the file and can no longer be cancelled	{label} skriver filen og kan ikke lenger avbrytes
+	{label} is writing the file and can no longer be canceled	{label} skriver filen og kan ikke lenger avbrytes
 	Opening {name}…	Åpner {name}…
 	Opening…	Åpner…
 	Reading…	Leser…
@@ -2542,7 +2561,7 @@
 	Automatic uses GPU acceleration when available and falls back to CPU rendering on errors.	Automatisk bruker GPU-akselerasjon når det er tilgjengelig, og faller tilbake til CPU-gjengivelse ved feil.
 	Switched to CPU rendering	Byttet til CPU-gjengivelse
 	GPU acceleration could not continue. Your documents are unchanged.	GPU-akselerasjonen kunne ikke fortsette. Dokumentene dine er uendret.
-	PhotoCraft is using the CPU image compositor. The window may still use your graphics adapter.	PhotoCraft bruker CPU-bildekomposisjon. Vinduet kan fortsatt bruke grafikkortet ditt.
+	LumaFoundry is using the CPU image compositor. The window may still use your graphics adapter.	LumaFoundry bruker CPU-bildekomposisjon. Vinduet kan fortsatt bruke grafikkortet ditt.
 	Retry GPU requires a restart. Save your work first.	Prøv GPU på nytt krever omstart. Lagre arbeidet ditt først.
 	Retry GPU tries the graphics processor again now.	Prøv GPU på nytt prøver grafikkprosessoren igjen nå.
 	GPU acceleration resumed.	GPU-akselerasjon gjenopptatt.
@@ -2623,7 +2642,7 @@ cameraRaw	Roughness	Ruhet
 	Discard Layers and Save a Copy	Forkast lag og lagre en kopi
 	Don't show again	Ikke vis igjen
 	Save failed: {error}	Lagring mislyktes: {error}
-	Save cancelled	Lagring avbrutt
+	Save canceled	Lagring avbrutt
 	Couldn't place {name}: {error}	Kunne ikke plassere {name}: {error}
 	Magnetic Lasso Tool	Magnetlasso
 	Frequency	Frekvens
@@ -2767,7 +2786,7 @@ fontWeight	Italic	Kursiv
 	Impressionist	Impresjonistisk
 	Rotate View Tool	Roter visningverktøy
 	Reset View	Tilbakestill visning
-	Drag around the centre to rotate the view  ·  Shift constrains to 15°	Dra rundt midtpunktet for å rotere visningen  ·  Shift begrenser til 15°
+	Drag around the center to rotate the view  ·  Shift constrains to 15°	Dra rundt midtpunktet for å rotere visningen  ·  Shift begrenser til 15°
 
 # Painting symmetry presets.
 	Dual Axis	Dobbel akse
@@ -2787,15 +2806,15 @@ fontWeight	Italic	Kursiv
 	All Layers No Adjustments	Alle lag uten justeringer
 	Current & Below No Adjustments	Gjeldende og under uten justeringer
 	Show Sampling Ring	Vis prøvetakingsring
-	Click to sample the foreground colour  ·  {key}-click for background	Klikk for å hente forgrunnsfargen  ·  {key}-klikk for bakgrunn
+	Click to sample the foreground color  ·  {key}-click for background	Klikk for å hente forgrunnsfargen  ·  {key}-klikk for bakgrunn
 
 # Color Picker warnings
-	Out of gamut for printing: click for the nearest printable colour	Utenfor fargeomfanget for utskrift: klikk for nærmeste utskrivbare farge
-	Not a web colour: click for the nearest web colour	Ikke en webfarge: klikk for nærmeste webfarge
+	Out of gamut for printing: click for the nearest printable color	Utenfor fargeomfanget for utskrift: klikk for nærmeste utskrivbare farge
+	Not a web color: click for the nearest web color	Ikke en webfarge: klikk for nærmeste webfarge
 	Color to Alpha…	Farge til alfa…
 	Transparency Threshold	Gjennomsiktighetsterskel
 	Opacity Threshold	Dekkevneterskel
-	PhotoCraft — Screen Color Picker	PhotoCraft: skjermfargevelger
+	LumaFoundry — Screen Color Picker	LumaFoundry: skjermfargevelger
 
 	Rasterize svg groups deeper than	Rasteriser SVG-grupper dypere enn
 	0 turns this threshold off; SVG groups nested deeper than 100 levels are always rasterized.	0 slår av denne terskelen. SVG-grupper nestet dypere enn 100 nivåer rasteriseres alltid.
@@ -3179,7 +3198,7 @@ curves	Smooth	Jevn ut
 	{name} (Photoshop)	{name} (Photoshop)
 	{message} ({note})	{message} ({note})
 @plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	Lastet inn {n} handling fra {file}|Lastet inn {n} handlinger fra {file}
-@plural	{n} step has no PhotoCraft equivalent yet|{n} steps have no PhotoCraft equivalent yet	{n} trinn har ingen PhotoCraft-ekvivalent ennå|{n} trinn har ingen PhotoCraft-ekvivalent ennå
+@plural	{n} step has no LumaFoundry equivalent yet|{n} steps have no LumaFoundry equivalent yet	{n} trinn har ingen LumaFoundry-ekvivalent ennå|{n} trinn har ingen LumaFoundry-ekvivalent ennå
 @plural	Saved {n} action to {file}|Saved {n} actions to {file}	Lagret {n} handling til {file}|Lagret {n} handlinger til {file}
 @plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	{n} trinn uten Photoshop-ekvivalent ble utelatt|{n} trinn uten Photoshop-ekvivalent ble utelatt
 @plural	{n} action file loaded|{n} action files loaded	{n} handlingsfil lastet inn|{n} handlingsfiler lastet inn
@@ -3209,7 +3228,7 @@ curves	Smooth	Jevn ut
 # Native Windows printing qualification
 	Don't also tick Mirror Image in Print Settings…: the two flips cancel out.	Ikke kryss også av for Speilvend bilde i Utskriftsinnstillinger…: de to vendingene opphever hverandre.
 	Print Settings…	Utskriftsinnstillinger…
-	Remember to turn off the printer's own colour management in Print Settings…	Husk å slå av skriverens egen fargestyring i Utskriftsinnstillinger…
+	Remember to turn off the printer's own color management in Print Settings…	Husk å slå av skriverens egen fargestyring i Utskriftsinnstillinger…
 	Sent to {printer}	Sendt til {printer}
 	set in Print Settings…	angitt i Utskriftsinnstillinger…
 	ICO is limited to 256 × 256 pixels	ICO er begrenset til 256 × 256 piksler
@@ -3310,12 +3329,12 @@ curves	Smooth	Jevn ut
 	Bicubic Smoother	Bikubisk jevnere
 	Bicubic Sharper	Bikubisk skarpere
 	Pasting from other apps is unavailable	Innliming fra andre programmer er utilgjengelig
-	PhotoCraft can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	PhotoCraft får ikke tilgang til systemets utklippstavle i denne økten. På Wayland skjuler en Flatpak-sandkasse protokollen som bilder fra andre programmer leses gjennom.
-	To paste from other apps, start PhotoCraft under XWayland: `{command}`	For å lime inn fra andre programmer, start PhotoCraft under XWayland: `{command}`
-	Nothing to paste: PhotoCraft can't read the system clipboard here	Ingenting å lime inn: PhotoCraft kan ikke lese systemets utklippstavle her
+	LumaFoundry can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	LumaFoundry får ikke tilgang til systemets utklippstavle i denne økten. På Wayland skjuler en Flatpak-sandkasse protokollen som bilder fra andre programmer leses gjennom.
+	To paste from other apps, start LumaFoundry under XWayland: `{command}`	For å lime inn fra andre programmer, start LumaFoundry under XWayland: `{command}`
+	Nothing to paste: LumaFoundry can't read the system clipboard here	Ingenting å lime inn: LumaFoundry kan ikke lese systemets utklippstavle her
 	Delete this set	Slett dette settet
 	New Set…	Nytt sett…
-	PhotoCraft Defaults	PhotoCraft-standarder
+	LumaFoundry Defaults	LumaFoundry-standarder
 	Save a list of these shortcuts as a web page	Lagre en liste over disse hurtigtastene som en nettside
 	Save the changes to this set	Lagre endringene i dette settet
 	Save these shortcuts as a .kys file	Lagre disse hurtigtastene som en .kys-fil
@@ -3873,12 +3892,12 @@ curves	Smooth	Jevn ut
 	In White	I hvitt
 	Increase Brush Hardness	Øk penselhardhet
 	Demosaic	Demosaikk
-	How the camera's colour filter mosaic is filled in. It is applied when the file opens; the preview shows the method it was opened with.	Hvordan kameraets fargefiltermosaikk fylles ut. Det brukes når filen åpnes. Forhåndsvisningen viser metoden den ble åpnet med.
+	How the camera's color filter mosaic is filled in. It is applied when the file opens; the preview shows the method it was opened with.	Hvordan kameraets fargefiltermosaikk fylles ut. Det brukes når filen åpnes. Forhåndsvisningen viser metoden den ble åpnet med.
 	AHD (adaptive homogeneity)	AHD (adaptiv homogenitet)
 	Malvar–He–Cutler	Malvar–He–Cutler
-	Hirakawa–Parks: the cleanest edges and the least colour fringing, the slowest.	Hirakawa–Parks: de reneste kantene og minst fargefrynsing, den tregeste.
-	Gradient-corrected interpolation: sharp and fast, with some colour fringing on fine detail.	Gradientkorrigert interpolering: skarp og rask, med noe fargefrynsing på fine detaljer.
-	The fastest and the softest, with colour fringing on fine detail.	Den raskeste og mykeste, med fargefrynsing på fine detaljer.
+	Hirakawa–Parks: the cleanest edges and the least color fringing, the slowest.	Hirakawa–Parks: de reneste kantene og minst fargefrynsing, den tregeste.
+	Gradient-corrected interpolation: sharp and fast, with some color fringing on fine detail.	Gradientkorrigert interpolering: skarp og rask, med noe fargefrynsing på fine detaljer.
+	The fastest and the softest, with color fringing on fine detail.	Den raskeste og mykeste, med fargefrynsing på fine detaljer.
 	“{name}” already exists. Replace it?	«{name}» finnes allerede. Erstatte den?
 	The name in the save dialog was “{name}”.	Navnet i lagringsdialogen var «{name}».
 	Move Up	Flytt opp
@@ -4081,7 +4100,7 @@ curves	Smooth	Jevn ut
 	Multiple Flames Path Directions	Flere flammer etter banens retning
 	Multiple Flames Various Length	Flere flammer med ulik lengde
 	My Brushes	Mine pensler
-	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run PhotoCraft under XWayland with `WAYLAND_DISPLAY= photocraft`.	Innebygd dra-og-slipp av filer støttes ikke på Wayland ennå. Bruk Fil › Åpne, eller kjør PhotoCraft under XWayland med `WAYLAND_DISPLAY= photocraft`.
+	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run LumaFoundry under XWayland with `WAYLAND_DISPLAY= photocraft`.	Innebygd dra-og-slipp av filer støttes ikke på Wayland ennå. Bruk Fil › Åpne, eller kjør LumaFoundry under XWayland med `WAYLAND_DISPLAY= photocraft`.
 	Nearest	Nærmeste
 	Neon Glow	Neonglød
 	Neutralize	Nøytraliser
@@ -4168,7 +4187,7 @@ curves	Smooth	Jevn ut
 	Pentagon	Femkant
 	Percentage	Prosentdel
 	Permission denied	Tilgang nektet
-	PhotoCraft keeps retrying; until a save succeeds, preference changes are lost when it closes.	PhotoCraft prøver på nytt; til en lagring lykkes, går innstillingsendringer tapt når det lukkes.
+	LumaFoundry keeps retrying; until a save succeeds, preference changes are lost when it closes.	LumaFoundry prøver på nytt; til en lagring lykkes, går innstillingsendringer tapt når det lukkes.
 	Photomerge	Photomerge
 	Pick Color From Image	Velg farge fra bilde
 	Picture Frame	Bilderamme
@@ -4225,7 +4244,7 @@ curves	Smooth	Jevn ut
 	Pyramids	Pyramider
 	Quick Actions	Hurtighandlinger
 	Quit	Avslutt
-	Quit PhotoCraft	Avslutt PhotoCraft
+	Quit LumaFoundry	Avslutt LumaFoundry
 	Quit {app}	Avslutt {app}
 	R G B	R G B
 	R g b	R G B
@@ -4301,7 +4320,7 @@ curves	Smooth	Jevn ut
 	Save a Copy	Lagre en kopi
 	Save before closing?	Lagre før lukking?
 	Save for Web (Legacy)	Lagre for web (eldre)
-	Save your work and restart PhotoCraft to retry GPU acceleration. CPU rendering remains active for this session.	Lagre arbeidet og start PhotoCraft på nytt for å prøve GPU-akselerasjon igjen. CPU-gjengivelse er fortsatt aktiv i denne økten.
+	Save your work and restart LumaFoundry to retry GPU acceleration. CPU rendering remains active for this session.	Lagre arbeidet og start LumaFoundry på nytt for å prøve GPU-akselerasjon igjen. CPU-gjengivelse er fortsatt aktiv i denne økten.
 	Saved a copy as {path}	Lagret en kopi som {path}
 	Saved {path}; image assets: {n} in {dir}	Lagret {path}; bilderessurser: {n} i {dir}
 	Saving…	Lagrer…
@@ -4529,7 +4548,6 @@ curves	Smooth	Jevn ut
 	Use File › Open to open an image.	Bruk Fil › Åpne for å åpne et bilde.
 	Use Selection In Source	Bruk utvalg i kilde
 	Use Selection In Target	Bruk utvalg i mål
-	Uses the foreground and background colors.	Bruker forgrunns- og bakgrunnsfargene.
 	Vanishing Point	Fluktpunkt
 	Variable Data Sets	Variable datasett
 	Vector Mask Hides Effects	Vektormaske skjuler effekter
@@ -4739,8 +4757,8 @@ cameraRaw	Camera Raw ({name})	Camera Raw ({name})
 cameraRaw	Camera Raw Filter ({layer})	Camera Raw-filter ({layer})
 cameraRaw	Camera Raw isn't open	Camera Raw er ikke åpen
 cameraRaw	Cancel	Avbryt
-cameraRaw	Cancelled opening {name}	Avbrøt åpning av {name}
-cameraRaw	Cancelled {label}	Avbrøt {label}
+cameraRaw	Canceled opening {name}	Avbrøt åpning av {name}
+cameraRaw	Canceled {label}	Avbrøt {label}
 cameraRaw	Color Priority	Fargeprioritet
 cameraRaw	Developing {name}	Fremkaller {name}
 cameraRaw	Full-resolution preview unavailable	Forhåndsvisning i full oppløsning er ikke tilgjengelig
@@ -4795,3 +4813,19 @@ cameraRaw	White Balance: As Shot	Hvitbalanse: som fotografert
 	Pick a different document for each channel.	Velg et annet dokument for hver kanal.
 	A picked document is no longer open.	Et av de valgte dokumentene er ikke lenger åpent.
 	A picked document is no longer a grayscale document of the same size.	Et av de valgte dokumentene er ikke lenger et dokument i gråtoner av samme størrelse.
+# Move tool options bar (#11381)
+	Align top edges	Juster øverste kanter
+	Align vertical centers	Juster loddrette midtpunkter
+	Align bottom edges	Juster nederste kanter
+	Distribute vertically	Fordel loddrett
+	Distribute horizontally	Fordel vannrett
+	Show layer bounds on hover	Vis lagets grenser ved hovring
+	Expand layer group on click	Utvid lagergruppe ved klikk
+	Show hover bounds from Layers	Vis hovringsgrenser fra Lag
+# Artboard tool options bar (#11385)
+	Distribute Widths	Fordel bredder
+	Distribute Heights	Fordel høyder
+	Auto-nest Layers	Neste lag automatisk
+	Auto-size Canvas	Endre lerretstørrelse automatisk
+	Keep Relative Position During Layer Reordering	Behold relativ posisjon ved omordning av lag
+	Shrinkwrap Canvas on Save	Krymp lerretet til innholdet ved lagring

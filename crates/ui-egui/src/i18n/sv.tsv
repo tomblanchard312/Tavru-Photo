@@ -84,6 +84,7 @@
 	Right	Höger
 	Open Recent	Öppna senaste
 	Clear Recent Files	Rensa senaste filer
+	Clear Recent File List	Rensa senaste filer
 	Remove from Recent	Ta bort från senaste
 	Remove {name} from Recent	Ta bort {name} från senaste
 	Close	Stäng
@@ -92,6 +93,10 @@
 	Restore	Återställ
 	Close All	Stäng alla
 	Close Others	Stäng övriga
+	New Document…	Nytt dokument…
+	Open Document…	Öppna…
+	Consolidate All to Here	Samla alla här
+	Move to New Window	Flytta till nytt fönster
 	Save	Spara
 	Save As…	Spara som…
 	Save a Copy…	Spara en kopia…
@@ -104,7 +109,6 @@
 	Export As…	Exportera som…
 	Export	Exportera
 	Export…	Exportera…
-	Quick Export As PNG	Snabbexportera som PNG
 	Quick Export as PNG	Snabbexportera som PNG
 	Place Embedded…	Placera inbäddad…
 	Place Linked…	Placera länkad…
@@ -308,7 +312,6 @@
 	All	Alla
 	Deselect	Avmarkera
 	Reselect	Markera igen
-	Inverse Selection	Omvänd markering
 	Inverse	Omvänd
 	Color Range…	Färgintervall…
 	Select and Mask…	Markera och maskera…
@@ -506,7 +509,6 @@
 	Match Location	Matcha plats
 	Match Rotation	Matcha rotation
 	Match All	Matcha alla
-	New Window for Document	Nytt fönster för dokument
 	Workspace	Arbetsyta
 	Extensions	Tillägg
 	Panels	Paneler
@@ -536,15 +538,21 @@
 	Timeline	Tidslinje
 	Tool Presets	Verktygsförinställningar
 	Tools	Verktyg
+	Contextual Task Bar	Kontextuellt aktivitetsfält
+	Hide bar	Dölj fältet
+	Reset bar position	Återställ fältets position
+	Pin bar position	Fäst fältets position
+	Move bar	Flytta fältet
+	More options	Fler alternativ
 	Libraries	Bibliotek
 	3D	3D
 	Toolbars	Verktygsfält
 	Hide All	Dölj alla
 
 # Help
-	About PhotoCraft	Om PhotoCraft
-	PhotoCraft Website	PhotoCrafts webbplats
-	PhotoCraft on GitHub	PhotoCraft på GitHub
+	About LumaFoundry	Om LumaFoundry
+	LumaFoundry Website	LumaFoundrys webbplats
+	LumaFoundry on GitHub	LumaFoundry på GitHub
 	Report an Issue…	Rapportera ett problem…
 	ArtCraft Website	ArtCrafts webbplats
 	Join the ArtCraft Discord…	Gå med i ArtCraft på Discord…
@@ -594,8 +602,8 @@
 	Background	Bakgrund
 	Set foreground color	Ange förgrundsfärg
 	Set background color	Ange bakgrundsfärg
-	Swap colours (X)	Byt plats på färgerna (X)
-	Default colours (D)	Standardfärger (D)
+	Switch Foreground and Background Colors (X)	Växla förgrunds- och bakgrundsfärg (X)
+	Default Foreground and Background Colors (D)	Standardfärger för förgrund och bakgrund (D)
 	Brush Tool Options	Alternativ för penselverktyget
 	Opacity	Opacitet
 	Flow	Flöde
@@ -625,11 +633,11 @@
 	Import Shortcuts…	Importera kortkommandon…
 	Load a keyboard shortcut set saved as .kys	Läs in en uppsättning kortkommandon som sparats som .kys
 	Imported {n} shortcuts from {file}. Click OK to keep them.	{n} kortkommandon har importerats från {file}. Klicka på OK för att behålla dem.
-	{n} commands are not in PhotoCraft.	{n} kommandon finns inte i PhotoCraft.
+	{n} commands are not in LumaFoundry.	{n} kommandon finns inte i LumaFoundry.
 	Keyboard shortcuts imported	Kortkommandon har importerats
 	Your keyboard shortcut set {set} is in use here: {n} shortcuts differ from the defaults. Edit › Keyboard Shortcuts shows them; Reset All to Defaults undoes this.	Din kortkommandouppsättning {set} används här: {n} kortkommandon skiljer sig från standardvärdena. Redigera › Kortkommandon visar dem; Återställ alla till standardvärden ångrar detta.
 	Import keyboard shortcuts?	Vill du importera kortkommandon?
-	PhotoCraft found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from PhotoCraft's. Import it?	PhotoCraft hittade din uppsättning kortkommandon {set} från en annan bildredigerare på den här datorn: {n} av dess kortkommandon skiljer sig från PhotoCrafts. Vill du importera den?
+	LumaFoundry found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from LumaFoundry's. Import it?	LumaFoundry hittade din uppsättning kortkommandon {set} från en annan bildredigerare på den här datorn: {n} av dess kortkommandon skiljer sig från LumaFoundrys. Vill du importera den?
 	Edit › Keyboard Shortcuts › Reset All to Defaults undoes an import.	Redigera › Kortkommandon › Återställ alla till standardvärden ångrar en import.
 	Don't Import	Importera inte
 	The keyboard shortcut set was not imported: {error}	Kortkommandouppsättningen importerades inte: {error}
@@ -684,6 +692,7 @@
 	Units & Rulers…	Enheter och linjaler…
 	Guides, Grid & Slices…	Stödlinjer, rutnät och skivor…
 	Plug-ins…	Plugin-program…
+	Plugins…	Plugin-program…
 	Technology Previews	Teknikförhandsgranskningar
 	Scratch Disks…	Arbetsdiskar…
 	Export Preferences…	Exportinställningar…
@@ -918,8 +927,8 @@
 	ACES	ACES
 	Industry Standard	Branschstandard
 	Web	Webb
-	Internet Standard RGB	Internetstandard-RGB
-	Legacy Macintosh RGB	Äldre Macintosh RGB
+	Internet Standard RGB (sRGB)	Internetstandard-RGB (sRGB)
+	Legacy Macintosh RGB (Gamma 1.8)	Äldre Macintosh RGB (Gamma 1.8)
 	Monitor RGB	Bildskärms-RGB
 	Windows LCD	Windows LCD
 	Coated CMYK	Bestruket CMYK
@@ -933,7 +942,7 @@
 	Embed Color Profile	Bädda in färgprofil
 	Assign Profile…	Tilldela profil…
 	Convert to Profile…	Konvertera till profil…
-	PhotoCraft Manages Colors	PhotoCraft hanterar färger
+	LumaFoundry Manages Colors	LumaFoundry hanterar färger
 	Printer Manages Colors	Skrivaren hanterar färger
 	(print to the printer)	(skriv ut på skrivaren)
 	Absolute Colorimetric	Absolut kolorimetrisk
@@ -1207,6 +1216,7 @@
 	Path to Illustrator…	Bana till Illustrator…
 	Make Work Path	Skapa arbetsbana
 	Make Selection	Skapa markering
+	Make Shape	Skapa form
 	Fill Path	Fyll bana
 	Stroke Path	Linje på bana
 	Clipping Path	Urklippsbana
@@ -1536,15 +1546,15 @@
 	Use File › Open, or paste a copied image with {paste}.	Använd Arkiv › Öppna, eller klistra in en kopierad bild med {paste}.
 	Native file drag-and-drop is unavailable	Inbyggt dra och släpp av filer är inte tillgängligt
 	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or copy the image in your file manager and paste it with {paste}.	Inbyggt dra och släpp av filer stöds inte på Wayland ännu. Använd Arkiv › Öppna, eller kopiera bilden i filhanteraren och klistra in den med {paste}.
-	To drop files, start PhotoCraft under XWayland: `{command}`	Starta PhotoCraft under XWayland för att kunna släppa filer: `{command}`
-	Or set Preferences › Performance › Linux display server to X11: PhotoCraft then always starts under XWayland.	Eller ställ in Inställningar › Prestanda › Linux-visningsserver på X11: då startar PhotoCraft alltid under XWayland.
+	To drop files, start LumaFoundry under XWayland: `{command}`	Starta LumaFoundry under XWayland för att kunna släppa filer: `{command}`
+	Or set Preferences › Performance › Linux display server to X11: LumaFoundry then always starts under XWayland.	Eller ställ in Inställningar › Prestanda › Linux-visningsserver på X11: då startar LumaFoundry alltid under XWayland.
 	Edit › Paste	Redigera › Klistra in
 	Photo	Foto
 	Print	Skriv ut
 	Art & Illustration	Konst och illustration
 	Mobile	Mobil
 	Film & Video	Film och video
-	Default PhotoCraft Size	Standardstorlek för PhotoCraft
+	Default LumaFoundry Size	Standardstorlek för LumaFoundry
 	Clipboard	Urklipp
 	Photo (2 × 3 in)	Foto (2 × 3 tum)
 	Photo (4 × 6 in)	Foto (4 × 6 tum)
@@ -1600,7 +1610,7 @@
 	Revert “{name}” to the last saved version? Your changes will be lost.	Vill du återgå till den senast sparade versionen av ”{name}”? Dina ändringar går förlorade.
 	{key} to subtract	{key} för att subtrahera
 	↑↓ navigate   {key} run   esc close	↑↓ navigera   {key} kör   esc stäng
-	Click to restore the current colour	Klicka för att återställa den aktuella färgen
+	Click to restore the current color	Klicka för att återställa den aktuella färgen
 	Click with the Note tool to add a note.	Klicka med anteckningsverktyget för att lägga till en anteckning.
 	Drag a rectangle around the object	Dra en rektangel runt objektet
 	Drag on the image to add a constraint; Shift for horizontal/vertical; right-click a constraint to change or delete it.	Dra i bilden för att lägga till en begränsning; Shift för vågrätt/lodrätt; högerklicka på en begränsning för att ändra eller ta bort den.
@@ -1624,6 +1634,7 @@
 	Move Tool	Flyttverktyg
 	Could not use the move tool because the layer is locked.	Det gick inte att använda flyttverktyget eftersom lagret är låst.
 	Could not complete the Free Transform command because the layer is locked.	Det gick inte att slutföra kommandot Ombilda fritt eftersom lagret är låst.
+	Could not transform because the layer is locked.	Det gick inte att omforma eftersom lagret är låst.
 	Rectangular Marquee Tool	Verktyget Rektangulär markeringsram
 	Elliptical Marquee Tool	Verktyget Elliptisk markeringsram
 	Single Row Marquee Tool	Verktyget Enradsmarkeringsram
@@ -1681,10 +1692,10 @@
 	Drag to move the active layer	Dra för att flytta det aktiva lagret
 	Drag to pan  ·  hold Space with any tool	Dra för att panorera  ·  håll ned blanksteg med valfritt verktyg
 	Drag to draw a gradient	Dra för att rita en gradient
-	Click to fill similar colours	Klicka för att fylla liknande färger
+	Click to fill similar colors	Klicka för att fylla liknande färger
 	Click to add text	Klicka för att lägga till text
 	Drag (lasso) or click points (polygonal) · {add} add · {sub} subtract	Dra (lasso) eller klicka på punkter (polygonal) · {add} lägg till · {sub} subtrahera
-	Drag a crop box · drag inside to move · edges resize ({ratio} ratio, {centre} centre) · Space moves while drawing · arrows nudge · X swaps orientation · {commit} commits · Esc cancels	Dra en beskärningsram · dra inuti för att flytta · kanterna ändrar storlek ({ratio} proportioner, {centre} centrerat) · Blanksteg flyttar medan du ritar · piltangenterna flyttar stegvis · X byter orientering · {commit} verkställer · Esc avbryter
+	Drag a crop box · drag inside to move · edges resize ({ratio} ratio, {centre} center) · Space moves while drawing · arrows nudge · X swaps orientation · {commit} commits · Esc cancels	Dra en beskärningsram · dra inuti för att flytta · kanterna ändrar storlek ({ratio} proportioner, {centre} centrerat) · Blanksteg flyttar medan du ritar · piltangenterna flyttar stegvis · X byter orientering · {commit} verkställer · Esc avbryter
 	{mode} Color · {bits} bit	{mode}-färg · {bits} bitar
 	Drag to move the layer	Dra för att flytta lagret
 	Fit Screen	Anpassa till skärmen
@@ -1696,7 +1707,7 @@
 	Reverse	Omvänd
 	Align with layer	Justera efter lager
 	Join us on Discord	Gå med i vår Discord
-	PhotoCraft website	PhotoCrafts webbplats
+	LumaFoundry website	LumaFoundrys webbplats
 	ArtCraft	ArtCraft
 	GitHub	GitHub
 	No character style	Inget teckenformat
@@ -1716,15 +1727,15 @@
 	Appearance	Utseende
 	Text Position:	Textposition:
 	Text color	Textfärg
-	Uses the foreground and background colours.	Använder förgrunds- och bakgrundsfärgerna.
+	Uses the foreground and background colors.	Använder förgrunds- och bakgrundsfärgerna.
 	Answer the unsaved-changes prompt first	Svara först på frågan om osparade ändringar
 	Unsaved changes	Osparade ändringar
 	Don't Save	Spara inte
 	No	Nej
 	Yes	Ja
-	These settings aren't available in PhotoCraft yet.	De här inställningarna finns inte i PhotoCraft ännu.
+	These settings aren't available in LumaFoundry yet.	De här inställningarna finns inte i LumaFoundry ännu.
 	Shortcut removed.	Kortkommandot har tagits bort.
-	All shortcuts reset to PhotoCraft defaults.	Alla kortkommandon har återställts till PhotoCrafts standardvärden.
+	All shortcuts reset to LumaFoundry defaults.	Alla kortkommandon har återställts till LumaFoundrys standardvärden.
 	Add Shortcut	Lägg till kortkommando
 	Delete Shortcut	Ta bort kortkommando
 	Press keys…	Tryck på tangenter…
@@ -1736,10 +1747,11 @@
 	name	namn
 	new	ny
 	Go to Layer	Gå till lager
-	Open a document to select a colour range.	Öppna ett dokument för att välja ett färgintervall.
+	Open a document to select a color range.	Öppna ett dokument för att välja ett färgintervall.
 	Saved	Sparat
 	Reveal in Finder	Visa i Finder
 	Show in Explorer	Visa i Utforskaren
+	Reveal in Explorer	Visa i Utforskaren
 	Show in Folder	Visa i mapp
 	Before (Y)	Före (Y)
 	Save Settings…	Spara inställningar…
@@ -1913,12 +1925,14 @@
 	Character Styles Panel	Panelen Teckenformat
 	Clear Canvas Guides	Rensa stödlinjer för arbetsytan
 	Clear Selected Artboard Guides	Rensa stödlinjer för markerad rityta
-	Color Blindness — Deuteranopia-type	Färgblindhet — deuteranopityp
-	Color Blindness — Protanopia-type	Färgblindhet — protanopityp
+	Color Blindness - Deuteranopia-type	Färgblindhet — deuteranopityp
+	Color Blindness - Protanopia-type	Färgblindhet — protanopityp
 	Color Table…	Färgtabell…
 	Combine Shapes	Kombinera former
 	Contract…	Dra ihop…
 	Convert to Embedded	Konvertera till inbäddat
+	Embed Linked	Bädda in länkat
+	Embed All Linked	Bädda in alla länkade
 	Convert to Layers	Konvertera till lager
 	Convert to Linked…	Konvertera till länkat…
 	Count	Antal
@@ -2006,6 +2020,7 @@
 	Pixelate	Pixla
 	Place Scale Marker…	Placera skalmarkör…
 	Plug-ins	Plugin-program
+	Plugins	Plugin-program
 	Print One Copy	Skriv ut en kopia
 	Print…	Skriv ut…
 	Range	Intervall
@@ -2050,7 +2065,7 @@
 	Vertical Centers	Lodräta mittpunkter
 	Video Frames to Layers…	Videobildrutor till lager…
 	WIA Support…	WIA-stöd…
-	Working CMY Plate	CMY-arbetsplåt
+	Working CMY Plates	CMY-arbetsplåtar
 
 # tl! literals (third pass)
 	Absolute	Absolut
@@ -2085,7 +2100,7 @@
 	Canvas	Arbetsyta
 	Capture	Fånga
 	Center Crop Marks	Centrerade beskärningsmärken
-	Centre the gradient (offset 0, 0)	Centrera gradienten (förskjutning 0, 0)
+	Center the gradient (offset 0, 0)	Centrera gradienten (förskjutning 0, 0)
 	Change Screen Mode  (F)	Ändra skärmläge  (F)
 	Change To:	Ändra till:
 	Clear All	Rensa alla
@@ -2207,8 +2222,8 @@
 	Output:	Utdata:
 	Paint Overlay	Målningsöverlägg
 	Pattern Size	Mönsterstorlek
-	PhotoCraft	PhotoCraft
-	PhotoCraft — an open-source, native image editor written in Rust.	PhotoCraft — en inbyggd bildredigerare med öppen källkod, skriven i Rust.
+	LumaFoundry	LumaFoundry
+	LumaFoundry — an open-source, native image editor written in Rust.	LumaFoundry — en inbyggd bildredigerare med öppen källkod, skriven i Rust.
 	Position and Size	Position och storlek
 	Preserve Details	Bevara detaljer
 	Preserve Luminosity	Bevara luminositet
@@ -2237,7 +2252,7 @@
 	Roughness	Grovhet
 	Roundness	Rundhet
 	Rulers & Grids	Linjaler och rutnät
-	Sample: foreground colour	Prov: förgrundsfärg
+	Sample: foreground color	Prov: förgrundsfärg
 	Sampling: Background Swatch	Provtagning: bakgrundsfärgruta
 	Sampling: Continuous	Provtagning: kontinuerlig
 	Sampling: Once	Provtagning: en gång
@@ -2336,6 +2351,11 @@
 	Show canvas dots	Visa punkter på arbetsytan
 	Clip thumbnails to layer bounds	Begränsa miniatyrer till lagergränser
 	Clip Thumbnails to Layer Bounds	Begränsa miniatyrer till lagergränser
+	No Thumbnails	Inga miniatyrer
+	Small Thumbnails	Små miniatyrer
+	Medium Thumbnails	Medelstora miniatyrer
+	Large Thumbnails	Stora miniatyrer
+	Clip Thumbnails to Document Bounds	Begränsa miniatyrer till dokumentgränser
 	Canvas color	Arbetsytans färg
 	Canvas custom color	Anpassad färg för arbetsytan
 	Classic	Klassisk
@@ -2462,7 +2482,6 @@
 	Show only crosshair while painting	Visa bara hårkors vid målning
 	Show slice numbers	Visa skivnummer
 	Show tooltips	Visa verktygstips
-	Enable animations	Aktivera animeringar
 	Show highlight on rollover	Visa framhävning när pekaren förs över
 	Show bounding box when dragging layer	Visa begränsningsram när lager dras
 	System title bar	Systemets namnlist
@@ -2506,7 +2525,7 @@
 	Alt-click to define a source point to clone from	Alt-klicka för att ange en källpunkt att klona från
 	No path to make a selection from: draw one with the Pen tool or select one in the Paths panel.	Det finns ingen bana att skapa en markering från: rita en med pennverktyget eller markera en i panelen Banor.
 	Cancel opening	Avbryt öppning
-	Cancelled opening {name}	Öppningen av {name} avbröts
+	Canceled opening {name}	Öppningen av {name} avbröts
 	Damaged Photoshop document	Skadat Photoshop-dokument
 	The document “{name}” may be damaged.	Dokumentet ”{name}” kan vara skadat.
 	Some layers, pixels or masks could not be read. Do you want to continue opening it?	Vissa lager, pixlar eller masker kunde inte läsas. Vill du fortsätta att öppna det?
@@ -2516,7 +2535,7 @@
 	The document “{name}” has an embedded color profile that does not match the current {mode} working space.	Dokumentet ”{name}” har en inbäddad färgprofil som inte matchar den aktuella arbetsfärgrymden för {mode}.
 	Working: {working}	Arbetsfärgrymd: {working}
 	Developing {name}	Framkallar {name}
-	Cancelled {label}	{label} avbröts
+	Canceled {label}	{label} avbröts
 	Esc to cancel	Esc för att avbryta
 	Opened {name}	Öppnade {name}
 	Opening {name}	Öppnar {name}
@@ -2524,7 +2543,7 @@
 	Saving {name}	Sparar {name}
 	Saving {percent}	Sparar {percent}
 	A save to {name} is still running; try again when it finishes	En sparning till {name} pågår fortfarande; försök igen när den är klar
-	{label} is writing the file and can no longer be cancelled	{label} skriver filen och kan inte längre avbrytas
+	{label} is writing the file and can no longer be canceled	{label} skriver filen och kan inte längre avbrytas
 	Opening {name}…	Öppnar {name}…
 	Opening…	Öppnar…
 	Reading…	Läser…
@@ -2540,7 +2559,7 @@
 	Automatic uses GPU acceleration when available and falls back to CPU rendering on errors.	Automatiskt använder GPU-acceleration när det är tillgängligt och återgår till CPU-rendering vid fel.
 	Switched to CPU rendering	Bytte till CPU-rendering
 	GPU acceleration could not continue. Your documents are unchanged.	GPU-accelerationen kunde inte fortsätta. Dina dokument är oförändrade.
-	PhotoCraft is using the CPU image compositor. The window may still use your graphics adapter.	PhotoCraft använder CPU-bildkompositören. Fönstret kan fortfarande använda ditt grafikkort.
+	LumaFoundry is using the CPU image compositor. The window may still use your graphics adapter.	LumaFoundry använder CPU-bildkompositören. Fönstret kan fortfarande använda ditt grafikkort.
 	Retry GPU requires a restart. Save your work first.	Att försöka med GPU igen kräver en omstart. Spara ditt arbete först.
 	Retry GPU tries the graphics processor again now.	”Försök med GPU igen” provar grafikprocessorn på nytt nu.
 	GPU acceleration resumed.	GPU-accelerationen har återupptagits.
@@ -2621,7 +2640,7 @@ cameraRaw	Roughness	Grovhet
 	Discard Layers and Save a Copy	Släng lager och spara en kopia
 	Don't show again	Visa inte igen
 	Save failed: {error}	Det gick inte att spara: {error}
-	Save cancelled	Sparandet avbröts
+	Save canceled	Sparandet avbröts
 	Couldn't place {name}: {error}	Det gick inte att placera {name}: {error}
 	Magnetic Lasso Tool	Verktyget Magnetiskt lasso
 	Frequency	Frekvens
@@ -2765,7 +2784,7 @@ fontWeight	Italic	Kursiv
 	Impressionist	Impressionistisk
 	Rotate View Tool	Verktyget Rotera vy
 	Reset View	Återställ vy
-	Drag around the centre to rotate the view  ·  Shift constrains to 15°	Dra runt mitten för att rotera vyn  ·  Shift begränsar till 15°
+	Drag around the center to rotate the view  ·  Shift constrains to 15°	Dra runt mitten för att rotera vyn  ·  Shift begränsar till 15°
 
 # Painting symmetry presets.
 	Dual Axis	Dubbelaxel
@@ -2785,15 +2804,15 @@ fontWeight	Italic	Kursiv
 	All Layers No Adjustments	Alla lager utan justeringar
 	Current & Below No Adjustments	Aktuellt och under utan justeringar
 	Show Sampling Ring	Visa provtagningsring
-	Click to sample the foreground colour  ·  {key}-click for background	Klicka för att ta prov på förgrundsfärgen  ·  {key}-klicka för bakgrundsfärgen
+	Click to sample the foreground color  ·  {key}-click for background	Klicka för att ta prov på förgrundsfärgen  ·  {key}-klicka för bakgrundsfärgen
 
 # Color Picker warnings
-	Out of gamut for printing: click for the nearest printable colour	Utanför färgomfånget för utskrift: klicka för närmaste utskrivbara färg
-	Not a web colour: click for the nearest web colour	Inte en webbfärg: klicka för närmaste webbfärg
+	Out of gamut for printing: click for the nearest printable color	Utanför färgomfånget för utskrift: klicka för närmaste utskrivbara färg
+	Not a web color: click for the nearest web color	Inte en webbfärg: klicka för närmaste webbfärg
 	Color to Alpha…	Färg till alfa…
 	Transparency Threshold	Tröskelvärde för genomskinlighet
 	Opacity Threshold	Opacitetströskelvärde
-	PhotoCraft — Screen Color Picker	PhotoCraft — Skärmfärgväljare
+	LumaFoundry — Screen Color Picker	LumaFoundry — Skärmfärgväljare
 
 	Rasterize svg groups deeper than	Rasterisera SVG-grupper djupare än
 	0 turns this threshold off; SVG groups nested deeper than 100 levels are always rasterized.	0 stänger av tröskelvärdet; SVG-grupper som är nästlade djupare än 100 nivåer rasteriseras alltid.
@@ -3177,7 +3196,7 @@ curves	Smooth	Jämna ut
 	{name} (Photoshop)	{name} (Photoshop)
 	{message} ({note})	{message} ({note})
 @plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	Läste in {n} åtgärd från {file}|Läste in {n} åtgärder från {file}
-@plural	{n} step has no PhotoCraft equivalent yet|{n} steps have no PhotoCraft equivalent yet	{n} steg saknar ännu motsvarighet i PhotoCraft|{n} steg saknar ännu motsvarighet i PhotoCraft
+@plural	{n} step has no LumaFoundry equivalent yet|{n} steps have no LumaFoundry equivalent yet	{n} steg saknar ännu motsvarighet i LumaFoundry|{n} steg saknar ännu motsvarighet i LumaFoundry
 @plural	Saved {n} action to {file}|Saved {n} actions to {file}	Sparade {n} åtgärd i {file}|Sparade {n} åtgärder i {file}
 @plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	{n} steg utan motsvarighet i Photoshop utelämnades|{n} steg utan motsvarighet i Photoshop utelämnades
 @plural	{n} action file loaded|{n} action files loaded	{n} åtgärdsfil inläst|{n} åtgärdsfiler inlästa
@@ -3207,7 +3226,7 @@ curves	Smooth	Jämna ut
 # Native Windows printing qualification
 	Don't also tick Mirror Image in Print Settings…: the two flips cancel out.	Markera inte också Spegelvänd bild i Utskriftsinställningar…: de två vändningarna tar ut varandra.
 	Print Settings…	Utskriftsinställningar…
-	Remember to turn off the printer's own colour management in Print Settings…	Kom ihåg att stänga av skrivarens egen färghantering i Utskriftsinställningar…
+	Remember to turn off the printer's own color management in Print Settings…	Kom ihåg att stänga av skrivarens egen färghantering i Utskriftsinställningar…
 	Sent to {printer}	Skickat till {printer}
 	set in Print Settings…	anges i Utskriftsinställningar…
 	ICO is limited to 256 × 256 pixels	ICO är begränsat till 256 × 256 pixlar
@@ -3308,12 +3327,12 @@ curves	Smooth	Jämna ut
 	Bicubic Smoother	Bikubisk mjukare
 	Bicubic Sharper	Bikubisk skarpare
 	Pasting from other apps is unavailable	Det går inte att klistra in från andra appar
-	PhotoCraft can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	PhotoCraft kommer inte åt systemets urklipp i den här sessionen. Under Wayland döljer en Flatpak-sandlåda protokollet som bilder från andra appar läses via.
-	To paste from other apps, start PhotoCraft under XWayland: `{command}`	Starta PhotoCraft under XWayland för att klistra in från andra appar: `{command}`
-	Nothing to paste: PhotoCraft can't read the system clipboard here	Inget att klistra in: PhotoCraft kan inte läsa systemets urklipp här
+	LumaFoundry can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	LumaFoundry kommer inte åt systemets urklipp i den här sessionen. Under Wayland döljer en Flatpak-sandlåda protokollet som bilder från andra appar läses via.
+	To paste from other apps, start LumaFoundry under XWayland: `{command}`	Starta LumaFoundry under XWayland för att klistra in från andra appar: `{command}`
+	Nothing to paste: LumaFoundry can't read the system clipboard here	Inget att klistra in: LumaFoundry kan inte läsa systemets urklipp här
 	Delete this set	Ta bort den här uppsättningen
 	New Set…	Ny uppsättning…
-	PhotoCraft Defaults	PhotoCraft-standard
+	LumaFoundry Defaults	LumaFoundry-standard
 	Save a list of these shortcuts as a web page	Spara en lista över dessa kortkommandon som en webbsida
 	Save the changes to this set	Spara ändringarna i den här uppsättningen
 	Save these shortcuts as a .kys file	Spara dessa kortkommandon som en .kys-fil
@@ -3871,12 +3890,12 @@ curves	Smooth	Jämna ut
 	In White	Vitt in
 	Increase Brush Hardness	Öka penselns hårdhet
 	Demosaic	Demosaicering
-	How the camera's colour filter mosaic is filled in. It is applied when the file opens; the preview shows the method it was opened with.	Hur kamerans färgfiltermosaik fylls i. Den tillämpas när filen öppnas; förhandsgranskningen visar metoden som den öppnades med.
+	How the camera's color filter mosaic is filled in. It is applied when the file opens; the preview shows the method it was opened with.	Hur kamerans färgfiltermosaik fylls i. Den tillämpas när filen öppnas; förhandsgranskningen visar metoden som den öppnades med.
 	AHD (adaptive homogeneity)	AHD (adaptiv homogenitet)
 	Malvar–He–Cutler	Malvar–He–Cutler
-	Hirakawa–Parks: the cleanest edges and the least colour fringing, the slowest.	Hirakawa–Parks: renast kanter och minst färgfransning, men långsammast.
-	Gradient-corrected interpolation: sharp and fast, with some colour fringing on fine detail.	Gradientkorrigerad interpolering: skarp och snabb, med viss färgfransning i fina detaljer.
-	The fastest and the softest, with colour fringing on fine detail.	Snabbast och mjukast, med färgfransar vid fina detaljer.
+	Hirakawa–Parks: the cleanest edges and the least color fringing, the slowest.	Hirakawa–Parks: renast kanter och minst färgfransning, men långsammast.
+	Gradient-corrected interpolation: sharp and fast, with some color fringing on fine detail.	Gradientkorrigerad interpolering: skarp och snabb, med viss färgfransning i fina detaljer.
+	The fastest and the softest, with color fringing on fine detail.	Snabbast och mjukast, med färgfransar vid fina detaljer.
 	“{name}” already exists. Replace it?	”{name}” finns redan. Vill du ersätta den?
 	The name in the save dialog was “{name}”.	Namnet i dialogrutan Spara var ”{name}”.
 	Move Up	Flytta uppåt
@@ -4079,7 +4098,7 @@ curves	Smooth	Jämna ut
 	Multiple Flames Path Directions	Flera lågor i banans riktningar
 	Multiple Flames Various Length	Flera lågor med olika längd
 	My Brushes	Mina penslar
-	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run PhotoCraft under XWayland with `WAYLAND_DISPLAY= photocraft`.	Inbyggt dra och släpp av filer stöds inte på Wayland ännu. Använd Arkiv › Öppna, eller kör PhotoCraft under XWayland med `WAYLAND_DISPLAY= photocraft`.
+	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run LumaFoundry under XWayland with `WAYLAND_DISPLAY= photocraft`.	Inbyggt dra och släpp av filer stöds inte på Wayland ännu. Använd Arkiv › Öppna, eller kör LumaFoundry under XWayland med `WAYLAND_DISPLAY= photocraft`.
 	Nearest	Närmaste
 	Neon Glow	Neonglöd
 	Neutralize	Neutralisera
@@ -4166,7 +4185,7 @@ curves	Smooth	Jämna ut
 	Pentagon	Pentagon
 	Percentage	Procent
 	Permission denied	Åtkomst nekad
-	PhotoCraft keeps retrying; until a save succeeds, preference changes are lost when it closes.	PhotoCraft fortsätter att försöka; tills en sparning lyckas går ändrade inställningar förlorade när programmet stängs.
+	LumaFoundry keeps retrying; until a save succeeds, preference changes are lost when it closes.	LumaFoundry fortsätter att försöka; tills en sparning lyckas går ändrade inställningar förlorade när programmet stängs.
 	Photomerge	Photomerge
 	Pick Color From Image	Hämta färg från bilden
 	Picture Frame	Bildram
@@ -4223,7 +4242,7 @@ curves	Smooth	Jämna ut
 	Pyramids	Pyramider
 	Quick Actions	Snabbåtgärder
 	Quit	Avsluta
-	Quit PhotoCraft	Avsluta PhotoCraft
+	Quit LumaFoundry	Avsluta LumaFoundry
 	Quit {app}	Avsluta {app}
 	R G B	RGB
 	R g b	RGB
@@ -4299,7 +4318,7 @@ curves	Smooth	Jämna ut
 	Save a Copy	Spara en kopia
 	Save before closing?	Vill du spara innan du stänger?
 	Save for Web (Legacy)	Spara för webben (äldre)
-	Save your work and restart PhotoCraft to retry GPU acceleration. CPU rendering remains active for this session.	Spara ditt arbete och starta om PhotoCraft för att försöka med GPU-acceleration igen. CPU-rendering används under resten av sessionen.
+	Save your work and restart LumaFoundry to retry GPU acceleration. CPU rendering remains active for this session.	Spara ditt arbete och starta om LumaFoundry för att försöka med GPU-acceleration igen. CPU-rendering används under resten av sessionen.
 	Saved a copy as {path}	Sparade en kopia som {path}
 	Saved {path}; image assets: {n} in {dir}	Sparade {path}; bildresurser: {n} i {dir}
 	Saving…	Sparar…
@@ -4527,7 +4546,6 @@ curves	Smooth	Jämna ut
 	Use File › Open to open an image.	Öppna en bild med Arkiv › Öppna.
 	Use Selection In Source	Använd markering i källan
 	Use Selection In Target	Använd markering i målet
-	Uses the foreground and background colors.	Använder förgrunds- och bakgrundsfärgerna.
 	Vanishing Point	Fluktpunkt
 	Variable Data Sets	Variabla datauppsättningar
 	Vector Mask Hides Effects	Vektormask döljer effekter
@@ -4737,8 +4755,8 @@ cameraRaw	Camera Raw ({name})	Camera Raw ({name})
 cameraRaw	Camera Raw Filter ({layer})	Camera Raw-filter ({layer})
 cameraRaw	Camera Raw isn't open	Camera Raw är inte öppet
 cameraRaw	Cancel	Avbryt
-cameraRaw	Cancelled opening {name}	Öppningen av {name} avbröts
-cameraRaw	Cancelled {label}	{label} avbröts
+cameraRaw	Canceled opening {name}	Öppningen av {name} avbröts
+cameraRaw	Canceled {label}	{label} avbröts
 cameraRaw	Color Priority	Färgprioritet
 cameraRaw	Developing {name}	Framkallar {name}
 cameraRaw	Full-resolution preview unavailable	Förhandsgranskning i full upplösning är inte tillgänglig
@@ -4793,3 +4811,19 @@ cameraRaw	White Balance: As Shot	Vitbalans: som tagen
 	Pick a different document for each channel.	Välj ett annat dokument för varje kanal.
 	A picked document is no longer open.	Ett av de valda dokumenten är inte längre öppet.
 	A picked document is no longer a grayscale document of the same size.	Ett av de valda dokumenten är inte längre ett gråskaledokument i samma storlek.
+# Move tool options bar (#11381)
+	Align top edges	Justera överkanter
+	Align vertical centers	Justera vertikala mittpunkter
+	Align bottom edges	Justera underkanter
+	Distribute vertically	Fördela vertikalt
+	Distribute horizontally	Fördela horisontellt
+	Show layer bounds on hover	Visa lagrets gränser vid hovring
+	Expand layer group on click	Expandera lagergrupp vid klick
+	Show hover bounds from Layers	Visa hovringsgränser från Lager
+# Artboard tool options bar (#11385)
+	Distribute Widths	Fördela bredder
+	Distribute Heights	Fördela höjder
+	Auto-nest Layers	Kapsla in lager automatiskt
+	Auto-size Canvas	Ändra storlek på arbetsytan automatiskt
+	Keep Relative Position During Layer Reordering	Behåll relativ position vid ändring av lagerordning
+	Shrinkwrap Canvas on Save	Krymp arbetsytan till innehållet vid sparning

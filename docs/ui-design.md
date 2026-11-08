@@ -34,7 +34,7 @@ Both Breeze themes are our own values close to Plasma's (not a copy of its colou
 
 Edit → Preferences → Interface shows an Appearance Mode selector (Sync with system, Dark, Light) above separate light and dark theme cards with LumaFoundry editor previews and radio choices. Auto is opt-in and follows the operating system while the app is running. On Linux it reads the desktop portal once and then listens for its `SettingChanged` signal (no polling, and the UI repaints only when the value changes); `gsettings` runs at most once at start-up, by absolute path, when the portal gives no answer. A missing system appearance falls back to Dark. New installs use Eridu (Dark) in the docked workspace, retaining the project's dark-first preference; Eridu (Light) is the saved light theme. Existing saved single-theme preferences migrate to a fixed Dark or Light mode with their chosen theme. The header appearance button cycles Auto → Light → Dark; its icon shows a monitor, moon or sun for the selected mode. Window → Theme and `ui.set {"theme":"classic"}` select a theme and fix the mode to its light or dark family.
 
-Window → Theme and macOS PhotoCraft → Appearance also offer Sync with system. Its checkmark follows the saved Auto mode rather than the displayed palette; choosing a manual theme selects its fixed appearance mode.
+Window → Theme and macOS LumaFoundry → Appearance also offer Sync with system. Its checkmark follows the saved Auto mode rather than the displayed palette; choosing a manual theme selects its fixed appearance mode.
 
 The toolbar's foreground and background colour chips follow the `Tokens::round_chips` flag. Pro and Classic leave it off and draw Photoshop's overlapping squares with Default Colors and Switch Colors above them. Studio, Studio Light, Solarized Dark, Adwaita, Adwaita Dark, Breeze Light, Breeze Dark, Soft Dark and Soft Light (the Studio-layout themes) turn it on and draw large round chips with a curved Switch Colors arrow centred right under them, its heads touching the chips: stacked vertically in one tool column, with Default Colors at their top-right, and side by side in two tool columns, with Default Colors at the toolbar's left edge. Another non-Pro theme can opt in by setting the flag.
 
@@ -167,7 +167,7 @@ Use `ui.click {x,y}`, `ui.move`, `ui.key` and `ui.type` (synthetic input in scre
 
 The Type options bar, Character panel, Character/Paragraph Style editors and Glyphs panel
 share a searchable family picker. Each visible row shows an `AaBbCc` sample rendered by
-PhotoCraft's text engine in that family (script/symbol fonts use characters they support). A family whose face also covers Arabic (alef, lam, meem, ain and the sample letters) shows a short `أبجد هوز` sample left of it, shaped right-to-left by the same engine; its row reserves the extra width once that row has been painted, and Latin-only families are unchanged.
+LumaFoundry's text engine in that family (script/symbol fonts use characters they support). A family whose face also covers Arabic (alef, lam, meem, ain and the sample letters) shows a short `أبجد هوز` sample left of it, shaped right-to-left by the same engine; its row reserves the extra width once that row has been painted, and Latin-only families are unchanged.
 Samples are cached with a bounded cache and follow display scale and theme text colour.
 Builds without system fonts preview the bundled fonts.
 While the menu is open, Up/Down applies the previous/next matching family and scrolls it into
@@ -231,6 +231,7 @@ Languages shipped (`complete_menus` marks a catalog that covers every menu strin
 - French (`fr`), complete, with two plural forms (0 and 1 use the singular).
 - Czech (`cs`), complete, with three plural forms.
 - Indonesian (`id`), complete, with one plural form.
+- Azerbaijani (`az`, Latin script), complete, with two integer plural forms (1 / other).
 
 - `tr(lang, s)` plain strings; `tr_ctx` when one English word needs different translations;
   `tr_id(lang, command_id, label)` for menu items (keyed by command id, English label as the

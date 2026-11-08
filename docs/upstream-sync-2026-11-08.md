@@ -37,13 +37,39 @@ range for the complete upstream history.
 The first native/Enki test attempts stopped because `/tmp/luma-fonts` had been
 removed since the earlier session. Restored the public craft-fonts checkout at
 `b076417b5880bd4154bd22f00695b1d28c6bea83` and restarted affected checks.
-Layering passes for 31 crates; the panel-command gate and all five GPU setup tests pass.
-Enki targeted tests pass (22 passed, one ignored). The first wasm/native attempts
-exposed obsolete Wayland notice references, now removed. UI test compilation
-exposed an upstream source-assertion path into the excluded home layout; it now
-checks the retained home screen with the same assertion. Native build, UI,
-adversarial commands, wasm, Clippy and corpus checks are running; terminal results
-belong in draft PR #14 evidence. Hosted lint, documentation, Nix evaluation and
-packaging-input checks passed at the initial merge revision; full CI remains pending.
-The corpus check uses pinned public fixtures. No native screen-reader, clean
-TavruOS/FreeBSD, release, or full performance acceptance is claimed by this sync.
+Confirmed local results:
+
+- Native application and CLI build pass (`cargo build --locked -p photocraft -p photocraft-cli`).
+- Enki targeted tests: 22 passed, one ignored; adversarial command panic hunt passes.
+- UI/engine all-target Clippy with warnings denied passes.
+- Layering: 31 crates; panel-command routing and all five GPU setup tests pass.
+- Wasm: 24 crates plus codecs with HEIF pass.
+- Parity regeneration completes; regenerated scorecard passes `--check`.
+- Offscreen 1440x900 home screenshot rendered and visually inspected: LumaFoundry
+  identity, retained home layout, display font and Phosphor controls present.
+  Renderer: Vulkan llvmpipe; this is not hardware-GPU or native accessibility evidence.
+
+Initial compilation exposed obsolete Wayland notice references and an upstream
+source-assertion path into the excluded home layout. Both are fixed.
+Hosted CI at `df528ef8a` passed formatting, Clippy, layering and panel routing, then
+failed on stale scorecard output; the generated source/output correction is included.
+Hosted no-HEIF tests, lint, documentation, Nix and packaging-input checks passed.
+UI units: 5,752 passed, 23 ignored, one failure in
+`prefs::prefs_ui::tests::preferences_interface_search_hides_rows_and_skips_empty_groups`
+(`"language" must not show Options`). The toolbar also has an Options button;
+verify query scoping before changing settings behavior. Integration binaries did
+not run after this unit failure. Remaining hosted checks are pending; consult PR #14.
+
+### Merge blocker: SVG stack overflow
+
+`cargo xtask test-corpus` aborts in the I/O integration binary with stack overflow.
+The release test `svg::an_embedded_svg_gets_only_the_nesting_depth_the_drawing_left`
+reproduces the abort when invoked alone. It can pass later in a serial full run,
+so order-dependent initialization needs investigation; serial success alone is
+not acceptance. A full serial I/O rerun passed 631 tests with nine ignored, while
+the isolated test still aborted. Do not increase the test stack or mark it ignored to conceal this.
+The pinned corpus fixtures downloaded successfully. Full corpus validation failed.
+
+No native screen-reader, clean TavruOS/FreeBSD, release, or full performance
+acceptance is claimed by this sync. Keep PR #14 draft until the crash and all
+remaining validation gates are resolved.

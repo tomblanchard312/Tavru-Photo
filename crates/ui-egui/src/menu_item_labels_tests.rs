@@ -73,7 +73,7 @@ fn engine_command_labels_match_the_menu() {
 #[test]
 fn history_step_names_and_other_labels_are_unchanged() {
     // The Home screen keeps its own button label (#11399 "not measured").
-    let src = include_str!("home_recent_ui.rs");
+    let src = include_str!("canvas/start_screen.rs");
     assert!(src.contains("tl!(\"Clear Recent Files\")"));
     // Merge Shape Components stays in Combine Shapes.
     let app = app();

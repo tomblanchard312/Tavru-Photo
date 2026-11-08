@@ -37,7 +37,13 @@ range for the complete upstream history.
 The first native/Enki test attempts stopped because `/tmp/luma-fonts` had been
 removed since the earlier session. Restored the public craft-fonts checkout at
 `b076417b5880bd4154bd22f00695b1d28c6bea83` and restarted affected checks.
-Layering passes for 31 crates. Native build, UI, Enki, adversarial commands, wasm,
-Clippy and corpus checks are running; final results belong in the draft PR evidence.
+Layering passes for 31 crates; the panel-command gate and all five GPU setup tests pass.
+Enki targeted tests pass (22 passed, one ignored). The first wasm/native attempts
+exposed obsolete Wayland notice references, now removed. UI test compilation
+exposed an upstream source-assertion path into the excluded home layout; it now
+checks the retained home screen with the same assertion. Native build, UI,
+adversarial commands, wasm, Clippy and corpus checks are running; terminal results
+belong in draft PR #14 evidence. Hosted lint, documentation, Nix evaluation and
+packaging-input checks passed at the initial merge revision; full CI remains pending.
 The corpus check uses pinned public fixtures. No native screen-reader, clean
 TavruOS/FreeBSD, release, or full performance acceptance is claimed by this sync.

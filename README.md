@@ -42,7 +42,7 @@
   <a href="#under-the-hood">Under the hood</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="#downloads">Downloads</a> ·
-  <a href="#lumafoundry-and-enki">Oqelith image tools</a> ·
+  <a href="#lumafoundry-and-oqelith">Oqelith image tools</a> ·
   <a href="https://github.com/tomblanchard312/lumafoundry/issues">Support</a>
 </p>
 
@@ -73,7 +73,7 @@
 
 ## LumaFoundry and Oqelith
 
-LumaFoundry is an independent fork of PhotoCraft with its own LF icon, dark blue branding and local Oqelith image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
+LumaFoundry is an independent fork of PhotoCraft with its own LF icon, TavruOS purple branding and local Oqelith image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
 
 The Linux integration provides these editing workflows through native dialogs and engine commands.
 
@@ -86,7 +86,7 @@ The Linux integration provides these editing workflows through native dialogs an
 
 Oqelith and compatible models must be installed and configured separately. Learned subject selection requires the segmentation worker and its model. Native Oqelith transport currently supports Linux. Other desktop platforms and the web build do not yet provide these runtime-backed tools. Local CPU and Vulkan inference and native offscreen workflows have been exercised; broader image-quality and interactive desktop validation remain open. See the implementation notes and setup boundaries in [generative tools](docs/features/generative-tools.md).
 
-LumaFoundry is also registered in EriduOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Oqelith integration validation remain pending.
+LumaFoundry is also registered in TavruOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Oqelith integration validation remain pending.
 
 ## Features
 

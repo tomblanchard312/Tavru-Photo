@@ -4,9 +4,9 @@ LumaFoundry serves people editing layered images and agents driving the same com
 
 ## Shared design contract
 
-The Eridu workspace palettes use semantic surfaces, text, River accents, Copper primary actions and status colors from the EriduOS design-system tokens. The stored proMedium/proLight and studio/studioLight identifiers remain compatible with saved preferences. The docked workspace remains the default; the project's dark-first preference is retained as an explicit exception to EDS's initial light default. Users can select light or system-following appearance in Preferences. Typography uses the current logical-pixel roles (12 caption, 13 control, 14 body, 20 section heading), installed or bundled Inter and display scaling. The Home page title uses Source Serif 4 Display Semibold; numeric fields, progress, document status and credit counts use Inter Tabular. Code and hexadecimal color values retain the technical monospace role. Document fonts remain independently editable.
+The TavruOS workspace palettes use semantic purple surfaces, primary actions, focus indicators and status colors from the current design-system tokens. The stored proMedium/proLight and studio/studioLight identifiers remain compatible with saved preferences. The docked workspace and dark appearance remain the defaults, matching the current visual specification. Users can select light or system-following appearance in Preferences. Typography uses the current logical-pixel roles (12 caption, 13 control, 14 body, 20 section heading), installed or bundled Inter and display scaling. The Home page title uses Inter Semibold; numeric fields, progress, document status and credit counts use Inter Tabular. Code and hexadecimal color values retain the technical monospace role. Document fonts remain independently editable.
 
-Canonical guidance lives in https://github.com/tomblanchard312/TavruOS/tree/main/design-system and its INTERFACE_RULES.md, ADOPTION.md and patterns/enki.md. Palette choices remain user-controlled.
+Canonical guidance lives in https://github.com/tomblanchard312/EriduOs/tree/main/design-system and its TAVRUOS_VISUAL_SPEC.md, BRANDING.md and ADOPTION.md. Palette choices remain user-controlled.
 
 ## Workspace and interaction
 
@@ -20,7 +20,7 @@ The LumaFoundry maintainers own these remaining migration items. Track their com
 
 ## Icon and font provenance
 
-The immutable `eridu-style` revision `d3b4cdc03706ac100fae2de907282575652b76ad` supplies the display and tabular font families. No font binaries are copied into this repository. `scripts/import-eridu-icons.py` exports the same revision's Phosphor outlines into the SVG loader already used by the application; application aliases are recorded in `assets/icons/eridu-map.json`. To regenerate, install `fonttools==4.60.1` in a virtual environment and run the script with that exact eridu-style checkout, then `cargo fmt --all`. MIT and OFL notices are retained in `ATTRIBUTION.md`, `NOTICE`, and the pinned dependency. The dashed ellipse is a vertically scaled circle outline.
+The immutable `eridu-style` revision `d3b4cdc03706ac100fae2de907282575652b76ad` supplies the tabular font families. No font binaries are copied into this repository. `scripts/import-eridu-icons.py` exports the same revision's Phosphor outlines into the SVG loader already used by the application; application aliases are recorded in `assets/icons/eridu-map.json`. To regenerate, install `fonttools==4.60.1` in a virtual environment and run the script with that exact eridu-style checkout, then `cargo fmt --all`. MIT and OFL notices are retained in `ATTRIBUTION.md`, `NOTICE`, and the pinned dependency. The dashed ellipse is a vertically scaled circle outline.
 
 ## Accessibility validation boundary
 

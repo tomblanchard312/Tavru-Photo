@@ -134,9 +134,9 @@ fn pro_light_gray_and_light_themes() {
         assert!(contrast(t.text_faint, t.card) >= 2.0, "{kind:?} faint text");
         assert!(contrast(t.accent_text, t.card) >= 3.0, "{kind:?} accent text");
     }
-    // The four Pro levels step from darkest to lightest, as in Photoshop.
-    let cards = [ThemeKind::Pro, ThemeKind::ProMedium, ThemeKind::ProLightGray, ThemeKind::ProLight].map(|k| Tokens::for_kind(k).card.r());
-    assert!(cards[1] < cards[2] && cards[2] < cards[3], "{cards:?}");
+    // Legacy neutral presets and the light theme step from dark to light.
+    let cards = [ThemeKind::Pro, ThemeKind::ProLightGray, ThemeKind::ProLight].map(|k| Tokens::for_kind(k).card.r());
+    assert!(cards.windows(2).all(|pair| pair[0] < pair[1]), "{cards:?}");
     assert!(!ThemeKind::Studio.is_pro() && !ThemeKind::StudioLight.is_pro() && !ThemeKind::Classic.is_pro());
     assert_eq!(ThemeKind::from_name("light gray"), Some(ThemeKind::ProLightGray));
     assert_eq!(ThemeKind::from_name("lightest"), Some(ThemeKind::ProLight));
@@ -163,7 +163,7 @@ fn theme_names_parse() {
     assert_eq!(ThemeKind::from_name("Solarized Dark"), Some(ThemeKind::SolarizedDark));
     assert_eq!(ThemeKind::from_name("solarized"), Some(ThemeKind::SolarizedDark));
     let m = Tokens::for_kind(ThemeKind::ProMedium);
-    assert!(m.pro && m.dark() && m.kind == ThemeKind::ProMedium && m.card == Color32::from_rgb(32, 44, 51));
+    assert!(m.pro && m.dark() && m.kind == ThemeKind::ProMedium && m.card == Color32::from_rgb(25, 26, 42));
     let s = Tokens::for_kind(ThemeKind::SolarizedDark);
     assert!(s.dark() && !s.bevel && s.kind == ThemeKind::SolarizedDark && s.card == Color32::from_rgb(7, 54, 66));
     assert_eq!(ThemeKind::from_name("neon"), None);

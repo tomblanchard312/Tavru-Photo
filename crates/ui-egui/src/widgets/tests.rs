@@ -1373,15 +1373,17 @@ fn dropdown_opens_with_focus_and_arrow_keys_change_the_value() {
 #[test]
 fn dropdown_list_keeps_its_width_while_scrolling() {
     use photocraft_color::BlendMode;
-    let mut h = Harness::builder().with_size(egui::vec2(400.0, 700.0)).build_ui_state(
-        |ui, mode: &mut BlendMode| {
-            let opts: Vec<(BlendMode, &str)> = BlendMode::LAYER_MODES.iter().map(|m| (*m, m.label())).collect();
-            super::dropdown(ui, "brush-mode", tl!("Mode"), mode, &opts, 96.0);
-        },
-        BlendMode::Normal,
-    );
+    let mut h = Harness::builder()
+        .with_context_setup(|ctx| crate::PhotocraftApp::setup_context(ctx, crate::theme::ThemeKind::ProMedium))
+        .with_size(egui::vec2(400.0, 700.0))
+        .build_ui_state(
+            |ui, mode: &mut BlendMode| {
+                let opts: Vec<(BlendMode, &str)> = BlendMode::LAYER_MODES.iter().map(|m| (*m, m.label())).collect();
+                super::dropdown(ui, "brush-mode", tl!("Mode"), mode, &opts, 96.0);
+            },
+            BlendMode::Normal,
+        );
     // The app's theme strokes plain rows, which is what made hovered rows wider.
-    crate::theme::apply(&h.ctx, crate::theme::ThemeKind::ProMedium);
     h.run();
     h.get_by_role(egui::accesskit::Role::ComboBox).click();
     h.run();
@@ -1405,15 +1407,17 @@ fn dropdown_list_keeps_its_width_while_scrolling() {
 /// steps them) `down` from its top, opened.
 fn open_blend_modes(height: f32, down: f32) -> Harness<'static, photocraft_color::BlendMode> {
     use photocraft_color::BlendMode;
-    let mut h = Harness::builder().with_size(egui::vec2(400.0, height)).build_ui_state(
-        move |ui, mode: &mut BlendMode| {
-            ui.add_space(down);
-            let opts: Vec<(BlendMode, &str)> = BlendMode::LAYER_MODES.iter().map(|m| (*m, m.label())).collect();
-            super::dropdown_wheel_hovered(ui, "blend-mode", tl!("Blend Mode"), mode, &opts, 120.0);
-        },
-        BlendMode::Normal,
-    );
-    crate::theme::apply(&h.ctx, crate::theme::ThemeKind::ProMedium);
+    let mut h = Harness::builder()
+        .with_context_setup(|ctx| crate::PhotocraftApp::setup_context(ctx, crate::theme::ThemeKind::ProMedium))
+        .with_size(egui::vec2(400.0, height))
+        .build_ui_state(
+            move |ui, mode: &mut BlendMode| {
+                ui.add_space(down);
+                let opts: Vec<(BlendMode, &str)> = BlendMode::LAYER_MODES.iter().map(|m| (*m, m.label())).collect();
+                super::dropdown_wheel_hovered(ui, "blend-mode", tl!("Blend Mode"), mode, &opts, 120.0);
+            },
+            BlendMode::Normal,
+        );
     h.run();
     h.get_by_role(egui::accesskit::Role::ComboBox).click();
     h.run_steps(4);
@@ -1768,13 +1772,15 @@ fn menu_scroll_arrows_stay_inside_a_short_window() {
 /// [`MODES`] in a wheel dropdown whose list draws a line above each option `starts_group` picks,
 /// opened: the open list's rect and each option's row in it.
 fn open_grouped_modes(starts_group: fn(&usize) -> bool) -> (egui::Rect, Vec<egui::Rect>) {
-    let mut h = Harness::builder().with_size(egui::vec2(300.0, 300.0)).build_ui_state(
-        move |ui, selected: &mut usize| {
-            super::dropdown_wheel_grouped(ui, "blend-mode", tl!("Blend Mode"), selected, &MODES, 120.0, starts_group);
-        },
-        0,
-    );
-    crate::theme::apply(&h.ctx, crate::theme::ThemeKind::ProMedium);
+    let mut h = Harness::builder()
+        .with_context_setup(|ctx| crate::PhotocraftApp::setup_context(ctx, crate::theme::ThemeKind::ProMedium))
+        .with_size(egui::vec2(300.0, 300.0))
+        .build_ui_state(
+            move |ui, selected: &mut usize| {
+                super::dropdown_wheel_grouped(ui, "blend-mode", tl!("Blend Mode"), selected, &MODES, 120.0, starts_group);
+            },
+            0,
+        );
     h.run();
     h.get_by_role(egui::accesskit::Role::ComboBox).click();
     h.run_steps(4);

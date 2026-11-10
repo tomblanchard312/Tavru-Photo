@@ -42,7 +42,7 @@
   <a href="#under-the-hood">Under the hood</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="#downloads">Downloads</a> ·
-  <a href="#lumafoundry-and-enki">Enki image tools</a> ·
+  <a href="#lumafoundry-and-enki">Oqelith image tools</a> ·
   <a href="https://github.com/tomblanchard312/lumafoundry/issues">Support</a>
 </p>
 
@@ -71,22 +71,22 @@
 
 <br>
 
-## LumaFoundry and Enki
+## LumaFoundry and Oqelith
 
-LumaFoundry is an independent fork of PhotoCraft with its own LF icon, dark blue branding and local Enki image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
+LumaFoundry is an independent fork of PhotoCraft with its own LF icon, dark blue branding and local Oqelith image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
 
 The Linux integration provides these editing workflows through native dialogs and engine commands.
 
 - Generate images or a background beneath a masked subject, with model, prompt and seed controls.
 - Fill a selection or remove an object using the original image and surrounding context. Results become new masked layers with undo support and protected pixels preserved.
 - Expand the canvas while preserving the original image region. Current support covers static pixel layers and groups within the editing model's size limits.
-- Select a subject with Enki's U2Net worker, refine its edges, create a masked background-removal copy, or replace the background while protecting the subject.
+- Select a subject with Oqelith's U2Net worker, refine its edges, create a masked background-removal copy, or replace the background while protecting the subject.
 - Match generated edges for fill, removal and expansion. Background replacement defaults to edge matching off to avoid spreading subject colors into the new background.
 - Add solid, gradient or image backgrounds beneath a masked subject with the Background Fill tool.
 
-Enki and compatible models must be installed and configured separately. Learned subject selection requires the segmentation worker and its model. Native Enki transport currently supports Linux. Other desktop platforms and the web build do not yet provide these runtime-backed tools. Local CPU and Vulkan inference and native offscreen workflows have been exercised; broader image-quality and interactive desktop validation remain open. See the implementation notes and setup boundaries in [generative tools](docs/features/generative-tools.md).
+Oqelith and compatible models must be installed and configured separately. Learned subject selection requires the segmentation worker and its model. Native Oqelith transport currently supports Linux. Other desktop platforms and the web build do not yet provide these runtime-backed tools. Local CPU and Vulkan inference and native offscreen workflows have been exercised; broader image-quality and interactive desktop validation remain open. See the implementation notes and setup boundaries in [generative tools](docs/features/generative-tools.md).
 
-LumaFoundry is also registered in EriduOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Enki integration validation remain pending.
+LumaFoundry is also registered in EriduOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Oqelith integration validation remain pending.
 
 ## Features
 

@@ -8,7 +8,7 @@ pub fn owns(fields: &Map<String, Value>) -> bool {
 }
 pub fn open(app: &mut PhotocraftApp) -> Result<u64, String> {
     if !app.session.is_enabled(COMMAND) {
-        return Err("Open a document on Linux with the Enki runtime available".into());
+        return Err("Open a document on Linux with the on-device runtime available".into());
     }
     let document = app.session.active().ok_or("no document open")?.doc.id.0;
     let mut fields = Map::new();
@@ -87,7 +87,6 @@ pub fn body(_app: &PhotocraftApp, ui: &mut egui::Ui, fields: &mut Map<String, Va
     }
     text(ui, fields, "prompt", "Prompt:", "Describe the image", 2000);
     text(ui, fields, "negative", "Avoid:", "Optional unwanted details", 2000);
-    text(ui, fields, "model", "Model:", "Empty uses the Enki recommendation", 256);
     if !editing {
         for (key, label) in [("width", "Width:"), ("height", "Height:")] {
             let mut value = fields.get(key).and_then(Value::as_u64).unwrap_or(512) as u32;
@@ -123,7 +122,7 @@ pub fn body(_app: &PhotocraftApp, ui: &mut egui::Ui, fields: &mut Map<String, Va
         if replacing_background {
             ui.label(tl!("The selection marks the subject to keep. Its background will be replaced using the original scene as context."));
         }
-        ui.label(tl!("Uses original image context and an edit mask. Protected pixels remain unchanged. Requires an updated Enki runtime."));
+        ui.label(tl!("Uses original image context and an edit mask. Protected pixels remain unchanged. Requires an updated on-device runtime."));
     }
     let mut override_sampling = fields.contains_key("steps");
     if widgets::checkbox(ui, &mut override_sampling, tl!("Override sampling settings")).changed() {
@@ -158,7 +157,7 @@ pub fn body(_app: &PhotocraftApp, ui: &mut egui::Ui, fields: &mut Map<String, Va
     if !editing {
         ui.label(tl!("Use multiples of 8 for image dimensions. A negative seed creates a new variation."));
     }
-    ui.label(tl!("Runs locally through Enki. No models are downloaded. The result is a new layer; Undo removes it."));
+    ui.label(tl!("Runs on this device. No models are downloaded. The result is a new layer; Undo removes it."));
 }
 #[cfg(all(test, target_os = "linux"))]
 mod tests {

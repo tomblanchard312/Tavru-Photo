@@ -10,7 +10,7 @@ Update existing draft PR #14; no duplicate PR or merge into main.
 
 ## Integration
 
-Retain the independent implementation policy, contributor rules, Enki commands,
+Retain the independent implementation policy, contributor rules, Oqelith commands,
 LumaFoundry home layout and private-dependency workflows from current main.
 PR #11 remains separate. Import upstream pinned craft-libs updates, toolbar-side
 placement, text alignment, PDF/vector improvements, action/file-handling fixes
@@ -28,7 +28,7 @@ Resolve documentation conflicts in favor of updated behavior with fork branding.
 - Layering: 31 crates pass. Panel-command routing, five GPU setup tests and
   generated-scorecard freshness pass.
 - Wasm: 24 crates and HEIF codecs pass.
-- Enki: 22 passed, one ignored. Adversarial command panic hunt passes.
+- Oqelith: 22 passed, one ignored. Adversarial command panic hunt passes.
 - New 1440x900 offscreen home render visually inspected: retained LumaFoundry
   branding, layout, display font and Phosphor controls. Vulkan llvmpipe; not a
   native accessibility or hardware-GPU acceptance test.

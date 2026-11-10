@@ -10,7 +10,7 @@ Canonical guidance lives in https://github.com/tomblanchard312/TavruOS/tree/main
 
 ## Workspace and interaction
 
-Use the image canvas as the recognizable central workspace, with tools at the left, document tabs above and layer/property inspectors at the right. Settings use category navigation. Group advanced controls in their existing dialogs. Preserve keyboard shortcuts, visible focus, Escape/cancel and undo. Empty state offers New and Open. Populated state shows the image and editable layers. Failed operations retain the document and report the error with recovery guidance. Enki operations expose availability, progress, cancellation and editable generated layers.
+Use the image canvas as the recognizable central workspace, with tools at the left, document tabs above and layer/property inspectors at the right. Settings use category navigation. Group advanced controls in their existing dialogs. Preserve keyboard shortcuts, visible focus, Escape/cancel and undo. Empty state offers New and Open. Populated state shows the image and editable layers. Failed operations retain the document and report the error with recovery guidance. Oqelith operations expose availability, progress, cancellation and editable generated layers.
 
 ## Adoption boundaries
 
@@ -29,3 +29,18 @@ The shell exposes an application window name, a Home heading, named foreground/b
 The native Linux host probe uses the built `target/debug/photocraft`, a separate D-Bus session, scratch XDG directories, AT-SPI and Orca 46.1. Native announcements are evidence of emitted screen-reader speech, not a human assessment of intelligibility. Offscreen keyboard and render tests are recorded separately from native observations. See [the validation record](eridu-accessibility-validation.md).
 
 Release acceptance remains open for clean EriduOS Linux and FreeBSD sessions, physical Braille hardware with speech off, review by a screen-reader user, complete keyboard-only editing/save/open/recovery workflows, and cross-application behavior. The existing dark-first preference exception also remains. This migration does not certify full EDS compliance.
+
+## Current branding — 2026-11-10
+
+The canonical [TavruOS visual specification](https://github.com/tomblanchard312/EriduOs/blob/main/design-system/TAVRUOS_VISUAL_SPEC.md)
+and [semantic colors](https://github.com/tomblanchard312/EriduOs/blob/main/design-system/tokens/colors.json)
+override the earlier copper/river palette and serif display face. Standard and
+Studio themes use purple semantic roles in light and dark; headings use Inter
+Semibold, with existing UI, numeric and code font roles retained.
+
+Oqelith is the service name in technical documentation. Image tools use functional
+labels and do not show a service wordmark or model picker. Stable command IDs,
+wire fields and socket paths remain compatible with existing integrations.
+There is currently no conversational assistant in LumaFoundry: if one is added,
+its label must be **Ask** and its icon **chat-text** (Phosphor ChatText, regular
+and filled assets in the existing licensed catalog), never a service name.

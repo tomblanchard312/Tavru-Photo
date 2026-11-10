@@ -116,7 +116,7 @@ fn saved_ui_font_size_survives_first_frame_install() {
 fn pro_light_gray_and_light_themes() {
     // #2661: Photoshop's third and fourth brightness levels, with the Pro layout.
     for (kind, panel, id, label) in
-        [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 255, "proLight", "Eridu (Light)")]
+        [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 255, "proLight", "TavruOS (Light)")]
     {
         let t = Tokens::for_kind(kind);
         assert!(t.pro && !t.dark() && !t.bevel && kind.is_pro(), "{kind:?}");
@@ -388,12 +388,12 @@ fn eridu_roles_preserve_weights_and_zoom_across_themes() {
 fn eridu_palettes_use_semantic_action_and_surface_colors() {
     let light = Tokens::for_kind(ThemeKind::StudioLight);
     let dark = Tokens::for_kind(ThemeKind::Studio);
-    assert_eq!(light.canvas, Color32::from_rgb(250, 249, 246));
-    assert_eq!(light.accent, Color32::from_rgb(36, 107, 131));
-    assert_eq!(light.primary_bg, Color32::from_rgb(148, 89, 44));
-    assert_eq!(dark.canvas, Color32::from_rgb(23, 35, 43));
-    assert_eq!(dark.accent, Color32::from_rgb(131, 201, 224));
-    assert_eq!(dark.primary_bg, Color32::from_rgb(224, 164, 114));
+    assert_eq!(light.canvas, Color32::from_rgb(245, 243, 250));
+    assert_eq!(light.accent, Color32::from_rgb(109, 40, 217));
+    assert_eq!(light.primary_bg, Color32::from_rgb(109, 40, 217));
+    assert_eq!(dark.canvas, Color32::from_rgb(18, 19, 31));
+    assert_eq!(dark.accent, Color32::from_rgb(196, 162, 255));
+    assert_eq!(dark.primary_bg, Color32::from_rgb(124, 58, 237));
     for palette in [light, dark] {
         assert_eq!((palette.radius_sm, palette.radius, palette.radius_lg), (4.0, 8.0, 12.0));
     }
@@ -408,7 +408,7 @@ fn eridu_display_and_numeric_roles_are_bound_and_digits_align() {
         let numeric_font = numeric(&ctx, 14.0);
         ui.fonts_mut(|fonts| {
             let defs = fonts.definitions();
-            assert_eq!(defs.families[&display(28.0).family][0], eridu_style::fonts::DISPLAY);
+            assert_eq!(display(28.0), semibold(28.0));
             assert_eq!(defs.families[&numeric_font.family][0], eridu_style::fonts::NUMERIC);
             let widths: Vec<_> = (0..10).map(|n| fonts.layout_no_wrap(n.to_string(), numeric_font.clone(), Color32::WHITE).size().x).collect();
             assert!(widths.iter().all(|width| (width - widths[0]).abs() < 0.01), "tabular digits: {widths:?}");
@@ -427,4 +427,11 @@ fn numeric_role_is_safe_before_font_installation_takes_effect() {
     })
     .textures_delta
     .clear();
+}
+
+#[test]
+fn current_brand_headings_and_chat_icon_use_the_approved_roles() {
+    assert_eq!(display(28.0).family, semibold(28.0).family);
+    assert!(crate::icon_data::ICONS.iter().any(|(name, _)| *name == "chat-text"));
+    assert!(crate::icon_data::FILLED_ICONS.iter().any(|(name, _)| *name == "chat-text"));
 }

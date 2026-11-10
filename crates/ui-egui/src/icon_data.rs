@@ -183,6 +183,7 @@ pub static ICONS: &[(&str, &[u8])] = &[
     ("vertical-align-bottom", include_bytes!("../../../assets/icons/eridu/regular/align_bottom.svg")),
     ("vertical-align-middle", include_bytes!("../../../assets/icons/eridu/regular/align_center_vertical.svg")),
     ("panel-left", include_bytes!("../../../assets/icons/eridu/regular/sidebar.svg")),
+    ("chat-text", include_bytes!("../../../assets/icons/eridu/regular/chat_text.svg")),
 ];
 
 pub static FILLED_ICONS: &[(&str, &[u8])] = &[
@@ -368,4 +369,5 @@ pub static FILLED_ICONS: &[(&str, &[u8])] = &[
     ("vertical-align-bottom", include_bytes!("../../../assets/icons/eridu/fill/align_bottom.svg")),
     ("vertical-align-middle", include_bytes!("../../../assets/icons/eridu/fill/align_center_vertical.svg")),
     ("panel-left", include_bytes!("../../../assets/icons/eridu/fill/sidebar.svg")),
+    ("chat-text", include_bytes!("../../../assets/icons/eridu/fill/chat_text.svg")),
 ];

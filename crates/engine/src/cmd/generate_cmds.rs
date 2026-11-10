@@ -1,4 +1,4 @@
-//! Native image generation through the installed per-user Enki runtime.
+//! Native image generation through the installed per-user Oqelith runtime.
 
 use crate::{EngineError, Result, Session, commands::CommandSpec};
 #[cfg(target_os = "linux")]
@@ -98,7 +98,7 @@ impl Request {
 // shortcut: Linux peer verification only; add native transports before enabling other platforms.
 fn enabled(s: &Session) -> std::result::Result<(), String> {
     if !cfg!(target_os = "linux") {
-        return Err("Enki connection is currently available on Linux only".into());
+        return Err("On-device connection is currently available on Linux only".into());
     }
     let st = s.active().ok_or("open a document first")?;
     if !matches!(
@@ -112,7 +112,7 @@ fn enabled(s: &Session) -> std::result::Result<(), String> {
 
 #[cfg(not(target_os = "linux"))]
 fn run(_: &mut Session, _: &Value) -> Result<Value> {
-    Err(EngineError::Other("Enki connection is currently available on Linux only".into()))
+    Err(EngineError::Other("On-device connection is currently available on Linux only".into()))
 }
 
 #[cfg(target_os = "linux")]
@@ -208,12 +208,12 @@ struct Output {
 #[cfg(target_os = "linux")]
 fn validate_png(bytes: &[u8], width: u32, height: u32) -> Result<()> {
     if bytes.len() > 5 * 1024 * 1024 || !(64..=1024).contains(&width) || !(64..=1024).contains(&height) {
-        return Err(bad("Enki returned an oversized image"));
+        return Err(bad("The on-device runtime returned an oversized image"));
     }
     let size = bytes.get(16..24).and_then(|b| <[u8; 8]>::try_from(b).ok());
     let expected: Vec<u8> = width.to_be_bytes().into_iter().chain(height.to_be_bytes()).collect();
     if bytes.get(..16) != Some(&b"\x89PNG\r\n\x1a\n\0\0\0\rIHDR"[..]) || size.as_ref().map(|v| v.as_slice()) != Some(expected.as_slice()) {
-        return Err(bad("Enki returned invalid PNG dimensions"));
+        return Err(bad("The on-device runtime returned invalid PNG dimensions"));
     }
     Ok(())
 }
@@ -225,7 +225,7 @@ pub fn specs() -> Vec<CommandSpec> {
         label: "Generate Image…",
         menu: &["Image"],
         shortcut: None,
-        params: r#"{"prompt":text,"negative":text?,"model":id? (empty: Enki recommendation),"width":64..1024=512,"height":64..1024=512 (multiples of 8),"steps":1..50?,"cfg":1..20?,"seed":i64=-1,"document":id?,"placement":"layer|background"="layer","dryRun":bool=false} → {layer,seed,model}. Linux native, installed runtime required. Creates an editable layer in one undo step, or inserts a full-canvas background beneath a masked subject; Session::start runs cancellably in the background."#,
+        params: r#"{"prompt":text,"negative":text?,"model":id? (empty: Oqelith recommendation),"width":64..1024=512,"height":64..1024=512 (multiples of 8),"steps":1..50?,"cfg":1..20?,"seed":i64=-1,"document":id?,"placement":"layer|background"="layer","dryRun":bool=false} → {layer,seed,model}. Linux native, installed runtime required. Creates an editable layer in one undo step, or inserts a full-canvas background beneath a masked subject; Session::start runs cancellably in the background."#,
         enabled,
         run,
         journal: true,

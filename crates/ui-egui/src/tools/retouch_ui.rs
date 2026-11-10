@@ -748,10 +748,18 @@ fn protect_tones_checkbox(ui: &mut egui::Ui, on: &mut bool) -> (egui::Response, 
     let (mut resp, label_resp) = ui
         .horizontal(|ui| {
             ui.spacing_mut().item_spacing.x = 6.0;
+            // Even inside a scrolling bar, a named control must fit the viewport.
+            ui.set_max_width((ui.ctx().content_rect().width() - 20.0).max(14.0));
             let (rect, resp) = ui.allocate_exact_size(vec2(14.0, 14.0), egui::Sense::CLICK);
             let resp = resp.on_hover_cursor(egui::CursorIcon::PointingHand);
             let l = ui
-                .add(egui::Label::new(egui::RichText::new(label).color(t.text_dim)).selectable(false).sense(egui::Sense::click()))
+                .add(
+                    egui::Label::new(egui::RichText::new(label).color(t.text_dim))
+                        .truncate()
+                        .show_tooltip_when_elided(false)
+                        .selectable(false)
+                        .sense(egui::Sense::click()),
+                )
                 .on_hover_cursor(egui::CursorIcon::PointingHand);
             // Pressing the label presses the box (#4476).
             let pressed = resp.is_pointer_button_down_on() || l.is_pointer_button_down_on();

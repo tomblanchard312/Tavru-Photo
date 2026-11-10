@@ -7,14 +7,14 @@ Upstream advances by 1,311 commits since `a25999311`. The review branch is
 ## Integration decisions
 
 - Preserve LumaFoundry's independent implementation policy, product identity,
-  home screen, Enki features, and existing Phosphor icon catalog.
+  home screen, Oqelith features, and existing Phosphor icon catalog.
 - Retain main's newer TavruOS/Oqelith wording and authenticated dependency/release
   workflows from PRs #12 and #13. PR #11 is separate, unmerged work; this sync does
   not select a different font-dependency strategy on its behalf.
 - Keep both upstream and fork license notices, including the new craft-pdf/Hayro
   renderer's font, ICC and character-map notices. New PDF import code remains subject
   to corpus and runtime checks; accepting a merge is not usability evidence.
-- Combine Enki generation/background dialogs with upstream variable dialogs.
+- Combine Oqelith generation/background dialogs with upstream variable dialogs.
 - Adapt the retained home screen to upstream native Wayland file-drop support;
   remove the obsolete unsupported-drop warning and retain the existing home layout.
 - Map new pin and counterclockwise-rotation controls to the same licensed Phosphor
@@ -34,13 +34,13 @@ range for the complete upstream history.
 
 ## Validation
 
-The first native/Enki test attempts stopped because `/tmp/luma-fonts` had been
+The first native/Oqelith test attempts stopped because `/tmp/luma-fonts` had been
 removed since the earlier session. Restored the public craft-fonts checkout at
 `b076417b5880bd4154bd22f00695b1d28c6bea83` and restarted affected checks.
 Confirmed local results:
 
 - Native application and CLI build pass (`cargo build --locked -p photocraft -p photocraft-cli`).
-- Enki targeted tests: 22 passed, one ignored; adversarial command panic hunt passes.
+- Oqelith targeted tests: 22 passed, one ignored; adversarial command panic hunt passes.
 - UI/engine all-target Clippy with warnings denied passes.
 - Layering: 31 crates; panel-command routing and all five GPU setup tests pass.
 - Wasm: 24 crates plus codecs with HEIF pass.

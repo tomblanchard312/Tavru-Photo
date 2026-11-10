@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Check MSI icon references without building or installing LumaFoundry.
+  Check MSI icon references without building or installing Tavru Photo.
 
 .DESCRIPTION
   ICE50 requires advertised shortcut icon identifiers to have the target file's extension.

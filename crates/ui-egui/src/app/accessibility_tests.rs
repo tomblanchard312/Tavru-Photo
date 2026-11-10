@@ -9,8 +9,8 @@ fn shell_semantics_and_keyboard_new_document() {
         PhotocraftApp::new(photocraft_engine::Session::new(), Default::default())
     });
     h.run_steps(4);
-    assert_eq!(h.root().accesskit_node().label().as_deref(), Some("LumaFoundry"));
-    h.get_by_role_and_label(Role::Heading, "LumaFoundry");
+    assert_eq!(h.root().accesskit_node().label().as_deref(), Some("Tavru Photo"));
+    h.get_by_role_and_label(Role::Heading, "Tavru Photo");
     h.get_by_role_and_label(Role::Button, "Set foreground color");
     h.get_by_role_and_label(Role::Button, "Set background color");
     h.get_by_role_and_label(Role::Button, "New document…     Ctrl+N").focus();

@@ -1,9 +1,9 @@
 # Development guide
 
-This fork is **LumaFoundry**: https://github.com/tomblanchard312/lumafoundry.
+This fork is **Tavru Photo**: https://github.com/tomblanchard312/Tavru-Photo.
 Cargo packages, binary names, settings paths, automation ids and `.pcraft` files retain
-the upstream machine names for compatibility. Visible product branding uses LumaFoundry.
-Historical parity documentation describes upstream LumaFoundry.
+the upstream machine names for compatibility. Visible product branding uses Tavru Photo.
+Historical parity documentation describes upstream Tavru Photo.
 
 ## Prerequisites
 
@@ -35,13 +35,13 @@ This error indicates an application-control restriction; moving `CARGO_TARGET_DI
 reinstalling Rust does not establish that the blocked executable is trusted. See Microsoft's
 [Smart App Control FAQ](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions)
 for the available controls; there is no per-app exception. On a managed device, ask your
-administrator about an approved development environment. If you only want to run LumaFoundry,
+administrator about an approved development environment. If you only want to run Tavru Photo,
 use the [packaged Windows release](https://github.com/storytold/photocraft/releases) to avoid
 building locally; the downloaded app is still subject to Windows application-control checks.
 
 ## Build and run
 
-On Linux, LumaFoundry keeps its integrated client-side decorated title bar by default (#4439), including desktop-matched buttons. Enabling **System Title Bar** in Preferences switches to the system frame at the next launch: on GNOME/Wayland, winit provides font-free Adwaita controls; on X11, the window manager supplies the frame. Explicit saved choices are respected and Windows/macOS defaults are unchanged.
+On Linux, Tavru Photo keeps its integrated client-side decorated title bar by default (#4439), including desktop-matched buttons. Enabling **System Title Bar** in Preferences switches to the system frame at the next launch: on GNOME/Wayland, winit provides font-free Adwaita controls; on X11, the window manager supplies the frame. Explicit saved choices are respected and Windows/macOS defaults are unchanged.
 
 ```sh
 cargo run --release -p photocraft -- path/to/image.psd      # desktop app
@@ -56,7 +56,7 @@ cargo xtask parity                                         # Photoshop menu cove
 
 Image code is slow at `opt-level 0`, so the workspace profile builds dependencies at `opt-level 2`. Use `--release` for anything interactive. Test builds compile ui-egui itself at `opt-level 0` (`[profile.test.package.photocraft-ui-egui]` in `Cargo.toml`): it was one of the biggest test-build units, and its tests run no heavy pixel code of their own.
 
-The dev profile builds LumaFoundry's crates with `debug = "line-tables-only"` and dependencies with no debug info: panic backtraces keep file and line in LumaFoundry code, and test binaries link about twice as fast. To inspect local variables in a debugger, build with `CARGO_PROFILE_DEV_DEBUG=true`.
+The dev profile builds Tavru Photo's crates with `debug = "line-tables-only"` and dependencies with no debug info: panic backtraces keep file and line in Tavru Photo code, and test binaries link about twice as fast. To inspect local variables in a debugger, build with `CARGO_PROFILE_DEV_DEBUG=true`.
 
 ### Faster test loops
 
@@ -141,7 +141,7 @@ CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo test --workspace     # runs the Japa
 
 ## One instance per user
 
-On Windows and Linux the first LumaFoundry holds an exclusive lock on `instance.lock` in the config directory and listens on a loopback port named in `instance.json` (with a fresh 256-bit token; the file is 0600 on Unix). Inside a Flatpak it listens on a Unix socket instead, `$XDG_RUNTIME_DIR/app/<app id>/instance.sock` (0600), because Flatpak isolates each sandbox's network namespace, loopback included, unless the app is granted `--share=network`, while that runtime directory is shared by all sandboxes of the app (#1540); the lock, token and protocol are the same. A later launch hands its file arguments there and exits, so files opened from Explorer or a file manager become tabs in the running window (#3708). The primary answers `ok` only once its UI has taken the files; a launch that gets anything else (the primary is starting, hung or closing) keeps retrying the lock for up to 10 s, becoming the primary itself once the old one lets go, and then starts a separate instance, so a file is never acknowledged and lost. When the event loop ends (and before the CPU-compatibility relaunch) the primary refuses new files and frees the lock. It applies only with the per-user settings folder: a portable copy (`LumaFoundryData` beside the executable) or `PHOTOCRAFT_CONFIG_DIR` may be shared between users, so those launches run separately. So do `--new-instance` (or `PHOTOCRAFT_NEW_INSTANCE=1`), every `--control` launch, and launches given a per-process option (`--safe-gpu`, `--present-mode`, `--frame-latency`, `--stroke-trace`, `--in-window-menus`, `--automation-*-root`). A `cargo run` while an installed LumaFoundry is running forwards to it: pass `--new-instance` or set `PHOTOCRAFT_CONFIG_DIR`. macOS gets the same behaviour from LaunchServices (`apple_events.rs`). On native Wayland the running window can't bring itself forward (that takes the launcher's `XDG_ACTIVATION_TOKEN`, and winit 0.30 can't activate an existing window with one), so it asks for attention instead and the taskbar highlights it; X11, XWayland and Windows bring it to the front. Code: `apps/photocraft/src/single_instance.rs`.
+On Windows and Linux the first Tavru Photo holds an exclusive lock on `instance.lock` in the config directory and listens on a loopback port named in `instance.json` (with a fresh 256-bit token; the file is 0600 on Unix). Inside a Flatpak it listens on a Unix socket instead, `$XDG_RUNTIME_DIR/app/<app id>/instance.sock` (0600), because Flatpak isolates each sandbox's network namespace, loopback included, unless the app is granted `--share=network`, while that runtime directory is shared by all sandboxes of the app (#1540); the lock, token and protocol are the same. A later launch hands its file arguments there and exits, so files opened from Explorer or a file manager become tabs in the running window (#3708). The primary answers `ok` only once its UI has taken the files; a launch that gets anything else (the primary is starting, hung or closing) keeps retrying the lock for up to 10 s, becoming the primary itself once the old one lets go, and then starts a separate instance, so a file is never acknowledged and lost. When the event loop ends (and before the CPU-compatibility relaunch) the primary refuses new files and frees the lock. It applies only with the per-user settings folder: a portable copy (`LumaFoundryData` beside the executable) or `PHOTOCRAFT_CONFIG_DIR` may be shared between users, so those launches run separately. So do `--new-instance` (or `PHOTOCRAFT_NEW_INSTANCE=1`), every `--control` launch, and launches given a per-process option (`--safe-gpu`, `--present-mode`, `--frame-latency`, `--stroke-trace`, `--in-window-menus`, `--automation-*-root`). A `cargo run` while an installed Tavru Photo is running forwards to it: pass `--new-instance` or set `PHOTOCRAFT_CONFIG_DIR`. macOS gets the same behaviour from LaunchServices (`apple_events.rs`). On native Wayland the running window can't bring itself forward (that takes the launcher's `XDG_ACTIVATION_TOKEN`, and winit 0.30 can't activate an existing window with one), so it asks for attention instead and the taskbar highlights it; X11, XWayland and Windows bring it to the front. Code: `apps/photocraft/src/single_instance.rs`.
 
 ## Graphics startup and device loss
 
@@ -166,9 +166,9 @@ Native pixel residency, RAM limits and scratch failure recovery are described in
 [`scratch-disks.md`](scratch-disks.md). Control `ui.inspect` includes `scratch` counters and
 the `memory` sample, effective allowances and current working reservations.
 
-The desktop app writes its `log` records to standard error and to `logs/photocraft.log` in the settings directory (Linux `~/.config/photocraft/logs/`, macOS `~/Library/Application Support/Photocraft/logs/`, Windows `%APPDATA%\Photocraft\logs\`, or under `PHOTOCRAFT_CONFIG_DIR` / the portable data folder). A start launched from a desktop menu or the Dock has no terminal, so this file is what to attach to a bug report: GPU startup fallbacks, a lost device and the crash guard's panic report all land there. Each launch moves the previous log to `photocraft.1.log` (and that one to `photocraft.2.log`), so the log of a run that crashed survives the next start. A launch while another LumaFoundry is still running leaves that instance's log where it is and writes its own `photocraft-<pid>.log` next to it (the newest two of those are kept once their instances have exited; the `LumaFoundry <version>, log file <path>` line at startup names the file in use). The file stops growing at 16 MiB. `--version` and command-line errors write no file. A desktop start that fails before any window exists logs the error and, when no terminal, automation client or headless session can report it, shows it in a dialog naming this file (#7643).
+The desktop app writes its `log` records to standard error and to `logs/photocraft.log` in the settings directory (Linux `~/.config/photocraft/logs/`, macOS `~/Library/Application Support/Photocraft/logs/`, Windows `%APPDATA%\Photocraft\logs\`, or under `PHOTOCRAFT_CONFIG_DIR` / the portable data folder). A start launched from a desktop menu or the Dock has no terminal, so this file is what to attach to a bug report: GPU startup fallbacks, a lost device and the crash guard's panic report all land there. Each launch moves the previous log to `photocraft.1.log` (and that one to `photocraft.2.log`), so the log of a run that crashed survives the next start. A launch while another Tavru Photo is still running leaves that instance's log where it is and writes its own `photocraft-<pid>.log` next to it (the newest two of those are kept once their instances have exited; the `Tavru Photo <version>, log file <path>` line at startup names the file in use). The file stops growing at 16 MiB. `--version` and command-line errors write no file. A desktop start that fails before any window exists logs the error and, when no terminal, automation client or headless session can report it, shows it in a dialog naming this file (#7643).
 
-By default LumaFoundry's own crates log at `info` and everything else at `warn`. `RUST_LOG` replaces that with env_logger-style directives, for example `RUST_LOG=debug`, `RUST_LOG=warn,photocraft_gpu=trace` or `RUST_LOG=info,wgpu_core=warn`; a directive ending in `*` covers every target starting with it (`photocraft*=debug`). The logger is `apps/photocraft/src/logging.rs`; the web build logs to the browser console instead.
+By default Tavru Photo's own crates log at `info` and everything else at `warn`. `RUST_LOG` replaces that with env_logger-style directives, for example `RUST_LOG=debug`, `RUST_LOG=warn,photocraft_gpu=trace` or `RUST_LOG=info,wgpu_core=warn`; a directive ending in `*` covers every target starting with it (`photocraft*=debug`). The logger is `apps/photocraft/src/logging.rs`; the web build logs to the browser console instead.
 
 ## Environment variables
 
@@ -279,7 +279,7 @@ The `--cli` selector is removed; all remaining arguments, stdin, stdout, stderr 
 
 ### GPU rendering
 
-LumaFoundry CLI supports optional native GPU acceleration for flat exports and composition in `convert`, `run`, `batch`, `serve`, and headless `mcp`:
+Tavru Photo CLI supports optional native GPU acceleration for flat exports and composition in `convert`, `run`, `batch`, `serve`, and headless `mcp`:
 
 - `--gpu`: Opt into GPU acceleration. Prefers a hardware adapter, performs bounded multi-band readback, and automatically falls back to CPU if an unsupported document feature (such as unsupported blend modes or layered saves) is encountered or if the GPU device becomes unavailable.
 - `--no-gpu`: Explicitly disable GPU rendering and use CPU composition (the default).
@@ -384,7 +384,7 @@ A typical agent loop (place inputs under the configured read root and outputs un
 
 `crates/cms` is our own pure-Rust ICC engine (v2/v4 parsing, matrix/TRC and LUT profiles, all four
 intents, black point compensation). It ships CC0 built-in profiles, including a synthetic
-"LumaFoundry Coated CMYK", because Adobe's CMYK profiles are proprietary (see `crates/cms/README.md`).
+"Tavru Photo Coated CMYK", because Adobe's CMYK profiles are proprietary (see `crates/cms/README.md`).
 
 - Documents carry an optional embedded ICC profile (`Document::icc_profile`); `edit.assignProfile`
   and `edit.convertToProfile` change it. Mode changes (`image.mode.*`) convert through cms.
@@ -474,7 +474,7 @@ that matches nothing any more is an error, so the list only shrinks.
 
 ### Headless GPU rendering and flat export (issue #8062)
 
-LumaFoundry foundation PR 1 adds an optional, additive headless GPU rendering backend for flat export and headless automation sessions:
+Tavru Photo foundation PR 1 adds an optional, additive headless GPU rendering backend for flat export and headless automation sessions:
 
 - **Layering & Contracts:**
   - `photocraft-gpu` (L3) provides windowless native context creation ([`NativeContext`]), checked bounded band readback ([`readback::render_bands`]), and device health monitoring ([`DeviceHealth`]). It does not depend on IO or UI crates.
@@ -494,7 +494,7 @@ LumaFoundry foundation PR 1 adds an optional, additive headless GPU rendering ba
 
 ## Scorecard and performance budgets
 
-[`docs/scorecard.md`](scorecard.md) says, with numbers, where LumaFoundry stands per area. It is
+[`docs/scorecard.md`](scorecard.md) says, with numbers, where Tavru Photo stands per area. It is
 generated; never edit it by hand.
 
 ```sh
@@ -645,7 +645,7 @@ How the web shell (`apps/photocraft-web/src/web.rs`) differs from desktop:
 - **File dialogs** use `rfd::AsyncFileDialog`. Chosen file contents arrive asynchronously through `Services::file_dialog`; this includes File › Open and single-file commands such as Place Embedded.
 - **Save / Save As / Export** trigger a browser download of the encoded bytes. The shell does this with a Blob, an object URL and a temporary `<a download>`, all created from Rust. There is no save dialog, so the suggested name becomes the download name.
 - **Drag-and-drop:** `WebShell` takes the frame's `dropped_files` before the app sees them. It reads each file with `DroppedFile::bytes_async` and pushes the bytes into `Services::inbox`.
-- **Startup failures:** `index.html` shows "Loading LumaFoundry…" until the app removes it, or replaces it with the error when the web runner fails to start. If the `.wasm` never downloads or doesn't match the page's `.js` (a stale cached `index.html` after a deploy), no Rust runs at all, so the page itself (CSS only, no script) adds a hint with a Reload link after 20 seconds.
+- **Startup failures:** `index.html` shows "Loading Tavru Photo…" until the app removes it, or replaces it with the error when the web runner fails to start. If the `.wasm` never downloads or doesn't match the page's `.js` (a stale cached `index.html` after a deploy), no Rust runs at all, so the page itself (CSS only, no script) adds a hint with a Reload link after 20 seconds.
 - **No control server:** browsers can't listen on TCP. To automate the web build, drive headless Chrome with `--remote-debugging-port`. `Page.setInterceptFileChooserDialog` plus `DOM.setFileInputFiles` covers Open, `Input.dispatchDragEvent` with `files` covers drops, and `Browser.setDownloadBehavior` captures downloads.
 - Headless Chrome on macOS (`--headless=new --enable-unsafe-webgpu`) gets a real WebGPU adapter.
 
@@ -758,7 +758,7 @@ cargo run -p photocraft-psd --example atn_roundtrip -- "Default Actions.atn"   #
 The real-file oracles are `corpus/atn/` (16 sets from seven public repositories, see *Test
 corpora*): `photocraft-psd`'s corpus test parses every file and rewrites it byte for byte;
 `photocraft-engine`'s loads, saves and reloads every set and caps the steps that still have no
-LumaFoundry equivalent.
+Tavru Photo equivalent.
 
 Events outside the table load as `actions.photoshopStep` steps that keep the descriptor
 verbatim (so Save Actions writes them back) and fail at playback with the step's Photoshop name.
@@ -897,7 +897,7 @@ physical RAM (excluding swap) and, where measurable, system commit headroom:
   cannot be read, or whose membership file is malformed or empty, fails closed (available memory
   is treated as zero, `Some(0)`) rather than falling back to unrestricted host RAM. That reading
   gives H = 0 from the formula, so it stays refused (only a credited tile share can pass), and
-  the refusal says LumaFoundry measured no free memory or could not read the system's memory limit.
+  the refusal says Tavru Photo measured no free memory or could not read the system's memory limit.
 - Applications can lower the admission threshold with `ImportOptions::psd_max_pixel_bytes`; explicit caller limits may lower admission, never bypass the hard boundary.
 - Concurrent PSD decodes are serialized using a process-wide, cancellation-aware admission gate, with nested decodes sharing the enclosing allowance.
 - A pending high-memory approval is bound to one source and one estimate. The engine keeps at
@@ -957,8 +957,8 @@ free-memory figure. This holds for `doc.open` and `doc.place` and for the MCP `d
 command. GUI automation imports currently cross a service boundary that returns string errors.
 
 When measured free memory set the limit, the refusal message gives the free amount and ends with
-"Close other apps and try again"; a reading of zero says LumaFoundry measured no free memory or
-could not read the system's memory limit. The approval prompt warns that LumaFoundry may run out of
+"Close other apps and try again"; a reading of zero says Tavru Photo measured no free memory or
+could not read the system's memory limit. The approval prompt warns that Tavru Photo may run out of
 memory when opening the file would leave less than 1 GiB of the measured free RAM
 (`LOW_MEMORY_WARNING_MARGIN`).
 
@@ -1096,7 +1096,7 @@ value to match and differ from the base. Numbers compare by exact value, so `17`
 Every check is run and reported (not only the first failure), each result naming the layer and the property path. See the starter recipes for examples. Regenerate hashes when deliberately changing
 the corpus pin, and review them against `xtask/photoshop-corpus.sha256`.
 
-These checks use LumaFoundry's own importer and inspector; they do **not** prove that
+These checks use Tavru Photo's own importer and inspector; they do **not** prove that
 Photoshop can open the output or interprets it correctly. The report marks those
 stages `not_run`. The ordinary CI corpus job does not yet run this recipe command or
 upload its artifacts; that integration and the Photoshop judge are separate work.
@@ -1133,9 +1133,9 @@ their own modes, an upper stroke covering lower ones.
 ## System printing
 
 `file.print` and `file.printOneCopy` keep PDF layout, scaling, marks and ICC conversion in
-LumaFoundry and submit the rendered bytes through `craft-print` at the Git revision pinned in
+Tavru Photo and submit the rendered bytes through `craft-print` at the Git revision pinned in
 `Cargo.toml`. CUPS streams the PDF on macOS/Linux; Windows uses the shared Windows PDF backend.
-The driver receives exact physical sheet size so it does not scale LumaFoundry's layout twice.
+The driver receives exact physical sheet size so it does not scale Tavru Photo's layout twice.
 Windows raster printing does not establish physical-printer colour fidelity; test critical
 photo output with the actual printer and its profile.
 

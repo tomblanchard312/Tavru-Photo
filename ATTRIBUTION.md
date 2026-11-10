@@ -167,11 +167,11 @@ are adapted from Skyfuller1303’s MIT OR Apache-2.0 implementation in
 extension and current-main integration build on that source. Clipboard and unrelated
 Shape Tools changes from that branch are not included.
 
-## Original LumaFoundry artwork
+## Original Tavru Photo artwork
 
 | Path | Title | Author | Source | License |
 |---|---|---|---|---|
-| `assets/app-icon/photocraft*.svg`, `photocraft-1024.png`, `photocraft.ico`, `photocraft.icns`, `hicolor/` | LumaFoundry LF monogram | OpenAI Codex for LumaFoundry | Original geometric vector artwork | MIT OR Apache-2.0, [`LICENSE.txt`](assets/app-icon/LICENSE.txt) |
+| `assets/app-icon/photocraft*.svg`, `photocraft-1024.png`, `photocraft.ico`, `photocraft.icns`, `hicolor/` | Tavru Photo LF monogram | OpenAI Codex for Tavru Photo | Original geometric vector artwork | MIT OR Apache-2.0, [`LICENSE.txt`](assets/app-icon/LICENSE.txt) |
 
 ## Eridu design system assets
 
@@ -181,7 +181,7 @@ Shape Tools changes from that branch are not included.
 | `eridu-style` dependency display/numeric font roles | Source Serif 4 Display Semibold and Inter Tabular | Adobe (Source Serif); Rasmus Andersson (Inter) | https://github.com/tomblanchard312/eridu-style/tree/d3b4cdc03706ac100fae2de907282575652b76ad/fonts | SIL OFL 1.1; original licenses retained in the pinned dependency. |
 ## Assets bundled by the PDF reader dependency (craft-pdf)
 
-LumaFoundry imports PDF pages through `craft-pdf`, pinned to the craft-libs revision
+Tavru Photo imports PDF pages through `craft-pdf`, pinned to the craft-libs revision
 `c5a1cbfb5f9049f9270955caffb5bee5997aebf7`. The renderer vendors Hayro and the assets below;
 they ship inside the dependency rather than being copied into this repository. PDFium is no
 longer used or shipped.

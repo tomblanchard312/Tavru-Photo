@@ -1,6 +1,6 @@
 {
   "id": "photocraft",
-  "name": "LumaFoundry",
+  "name": "Tavru Photo",
   "upgradeCode": "D9660F32-2D0A-4ABE-B73D-17BE25F1542C",
   "sources": [
     "photocraft.wxs"
@@ -154,7 +154,7 @@
       "-1",
       "Software\\Classes\\Applications\\photocraft.exe",
       "FriendlyAppName",
-      "LumaFoundry"
+      "Tavru Photo"
     ],
     [
       "-1",

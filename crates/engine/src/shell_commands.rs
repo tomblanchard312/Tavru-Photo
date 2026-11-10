@@ -94,12 +94,12 @@ pub const SHELL_COMMANDS: &[(&str, &str, &[&str], Option<&str>)] = &[
     ("window.theme.system", "Sync with system", &["Window", "Theme"], None),
     ("edit.search", "Search…", &["Edit"], Some("Cmd+F")),
     ("help.discord", "Project Support…", &["Help"], None),
-    ("help.website", "LumaFoundry Website", &["Help"], None),
+    ("help.website", "Tavru Photo Website", &["Help"], None),
     ("help.artcraftWebsite", "Maintainer on GitHub", &["Help"], None),
-    ("help.github", "LumaFoundry on GitHub", &["Help"], None),
+    ("help.github", "Tavru Photo on GitHub", &["Help"], None),
     ("help.reportIssue", "Report an Issue…", &["Help"], None),
     ("help.systemInfo", "System Info…", &["Help"], None),
-    ("help.about", "About LumaFoundry", &["Help"], None),
+    ("help.about", "About Tavru Photo", &["Help"], None),
 ];
 
 /// The tools, in toolbar order: shortcut id (`tools.select.<tool>`), Photoshop's name for it

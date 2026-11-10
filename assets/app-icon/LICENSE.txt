@@ -1,3 +1,3 @@
-LumaFoundry LF monogram and derived icons in this directory.
-Original geometric vector artwork created by OpenAI Codex for LumaFoundry, 2026.
+Tavru Photo LF monogram and derived icons in this directory.
+Original geometric vector artwork created by OpenAI Codex for Tavru Photo, 2026.
 Licensed under MIT OR Apache-2.0; see ../../LICENSE-MIT and ../../LICENSE-APACHE.

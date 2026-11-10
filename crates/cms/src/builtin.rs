@@ -83,15 +83,15 @@ impl Builtin {
         match self {
             Builtin::Srgb => "sRGB IEC61966-2.1",
             Builtin::DisplayP3 => "Display P3",
-            Builtin::AdobeRgbCompat => "Adobe RGB (1998)-compatible (LumaFoundry)",
-            Builtin::ProPhotoCompat => "ProPhoto RGB-compatible (ROMM primaries, LumaFoundry)",
-            Builtin::LinearSrgb => "Linear sRGB (LumaFoundry)",
-            Builtin::AcesCg => "ACEScg (AP1, linear, LumaFoundry)",
-            Builtin::Rec2020 => "Rec. ITU-R BT.2020 (LumaFoundry)",
-            Builtin::GrayGamma22 => "Gray Gamma 2.2 (LumaFoundry)",
-            Builtin::SGray => "sGray (sRGB tone curve, LumaFoundry)",
-            Builtin::DotGain20Compat => "Dot Gain 20%-compatible (gamma 1.732, LumaFoundry)",
-            Builtin::LabD50 => "Lab D50 identity (LumaFoundry)",
+            Builtin::AdobeRgbCompat => "Adobe RGB (1998)-compatible (Tavru Photo)",
+            Builtin::ProPhotoCompat => "ProPhoto RGB-compatible (ROMM primaries, Tavru Photo)",
+            Builtin::LinearSrgb => "Linear sRGB (Tavru Photo)",
+            Builtin::AcesCg => "ACEScg (AP1, linear, Tavru Photo)",
+            Builtin::Rec2020 => "Rec. ITU-R BT.2020 (Tavru Photo)",
+            Builtin::GrayGamma22 => "Gray Gamma 2.2 (Tavru Photo)",
+            Builtin::SGray => "sGray (sRGB tone curve, Tavru Photo)",
+            Builtin::DotGain20Compat => "Dot Gain 20%-compatible (gamma 1.732, Tavru Photo)",
+            Builtin::LabD50 => "Lab D50 identity (Tavru Photo)",
             Builtin::CoatedCmyk => crate::synth::DESCRIPTION,
         }
     }
@@ -146,7 +146,7 @@ pub fn srgb() -> &'static Profile {
 /// only assigned to such files, never offered as a working space.
 pub fn linear_gray() -> &'static Profile {
     static PROFILE: OnceLock<Profile> = OnceLock::new();
-    PROFILE.get_or_init(|| gray("Linear Gray (LumaFoundry)", Curve::Gamma(1.0)))
+    PROFILE.get_or_init(|| gray("Linear Gray (Tavru Photo)", Curve::Gamma(1.0)))
 }
 
 /// The ICC D65 used for the RGB spaces (chromaticity 0.3127, 0.3290).
@@ -305,7 +305,7 @@ pub fn cicp_rgb(primaries: u16, transfer: u16, linear: bool) -> Option<Profile> 
         5 => (Curve::Gamma(2.8), "gamma 2.8"),
         _ => return None,
     };
-    Some(rgb(&format!("{name} {curve} (LumaFoundry)"), prim, d65(), trc))
+    Some(rgb(&format!("{name} {curve} (Tavru Photo)"), prim, d65(), trc))
 }
 
 fn build(b: Builtin) -> Profile {

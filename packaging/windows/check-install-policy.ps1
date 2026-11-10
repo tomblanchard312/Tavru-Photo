@@ -57,7 +57,7 @@ try {
     foreach ($row in (Read-Rows $database 'SELECT `Directory`, `Directory_Parent`, `DefaultDir` FROM `Directory`' 3)) { $dirs[$row[0]] = @($row[1],$row[2]) }
     if ($dirs['INSTALLFOLDER'][0] -ne 'CraftSuiteFolder' -or $dirs['CraftSuiteFolder'][1] -ne 'LumaFoundry' -or
         $dirs['CraftSuiteFolder'][0] -ne 'LocalProgramsFolder' -or $dirs['LocalProgramsFolder'][0] -ne 'LocalAppDataFolder') {
-      throw 'Launcher new-install folder must be under the per-user LumaFoundry suite root.'
+      throw 'Launcher new-install folder must be under the per-user Tavru Photo suite root.'
     }
     foreach ($explicit in @('', 'F:\Chosen exact launcher')) {
       Set-SessionProperty $session 'PREVIOUSINSTALLFOLDER' 'E:\Existing exact launcher'
@@ -76,7 +76,7 @@ try {
         throw 'Launcher registration or shortcut preference changed unexpectedly.'
       }
     }
-    Write-Output 'PASS LumaFoundry Launcher: per-user scope, suite folder, remembered/custom paths and existing registration. No installation performed.'
+    Write-Output 'PASS Tavru Photo Launcher: per-user scope, suite folder, remembered/custom paths and existing registration. No installation performed.'
     return
   }
   if ($properties['ALLUSERS'] -ne '2' -or $properties['MSIINSTALLPERUSER'] -ne '1') {

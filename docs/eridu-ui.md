@@ -1,6 +1,6 @@
-# LumaFoundry interface brief
+# Tavru Photo interface brief
 
-LumaFoundry serves people editing layered images and agents driving the same command engine. Its primary tasks are opening an image, selecting and editing pixels or layers, reviewing generated changes, and saving an editable document or export.
+Tavru Photo serves people editing layered images and agents driving the same command engine. Its primary tasks are opening an image, selecting and editing pixels or layers, reviewing generated changes, and saving an editable document or export.
 
 ## Shared design contract
 
@@ -16,7 +16,7 @@ Use the image canvas as the recognizable central workspace, with tools at the le
 
 Linux is the primary validation platform; Windows and web compile/test gates remain supported. FreeBSD runtime and assistive-technology acceptance require native validation. The UI icon catalog uses Phosphor regular, with filled variants for selected toolbar and rail controls. Precision pen pointers retain their calibrated cursor artwork and hotspots; these are editing cursors, not toolbar glyphs. Dense editor spacing and every auxiliary dialog still require adoption review. The application retains its own LF identity and existing open/save integration. Full EDS compliance requires the shared adoption checklist, including keyboard-only, screen-reader, failure-state and cross-application testing.
 
-The LumaFoundry maintainers own these remaining migration items. Track their completion with UI changes and review evidence rather than treating palette adoption as complete accessibility acceptance.
+The Tavru Photo maintainers own these remaining migration items. Track their completion with UI changes and review evidence rather than treating palette adoption as complete accessibility acceptance.
 
 ## Icon and font provenance
 

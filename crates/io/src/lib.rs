@@ -1193,7 +1193,7 @@ fn export_stages_with_renderer(
     }
     if ext == "xcf" {
         return Err(IoError::Unsupported(
-            "XCF is GIMP's own format and LumaFoundry only opens it; save as .pcraft to keep the layers, or export a flat image".into(),
+            "XCF is GIMP's own format and Tavru Photo only opens it; save as .pcraft to keep the layers, or export a flat image".into(),
         ));
     }
     if ext == "ora" {

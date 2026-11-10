@@ -21,8 +21,8 @@ fn main() {
     }
     let mut res = winresource::WindowsResource::new();
     res.set_icon("../../assets/app-icon/photocraft.ico")
-        .set("ProductName", "LumaFoundry")
-        .set("FileDescription", "LumaFoundry image editor")
+        .set("ProductName", "Tavru Photo")
+        .set("FileDescription", "Tavru Photo image editor")
         .set("CompanyName", "LumaFoundry contributors")
         .set("LegalCopyright", "Copyright (c) the LumaFoundry authors. MIT OR Apache-2.0.")
         .set("OriginalFilename", "photocraft.exe")

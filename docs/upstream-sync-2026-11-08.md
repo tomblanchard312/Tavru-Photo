@@ -1,12 +1,12 @@
 # Upstream synchronization — 2026-11-08
 
-Draft merge from upstream `aae9b7ea6` into LumaFoundry main `160a98f04`.
+Draft merge from upstream `aae9b7ea6` into Tavru Photo main `160a98f04`.
 Upstream advances by 1,311 commits since `a25999311`. The review branch is
 `codex/photocraft-sync-2026-11-08`; it does not merge or publish main.
 
 ## Integration decisions
 
-- Preserve LumaFoundry's independent implementation policy, product identity,
+- Preserve Tavru Photo's independent implementation policy, product identity,
   home screen, Enki features, and existing Phosphor icon catalog.
 - Retain main's newer TavruOS/Oqelith wording and authenticated dependency/release
   workflows from PRs #12 and #13. PR #11 is separate, unmerged work; this sync does
@@ -19,7 +19,7 @@ Upstream advances by 1,311 commits since `a25999311`. The review branch is
   remove the obsolete unsupported-drop warning and retain the existing home layout.
 - Map new pin and counterclockwise-rotation controls to the same licensed Phosphor
   family, regenerating regular and filled assets through the existing importer.
-- Merge translation additions, deduplicate keys and retain LumaFoundry product text.
+- Merge translation additions, deduplicate keys and retain Tavru Photo product text.
   New upstream language catalogs remain drafts as stated by their provenance notes.
 - Exclude upstream's contributor-policy replacement and its house-rules workflow;
   retain the fork's AGENTS.md and existing CLAUDE.md policy. This is a code sync,
@@ -45,7 +45,7 @@ Confirmed local results:
 - Layering: 31 crates; panel-command routing and all five GPU setup tests pass.
 - Wasm: 24 crates plus codecs with HEIF pass.
 - Parity regeneration completes; regenerated scorecard passes `--check`.
-- Offscreen 1440x900 home screenshot rendered and visually inspected: LumaFoundry
+- Offscreen 1440x900 home screenshot rendered and visually inspected: Tavru Photo
   identity, retained home layout, display font and Phosphor controls present.
   Renderer: Vulkan llvmpipe; this is not hardware-GPU or native accessibility evidence.
 

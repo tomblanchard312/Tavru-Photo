@@ -179,6 +179,10 @@ pub static ICONS: &[(&str, &[u8])] = &[
     ("zoom-in", include_bytes!("../../../assets/icons/eridu/regular/magnifying_glass_plus.svg")),
     ("pin", include_bytes!("../../../assets/icons/eridu/regular/push_pin.svg")),
     ("rotate-ccw", include_bytes!("../../../assets/icons/eridu/regular/arrow_counter_clockwise.svg")),
+    ("vertical-align-top", include_bytes!("../../../assets/icons/eridu/regular/align_top.svg")),
+    ("vertical-align-bottom", include_bytes!("../../../assets/icons/eridu/regular/align_bottom.svg")),
+    ("vertical-align-middle", include_bytes!("../../../assets/icons/eridu/regular/align_center_vertical.svg")),
+    ("panel-left", include_bytes!("../../../assets/icons/eridu/regular/sidebar.svg")),
 ];
 
 pub static FILLED_ICONS: &[(&str, &[u8])] = &[
@@ -360,4 +364,8 @@ pub static FILLED_ICONS: &[(&str, &[u8])] = &[
     ("zoom-in", include_bytes!("../../../assets/icons/eridu/fill/magnifying_glass_plus.svg")),
     ("pin", include_bytes!("../../../assets/icons/eridu/fill/push_pin.svg")),
     ("rotate-ccw", include_bytes!("../../../assets/icons/eridu/fill/arrow_counter_clockwise.svg")),
+    ("vertical-align-top", include_bytes!("../../../assets/icons/eridu/fill/align_top.svg")),
+    ("vertical-align-bottom", include_bytes!("../../../assets/icons/eridu/fill/align_bottom.svg")),
+    ("vertical-align-middle", include_bytes!("../../../assets/icons/eridu/fill/align_center_vertical.svg")),
+    ("panel-left", include_bytes!("../../../assets/icons/eridu/fill/sidebar.svg")),
 ];

@@ -10,7 +10,7 @@ Canonical guidance lives in https://github.com/tomblanchard312/TavruOS/tree/main
 
 ## Workspace and interaction
 
-Use the image canvas as the recognizable central workspace, with tools at the left, document tabs above and layer/property inspectors at the right. Settings use category navigation. Group advanced controls in their existing dialogs. Preserve keyboard shortcuts, visible focus, Escape/cancel and undo. Empty state offers New and Open. Populated state shows the image and editable layers. Failed operations retain the document and report the error with recovery guidance. Enki operations expose availability, progress, cancellation and editable generated layers.
+Use the image canvas as the recognizable central workspace, with tools at the left, document tabs above and layer/property inspectors at the right. Settings use category navigation. Group advanced controls in their existing dialogs. Preserve keyboard shortcuts, visible focus, Escape/cancel and undo. Empty state offers New and Open. Populated state shows the image and editable layers. Failed operations retain the document and report the error with recovery guidance. Oqelith operations expose availability, progress, cancellation and editable generated layers.
 
 ## Adoption boundaries
 
@@ -20,7 +20,7 @@ The Tavru Photo maintainers own these remaining migration items. Track their com
 
 ## Icon and font provenance
 
-The immutable `eridu-style` revision `d3b4cdc03706ac100fae2de907282575652b76ad` supplies the display and tabular font families. No font binaries are copied into this repository. `scripts/import-eridu-icons.py` exports the same revision's Phosphor outlines into the SVG loader already used by the application; application aliases are recorded in `assets/icons/eridu-map.json`. To regenerate, install `fonttools==4.60.1` in a virtual environment and run the script with that exact eridu-style checkout, then `cargo fmt --all`. MIT and OFL notices are retained in `ATTRIBUTION.md`, `NOTICE`, and the pinned dependency. The dashed ellipse is a vertically scaled circle outline.
+The immutable `tavru-style` revision `d3b4cdc03706ac100fae2de907282575652b76ad` supplies the display and tabular font families. No font binaries are copied into this repository. `scripts/import-tavru-icons.py` exports the same revision's Phosphor outlines into the SVG loader already used by the application; application aliases are recorded in `assets/icons/tavru-map.json`. To regenerate, install `fonttools==4.60.1` in a virtual environment and run the script with that exact tavru-style checkout, then `cargo fmt --all`. MIT and OFL notices are retained in `ATTRIBUTION.md`, `NOTICE`, and the pinned dependency. The dashed ellipse is a vertically scaled circle outline.
 
 ## Accessibility validation boundary
 

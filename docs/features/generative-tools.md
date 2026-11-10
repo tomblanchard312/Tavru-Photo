@@ -7,7 +7,7 @@ subject masks (`select.subjectEnki`), a masked cutout duplicate (`layer.removeBa
 and source-aware background replacement (`image.replaceBackground`). Background replacement
 protects the subject selection and edits its complement. Edge matching defaults off for
 background replacement because the protected pixels are the subject itself. Subject-mask inference requires the
-separately configured Enki U2Net worker/model; edge refinement reuses the image-guided engine,
+separately configured Oqelith U2Net worker/model; edge refinement reuses the image-guided engine,
 not a learned alpha-matting model. These latest additions still require complete acceptance;
 earlier live evidence below belongs to the previous checkout, not this 0.19.0 port.
 
@@ -15,19 +15,19 @@ earlier live evidence below belongs to the previous checkout, not this 0.19.0 po
 
 The first native implementation is `image.generate`, available through Image › Generate Image and Properties Quick Actions
 for pixel and Smart Object layers. It supports a new image layer or a generated background
-beneath a masked subject. Linux connects directly to the installed Enki runtime, verifies the
+beneath a masked subject. Linux connects directly to the installed Oqelith runtime, verifies the
 peer user, negotiates protocol v3, bounds frames/PNG headers, and uses engine jobs for progress
 and cancellation. Output conversion uses the CMS and retains the document profile and depth.
 
 Prompt, negative prompt, dimensions, model, optional sampling overrides and seed are exposed.
-An empty model requests Enki's recommendation. Generation creates one editable layer and one
+An empty model requests Oqelith's recommendation. Generation creates one editable layer and one
 undo step. Repeating with a negative seed retains alternatives as separate layers; an interactive
 variation browser is still planned. Background generation requires a subject mask and full
 canvas coverage, preserves active subject and selection, and does not claim automatic scene
 or lighting matching. Native transports for other platforms remain open.
 
 The next implementation adds **Image › Fill Selection**, **Remove Object** and **Expand Canvas**.
-They send a colour-managed source/context PNG and a saved edit mask to Enki, then apply the
+They send a colour-managed source/context PNG and a saved edit mask to Oqelith, then apply the
 result as a new masked root layer. Outside-mask pixels and original layers remain unchanged.
 Selection edits use bounded surrounding context, including in large documents, without shrinking
 the selection. The selection itself is preserved, including existing feather weights.
@@ -42,9 +42,9 @@ multiples of 8, with no implicit rounding. Learned subject selection remains a s
 
 | Stage | Tools | Completion gate |
 |---|---|---|
-| 1 | Generate Image, explicit model/seed controls | Native dialog and engine command, cancellable job, installed Enki runtime, bounded PNG decoding, new editable layer, one undo; deterministic protocol tests and live generation |
+| 1 | Generate Image, explicit model/seed controls | Native dialog and engine command, cancellable job, installed Oqelith runtime, bounded PNG decoding, new editable layer, one undo; deterministic protocol tests and live generation |
 | 2 | Select Subject, Refine Edges, Remove Background | Learned segmentation and edge matting behind the existing editable masks; real-image fixtures, thin structures and transparency evaluated; existing classical tools remain available |
-| 3 | Fill Selection, Remove Object, Generate Background | Enki image+mask editing capability; source/context supplied to a compatible editing model; output clipped to the saved mask; protected pixels unchanged; one undo and save/reopen |
+| 3 | Fill Selection, Remove Object, Generate Background | Oqelith image+mask editing capability; source/context supplied to a compatible editing model; output clipped to the saved mask; protected pixels unchanged; one undo and save/reopen |
 | 4 | Expand Canvas | Same editing pipeline with an outside-canvas mask; source layers translated without rasterizing; requested dimensions exact; original region unchanged |
 | 5 | Reference Images, Prompt Edit | Explicit composition/style/subject references and model capability checks; references never ignored silently; all edits use the mask pipeline |
 | 6 | Variations | Repeat generation with reported seeds, retain alternatives as layers, explicit keep/delete; cancellation and document-switch tests |
@@ -55,7 +55,7 @@ multiples of 8, with no implicit rounding. Learned subject selection remains a s
 
 ## Shared implementation
 
-Reuse engine commands, background jobs, existing progress/cancel UI, native dialogs and document history. Native runtime calls must never run on the UI thread. No runtime installation, model downloads or model switching at startup. Model choice is explicit or comes from Enki's recommendation API. The web build reports native-runtime unavailability.
+Reuse engine commands, background jobs, existing progress/cancel UI, native dialogs and document history. Native runtime calls must never run on the UI thread. No runtime installation, model downloads or model switching at startup. Model choice is explicit or comes from Oqelith's recommendation API. The web build reports native-runtime unavailability.
 
 Model input/output is a colour-managed boundary. Convert working copies through the CMS; retain the original document profile, depth, layers and masks. Reject unsupported dimensions rather than silently shrinking documents. PNG dimensions and frame lengths are bounded before allocation.
 
@@ -63,14 +63,14 @@ Masked edits use a snapshot of the document, selection and context at submission
 
 ## Current backend boundary
 
-Enki source now implements the additive v3 masked-edit revision 1 extension: `image_capabilities`,
+Oqelith source now implements the additive v3 masked-edit revision 1 extension: `image_capabilities`,
 `imagine` task `fill`, `params.mask_png`, source validation and exact restoration of fully
 protected RGBA pixels. Its SDK exposes `ImageRequest::fill`. `image_edit_defaults` returns an
 editing-model profile separately from the general generation recommendation. The current edit
 recommendation uses the already-catalogued reference-conditioned FLUX.2 Klein model. No model
 is installed or downloaded automatically.
 
-These changes live in the adjacent Enki checkout as well as this application. Existing installed
+These changes live in the adjacent Oqelith checkout as well as this application. Existing installed
 runtimes without the extension are refused before source images are sent. Runtime source/builds
 were tested on separate private sockets; the installed running daemon was not replaced or
 restarted. Both updated builds must be deployed before using these tools with the normal endpoint.

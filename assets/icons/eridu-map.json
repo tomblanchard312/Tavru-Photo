@@ -174,5 +174,11 @@
   "wand": "MAGIC_WAND",
   "wand-sparkles": "SPARKLE",
   "x": "X",
-  "zoom-in": "MAGNIFYING_GLASS_PLUS"
+  "zoom-in": "MAGNIFYING_GLASS_PLUS",
+  "pin": "PUSH_PIN",
+  "rotate-ccw": "ARROW_COUNTER_CLOCKWISE",
+  "vertical-align-top": "ALIGN_TOP",
+  "vertical-align-bottom": "ALIGN_BOTTOM",
+  "vertical-align-middle": "ALIGN_CENTER_VERTICAL",
+  "panel-left": "SIDEBAR"
 }

@@ -1,6 +1,6 @@
 # UI localisation and live language switching
 
-PhotoCraft uses the same Rust catalog implementation in the native egui shell and the
+LumaFoundry uses the same Rust catalog implementation in the native egui shell and the
 WebAssembly build. English source strings are lookup keys. UTF-8 TSV catalogs supply plain,
 contextual, command-ID and plural translations; missing entries fall back to English.
 
@@ -27,6 +27,8 @@ contextual, command-ID and plural translations; missing entries fall back to Eng
 | Nederlands | `nl` | one / other |
 | Magyar | `hu` | one form |
 | Tiếng Việt | `vi` | one form |
+| ไทย | `th` | one form |
+| தமிழ் | `ta` | one / other |
 | Srpski | `sr` | one / few / many (teens use many) |
 | Bosanski | `bs` | one / few / other (teens use other) |
 | हिन्दी | `hi` | one / other |
@@ -34,6 +36,17 @@ contextual, command-ID and plural translations; missing entries fall back to Eng
 | Suomi | `fi` | one / other (partitive after every count but 1) |
 | Dansk | `da` | one / other |
 | Norsk bokmål | `nb` | one / other |
+| ქართული | `ka` | one form (count-neutral: `შრე: {n}`) |
+| עברית | `he` | one / other |
+| اردو | `ur` | one / other |
+| Română | `ro` | one / few (0, 2–19, 101–119 …) / other (20–100, 120 …) |
+| Azərbaycanca | `az` | one (1) / other (all other integer counts) |
+
+Azerbaijani (`az`, Latin script) is registered with a complete menu catalog. Regional tags
+such as `az-AZ` and `az-Latn-AZ` select it. The catalog includes the existing catalogs'
+dynamic labels, contextual translations and two integer plural forms. Machine-assisted
+drafts have edited core terminology; native-speaker review is pending. See
+[`localization-az.md`](localization-az.md) for terminology, provenance and validation limits.
 
 Languages registered with `complete_menus` cover the current menu labels, `tl!` literals, blend
 mode names, and generated preference labels. A string a catalog lacks shows in English:
@@ -43,6 +56,10 @@ selectable, resolves regional tags such as `vi-VN`, and covers all current stabl
 keys. `complete_menus` remains false while generated/dynamic long-tail labels are still under
 review. This does not include every engine error or status message: those remain English, as do
 automation command IDs and user-provided document, layer and preset names.
+
+UI search and access-key comparisons use locale-aware dotted/dotless I rules for Azerbaijani
+and Turkish. English command aliases remain searchable using English casing. See the
+[Azerbaijani case-conversion audit](localization-az.md#ui-case-conversion-audit-2026-11-06).
 
 ## Switch without restarting
 
@@ -116,7 +133,7 @@ Not mirrored yet: panel interiors, dialogs, menu rows (shortcuts stay on the rig
 (they open to the right), document tabs and the canvas. egui 0.37 lays text out with the Unicode
 Bidirectional Algorithm (each paragraph takes the direction of its first strong letter), so
 catalogs, layer names and document names are handed to it in logical order, as typed; never
-pre-reorder a label. The title line forces a left-to-right paragraph so "— PhotoCraft" stays at
+pre-reorder a label. The title line forces a left-to-right paragraph so "— LumaFoundry" stays at
 the right of a right-to-left document name, and `bidi_text::elide` cuts a right-to-left name at
 its logical end. Document text is laid out by the text engine.
 
@@ -147,7 +164,7 @@ detection remain separate outstanding work. Switching catalogs does not supply m
 2. Register its code, native name and plural rule in `i18n::LANGUAGES`.
 3. Translate the meaning of the English source keys. Preserve `{name}` placeholders, escaped
    characters and the trailing `…` on dialog commands. Use `@id` to disambiguate a command
-   label and `@plural` for count-sensitive text. Keep product names such as PhotoCraft.
+   label and `@plural` for count-sensitive text. Keep product names such as LumaFoundry.
 4. Set `complete_menus` once `cargo xtask i18n-coverage` lists nothing missing for the language. Add source and license
    attribution for translation assets, then run the catalog and shell tests.
 
@@ -161,5 +178,5 @@ cargo xtask wasm
 
 Render representative dialogs with the offscreen `snapshot` example, including a sequence
 of language changes in one process. Inspect the PNGs for missing glyphs and truncated labels.
-Translations are original work or reuse the open PhotoCraft contributions credited in
+Translations are original work or reuse the open LumaFoundry contributions credited in
 [ATTRIBUTION.md](../ATTRIBUTION.md); no proprietary localisation resources are used.

@@ -38,14 +38,14 @@ fn ids(nodes: &[Node]) -> Vec<String> {
 fn photocraft_gets_a_mac_app_menu() {
     let l = layout(true);
     let app = &l.bar.menus[0];
-    assert_eq!((app.title.as_str(), app.role), ("LumaFoundry", MenuRole::App));
+    assert_eq!((app.title.as_str(), app.role), ("Tavru Photo", MenuRole::App));
     assert_eq!(
         ids(&app.children),
         ["help.about", "---", "[Settings]", "[Language]", "[Appearance]", "---", "<Services>", "---", HIDE, "<HideOthers>", "<ShowAll>", "---", "file.exit"]
     );
     let quit = l.bar.find("file.exit").unwrap();
-    assert_eq!((quit.label.as_str(), quit.shortcut.as_deref()), ("Quit LumaFoundry", Some("Cmd+Q")));
-    assert_eq!(l.bar.find("help.about").unwrap().label, "About LumaFoundry");
+    assert_eq!((quit.label.as_str(), quit.shortcut.as_deref()), ("Quit Tavru Photo", Some("Cmd+Q")));
+    assert_eq!(l.bar.find("help.about").unwrap().label, "About Tavru Photo");
 }
 
 #[test]
@@ -56,7 +56,7 @@ fn moved_items_leave_their_old_menus() {
     assert!(!ids(&by("Help").children).contains(&"help.about".to_string()));
     assert!(!ids(&by("Edit").children).contains(&"[Preferences]".to_string()));
     let titles: Vec<&str> = l.bar.menus.iter().map(|m| m.title.as_str()).collect();
-    assert_eq!(titles, ["LumaFoundry", "File", "Edit", "Image", "Layer", "Type", "Select", "Filter", "View", "Window", "Help"]);
+    assert_eq!(titles, ["Tavru Photo", "File", "Edit", "Image", "Layer", "Type", "Select", "Filter", "View", "Window", "Help"]);
 }
 
 /// PhotoCraft keeps Photoshop's ⌘H, ⌘M, ⌘W and ⌘, (Hide Layers): the system items give way.

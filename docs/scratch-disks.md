@@ -1,6 +1,6 @@
 # Scratch disks and memory residency
 
-Native LumaFoundry keeps pixel tiles in RAM and spills cold tiles to a configured scratch
+Native Tavru Photo keeps pixel tiles in RAM and spills cold tiles to a configured scratch
 directory. A read or write guard keeps a tile resident while a consumer uses its bytes. Undo
 snapshots keep their copy-on-write tiles, including disk-backed tiles, until History States
 retires them. Web builds retain their explicit memory limit (capped like Memory Usage) and do not use a

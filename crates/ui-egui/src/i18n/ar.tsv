@@ -831,9 +831,9 @@
 	Pin bar position	تثبيت موضع الشريط
 	Move bar	نقل الشريط
 	More options	مزيد من الخيارات
-	About LumaFoundry	حول LumaFoundry
-	LumaFoundry Website	موقع LumaFoundry
-	LumaFoundry on GitHub	LumaFoundry على GitHub
+	About Tavru Photo	حول Tavru Photo
+	Tavru Photo Website	موقع Tavru Photo
+	Tavru Photo on GitHub	Tavru Photo على GitHub
 	ArtCraft Website	موقع ArtCraft
 	Join the ArtCraft Discord…	الانضمام إلى ArtCraft على Discord…
 	Report an Issue…	الإبلاغ عن مشكلة…
@@ -887,7 +887,7 @@
 	All Caps	جميع الأحرف كبيرة
 	All Slices	كل الشرائح
 	All User Slices	كل شرائح المستخدم
-	All shortcuts reset to LumaFoundry defaults.	تمت إعادة تعيين جميع الاختصارات إلى إعدادات LumaFoundry الافتراضية.
+	All shortcuts reset to Tavru Photo defaults.	تمت إعادة تعيين جميع الاختصارات إلى إعدادات Tavru Photo الافتراضية.
 	Alt	Alt
 	Always use pressure for opacity	استخدام الضغط دائمًا للعتامة
 	Always use pressure for size	استخدام الضغط دائمًا للحجم
@@ -1145,8 +1145,8 @@
 	Drop an image or PSD anywhere to open it.	أفلت صورة أو ملف PSD في أي مكان لفتحه.
 	Native file drag-and-drop is unavailable	السحب والإفلات الأصلي للملفات غير متاح
 	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or copy the image in your file manager and paste it with {paste}.	السحب والإفلات الأصلي للملفات غير مدعوم على Wayland بعد. استخدم ملف › فتح، أو انسخ الصورة في مدير الملفات والصقها باستخدام {paste}.
-	To drop files, start LumaFoundry under XWayland: `{command}`	لإفلات الملفات، شغّل LumaFoundry تحت XWayland: `{command}`
-	Or set Preferences › Performance › Linux display server to X11: LumaFoundry then always starts under XWayland.	أو اضبط التفضيلات › الأداء › خادم عرض Linux على X11: عندها يبدأ LumaFoundry دائمًا تحت XWayland.
+	To drop files, start Tavru Photo under XWayland: `{command}`	لإفلات الملفات، شغّل Tavru Photo تحت XWayland: `{command}`
+	Or set Preferences › Performance › Linux display server to X11: Tavru Photo then always starts under XWayland.	أو اضبط التفضيلات › الأداء › خادم عرض Linux على X11: عندها يبدأ Tavru Photo دائمًا تحت XWayland.
 	Edit › Paste	تحرير › لصق
 	Duplicate Layers…	تكرار الطبقات…
 	Duplicate style	تكرار النمط
@@ -1396,9 +1396,9 @@
 	Perspective Warp is not active	التواء المنظور غير نشط
 	Perspective Warp: draw planes along the image's perspective, then switch to Warp	التواء المنظور: ارسم مستويات وفق منظور الصورة، ثم انتقل إلى الالتواء
 	Photo Filter	فلتر الصور
-	LumaFoundry	LumaFoundry
-	LumaFoundry Manages Colors	LumaFoundry يدير الألوان
-	LumaFoundry — an open-source, native image editor written in Rust.	LumaFoundry — محرر صور أصلي ومفتوح المصدر مكتوب بلغة Rust.
+	Tavru Photo	Tavru Photo
+	Tavru Photo Manages Colors	Tavru Photo يدير الألوان
+	Tavru Photo — an open-source, native image editor written in Rust.	Tavru Photo — محرر صور أصلي ومفتوح المصدر مكتوب بلغة Rust.
 	Pin Depth:	عمق الدبوس:
 	Pixel Length:	الطول بالبكسل:
 	Pixels/Centimeter	بكسل/سنتيمتر
@@ -1473,11 +1473,11 @@
 	Import Shortcuts…	استيراد الاختصارات…
 	Load a keyboard shortcut set saved as .kys	تحميل مجموعة اختصارات لوحة مفاتيح محفوظة بتنسيق .kys
 	Imported {n} shortcuts from {file}. Click OK to keep them.	تم استيراد {n} من الاختصارات من {file}. انقر «موافق» للاحتفاظ بها.
-	{n} commands are not in LumaFoundry.	{n} من الأوامر غير موجودة في LumaFoundry.
+	{n} commands are not in Tavru Photo.	{n} من الأوامر غير موجودة في Tavru Photo.
 	Keyboard shortcuts imported	تم استيراد اختصارات لوحة المفاتيح
 	Your keyboard shortcut set {set} is in use here: {n} shortcuts differ from the defaults. Edit › Keyboard Shortcuts shows them; Reset All to Defaults undoes this.	مجموعة اختصارات لوحة المفاتيح {set} الخاصة بك قيد الاستخدام هنا: {n} من الاختصارات تختلف عن الافتراضيات. يعرضها «تحرير › اختصارات لوحة المفاتيح»؛ ويتراجع «إعادة تعيين الكل إلى الافتراضيات» عن ذلك.
 	Import keyboard shortcuts?	هل تريد استيراد اختصارات لوحة المفاتيح؟
-	LumaFoundry found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from LumaFoundry's. Import it?	عثر LumaFoundry على مجموعة اختصارات لوحة المفاتيح {set} الخاصة بك من محرر صور آخر على هذا الكمبيوتر: {n} من اختصاراتها تختلف عن اختصارات LumaFoundry. هل تريد استيرادها؟
+	Tavru Photo found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from Tavru Photo's. Import it?	عثر Tavru Photo على مجموعة اختصارات لوحة المفاتيح {set} الخاصة بك من محرر صور آخر على هذا الكمبيوتر: {n} من اختصاراتها تختلف عن اختصارات Tavru Photo. هل تريد استيرادها؟
 	Edit › Keyboard Shortcuts › Reset All to Defaults undoes an import.	تحرير › اختصارات لوحة المفاتيح › إعادة تعيين الكل إلى الافتراضيات يؤدي إلى التراجع عن الاستيراد.
 	Don't Import	عدم الاستيراد
 	The keyboard shortcut set was not imported: {error}	لم يتم استيراد مجموعة اختصارات لوحة المفاتيح: {error}
@@ -1702,7 +1702,7 @@
 	Current Tool	الأداة الحالية
 	Custom Shape Tool	أداة الشكل المخصص
 	Cyans	درجات السماوي
-	Default LumaFoundry Size	حجم LumaFoundry الافتراضي
+	Default Tavru Photo Size	حجم Tavru Photo الافتراضي
 	Delete Workspace	حذف مساحة العمل
 	Diamond	ماسي
 	Dimensions:	الأبعاد:
@@ -1814,7 +1814,7 @@
 	Pen Tool	أداة القلم
 	Convert Point Tool	أداة تحويل النقطة
 	Photo	صورة فوتوغرافية
-	LumaFoundry website	موقع LumaFoundry
+	Tavru Photo website	موقع Tavru Photo
 	Picas	بيكا
 	Pillow Emboss	نقش وسادي
 	Pixel Replacement	استبدال البكسل
@@ -2149,7 +2149,7 @@
 	System Info	معلومات النظام
 	More panels	المزيد من اللوحات
 	More documents	المزيد من المستندات
-	These settings aren't available in LumaFoundry yet.	هذه الإعدادات غير متاحة في LumaFoundry بعد.
+	These settings aren't available in Tavru Photo yet.	هذه الإعدادات غير متاحة في Tavru Photo بعد.
 	Graphics	الرسومات
 	Reset GPU Backend	إعادة تعيين واجهة GPU الخلفية
 	Applies at next launch.	يُطبّق عند التشغيل التالي.
@@ -2364,7 +2364,7 @@
 	Automatic uses GPU acceleration when available and falls back to CPU rendering on errors.	يستخدم الوضع التلقائي تسريع GPU عند توفره ويعود إلى تصيير CPU عند حدوث أخطاء.
 	Switched to CPU rendering	تم التبديل إلى تصيير CPU
 	GPU acceleration could not continue. Your documents are unchanged.	تعذّر استمرار تسريع GPU. مستنداتك لم تتغير.
-	LumaFoundry is using the CPU image compositor. The window may still use your graphics adapter.	يستخدم LumaFoundry مركب الصور على CPU. قد تظل النافذة تستخدم محول الرسومات لديك.
+	Tavru Photo is using the CPU image compositor. The window may still use your graphics adapter.	يستخدم Tavru Photo مركب الصور على CPU. قد تظل النافذة تستخدم محول الرسومات لديك.
 	Retry GPU requires a restart. Save your work first.	تتطلب إعادة محاولة GPU إعادة التشغيل. احفظ عملك أولًا.
 	Retry GPU tries the graphics processor again now.	تؤدي إعادة محاولة GPU إلى تجربة معالج الرسومات مرة أخرى الآن.
 	GPU acceleration resumed.	تم استئناف تسريع GPU.
@@ -2604,7 +2604,7 @@ fontWeight	Italic	مائل
 	Color to Alpha…	اللون إلى ألفا…
 	Transparency Threshold	عتبة الشفافية
 	Opacity Threshold	عتبة العتامة
-	LumaFoundry — Screen Color Picker	LumaFoundry — منتقي ألوان الشاشة
+	Tavru Photo — Screen Color Picker	Tavru Photo — منتقي ألوان الشاشة
 
 	Rasterize svg groups deeper than	تنقيط مجموعات SVG إذا كانت أعمق من
 	0 turns this threshold off; SVG groups nested deeper than 100 levels are always rasterized.	0 يعطّل هذه العتبة؛ تُنقَّط مجموعات SVG المتداخلة بعمق أكبر من 100 مستوى دائمًا.
@@ -3282,7 +3282,7 @@ curves	Smooth	تنعيم
 	{name} (Photoshop)	{name} (Photoshop)
 	{message} ({note})	{message} ({note})
 @plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	تم تحميل {n} إجراء من {file}|تم تحميل {n} إجراء من {file}|تم تحميل {n} إجراءين من {file}|تم تحميل {n} إجراءات من {file}|تم تحميل {n} إجراءً من {file}|تم تحميل {n} إجراء من {file}
-@plural	{n} step has no LumaFoundry equivalent yet|{n} steps have no LumaFoundry equivalent yet	{n} خطوة ليس لها مكافئ في LumaFoundry بعد|{n} خطوة ليس لها مكافئ في LumaFoundry بعد|{n} خطوتان ليس لهما مكافئ في LumaFoundry بعد|{n} خطوات ليس لها مكافئ في LumaFoundry بعد|{n} خطوةً ليس لها مكافئ في LumaFoundry بعد|{n} خطوة ليس لها مكافئ في LumaFoundry بعد
+@plural	{n} step has no Tavru Photo equivalent yet|{n} steps have no Tavru Photo equivalent yet	{n} خطوة ليس لها مكافئ في Tavru Photo بعد|{n} خطوة ليس لها مكافئ في Tavru Photo بعد|{n} خطوتان ليس لهما مكافئ في Tavru Photo بعد|{n} خطوات ليس لها مكافئ في Tavru Photo بعد|{n} خطوةً ليس لها مكافئ في Tavru Photo بعد|{n} خطوة ليس لها مكافئ في Tavru Photo بعد
 @plural	Saved {n} action to {file}|Saved {n} actions to {file}	تم حفظ {n} إجراء في {file}|تم حفظ {n} إجراء في {file}|تم حفظ {n} إجراءين في {file}|تم حفظ {n} إجراءات في {file}|تم حفظ {n} إجراءً في {file}|تم حفظ {n} إجراء في {file}
 @plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	تم استبعاد {n} خطوة ليس لها مكافئ في Photoshop|تم استبعاد {n} خطوة ليس لها مكافئ في Photoshop|تم استبعاد {n} خطوتين ليس لهما مكافئ في Photoshop|تم استبعاد {n} خطوات ليس لها مكافئ في Photoshop|تم استبعاد {n} خطوةً ليس لها مكافئ في Photoshop|تم استبعاد {n} خطوة ليس لها مكافئ في Photoshop
 @plural	{n} action file loaded|{n} action files loaded	تم تحميل {n} ملف إجراءات|تم تحميل {n} ملف إجراءات|تم تحميل {n} ملفي إجراءات|تم تحميل {n} ملفات إجراءات|تم تحميل {n} ملفًا للإجراءات|تم تحميل {n} ملف إجراءات
@@ -3396,12 +3396,12 @@ curves	Smooth	تنعيم
 	Bicubic Smoother	ثنائي التكعيب أكثر نعومة
 	Bicubic Sharper	ثنائي التكعيب أكثر حدة
 	Pasting from other apps is unavailable	اللصق من التطبيقات الأخرى غير متاح
-	LumaFoundry can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	لا يستطيع LumaFoundry الوصول إلى حافظة النظام في هذه الجلسة. على Wayland، يُخفي صندوق الحماية Flatpak البروتوكول الذي تُقرأ عبره الصور من التطبيقات الأخرى.
-	To paste from other apps, start LumaFoundry under XWayland: `{command}`	للصق من التطبيقات الأخرى، شغّل LumaFoundry ضمن XWayland: `{command}`
-	Nothing to paste: LumaFoundry can't read the system clipboard here	لا يوجد شيء للصق: لا يستطيع LumaFoundry قراءة حافظة النظام هنا
+	Tavru Photo can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	لا يستطيع Tavru Photo الوصول إلى حافظة النظام في هذه الجلسة. على Wayland، يُخفي صندوق الحماية Flatpak البروتوكول الذي تُقرأ عبره الصور من التطبيقات الأخرى.
+	To paste from other apps, start Tavru Photo under XWayland: `{command}`	للصق من التطبيقات الأخرى، شغّل Tavru Photo ضمن XWayland: `{command}`
+	Nothing to paste: Tavru Photo can't read the system clipboard here	لا يوجد شيء للصق: لا يستطيع Tavru Photo قراءة حافظة النظام هنا
 	Delete this set	حذف هذه المجموعة
 	New Set…	مجموعة جديدة…
-	LumaFoundry Defaults	الإعدادات الافتراضية لـ LumaFoundry
+	Tavru Photo Defaults	الإعدادات الافتراضية لـ Tavru Photo
 	Save a list of these shortcuts as a web page	حفظ قائمة بهذه الاختصارات كصفحة ويب
 	Save the changes to this set	حفظ التغييرات في هذه المجموعة
 	Save these shortcuts as a .kys file	حفظ هذه الاختصارات كملف .kys

@@ -9,7 +9,7 @@
 # Clean-room: every entry was written from the plain meaning of the English label using ordinary
 # Spanish computing vocabulary (capa, pincel, selección, lienzo ...). No proprietary localisation
 # resource, string table or product UI was consulted or copied; add entries the same way.
-# Product and technology names (LumaFoundry, ArtCraft, OpenType, CMYK, Lab ...) stay in Latin
+# Product and technology names (Tavru Photo, ArtCraft, OpenType, CMYK, Lab ...) stay in Latin
 # letters; the trailing "…" of dialog commands is kept.
 # Layer Mask Display Options (the layer mask rubylith's colour and opacity)
 # Channel Options and New Spot Channel (#3761)
@@ -61,7 +61,7 @@
 # Actions panel: set folders, dialog toggle, Insert Stop
 # Batch / Image Processor
 # Native Windows printing qualification
-# LumaFoundry release checks.
+# Tavru Photo release checks.
 # History panel › History Brush source (#2966)
 # Bevel & Emboss shading controls.
 # Embedded Profile Mismatch: profile names beside the choices, Remember this choice
@@ -876,9 +876,9 @@
 	Timeline	Línea de tiempo
 	Tool Presets	Ajustes preestablecidos de herramienta
 	Tools	Herramientas
-	About LumaFoundry	Acerca de LumaFoundry
-	LumaFoundry Website	Sitio web de LumaFoundry
-	LumaFoundry on GitHub	LumaFoundry en GitHub
+	About Tavru Photo	Acerca de Tavru Photo
+	Tavru Photo Website	Sitio web de Tavru Photo
+	Tavru Photo on GitHub	Tavru Photo en GitHub
 	Contextual Task Bar	Barra de tareas contextual
 	Hide bar	Ocultar barra
 	Reset bar position	Restablecer posición de la barra
@@ -941,7 +941,7 @@
 	All Caps	Todo en mayúsculas
 	All Slices	Todos los sectores
 	All User Slices	Todos los sectores de usuario
-	All shortcuts reset to LumaFoundry defaults.	Se restablecieron todos los métodos abreviados a los valores predeterminados de LumaFoundry.
+	All shortcuts reset to Tavru Photo defaults.	Se restablecieron todos los métodos abreviados a los valores predeterminados de Tavru Photo.
 	Alt	Alt
 	Always use pressure for opacity	Usar siempre la presión para la opacidad
 	Always use pressure for size	Usar siempre la presión para el tamaño
@@ -1191,8 +1191,8 @@
 	Drop an image or PSD anywhere to open it.	Suelte una imagen o un PSD en cualquier lugar para abrirlo.
 	Native file drag-and-drop is unavailable	Arrastrar y soltar archivos de forma nativa no está disponible en Wayland
 	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or copy the image in your file manager and paste it with {paste}.	Arrastrar y soltar archivos de forma nativa aún no es compatible con Wayland. Use Archivo › Abrir, o copie la imagen en su gestor de archivos y péguela con {paste}.
-	To drop files, start LumaFoundry under XWayland: `{command}`	Para soltar archivos, inicie LumaFoundry con XWayland: `{command}`
-	Or set Preferences › Performance › Linux display server to X11: LumaFoundry then always starts under XWayland.	O establezca Preferencias › Rendimiento › Servidor de pantalla de Linux en X11: LumaFoundry se iniciará siempre con XWayland.
+	To drop files, start Tavru Photo under XWayland: `{command}`	Para soltar archivos, inicie Tavru Photo con XWayland: `{command}`
+	Or set Preferences › Performance › Linux display server to X11: Tavru Photo then always starts under XWayland.	O establezca Preferencias › Rendimiento › Servidor de pantalla de Linux en X11: Tavru Photo se iniciará siempre con XWayland.
 	Edit › Paste	Edición › Pegar
 	Duplicate Layers…	Duplicar capas…
 	Duplicate style	Duplicar estilo
@@ -1442,9 +1442,9 @@
 	Perspective Warp is not active	La deformación de perspectiva no está activa
 	Perspective Warp: draw planes along the image's perspective, then switch to Warp	Deformación de perspectiva: dibuje planos siguiendo la perspectiva de la imagen y luego cambie a Deformar
 	Photo Filter	Filtro de fotografía
-	LumaFoundry	LumaFoundry
-	LumaFoundry Manages Colors	LumaFoundry gestiona el color
-	LumaFoundry — an open-source, native image editor written in Rust.	LumaFoundry — un editor de imágenes nativo y de código abierto escrito en Rust.
+	Tavru Photo	Tavru Photo
+	Tavru Photo Manages Colors	Tavru Photo gestiona el color
+	Tavru Photo — an open-source, native image editor written in Rust.	Tavru Photo — un editor de imágenes nativo y de código abierto escrito en Rust.
 	Pin Depth:	Profundidad de la chincheta:
 	Pixel Length:	Longitud en píxeles:
 	Pixels/Centimeter	Píxeles/centímetro
@@ -1519,11 +1519,11 @@
 	Import Shortcuts…	Importar métodos abreviados…
 	Load a keyboard shortcut set saved as .kys	Cargar un conjunto de métodos abreviados de teclado guardado como .kys
 	Imported {n} shortcuts from {file}. Click OK to keep them.	Se importaron {n} métodos abreviados de {file}. Haga clic en Aceptar para conservarlos.
-	{n} commands are not in LumaFoundry.	{n} comandos no existen en LumaFoundry.
+	{n} commands are not in Tavru Photo.	{n} comandos no existen en Tavru Photo.
 	Keyboard shortcuts imported	Métodos abreviados de teclado importados
 	Your keyboard shortcut set {set} is in use here: {n} shortcuts differ from the defaults. Edit › Keyboard Shortcuts shows them; Reset All to Defaults undoes this.	Su conjunto de métodos abreviados de teclado {set} se usa aquí: {n} métodos abreviados difieren de los predeterminados. Edición › Métodos abreviados de teclado los muestra; Restablecer todo a los valores predeterminados lo deshace.
 	Import keyboard shortcuts?	¿Importar métodos abreviados de teclado?
-	LumaFoundry found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from LumaFoundry's. Import it?	LumaFoundry encontró en este equipo su conjunto de métodos abreviados de teclado {set} de otro editor de imágenes: {n} de sus métodos abreviados difieren de los de LumaFoundry. ¿Desea importarlo?
+	Tavru Photo found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from Tavru Photo's. Import it?	Tavru Photo encontró en este equipo su conjunto de métodos abreviados de teclado {set} de otro editor de imágenes: {n} de sus métodos abreviados difieren de los de Tavru Photo. ¿Desea importarlo?
 	Edit › Keyboard Shortcuts › Reset All to Defaults undoes an import.	Edición › Métodos abreviados de teclado › Restablecer todo a los valores predeterminados deshace una importación.
 	Don't Import	No importar
 	The keyboard shortcut set was not imported: {error}	No se importó el conjunto de métodos abreviados de teclado: {error}
@@ -1749,7 +1749,7 @@
 	Current Tool	Herramienta actual
 	Custom Shape Tool	Herramienta Forma personalizada
 	Cyans	Cianes
-	Default LumaFoundry Size	Tamaño predeterminado de LumaFoundry
+	Default Tavru Photo Size	Tamaño predeterminado de Tavru Photo
 	Delete Workspace	Eliminar espacio de trabajo
 	Diamond	Diamante
 	Dimensions:	Dimensiones:
@@ -1861,7 +1861,7 @@
 	Pen Tool	Herramienta Pluma
 	Convert Point Tool	Herramienta Convertir punto
 	Photo	Fotografía
-	LumaFoundry website	Sitio web de LumaFoundry
+	Tavru Photo website	Sitio web de Tavru Photo
 	Picas	Picas
 	Pillow Emboss	Relieve en almohadilla
 	Pixel Replacement	Sustitución de píxeles
@@ -2197,7 +2197,7 @@
 	System Info	Información del sistema
 	More panels	Más paneles
 	More documents	Más documentos
-	These settings aren't available in LumaFoundry yet.	Estos ajustes aún no están disponibles en LumaFoundry.
+	These settings aren't available in Tavru Photo yet.	Estos ajustes aún no están disponibles en Tavru Photo.
 	Graphics	Gráficos
 	Reset GPU Backend	Restablecer el backend de GPU
 	Applies at next launch.	Se aplicará en el próximo inicio.
@@ -2411,7 +2411,7 @@
 	Automatic uses GPU acceleration when available and falls back to CPU rendering on errors.	Automático utiliza la GPU cuando está disponible y cambia a la CPU si hay errores.
 	Switched to CPU rendering	Se cambió al renderizado por CPU
 	GPU acceleration could not continue. Your documents are unchanged.	La aceleración GPU no pudo continuar. Los documentos no han cambiado.
-	LumaFoundry is using the CPU image compositor. The window may still use your graphics adapter.	LumaFoundry compone las imágenes en la CPU. La ventana aún puede usar el adaptador gráfico.
+	Tavru Photo is using the CPU image compositor. The window may still use your graphics adapter.	Tavru Photo compone las imágenes en la CPU. La ventana aún puede usar el adaptador gráfico.
 	Retry GPU requires a restart. Save your work first.	Reintentar la GPU requiere reiniciar. Guarde primero su trabajo.
 	Retry GPU tries the graphics processor again now.	Reintentar la GPU vuelve a probar el procesador gráfico ahora.
 	GPU acceleration resumed.	Se reanudó la aceleración GPU.
@@ -2631,7 +2631,7 @@ fontWeight	Italic	Cursiva
 	Color to Alpha…	Color a alfa…
 	Transparency Threshold	Umbral de transparencia
 	Opacity Threshold	Umbral de opacidad
-	LumaFoundry — Screen Color Picker	LumaFoundry — Selector de color de pantalla
+	Tavru Photo — Screen Color Picker	Tavru Photo — Selector de color de pantalla
 	Rasterize svg groups deeper than	Rasterizar grupos SVG con mayor profundidad
 	0 turns this threshold off; SVG groups nested deeper than 100 levels are always rasterized.	0 desactiva este umbral; los grupos SVG anidados a más de 100 niveles siempre se rasterizan.
 	Rule of Thirds	Regla de los tercios
@@ -3417,7 +3417,7 @@ layerLabel	No Color	Sin color
 	Restart Required	Es necesario reiniciar
 	Restart	Reiniciar
 	Quit	Salir
-	Quit LumaFoundry	Salir de LumaFoundry
+	Quit Tavru Photo	Salir de Tavru Photo
 	Close Window	Cerrar ventana
 	New Window	Nueva ventana
 	Open Image	Abrir imagen
@@ -3910,7 +3910,7 @@ layerLabel	No Color	Sin color
 	Mezzotint	Grabado a media tinta
 	Mosaic	Mosaico
 	Motion Blur	Desenfoque de movimiento
-	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run LumaFoundry under XWayland with `WAYLAND_DISPLAY= photocraft`.	Arrastrar y soltar archivos de forma nativa aún no es compatible con Wayland. Use Archivo › Abrir o ejecute LumaFoundry mediante XWayland con `WAYLAND_DISPLAY= photocraft`.
+	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run Tavru Photo under XWayland with `WAYLAND_DISPLAY= photocraft`.	Arrastrar y soltar archivos de forma nativa aún no es compatible con Wayland. Use Archivo › Abrir o ejecute Tavru Photo mediante XWayland con `WAYLAND_DISPLAY= photocraft`.
 	Neon Glow	Resplandor de neón
 	New Guide Layout	Nuevo diseño de guías
 	New Video Layer from File	Nueva capa de vídeo desde archivo
@@ -4082,9 +4082,9 @@ layerLabel	No Color	Sin color
 	Saved {path}; image assets: {n} in {dir}	Se guardó {path}; recursos de imagen: {n} en {dir}
 	{message} (notes: {n}; {warning})	{message} (notas: {n}; {warning})
 	Preferences can't be saved	No se pueden guardar las preferencias
-	LumaFoundry keeps retrying; until a save succeeds, preference changes are lost when it closes.	LumaFoundry seguirá intentándolo; hasta que el guardado se complete, los cambios de preferencias se perderán al cerrar.
+	Tavru Photo keeps retrying; until a save succeeds, preference changes are lost when it closes.	Tavru Photo seguirá intentándolo; hasta que el guardado se complete, los cambios de preferencias se perderán al cerrar.
 	GPU retry scheduled	Reintento de GPU programado
-	Save your work and restart LumaFoundry to retry GPU acceleration. CPU rendering remains active for this session.	Guarde su trabajo y reinicie LumaFoundry para volver a intentar la aceleración por GPU. La interpretación por CPU seguirá activa durante esta sesión.
+	Save your work and restart Tavru Photo to retry GPU acceleration. CPU rendering remains active for this session.	Guarde su trabajo y reinicie Tavru Photo para volver a intentar la aceleración por GPU. La interpretación por CPU seguirá activa durante esta sesión.
 	GPU device was lost; using the CPU renderer.	Se perdió el dispositivo GPU; se usará el renderizador por CPU.
 	GPU error; using the CPU renderer.	Error de GPU; se usará el renderizador por CPU.
 	Couldn't open {name}: {error}	No se pudo abrir {name}: {error}
@@ -4196,7 +4196,7 @@ navigator	Zoom	Zoom
 	{name} (Photoshop)	{name} (Photoshop)
 	{message} ({note})	{message} ({note})
 @plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	Se cargó {n} acción de {file}|Se cargaron {n} acciones de {file}
-@plural	{n} step has no LumaFoundry equivalent yet|{n} steps have no LumaFoundry equivalent yet	{n} paso aún no tiene equivalente en LumaFoundry|{n} pasos aún no tienen equivalente en LumaFoundry
+@plural	{n} step has no Tavru Photo equivalent yet|{n} steps have no Tavru Photo equivalent yet	{n} paso aún no tiene equivalente en Tavru Photo|{n} pasos aún no tienen equivalente en Tavru Photo
 @plural	Saved {n} action to {file}|Saved {n} actions to {file}	Se guardó {n} acción en {file}|Se guardaron {n} acciones en {file}
 @plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	{n} paso sin equivalente en Photoshop omitido|{n} pasos sin equivalente en Photoshop omitidos
 @plural	{n} action file loaded|{n} action files loaded	Se cargó {n} archivo de acciones|Se cargaron {n} archivos de acciones
@@ -4294,12 +4294,12 @@ navigator	Zoom	Zoom
 	Bicubic Smoother	Bicúbica más suavizada
 	Bicubic Sharper	Bicúbica más enfocada
 	Pasting from other apps is unavailable	Pegar desde otras aplicaciones no está disponible
-	LumaFoundry can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	LumaFoundry no puede acceder al portapapeles del sistema en esta sesión. En Wayland, el entorno aislado de Flatpak oculta el protocolo con el que se leen las imágenes de otras aplicaciones.
-	To paste from other apps, start LumaFoundry under XWayland: `{command}`	Para pegar desde otras aplicaciones, inicia LumaFoundry en XWayland: `{command}`
-	Nothing to paste: LumaFoundry can't read the system clipboard here	Nada que pegar: LumaFoundry no puede leer aquí el portapapeles del sistema
+	Tavru Photo can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	Tavru Photo no puede acceder al portapapeles del sistema en esta sesión. En Wayland, el entorno aislado de Flatpak oculta el protocolo con el que se leen las imágenes de otras aplicaciones.
+	To paste from other apps, start Tavru Photo under XWayland: `{command}`	Para pegar desde otras aplicaciones, inicia Tavru Photo en XWayland: `{command}`
+	Nothing to paste: Tavru Photo can't read the system clipboard here	Nada que pegar: Tavru Photo no puede leer aquí el portapapeles del sistema
 	Delete this set	Eliminar este conjunto
 	New Set…	Nuevo conjunto…
-	LumaFoundry Defaults	Valores por defecto de LumaFoundry
+	Tavru Photo Defaults	Valores por defecto de Tavru Photo
 	Save a list of these shortcuts as a web page	Guardar una lista de estos métodos abreviados como página web
 	Save the changes to this set	Guardar los cambios en este conjunto
 	Save these shortcuts as a .kys file	Guardar estos métodos abreviados como archivo .kys

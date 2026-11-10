@@ -37,9 +37,9 @@
     <string>nb</string>
   </array>
   <key>CFBundleDisplayName</key>
-  <string>LumaFoundry</string>
+  <string>Tavru Photo</string>
   <key>CFBundleName</key>
-  <string>LumaFoundry</string>
+  <string>Tavru Photo</string>
   <key>CFBundleExecutable</key>
   <string>LumaFoundry</string>
   <key>CFBundleIdentifier</key>
@@ -75,14 +75,14 @@
   <key>NSHumanReadableCopyright</key>
   <string>Copyright © the LumaFoundry authors. MIT OR Apache-2.0.</string>
 
-  <!-- LumaFoundry's own format. -->
+  <!-- Tavru Photo's own format. -->
   <key>UTExportedTypeDeclarations</key>
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
       <string>ai.storyteller.photocraft.document</string>
       <key>UTTypeDescription</key>
-      <string>LumaFoundry Document</string>
+      <string>Tavru Photo Document</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -185,7 +185,7 @@
   <array>
     <dict>
       <key>CFBundleTypeName</key>
-      <string>LumaFoundry Document</string>
+      <string>Tavru Photo Document</string>
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>LSHandlerRank</key>

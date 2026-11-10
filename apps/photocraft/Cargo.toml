@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 default-run = "photocraft"
-description = "LumaFoundry: an open-source, native image editor"
+description = "Tavru Photo: an open-source, native image editor"
 build = "build.rs"
 
 [features]

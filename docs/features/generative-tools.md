@@ -1,4 +1,4 @@
-# LumaFoundry generative tools
+# Tavru Photo generative tools
 
 Implementation status, 2026-11-02. This is a draft port onto upstream 0.19.0.
 
@@ -109,4 +109,4 @@ real-photo quality, interactive desktop/GPU acceptance, model rights or release 
 
 ## Naming
 
-Use LumaFoundry names in new product copy, implementation notes and tests. Keep existing machine identifiers and required format/legal provenance intact.
+Use Tavru Photo names in new product copy, implementation notes and tests. Keep existing machine identifiers and required format/legal provenance intact.

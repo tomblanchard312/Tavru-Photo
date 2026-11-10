@@ -783,9 +783,9 @@
 	Pin bar position	Zakači položaj trake
 	Move bar	Pomjeri traku
 	More options	Više opcija
-	About LumaFoundry	O LumaFoundryu
-	LumaFoundry Website	Web stranica LumaFoundrya
-	LumaFoundry on GitHub	LumaFoundry na GitHubu
+	About Tavru Photo	O Tavru Photou
+	Tavru Photo Website	Web stranica Tavru Photoa
+	Tavru Photo on GitHub	Tavru Photo na GitHubu
 	ArtCraft Website	Web stranica ArtCrafta
 	Join the ArtCraft Discord…	Pridružite se ArtCraft Discordu…
 	Report an Issue…	Prijavi problem…
@@ -842,7 +842,7 @@
 	All Caps	Sva velika slova
 	All Slices	Svi isječci
 	All User Slices	Svi korisnički isječci
-	All shortcuts reset to LumaFoundry defaults.	Sve prečice su vraćene na zadane vrijednosti LumaFoundrya.
+	All shortcuts reset to Tavru Photo defaults.	Sve prečice su vraćene na zadane vrijednosti Tavru Photoa.
 	Alt	Alt
 	Always use pressure for opacity	Uvijek koristi pritisak za neprozirnost
 	Always use pressure for size	Uvijek koristi pritisak za veličinu
@@ -1322,9 +1322,9 @@
 	Perspective Warp is not active	Iskrivljenje perspektive nije aktivno
 	Perspective Warp: draw planes along the image's perspective, then switch to Warp	Iskrivljenje perspektive: nacrtajte ravni duž perspektive slike, zatim se prebacite na Iskrivljenje
 	Photo Filter	Foto filter
-	LumaFoundry	LumaFoundry
-	LumaFoundry Manages Colors	LumaFoundry upravlja bojama
-	LumaFoundry — an open-source, native image editor written in Rust.	LumaFoundry — izvorni uređivač slika otvorenog koda, napisan u Rustu.
+	Tavru Photo	Tavru Photo
+	Tavru Photo Manages Colors	Tavru Photo upravlja bojama
+	Tavru Photo — an open-source, native image editor written in Rust.	Tavru Photo — izvorni uređivač slika otvorenog koda, napisan u Rustu.
 	Pin Depth:	Dubina pribadače:
 	Pixel Length:	Dužina u pikselima:
 	Pixels/Centimeter	Piksela/centimetar
@@ -1399,11 +1399,11 @@
 	Import Shortcuts…	Uvezi prečice…
 	Load a keyboard shortcut set saved as .kys	Učitaj skup prečica na tastaturi sačuvan kao .kys
 	Imported {n} shortcuts from {file}. Click OK to keep them.	Uvezeno prečica iz {file}: {n}. Kliknite U redu da ih zadržite.
-	{n} commands are not in LumaFoundry.	Naredbi kojih nema u LumaFoundryu: {n}.
+	{n} commands are not in Tavru Photo.	Naredbi kojih nema u Tavru Photou: {n}.
 	Keyboard shortcuts imported	Prečice na tastaturi uvezene
 	Your keyboard shortcut set {set} is in use here: {n} shortcuts differ from the defaults. Edit › Keyboard Shortcuts shows them; Reset All to Defaults undoes this.	Vaš skup prečica na tastaturi {set} koristi se ovdje: {n} prečica razlikuje se od zadanih. Uredi › Prečice na tastaturi ih prikazuje; Vrati sve na zadano to poništava.
 	Import keyboard shortcuts?	Uvesti prečice na tastaturi?
-	LumaFoundry found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from LumaFoundry's. Import it?	LumaFoundry je pronašao vaš skup prečica na tastaturi {set} iz drugog uređivača slika na ovom računaru: {n} njegovih prečica razlikuje se od LumaFoundryovih. Uvesti ga?
+	Tavru Photo found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from Tavru Photo's. Import it?	Tavru Photo je pronašao vaš skup prečica na tastaturi {set} iz drugog uređivača slika na ovom računaru: {n} njegovih prečica razlikuje se od Tavru Photoovih. Uvesti ga?
 	Edit › Keyboard Shortcuts › Reset All to Defaults undoes an import.	Uredi › Prečice na tastaturi › Vrati sve na zadano poništava uvoz.
 	Don't Import	Nemoj uvesti
 	The keyboard shortcut set was not imported: {error}	Skup prečica na tastaturi nije uvezen: {error}
@@ -1626,7 +1626,7 @@
 	Current Tool	Trenutni alat
 	Custom Shape Tool	Alat za prilagođeni oblik
 	Cyans	Cijan tonovi
-	Default LumaFoundry Size	Zadana veličina LumaFoundrya
+	Default Tavru Photo Size	Zadana veličina Tavru Photoa
 	Delete Workspace	Izbriši radni prostor
 	Diamond	Romb
 	Dimensions:	Dimenzije:
@@ -1740,7 +1740,7 @@
 	Pen Tool	Alat pero
 	Convert Point Tool	Alat za pretvaranje tačke
 	Photo	Fotografija
-	LumaFoundry website	Web stranica LumaFoundrya
+	Tavru Photo website	Web stranica Tavru Photoa
 	Picas	Pice
 	Pillow Emboss	Jastučasti reljef
 	Pixel Replacement	Zamjena piksela
@@ -2071,7 +2071,7 @@
 	System Info	Informacije o sistemu
 	More panels	Više panela
 	More documents	Više dokumenata
-	These settings aren't available in LumaFoundry yet.	Ove postavke još nisu dostupne u LumaFoundryu.
+	These settings aren't available in Tavru Photo yet.	Ove postavke još nisu dostupne u Tavru Photou.
 	Graphics	Grafika
 	Reset GPU Backend	Vrati GPU pozadinski sistem na početno
 	Applies at next launch.	Primjenjuje se pri sljedećem pokretanju.
@@ -2665,8 +2665,8 @@
 	Overprint	Pretisak
 	Native file drag-and-drop is unavailable	Izvorno prevlačenje i ispuštanje datoteka nije dostupno
 	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or copy the image in your file manager and paste it with {paste}.	Izvorno prevlačenje i ispuštanje datoteka još nije podržano na Waylandu. Koristite Datoteka › Otvori ili kopirajte sliku u upravitelju datoteka i zalijepite je pomoću {paste}.
-	To drop files, start LumaFoundry under XWayland: `{command}`	Da ispuštate datoteke, pokrenite LumaFoundry pod XWaylandom: `{command}`
-	Or set Preferences › Performance › Linux display server to X11: LumaFoundry then always starts under XWayland.	Ili postavite Postavke › Performanse › Linux server prikaza na X11: LumaFoundry se tada uvijek pokreće pod XWaylandom.
+	To drop files, start Tavru Photo under XWayland: `{command}`	Da ispuštate datoteke, pokrenite Tavru Photo pod XWaylandom: `{command}`
+	Or set Preferences › Performance › Linux display server to X11: Tavru Photo then always starts under XWayland.	Ili postavite Postavke › Performanse › Linux server prikaza na X11: Tavru Photo se tada uvijek pokreće pod XWaylandom.
 	Edit › Paste	Uredi › Zalijepi
 	Use File › Open, or paste a copied image with {paste}.	Koristite Datoteka › Otvori ili zalijepite kopiranu sliku pomoću {paste}.
 	Mixer Brush Tool	Alat četkica za miješanje
@@ -2682,7 +2682,7 @@
 	Automatic uses GPU acceleration when available and falls back to CPU rendering on errors.	Automatski koristi GPU ubrzanje kad je dostupno i vraća se na CPU iscrtavanje pri greškama.
 	Switched to CPU rendering	Prebačeno na CPU iscrtavanje
 	GPU acceleration could not continue. Your documents are unchanged.	GPU ubrzanje nije moglo nastaviti. Vaši dokumenti su nepromijenjeni.
-	LumaFoundry is using the CPU image compositor. The window may still use your graphics adapter.	LumaFoundry koristi CPU kompozitor slika. Prozor i dalje može koristiti vaš grafički adapter.
+	Tavru Photo is using the CPU image compositor. The window may still use your graphics adapter.	Tavru Photo koristi CPU kompozitor slika. Prozor i dalje može koristiti vaš grafički adapter.
 	Retry GPU requires a restart. Save your work first.	Ponovni pokušaj GPU-a zahtijeva ponovno pokretanje. Prvo sačuvajte svoj rad.
 	Retry GPU tries the graphics processor again now.	Ponovo pokušaj GPU odmah ponovo isprobava grafički procesor.
 	GPU acceleration resumed.	GPU ubrzanje je nastavljeno.
@@ -2892,7 +2892,7 @@ fontWeight	Italic	Kurziv
 	Color to Alpha…	Boja u alfu…
 	Transparency Threshold	Prag prozirnosti
 	Opacity Threshold	Prag neprozirnosti
-	LumaFoundry — Screen Color Picker	LumaFoundry — birač boja s ekrana
+	Tavru Photo — Screen Color Picker	Tavru Photo — birač boja s ekrana
 	Rasterize svg groups deeper than	Rasteriziraj SVG grupe dublje od
 	0 turns this threshold off; SVG groups nested deeper than 100 levels are always rasterized.	0 isključuje ovaj prag; SVG grupe ugniježđene dublje od 100 nivoa uvijek se rasteriziraju.
 	Rule of Thirds	Pravilo trećina
@@ -3291,7 +3291,7 @@ layerLabel	No Color	Bez boje
 	Restart Required	Potrebno ponovno pokretanje
 	Restart	Ponovo pokreni
 	Quit	Izlaz
-	Quit LumaFoundry	Zatvori LumaFoundry
+	Quit Tavru Photo	Zatvori Tavru Photo
 	Close Window	Zatvori prozor
 	New Window	Novi prozor
 	Open Image	Otvori sliku
@@ -3798,7 +3798,7 @@ layerLabel	No Color	Bez boje
 	Mezzotint	Mecotinta
 	Mosaic	Mozaik
 	Motion Blur	Zamućenje pokreta
-	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run LumaFoundry under XWayland with `WAYLAND_DISPLAY= photocraft`.	Izvorno prevlačenje i ispuštanje datoteka još nije podržano na Waylandu. Koristite Datoteka › Otvori ili pokrenite LumaFoundry pod XWaylandom s `WAYLAND_DISPLAY= photocraft`.
+	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run Tavru Photo under XWayland with `WAYLAND_DISPLAY= photocraft`.	Izvorno prevlačenje i ispuštanje datoteka još nije podržano na Waylandu. Koristite Datoteka › Otvori ili pokrenite Tavru Photo pod XWaylandom s `WAYLAND_DISPLAY= photocraft`.
 	Neon Glow	Neonski sjaj
 	New Guide Layout	Novi raspored vodilica
 	New Video Layer from File	Novi video sloj iz datoteke
@@ -3977,9 +3977,9 @@ layerLabel	No Color	Bez boje
 	Saved {path}; image assets: {n} in {dir}	Sačuvano {path}; slikovni resursi: {n} u {dir}
 	{message} (notes: {n}; {warning})	{message} (bilješke: {n}; {warning})
 	Preferences can't be saved	Postavke se ne mogu sačuvati
-	LumaFoundry keeps retrying; until a save succeeds, preference changes are lost when it closes.	LumaFoundry nastavlja pokušavati; dok čuvanje ne uspije, promjene postavki se gube pri zatvaranju.
+	Tavru Photo keeps retrying; until a save succeeds, preference changes are lost when it closes.	Tavru Photo nastavlja pokušavati; dok čuvanje ne uspije, promjene postavki se gube pri zatvaranju.
 	GPU retry scheduled	Zakazan ponovni pokušaj GPU-a
-	Save your work and restart LumaFoundry to retry GPU acceleration. CPU rendering remains active for this session.	Sačuvajte svoj rad i ponovo pokrenite LumaFoundry da ponovo pokušate GPU ubrzanje. CPU iscrtavanje ostaje aktivno za ovu sesiju.
+	Save your work and restart Tavru Photo to retry GPU acceleration. CPU rendering remains active for this session.	Sačuvajte svoj rad i ponovo pokrenite Tavru Photo da ponovo pokušate GPU ubrzanje. CPU iscrtavanje ostaje aktivno za ovu sesiju.
 	GPU device was lost; using the CPU renderer.	GPU uređaj je izgubljen; koristi se CPU iscrtavanje.
 	GPU error; using the CPU renderer.	GPU greška; koristi se CPU iscrtavanje.
 	Couldn't open {name}: {error}	Nije moguće otvoriti {name}: {error}
@@ -4167,7 +4167,7 @@ shape	Appearance	Izgled
 	{name} (Photoshop)	{name} (Photoshop)
 	{message} ({note})	{message} ({note})
 @plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	Učitana {n} akcija iz {file}|Učitane {n} akcije iz {file}|Učitano {n} akcija iz {file}
-@plural	{n} step has no LumaFoundry equivalent yet|{n} steps have no LumaFoundry equivalent yet	{n} korak još nema ekvivalent u LumaFoundryu|{n} koraka još nemaju ekvivalent u LumaFoundryu|{n} koraka još nema ekvivalent u LumaFoundryu
+@plural	{n} step has no Tavru Photo equivalent yet|{n} steps have no Tavru Photo equivalent yet	{n} korak još nema ekvivalent u Tavru Photou|{n} koraka još nemaju ekvivalent u Tavru Photou|{n} koraka još nema ekvivalent u Tavru Photou
 @plural	Saved {n} action to {file}|Saved {n} actions to {file}	Sačuvana {n} akcija u {file}|Sačuvane {n} akcije u {file}|Sačuvano {n} akcija u {file}
 @plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	Izostavljen {n} korak bez ekvivalenta u Photoshopu|Izostavljena {n} koraka bez ekvivalenta u Photoshopu|Izostavljeno {n} koraka bez ekvivalenta u Photoshopu
 	Insert Stop…	Umetni tačku…
@@ -4278,12 +4278,12 @@ shape	Appearance	Izgled
 	Bicubic Smoother	Bikubično glađe
 	Bicubic Sharper	Bikubično oštrije
 	Pasting from other apps is unavailable	Lijepljenje iz drugih aplikacija nije dostupno
-	LumaFoundry can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	LumaFoundry u ovoj sesiji ne može pristupiti sistemskom međuspremniku. Na Waylandu Flatpak okruženje skriva protokol preko kojeg se čitaju slike iz drugih aplikacija.
-	To paste from other apps, start LumaFoundry under XWayland: `{command}`	Da lijepite iz drugih aplikacija, pokrenite LumaFoundry pod XWaylandom: `{command}`
-	Nothing to paste: LumaFoundry can't read the system clipboard here	Nema šta zalijepiti: LumaFoundry ovdje ne može čitati sistemski međuspremnik
+	Tavru Photo can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	Tavru Photo u ovoj sesiji ne može pristupiti sistemskom međuspremniku. Na Waylandu Flatpak okruženje skriva protokol preko kojeg se čitaju slike iz drugih aplikacija.
+	To paste from other apps, start Tavru Photo under XWayland: `{command}`	Da lijepite iz drugih aplikacija, pokrenite Tavru Photo pod XWaylandom: `{command}`
+	Nothing to paste: Tavru Photo can't read the system clipboard here	Nema šta zalijepiti: Tavru Photo ovdje ne može čitati sistemski međuspremnik
 	Delete this set	Izbriši ovaj skup
 	New Set…	Novi skup…
-	LumaFoundry Defaults	Zadane postavke LumaFoundrya
+	Tavru Photo Defaults	Zadane postavke Tavru Photoa
 	Save a list of these shortcuts as a web page	Sačuvaj listu ovih prečica kao web stranicu
 	Save the changes to this set	Sačuvaj promjene u ovom skupu
 	Save these shortcuts as a .kys file	Sačuvaj ove prečice kao .kys datoteku
@@ -4418,17 +4418,17 @@ shape	Appearance	Izgled
 	Object Aware needs a segmentation model, which isn't available yet	Svjesno objekata zahtijeva model segmentacije, koji još nije dostupan
 	Refine Hair needs hair detection, which isn't available yet	Poboljšaj kosu zahtijeva otkrivanje kose, koje još nije dostupno
 	Check for Updates…	Provjeri ažuriranja…
-	LumaFoundry Updates	LumaFoundry ažuriranja
+	Tavru Photo Updates	Tavru Photo ažuriranja
 	Checking for updates…	Provjera ažuriranja…
 	Open the release page to choose an installer for your system.	Otvorite stranicu izdanja da odaberete instalacijski program za svoj sistem.
 	Open Download Page	Otvori stranicu za preuzimanje
-	LumaFoundry is up to date.	LumaFoundry je ažuran.
+	Tavru Photo is up to date.	Tavru Photo je ažuran.
 	Could not check for updates.	Nije moguće provjeriti ažuriranja.
 	Updates have not been checked yet.	Ažuriranja još nisu provjerena.
 	Check Again	Provjeri ponovo
 	Automatically Check for Updates	Automatski provjeravaj ažuriranja
 	Installed version: {version}	Instalirana verzija: {version}
-	LumaFoundry {version} is available.	Dostupan je LumaFoundry {version}.
+	Tavru Photo {version} is available.	Dostupan je Tavru Photo {version}.
 	Hue Cube	Kocka nijanse
 	Brightness Cube	Kocka svjetline
 	Color Wheel	Kotač boja
@@ -4602,9 +4602,9 @@ smartSvg	Choose executable…	Odaberi izvršnu datoteku…
 smartSvg	Choose the application used to edit this SVG:	Odaberite aplikaciju za uređivanje ovog SVG-a:
 smartSvg	Edit SVG Smart Object	Uredi SVG pametni objekat
 smartSvg	Other application	Druga aplikacija
-smartSvg	LumaFoundry (internal editor)	LumaFoundry (interni uređivač)
+smartSvg	Tavru Photo (internal editor)	Tavru Photo (interni uređivač)
 smartSvg	SVG editor opened. Save the SVG to update this Smart Object.	SVG uređivač je otvoren. Sačuvajte SVG da biste ažurirali ovaj pametni objekat.
-smartSvg	Save to the opened SVG file. Each saved change becomes one undo step in LumaFoundry.	Sačuvajte u otvorenu SVG datoteku. Svaka sačuvana izmjena postaje jedan korak poništavanja u LumaFoundryu.
+smartSvg	Save to the opened SVG file. Each saved change becomes one undo step in Tavru Photo.	Sačuvajte u otvorenu SVG datoteku. Svaka sačuvana izmjena postaje jedan korak poništavanja u Tavru Photou.
 smartSvg	Stop syncing this Smart Object	Zaustavi sinhronizaciju ovog pametnog objekta
 smartSvg	Updates wait while another document or an editing dialog is active.	Ažuriranja čekaju dok je aktivan drugi dokument ili dijalog za uređivanje.
 smartSvg	AI/PDF/EPS contents will be edited as SVG. Saving replaces the embedded source; format-specific features may change.	Sadržaj AI/PDF/EPS uređivat će se kao SVG. Čuvanje zamjenjuje ugrađeni izvor; svojstva specifična za format mogu se promijeniti.

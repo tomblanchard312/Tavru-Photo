@@ -1,4 +1,4 @@
-# LumaFoundry app icon
+# Tavru Photo app icon
 
 Original LF monogram on a dark blue tile with blue and cyan accents.
 `photocraft.svg` is the vector master; existing filenames remain compatible with packaging.

@@ -33,12 +33,12 @@ pub(super) fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
     ui.scope_builder(egui::UiBuilder::new().max_rect(card), |ui| {
         ui.vertical_centered(|ui| {
             ui.horizontal(|ui| {
-                let title = ui.painter().layout_no_wrap(tl!("LumaFoundry").into(), crate::theme::display(38.0), t.text);
+                let title = ui.painter().layout_no_wrap(tl!("Tavru Photo").into(), crate::theme::display(38.0), t.text);
                 let by = ui.painter().layout_no_wrap(tl!("open source").into(), egui::FontId::proportional(13.0), t.text_faint);
                 let total = title.size().x + by.size().x + 10.0;
                 ui.add_space(((card.width() - total) / 2.0).max(0.0));
                 let (r, title_response) = ui.allocate_exact_size(title.size(), Sense::hover());
-                title_response.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Heading, true, tl!("LumaFoundry")));
+                title_response.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Heading, true, tl!("Tavru Photo")));
                 ui.painter().galley(r.min, title, t.text);
                 let (r2, _) = ui.allocate_exact_size(egui::vec2(by.size().x + 10.0, r.height()), Sense::hover());
                 ui.painter().galley(egui::pos2(r2.left() + 10.0, r.bottom() - by.size().y - 8.0), by, t.text_faint);

@@ -1,6 +1,6 @@
 # Independent implementation and provenance
 
-LumaFoundry targets functional editing capabilities and file interoperability through
+Tavru Photo targets functional editing capabilities and file interoperability through
 independently written code. Similar results or familiar workflows are not permission to
 copy another product's source, artwork, wording or distinctive visual presentation.
 This policy governs new work and takes precedence over historical instructions to reproduce
@@ -14,7 +14,7 @@ another application's appearance. It is an engineering policy, not a legal clear
 - Do not use leaked source, decompiled code, extracted shaders, executable resources, proprietary
   SDK material without a suitable licence, or code reconstructed from such material. Do not use
   an AI tool to translate, paraphrase or regenerate prohibited source or assets.
-- Write our own UI copy and documentation. Use LumaFoundry names for new tools and retain an
+- Write our own UI copy and documentation. Use Tavru Photo names for new tools and retain an
   independent graphic identity. Review familiar menu arrangements, icons and overall presentation
   for more than just individually functional elements; renaming is not a substitute for review.
 - Do not trace product screenshots, embed screenshot fragments in controls, or extract icons,
@@ -44,7 +44,7 @@ asset-by-asset, dependency, model, patent or legal audit.
 | Area | Evidence and disposition |
 |---|---|
 | Contribution rules | Previously called for matching another product's look. Updated to functional compatibility and independent expression. |
-| README | Removed the claim to be a reimplementation of a named proprietary product; describes LumaFoundry's own capabilities. |
+| README | Removed the claim to be a reimplementation of a named proprietary product; describes Tavru Photo's own capabilities. |
 | Inherited Pro themes | `crates/ui-egui/src/theme.rs` documents sampled interface colours; `docs/ui-design.md` previously specified a named external design style. This does not by itself establish infringement or clearance. Review the combined interface presentation and relevant licences before public release; retain provenance comments while review is open. |
 | App marks | Current fork assets have an original LF design and a local licence/attribution record. Upstream restricted visual marks are deleted in the working tree; original copyright notices remain. This is not trademark-name clearance. |
 | Icons and fonts | ATTRIBUTION.md and adjacent licence files record Lucide, an attributed magnetic-lasso adaptation, Inter and JetBrains Mono. Optional build fonts have separate upstream records. Entries were inspected, not every file's origin verified. |
@@ -66,9 +66,9 @@ questions; this document certifies none of them.
 ## Third-party references
 
 Any product names retained in interoperability documentation identify their respective products;
-they do not describe sponsorship or ownership of LumaFoundry. Adobe and Photoshop are either
+they do not describe sponsorship or ownership of Tavru Photo. Adobe and Photoshop are either
 registered trademarks or trademarks of Adobe in the United States and/or other countries.
-LumaFoundry is independently developed and is not affiliated with or endorsed by that company.
+Tavru Photo is independently developed and is not affiliated with or endorsed by that company.
 
 ## References
 

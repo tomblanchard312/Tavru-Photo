@@ -1,8 +1,10 @@
 <p align="center">
-  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.photocraft.png" width="128" height="128" alt="LumaFoundry icon: an LF monogram on a dark blue tile">
+  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.photocraft.png" width="128" height="128" alt="Tavru Photo icon: an LF monogram on a dark blue tile">
 </p>
 
-<h1 align="center">LumaFoundry</h1>
+<h1 align="center">Tavru Photo</h1>
+
+> **Product name:** Tavru Photo (formerly LumaFoundry, PhotoCraft). Application ids, crate names, settings directories and the macOS bundle filename stay as they are. GitHub redirects the previous repository name.
 
 <p align="center">
   <b>An independent, open-source image editor built in pure Rust.</b><br>
@@ -16,19 +18,19 @@
   <img alt="License: MIT OR Apache-2.0" src="https://img.shields.io/badge/license-MIT%20%2F%20Apache--2.0-3a3a3a?style=flat-square">
   <img alt="Status: early alpha" src="https://img.shields.io/badge/status-early%20alpha-d69e2e?style=flat-square">
   <br>
-  <a href="https://coderabbit.ai"><img alt="Reviewed by CodeRabbit" src="https://img.shields.io/coderabbit/prs/github/tomblanchard312/lumafoundry?style=flat-square&label=Reviewed%20by%20CodeRabbit&logo=coderabbit"></a>
+  <a href="https://coderabbit.ai"><img alt="Reviewed by CodeRabbit" src="https://img.shields.io/coderabbit/prs/github/tomblanchard312/Tavru-Photo?style=flat-square&label=Reviewed%20by%20CodeRabbit&logo=coderabbit"></a>
 </p>
 
 
 
 <p align="center">
-  <a href="https://github.com/tomblanchard312/lumafoundry"><b>LumaFoundry on GitHub</b></a>
+  <a href="https://github.com/tomblanchard312/Tavru-Photo"><b>Tavru Photo on GitHub</b></a>
 </p>
 
 <br>
 
 <p align="center">
-  <img src="docs/images/photocraft-demo.jpg" alt="LumaFoundry editing Hokusai's The Great Wave: a caption card with a drop shadow, Title and Credit type layers, Vibrance and Curves adjustment layers, and the Curves editor drawn over the image's histogram" width="100%">
+  <img src="docs/images/photocraft-demo.jpg" alt="Tavru Photo editing Hokusai's The Great Wave: a caption card with a drop shadow, Title and Credit type layers, Vibrance and Curves adjustment layers, and the Curves editor drawn over the image's histogram" width="100%">
   <br>
   <sub>A caption card with a drop shadow, live type, and Vibrance and Curves adjustment layers, with the Curves editor open.<br>
   <i>The Great Wave off Kanagawa</i>, Katsushika Hokusai, c. 1831</sub>
@@ -42,8 +44,8 @@
   <a href="#under-the-hood">Under the hood</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="#downloads">Downloads</a> ·
-  <a href="#lumafoundry-and-enki">Enki image tools</a> ·
-  <a href="https://github.com/tomblanchard312/lumafoundry/issues">Support</a>
+  <a href="#tavru-photo-and-enki">Oqelith image tools</a> ·
+  <a href="https://github.com/tomblanchard312/Tavru-Photo/issues">Support</a>
 </p>
 
 <br>
@@ -52,7 +54,7 @@
   <tr>
     <td width="25%" valign="top">
       <h3>🎛️ Familiar by design</h3>
-      The menus, shortcuts, panels and tools are where your hands expect them, from ⌘J to ⇧⌘D. If you know Photoshop, you already know LumaFoundry.
+      The menus, shortcuts, panels and tools are where your hands expect them, from ⌘J to ⇧⌘D. If you know Photoshop, you already know Tavru Photo.
     </td>
     <td width="25%" valign="top">
       <h3>⚡ Native and fast</h3>
@@ -71,9 +73,9 @@
 
 <br>
 
-## LumaFoundry and Enki
+## Tavru Photo and Enki
 
-LumaFoundry is an independent fork of PhotoCraft with its own LF icon, dark blue branding and local Enki image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
+Tavru Photo is an independent fork of PhotoCraft with its own LF icon, dark blue branding and local Enki image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
 
 The Linux integration provides these editing workflows through native dialogs and engine commands.
 
@@ -86,7 +88,7 @@ The Linux integration provides these editing workflows through native dialogs an
 
 Enki and compatible models must be installed and configured separately. Learned subject selection requires the segmentation worker and its model. Native Enki transport currently supports Linux. Other desktop platforms and the web build do not yet provide these runtime-backed tools. Local CPU and Vulkan inference and native offscreen workflows have been exercised; broader image-quality and interactive desktop validation remain open. See the implementation notes and setup boundaries in [generative tools](docs/features/generative-tools.md).
 
-LumaFoundry is also registered in EriduOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Enki integration validation remain pending.
+Tavru Photo is also registered in EriduOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Enki integration validation remain pending.
 
 ## Features
 
@@ -218,9 +220,9 @@ Every screenshot here is the real app at work on public-domain art, rendered off
 
 ## PSD without compromise
 
-LumaFoundry's PSD support is a standalone crate written from Adobe's public specification and tested against a corpus of real-world files.
+Tavru Photo's PSD support is a standalone crate written from Adobe's public specification and tested against a corpus of real-world files.
 
-- **Faithful round trips:** opening and re-saving a document renders the same for 307 of the 309 files in the psd-tools test set and 169 of 170 in our mixed ag-psd/psd-tools set (`crates/io/tests/it/corpus.rs`; fetch the psd-tools set with `cargo xtask corpus --psd-tools`), and anything we don't model yet (raw blocks, descriptors, extras) is carried over instead of being dropped. A re-saved file is not byte-identical to its source: LumaFoundry rewrites image resources, layer records and the composite. Only the standalone `photocraft-psd` crate, parsing and writing a file without the document model, reproduces every parseable corpus file byte for byte (`crates/psd/tests/it/corpus.rs`).
+- **Faithful round trips:** opening and re-saving a document renders the same for 307 of the 309 files in the psd-tools test set and 169 of 170 in our mixed ag-psd/psd-tools set (`crates/io/tests/it/corpus.rs`; fetch the psd-tools set with `cargo xtask corpus --psd-tools`), and anything we don't model yet (raw blocks, descriptors, extras) is carried over instead of being dropped. A re-saved file is not byte-identical to its source: Tavru Photo rewrites image resources, layer records and the composite. Only the standalone `photocraft-psd` crate, parsing and writing a file without the document model, reproduces every parseable corpus file byte for byte (`crates/psd/tests/it/corpus.rs`).
 - **Pixels that match:** a composite oracle compares our render with Photoshop's own merged image, covering gradient interpolation (Classic, Perceptual and Linear), layer effects, shape strokes, clipping and fill opacity.
 - **Large documents:** PSB, 16 and 32-bit files, and CMYK and Lab documents open natively.
 
@@ -259,13 +261,13 @@ The desktop app also offers an authenticated, loopback-only control channel (`ph
 ## Get started
 
 ```sh
-git clone https://github.com/tomblanchard312/lumafoundry
-cd lumafoundry
+git clone https://github.com/tomblanchard312/Tavru-Photo
+cd Tavru-Photo
 cargo run --release -p photocraft -- image.psd   # the desktop app
 cargo test --workspace                           # the test suite
 ```
 
-Japanese fonts for the UI and Type tool come from [craft-fonts](https://github.com/storytold/craft-fonts), an optional build input (desktop release builds always include it). Without it LumaFoundry uses your system's CJK fonts:
+Japanese fonts for the UI and Type tool come from [craft-fonts](https://github.com/storytold/craft-fonts), an optional build input (desktop release builds always include it). Without it Tavru Photo uses your system's CJK fonts:
 
 ```sh
 git clone https://github.com/storytold/craft-fonts ../craft-fonts
@@ -274,7 +276,7 @@ CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p photocraft
 
 New contributors and AI agents: start with [`AGENTS.md`](AGENTS.md), then [`docs/`](docs/).
 
-Installers for macOS, Windows, Linux, FreeBSD and the web are attached to each [GitHub release](https://github.com/tomblanchard312/lumafoundry/releases). On Linux you can pick an AppImage, a `.deb`, an `.rpm`, a tarball or a Flatpak bundle. The bundle needs the freedesktop runtime from [Flathub](https://flathub.org/setup), which `flatpak` offers to install along with it:
+Installers for macOS, Windows, Linux, FreeBSD and the web are attached to each [GitHub release](https://github.com/tomblanchard312/Tavru-Photo/releases). On Linux you can pick an AppImage, a `.deb`, an `.rpm`, a tarball or a Flatpak bundle. The bundle needs the freedesktop runtime from [Flathub](https://flathub.org/setup), which `flatpak` offers to install along with it:
 
 ```sh
 flatpak install --user photocraft-<version>-linux-x86_64.flatpak   # or -linux-aarch64
@@ -283,9 +285,9 @@ flatpak run ai.storyteller.photocraft
 
 The Flatpak prints through the host's CUPS socket (File › Print talks IPP to it directly, no `lp` needed); without CUPS, or without a printer, File › Print opens the system print dialog through the print portal. See [printing](docs/printing.md).
 
-The AppImage needs no install: the first run registers its launcher icon and menu entry in `~/.local/share` so the dock shows LumaFoundry's icon on Wayland. Set `PHOTOCRAFT_NO_DESKTOP_INTEGRATION=1` to skip that, and see [`docs/releasing.md`](docs/releasing.md) › Linux to undo it.
+The AppImage needs no install: the first run registers its launcher icon and menu entry in `~/.local/share` so the dock shows Tavru Photo's icon on Wayland. Set `PHOTOCRAFT_NO_DESKTOP_INTEGRATION=1` to skip that, and see [`docs/releasing.md`](docs/releasing.md) › Linux to undo it.
 
-On a Wayland session, files dropped on the window don't open yet: winit 0.30, the windowing library under egui, has no Wayland drag and drop (#386). Use File › Open, or copy the image in your file manager and paste it with Ctrl+V. To drag and drop, start LumaFoundry under XWayland: `WAYLAND_DISPLAY= photocraft`, `WAYLAND_DISPLAY= ./photocraft-<version>-linux-x86_64.AppImage`, or `flatpak run --nosocket=wayland --socket=x11 ai.storyteller.photocraft`. On Wayland, LumaFoundry shows the command for your install in a notice until you dismiss it. Preferences › Performance › Linux display server = X11 does the same on every launch. With a fractional display scale (125%, 150%, 175%) an XWayland window is drawn at a lower resolution and enlarged by the compositor, so the interface is blurred there; native Wayland stays sharp (#1072).
+On a Wayland session, files dropped on the window don't open yet: winit 0.30, the windowing library under egui, has no Wayland drag and drop (#386). Use File › Open, or copy the image in your file manager and paste it with Ctrl+V. To drag and drop, start Tavru Photo under XWayland: `WAYLAND_DISPLAY= photocraft`, `WAYLAND_DISPLAY= ./photocraft-<version>-linux-x86_64.AppImage`, or `flatpak run --nosocket=wayland --socket=x11 ai.storyteller.photocraft`. On Wayland, Tavru Photo shows the command for your install in a notice until you dismiss it. Preferences › Performance › Linux display server = X11 does the same on every launch. With a fractional display scale (125%, 150%, 175%) an XWayland window is drawn at a lower resolution and enlarged by the compositor, so the interface is blurred there; native Wayland stays sharp (#1072).
 
 On macOS, the command-line tool comes as `photocraft-cli-<version>-macos-universal.zip`. The binary is signed with the same Developer ID as the app and notarized by Apple. A bare binary can't carry a stapled notarization ticket the way the DMG does, so the first time you run it macOS checks the notarization online. You can confirm it yourself:
 
@@ -306,11 +308,11 @@ photocraft
 Maintainers: [`docs/releasing.md`](docs/releasing.md) explains how releases are built, signed and published.
 
 > [!IMPORTANT]
-> **Status:** LumaFoundry is in early alpha, and we want to be straight about where it stands: much of Photoshop's feature surface exists in some form, but **it is not yet a Photoshop replacement for daily professional work**. Remaining gaps include broader generative model and platform support, advanced typography and professional workflows, and plug-in compatibility. Every Photoshop menu item is wired to a command ([`docs/parity-checklist.md`](docs/parity-checklist.md)), but that measures wiring, not behaviour. The honest, dimension-by-dimension picture and where we're going next are in the [roadmap](ROADMAP.md) and [parity assessment](docs/target-app-parity.md). Expect rough edges, and please file issues (include your OS, document size, layer count and a screenshot). You can also tell us what broke on [GitHub](https://github.com/tomblanchard312/lumafoundry/issues).
+> **Status:** Tavru Photo is in early alpha, and we want to be straight about where it stands: much of Photoshop's feature surface exists in some form, but **it is not yet a Photoshop replacement for daily professional work**. Remaining gaps include broader generative model and platform support, advanced typography and professional workflows, and plug-in compatibility. Every Photoshop menu item is wired to a command ([`docs/parity-checklist.md`](docs/parity-checklist.md)), but that measures wiring, not behaviour. The honest, dimension-by-dimension picture and where we're going next are in the [roadmap](ROADMAP.md) and [parity assessment](docs/target-app-parity.md). Expect rough edges, and please file issues (include your OS, document size, layer count and a screenshot). You can also tell us what broke on [GitHub](https://github.com/tomblanchard312/Tavru-Photo/issues).
 
 ## Community packages
 
-These installers are maintained by community members, not by the LumaFoundry team.
+These installers are maintained by community members, not by the Tavru Photo team.
 
 On Gentoo, the [::snakebyte overlay](https://github.com/switch87/snakebyte-overlay) packages the Linux release as `media-gfx/photocraft-bin`:
 
@@ -325,7 +327,7 @@ emerge --ask media-gfx/photocraft-bin
 
 The [Eridu interface brief](docs/eridu-ui.md) records the design contract, workspace behavior and adoption gaps.
 
-Developer, architecture, automation, format, and security documentation is maintained in the [LumaFoundry documentation book](book/).
+Developer, architecture, automation, format, and security documentation is maintained in the [Tavru Photo documentation book](book/).
 
 To self-host the browser version with Docker, see [Docker web hosting](packaging/web/README.md#docker).
 
@@ -335,16 +337,16 @@ Security architecture, threat modeling, parser hardening, fuzzing, and vulnerabi
 
 ## Test corpora
 
-LumaFoundry is tested against real files: our own Photoshop-authored oracle PSDs in
+Tavru Photo is tested against real files: our own Photoshop-authored oracle PSDs in
 [photocraft-corpus](https://github.com/storytold/photocraft-corpus) plus the psd-tools, ag-psd and PngSuite sets, pinned and
 sha256-verified. Fetch them with `cargo xtask corpus --all` and run the tests with
 `cargo xtask test-corpus` (details in [docs/development.md](docs/development.md#test-corpora)).
 
 ## Downloads
 
-**New to LumaFoundry?** Check the [LumaFoundry releases page](https://github.com/tomblanchard312/lumafoundry/releases) for published builds, or use the source-build instructions above.
+**New to Tavru Photo?** Check the [Tavru Photo releases page](https://github.com/tomblanchard312/Tavru-Photo/releases) for published builds, or use the source-build instructions above.
 
-**Want a specific build or format?** The tables below describe packaging targets. Check the assets on the [latest release](https://github.com/tomblanchard312/lumafoundry/releases/latest) for availability; [all releases](https://github.com/tomblanchard312/lumafoundry/releases) have earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
+**Want a specific build or format?** The tables below describe packaging targets. Check the assets on the [latest release](https://github.com/tomblanchard312/Tavru-Photo/releases/latest) for availability; [all releases](https://github.com/tomblanchard312/Tavru-Photo/releases) have earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
 
 ### Windows
 
@@ -389,7 +391,7 @@ RISC-V (riscv64): `photocraft-<ver>-linux-riscv64.tar.gz` only, built against Ub
 
 ## License and credits
 
-LumaFoundry is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
+Tavru Photo is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
 Based on PhotoCraft by the ArtCraft team. This independent fork is not affiliated with ArtCraft.
 Copyright (c) 2026 ArtCraft Team and the PhotoCraft contributors. Required notices are in [NOTICE](NOTICE).
 
@@ -399,10 +401,10 @@ with its author, source and license in [ATTRIBUTION.md](ATTRIBUTION.md).
 Every artwork shown is in the public domain (Wikimedia Commons, NASA, U.S. National Archives); sources are listed in [`docs/images/SOURCES.md`](docs/images/SOURCES.md).
 
 
-<sub>Adobe, Photoshop, Illustrator, Premiere Pro, Lightroom, Acrobat, After Effects and InDesign are trademarks or registered trademarks of Adobe Inc. in the United States and/or other countries. LumaFoundry is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Adobe Inc.; these names are used only to describe the workflows it is compatible with.</sub>
+<sub>Adobe, Photoshop, Illustrator, Premiere Pro, Lightroom, Acrobat, After Effects and InDesign are trademarks or registered trademarks of Adobe Inc. in the United States and/or other countries. Tavru Photo is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Adobe Inc.; these names are used only to describe the workflows it is compatible with.</sub>
 
 
 
 ## Star history
 
-[![Star History Chart](https://api.star-history.com/svg?repos=tomblanchard312/lumafoundry&type=Date&legend=top-left)](https://www.star-history.com/?repos=tomblanchard312%2Flumafoundry&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=tomblanchard312/Tavru-Photo&type=Date&legend=top-left)](https://www.star-history.com/?repos=tomblanchard312%2FTavru-Photo&type=date&legend=top-left)

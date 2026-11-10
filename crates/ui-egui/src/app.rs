@@ -301,7 +301,7 @@ impl eframe::App for PhotocraftApp {
             self.ui.status = error;
             self.ui.status_error = true;
         }
-        ui.ctx().accesskit_node_builder(egui::accesskit_root_id(), |node| node.set_label("LumaFoundry"));
+        ui.ctx().accesskit_node_builder(egui::accesskit_root_id(), |node| node.set_label("Tavru Photo"));
         self.ui_frame(ui, frame);
         self.finish_type_reset_pass(ui.ctx());
     }

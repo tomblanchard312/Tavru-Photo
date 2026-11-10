@@ -552,9 +552,9 @@
 	Hide All	Skjul alt
 
 # Help
-	About LumaFoundry	Om LumaFoundry
-	LumaFoundry Website	LumaFoundrys websted
-	LumaFoundry on GitHub	LumaFoundry på GitHub
+	About Tavru Photo	Om Tavru Photo
+	Tavru Photo Website	Tavru Photos websted
+	Tavru Photo on GitHub	Tavru Photo på GitHub
 	Report an Issue…	Rapportér et problem…
 	ArtCraft Website	ArtCrafts websted
 	Join the ArtCraft Discord…	Deltag i ArtCrafts Discord…
@@ -635,11 +635,11 @@
 	Import Shortcuts…	Importér genveje…
 	Load a keyboard shortcut set saved as .kys	Indlæs et tastaturgenvejssæt, der er gemt som .kys
 	Imported {n} shortcuts from {file}. Click OK to keep them.	Importerede {n} genveje fra {file}. Klik på OK for at beholde dem.
-	{n} commands are not in LumaFoundry.	{n} kommandoer findes ikke i LumaFoundry.
+	{n} commands are not in Tavru Photo.	{n} kommandoer findes ikke i Tavru Photo.
 	Keyboard shortcuts imported	Tastaturgenveje importeret
 	Your keyboard shortcut set {set} is in use here: {n} shortcuts differ from the defaults. Edit › Keyboard Shortcuts shows them; Reset All to Defaults undoes this.	Dit tastaturgenvejssæt {set} er i brug her: {n} genveje afviger fra standarden. Redigér › Tastaturgenveje viser dem; Nulstil alle til standardværdierne fortryder dette.
 	Import keyboard shortcuts?	Importér tastaturgenveje?
-	LumaFoundry found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from LumaFoundry's. Import it?	LumaFoundry fandt dit tastaturgenvejssæt {set} fra et andet billedredigeringsprogram på denne computer: {n} af genvejene afviger fra LumaFoundrys. Vil du importere det?
+	Tavru Photo found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from Tavru Photo's. Import it?	Tavru Photo fandt dit tastaturgenvejssæt {set} fra et andet billedredigeringsprogram på denne computer: {n} af genvejene afviger fra Tavru Photos. Vil du importere det?
 	Edit › Keyboard Shortcuts › Reset All to Defaults undoes an import.	Redigér › Tastaturgenveje › Nulstil alle til standardværdierne fortryder en import.
 	Don't Import	Importér ikke
 	The keyboard shortcut set was not imported: {error}	Sættet med tastaturgenveje blev ikke importeret: {error}
@@ -944,7 +944,7 @@
 	Embed Color Profile	Indlejr farveprofil
 	Assign Profile…	Tildel profil…
 	Convert to Profile…	Konvertér til profil…
-	LumaFoundry Manages Colors	LumaFoundry styrer farver
+	Tavru Photo Manages Colors	Tavru Photo styrer farver
 	Printer Manages Colors	Printeren styrer farver
 	(print to the printer)	(udskriv til printeren)
 	Absolute Colorimetric	Absolut kolorimetrisk
@@ -1546,15 +1546,15 @@
 	Use File › Open, or paste a copied image with {paste}.	Brug Filer › Åbn, eller indsæt et kopieret billede med {paste}.
 	Native file drag-and-drop is unavailable	Indbygget træk-og-slip af filer er ikke tilgængeligt
 	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or copy the image in your file manager and paste it with {paste}.	Indbygget træk-og-slip af filer understøttes endnu ikke på Wayland. Brug Filer › Åbn, eller kopiér billedet i din filhåndtering, og indsæt det med {paste}.
-	To drop files, start LumaFoundry under XWayland: `{command}`	For at slippe filer skal du starte LumaFoundry under XWayland: `{command}`
-	Or set Preferences › Performance › Linux display server to X11: LumaFoundry then always starts under XWayland.	Eller sæt Præferencer › Ydeevne › Linux-visningsserver til X11: LumaFoundry starter derefter altid under XWayland.
+	To drop files, start Tavru Photo under XWayland: `{command}`	For at slippe filer skal du starte Tavru Photo under XWayland: `{command}`
+	Or set Preferences › Performance › Linux display server to X11: Tavru Photo then always starts under XWayland.	Eller sæt Præferencer › Ydeevne › Linux-visningsserver til X11: Tavru Photo starter derefter altid under XWayland.
 	Edit › Paste	Redigér › Indsæt
 	Photo	Foto
 	Print	Udskriv
 	Art & Illustration	Kunst og illustration
 	Mobile	Mobil
 	Film & Video	Film og video
-	Default LumaFoundry Size	LumaFoundry-standardstørrelse
+	Default Tavru Photo Size	Tavru Photo-standardstørrelse
 	Clipboard	Udklipsholder
 	Photo (2 × 3 in)	Foto (2 × 3 tommer)
 	Photo (4 × 6 in)	Foto (4 × 6 tommer)
@@ -1707,7 +1707,7 @@
 	Reverse	Omvendt
 	Align with layer	Justér med laget
 	Join us on Discord	Mød os på Discord
-	LumaFoundry website	LumaFoundry-websted
+	Tavru Photo website	Tavru Photo-websted
 	ArtCraft	ArtCraft
 	GitHub	GitHub
 	No character style	Ingen tegnstil
@@ -1733,9 +1733,9 @@
 	Don't Save	Gem ikke
 	No	Nej
 	Yes	Ja
-	These settings aren't available in LumaFoundry yet.	Disse indstillinger er endnu ikke tilgængelige i LumaFoundry.
+	These settings aren't available in Tavru Photo yet.	Disse indstillinger er endnu ikke tilgængelige i Tavru Photo.
 	Shortcut removed.	Genvej fjernet.
-	All shortcuts reset to LumaFoundry defaults.	Alle genveje er nulstillet til LumaFoundrys standardindstillinger.
+	All shortcuts reset to Tavru Photo defaults.	Alle genveje er nulstillet til Tavru Photos standardindstillinger.
 	Add Shortcut	Tilføj genvej
 	Delete Shortcut	Slet genvej
 	Press keys…	Tryk på taster…
@@ -2222,8 +2222,8 @@
 	Output:	Output:
 	Paint Overlay	Malingsoverlejring
 	Pattern Size	Mønsterstørrelse
-	LumaFoundry	LumaFoundry
-	LumaFoundry — an open-source, native image editor written in Rust.	LumaFoundry — et native open source-billedredigeringsprogram skrevet i Rust.
+	Tavru Photo	Tavru Photo
+	Tavru Photo — an open-source, native image editor written in Rust.	Tavru Photo — et native open source-billedredigeringsprogram skrevet i Rust.
 	Position and Size	Placering og størrelse
 	Preserve Details	Bevar detaljer
 	Preserve Luminosity	Bevar luminans
@@ -2558,7 +2558,7 @@
 	Automatic uses GPU acceleration when available and falls back to CPU rendering on errors.	Automatisk bruger GPU-acceleration, når det er muligt, og falder tilbage til CPU-gengivelse ved fejl.
 	Switched to CPU rendering	Skiftede til CPU-gengivelse
 	GPU acceleration could not continue. Your documents are unchanged.	GPU-accelerationen kunne ikke fortsætte. Dine dokumenter er uændrede.
-	LumaFoundry is using the CPU image compositor. The window may still use your graphics adapter.	LumaFoundry bruger CPU-billedsammensætteren. Vinduet bruger muligvis stadig din grafikadapter.
+	Tavru Photo is using the CPU image compositor. The window may still use your graphics adapter.	Tavru Photo bruger CPU-billedsammensætteren. Vinduet bruger muligvis stadig din grafikadapter.
 	Retry GPU requires a restart. Save your work first.	Genstart kræves for at prøve GPU igen. Gem dit arbejde først.
 	Retry GPU tries the graphics processor again now.	Prøv GPU igen forsøger at bruge grafikprocessoren igen nu.
 	GPU acceleration resumed.	GPU-accelerationen er genoptaget.
@@ -2811,7 +2811,7 @@ fontWeight	Italic	Kursiv
 	Color to Alpha…	Farve til alfa…
 	Transparency Threshold	Grænseværdi for gennemsigtighed
 	Opacity Threshold	Grænseværdi for opacitet
-	LumaFoundry — Screen Color Picker	LumaFoundry — Skærmfarvevælger
+	Tavru Photo — Screen Color Picker	Tavru Photo — Skærmfarvevælger
 
 	Rasterize svg groups deeper than	Rasterisér svg-grupper dybere end
 	0 turns this threshold off; SVG groups nested deeper than 100 levels are always rasterized.	0 deaktiverer denne grænseværdi; SVG-grupper, der er indlejret dybere end 100 niveauer, rasteriseres altid.
@@ -3195,7 +3195,7 @@ curves	Smooth	Udjævn
 	{name} (Photoshop)	{name} (Photoshop)
 	{message} ({note})	{message} ({note})
 @plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	Indlæste {n} handling fra {file}|Indlæste {n} handlinger fra {file}
-@plural	{n} step has no LumaFoundry equivalent yet|{n} steps have no LumaFoundry equivalent yet	{n} trin har ingen LumaFoundry-ækvivalent endnu|{n} trin har ingen LumaFoundry-ækvivalent endnu
+@plural	{n} step has no Tavru Photo equivalent yet|{n} steps have no Tavru Photo equivalent yet	{n} trin har ingen Tavru Photo-ækvivalent endnu|{n} trin har ingen Tavru Photo-ækvivalent endnu
 @plural	Saved {n} action to {file}|Saved {n} actions to {file}	Gemte {n} handling i {file}|Gemte {n} handlinger i {file}
 @plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	{n} trin uden Photoshop-ækvivalent udeladt|{n} trin uden Photoshop-ækvivalent udeladt
 @plural	{n} action file loaded|{n} action files loaded	{n} handlingsfil indlæst|{n} handlingsfiler indlæst
@@ -3326,12 +3326,12 @@ curves	Smooth	Udjævn
 	Bicubic Smoother	Bikubisk glattere
 	Bicubic Sharper	Bikubisk skarpere
 	Pasting from other apps is unavailable	Indsættelse fra andre programmer er ikke tilgængelig
-	LumaFoundry can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	LumaFoundry kan ikke få adgang til systemets udklipsholder i denne session. På Wayland skjuler en Flatpak-sandkasse den protokol, som billeder fra andre programmer læses igennem.
-	To paste from other apps, start LumaFoundry under XWayland: `{command}`	For at indsætte fra andre programmer skal du starte LumaFoundry under XWayland: `{command}`
-	Nothing to paste: LumaFoundry can't read the system clipboard here	Intet at indsætte: LumaFoundry kan ikke læse systemets udklipsholder her
+	Tavru Photo can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	Tavru Photo kan ikke få adgang til systemets udklipsholder i denne session. På Wayland skjuler en Flatpak-sandkasse den protokol, som billeder fra andre programmer læses igennem.
+	To paste from other apps, start Tavru Photo under XWayland: `{command}`	For at indsætte fra andre programmer skal du starte Tavru Photo under XWayland: `{command}`
+	Nothing to paste: Tavru Photo can't read the system clipboard here	Intet at indsætte: Tavru Photo kan ikke læse systemets udklipsholder her
 	Delete this set	Slet dette sæt
 	New Set…	Nyt sæt…
-	LumaFoundry Defaults	LumaFoundry-standarder
+	Tavru Photo Defaults	Tavru Photo-standarder
 	Save a list of these shortcuts as a web page	Gem en liste over disse genveje som en webside
 	Save the changes to this set	Gem ændringerne i dette sæt
 	Save these shortcuts as a .kys file	Gem disse genveje som en .kys-fil
@@ -4094,7 +4094,7 @@ curves	Smooth	Udjævn
 	Multiple Flames Path Directions	Flere flammer i stiens retninger
 	Multiple Flames Various Length	Flere flammer med forskellig længde
 	My Brushes	Mine pensler
-	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run LumaFoundry under XWayland with `WAYLAND_DISPLAY= photocraft`.	Indbygget træk-og-slip af filer understøttes endnu ikke på Wayland. Brug Filer › Åbn, eller kør LumaFoundry under XWayland med `WAYLAND_DISPLAY= photocraft`.
+	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or run Tavru Photo under XWayland with `WAYLAND_DISPLAY= photocraft`.	Indbygget træk-og-slip af filer understøttes endnu ikke på Wayland. Brug Filer › Åbn, eller kør Tavru Photo under XWayland med `WAYLAND_DISPLAY= photocraft`.
 	Nearest	Nærmeste
 	Neon Glow	Neonglød
 	Neutralize	Neutralisér
@@ -4181,7 +4181,7 @@ curves	Smooth	Udjævn
 	Pentagon	Femkant
 	Percentage	Procent
 	Permission denied	Adgang nægtet
-	LumaFoundry keeps retrying; until a save succeeds, preference changes are lost when it closes.	LumaFoundry bliver ved med at prøve igen; indtil det lykkes at gemme, går ændringer i præferencerne tabt, når programmet lukkes.
+	Tavru Photo keeps retrying; until a save succeeds, preference changes are lost when it closes.	Tavru Photo bliver ved med at prøve igen; indtil det lykkes at gemme, går ændringer i præferencerne tabt, når programmet lukkes.
 	Photomerge	Photomerge
 	Pick Color From Image	Vælg farve fra billede
 	Picture Frame	Billedramme
@@ -4238,7 +4238,7 @@ curves	Smooth	Udjævn
 	Pyramids	Pyramider
 	Quick Actions	Hurtige handlinger
 	Quit	Afslut
-	Quit LumaFoundry	Afslut LumaFoundry
+	Quit Tavru Photo	Afslut Tavru Photo
 	Quit {app}	Afslut {app}
 	R G B	R G B
 	R g b	R g b
@@ -4314,7 +4314,7 @@ curves	Smooth	Udjævn
 	Save a Copy	Gem en kopi
 	Save before closing?	Gem før lukning?
 	Save for Web (Legacy)	Gem til web (ældre)
-	Save your work and restart LumaFoundry to retry GPU acceleration. CPU rendering remains active for this session.	Gem dit arbejde, og genstart LumaFoundry for at prøve GPU-acceleration igen. CPU-gengivelse er stadig aktiv i denne session.
+	Save your work and restart Tavru Photo to retry GPU acceleration. CPU rendering remains active for this session.	Gem dit arbejde, og genstart Tavru Photo for at prøve GPU-acceleration igen. CPU-gengivelse er stadig aktiv i denne session.
 	Saved a copy as {path}	Gemte en kopi som {path}
 	Saved {path}; image assets: {n} in {dir}	Gemte {path}; billedaktiver: {n} i {dir}
 	Saving…	Gemmer…

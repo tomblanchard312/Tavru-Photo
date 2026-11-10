@@ -4,7 +4,7 @@
 # Integer plural forms: one|few|many (1, 21; 2–4, 22–24; 0, 5–19).
 # Rule: https://www.unicode.org/cldr/charts/48/supplemental/language_plural_rules.html#uk
 # Preserve {name} placeholders, shortcut names and trailing dialog ellipses.
-# Original translations from the meaning of LumaFoundry's English source keys.
+# Original translations from the meaning of Tavru Photo's English source keys.
 # No proprietary translation resources were used.
 # Licensed MIT OR Apache-2.0. See LICENSE-translations.txt and ATTRIBUTION.md.
 
@@ -172,7 +172,7 @@
 # Batch / Image Processor
 
 # Native Windows printing qualification
-# LumaFoundry release checks.
+# Tavru Photo release checks.
 # History panel › History Brush source (#2966)
 # Bevel & Emboss shading controls.
 # Embedded Profile Mismatch: profile names beside the choices, Remember this choice
@@ -689,9 +689,9 @@
 	3D	3D
 	Toolbars	Панелі інструментів
 	Hide All	Приховати все
-	About LumaFoundry	Про LumaFoundry
-	LumaFoundry Website	Вебсайт LumaFoundry
-	LumaFoundry on GitHub	LumaFoundry на GitHub
+	About Tavru Photo	Про Tavru Photo
+	Tavru Photo Website	Вебсайт Tavru Photo
+	Tavru Photo on GitHub	Tavru Photo на GitHub
 	Report an Issue…	Повідомити про проблему…
 	ArtCraft Website	Вебсайт ArtCraft
 	Join the ArtCraft Discord…	Приєднатися до Discord ArtCraft…
@@ -768,11 +768,11 @@
 	Import Shortcuts…	Імпортувати сполучення клавіш…
 	Load a keyboard shortcut set saved as .kys	Завантажити набір сполучень клавіш, збережений як .kys
 	Imported {n} shortcuts from {file}. Click OK to keep them.	Імпортовано сполучень клавіш: {n} із {file}. Натисніть OK, щоб зберегти їх.
-	{n} commands are not in LumaFoundry.	Команд, яких немає в LumaFoundry: {n}.
+	{n} commands are not in Tavru Photo.	Команд, яких немає в Tavru Photo: {n}.
 	Keyboard shortcuts imported	Сполучення клавіш імпортовано
 	Your keyboard shortcut set {set} is in use here: {n} shortcuts differ from the defaults. Edit › Keyboard Shortcuts shows them; Reset All to Defaults undoes this.	Тут використовується ваш набір сполучень клавіш {set}: сполучень, що відрізняються від стандартних: {n}. Їх показує Редагування › Сполучення клавіш; «Скинути все до стандартних» скасовує імпорт.
 	Import keyboard shortcuts?	Імпортувати сполучення клавіш?
-	LumaFoundry found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from LumaFoundry's. Import it?	LumaFoundry знайшов на цьому комп'ютері ваш набір сполучень клавіш {set} з іншого графічного редактора: сполучень, що відрізняються від LumaFoundry: {n}. Імпортувати його?
+	Tavru Photo found your keyboard shortcut set {set} from another image editor on this computer: {n} of its shortcuts differ from Tavru Photo's. Import it?	Tavru Photo знайшов на цьому комп'ютері ваш набір сполучень клавіш {set} з іншого графічного редактора: сполучень, що відрізняються від Tavru Photo: {n}. Імпортувати його?
 	Edit › Keyboard Shortcuts › Reset All to Defaults undoes an import.	Редагування › Сполучення клавіш › «Скинути все до стандартних» скасовує імпорт.
 	Don't Import	Не імпортувати
 	The keyboard shortcut set was not imported: {error}	Набір сполучень клавіш не імпортовано: {error}
@@ -1065,7 +1065,7 @@
 	Embed Color Profile	Вбудувати колірний профіль
 	Assign Profile…	Призначити профіль…
 	Convert to Profile…	Перетворити на профіль…
-	LumaFoundry Manages Colors	LumaFoundry керує кольорами
+	Tavru Photo Manages Colors	Tavru Photo керує кольорами
 	Printer Manages Colors	Принтер керує кольорами
 	(print to the printer)	(друк на принтері)
 	Absolute Colorimetric	Абсолютний колориметричний
@@ -1631,15 +1631,15 @@
 	Use File › Open, or paste a copied image with {paste}.	Скористайтеся меню Файл › Відкрити або вставте скопійоване зображення за допомогою {paste}.
 	Native file drag-and-drop is unavailable	Нативне перетягування файлів недоступне
 	Native file drag-and-drop is not supported on Wayland yet. Use File › Open, or copy the image in your file manager and paste it with {paste}.	Нативне перетягування файлів у Wayland ще не підтримується. Скористайтеся меню Файл › Відкрити або скопіюйте зображення у файловому менеджері та вставте його за допомогою {paste}.
-	To drop files, start LumaFoundry under XWayland: `{command}`	Щоб перетягувати файли, запустіть LumaFoundry під XWayland: `{command}`
-	Or set Preferences › Performance › Linux display server to X11: LumaFoundry then always starts under XWayland.	Або виберіть X11 у Налаштування › Продуктивність › Сервер відображення Linux: LumaFoundry завжди запускатиметься під XWayland.
+	To drop files, start Tavru Photo under XWayland: `{command}`	Щоб перетягувати файли, запустіть Tavru Photo під XWayland: `{command}`
+	Or set Preferences › Performance › Linux display server to X11: Tavru Photo then always starts under XWayland.	Або виберіть X11 у Налаштування › Продуктивність › Сервер відображення Linux: Tavru Photo завжди запускатиметься під XWayland.
 	Edit › Paste	Редагування › Вставити
 	Photo	Фото
 	Print	Друк
 	Art & Illustration	Мистецтво та ілюстрація
 	Mobile	Мобільні пристрої
 	Film & Video	Фільм і відео
-	Default LumaFoundry Size	Типовий розмір LumaFoundry
+	Default Tavru Photo Size	Типовий розмір Tavru Photo
 	Clipboard	Буфер обміну
 	Photo (2 × 3 in)	Фото (2 × 3 дюйми)
 	Photo (4 × 6 in)	Фото (4 × 6 дюймів)
@@ -1790,7 +1790,7 @@
 	Reverse	Зворотний
 	Align with layer	Вирівняти за шаром
 	Join us on Discord	Приєднуйтеся до нас у Discord
-	LumaFoundry website	Вебсайт LumaFoundry
+	Tavru Photo website	Вебсайт Tavru Photo
 	ArtCraft	ArtCraft
 	GitHub	GitHub
 	No character style	Без стилю символів
@@ -1815,9 +1815,9 @@
 	Don't Save	Не зберігати
 	No	Ні
 	Yes	Так
-	These settings aren't available in LumaFoundry yet.	Ці параметри ще недоступні у LumaFoundry.
+	These settings aren't available in Tavru Photo yet.	Ці параметри ще недоступні у Tavru Photo.
 	Shortcut removed.	Клавіатурне скорочення вилучено.
-	All shortcuts reset to LumaFoundry defaults.	Усі клавіатурні скорочення скинуто до типових значень LumaFoundry.
+	All shortcuts reset to Tavru Photo defaults.	Усі клавіатурні скорочення скинуто до типових значень Tavru Photo.
 	Add Shortcut	Додати клавіатурне скорочення
 	Delete Shortcut	Видалити клавіатурне скорочення
 	Press keys…	Натисніть клавіші…
@@ -2295,8 +2295,8 @@
 	Output:	Вихід:
 	Paint Overlay	Малювати накладання
 	Pattern Size	Розмір візерунка
-	LumaFoundry	LumaFoundry
-	LumaFoundry — an open-source, native image editor written in Rust.	LumaFoundry — нативний редактор зображень із відкритим кодом, написаний на Rust.
+	Tavru Photo	Tavru Photo
+	Tavru Photo — an open-source, native image editor written in Rust.	Tavru Photo — нативний редактор зображень із відкритим кодом, написаний на Rust.
 	Position and Size	Положення та розмір
 	Preserve Details	Зберігати деталі
 	Preserve Luminosity	Зберігати світність
@@ -2616,7 +2616,7 @@
 	Automatic uses GPU acceleration when available and falls back to CPU rendering on errors.	Автоматичний режим використовує прискорення GPU, коли воно доступне, та переходить на рендеринг CPU в разі помилок.
 	Switched to CPU rendering	Перехід на рендеринг CPU
 	GPU acceleration could not continue. Your documents are unchanged.	Прискорення GPU не може продовжувати роботу. Ваші документи не змінено.
-	LumaFoundry is using the CPU image compositor. The window may still use your graphics adapter.	LumaFoundry використовує компонувальник зображень CPU. Вікно може й далі використовувати ваш графічний адаптер.
+	Tavru Photo is using the CPU image compositor. The window may still use your graphics adapter.	Tavru Photo використовує компонувальник зображень CPU. Вікно може й далі використовувати ваш графічний адаптер.
 	Retry GPU requires a restart. Save your work first.	Повторна спроба використати GPU потребує перезапуску. Спочатку збережіть роботу.
 	Retry GPU tries the graphics processor again now.	Повторити спробу з GPU — одразу знову спробувати графічний процесор.
 	GPU acceleration resumed.	Прискорення GPU відновлено.
@@ -3838,7 +3838,7 @@ cameraData	Lens	Об'єктив
 	Click: smooth point · Double-click: corner · Drag a point: move · Click first point: close · {key} finish	Клацання: плавна точка · Подвійне клацання: кут · Перетягування точки: перемістити · Клацання першої точки: замкнути · {key}: завершити
 	Search settings…	Пошук налаштувань…
 	No matching settings	Немає відповідних налаштувань
-	LumaFoundry — Screen Color Picker	LumaFoundry — Піпетка кольору екрана
+	Tavru Photo — Screen Color Picker	Tavru Photo — Піпетка кольору екрана
 	Sampling Brush Tool	Пензель області вибірки
 	Sampling Area Overlay	Накладання області вибірки
 	Show Sampling Area	Показати область вибірки
@@ -3987,7 +3987,7 @@ curves	Smooth	Згладити
 	{name} (Photoshop)	{name} (Photoshop)
 	{message} ({note})	{message} ({note})
 @plural	Loaded {n} action from {file}|Loaded {n} actions from {file}	Завантажено {n} операцію з {file}|Завантажено {n} операції з {file}|Завантажено {n} операцій з {file}
-@plural	{n} step has no LumaFoundry equivalent yet|{n} steps have no LumaFoundry equivalent yet	{n} крок ще не має відповідника в LumaFoundry|{n} кроки ще не мають відповідника в LumaFoundry|{n} кроків ще не мають відповідника в LumaFoundry
+@plural	{n} step has no Tavru Photo equivalent yet|{n} steps have no Tavru Photo equivalent yet	{n} крок ще не має відповідника в Tavru Photo|{n} кроки ще не мають відповідника в Tavru Photo|{n} кроків ще не мають відповідника в Tavru Photo
 @plural	Saved {n} action to {file}|Saved {n} actions to {file}	Збережено {n} операцію до {file}|Збережено {n} операції до {file}|Збережено {n} операцій до {file}
 @plural	{n} step with no Photoshop equivalent left out|{n} steps with no Photoshop equivalent left out	Пропущено {n} крок без відповідника в Photoshop|Пропущено {n} кроки без відповідника в Photoshop|Пропущено {n} кроків без відповідника в Photoshop
 @plural	{n} action file loaded|{n} action files loaded	Завантажено {n} файл операцій|Завантажено {n} файли операцій|Завантажено {n} файлів операцій
@@ -4086,12 +4086,12 @@ curves	Smooth	Згладити
 	Bicubic Smoother	Бікубічна, гладкіша
 	Bicubic Sharper	Бікубічна, чіткіша
 	Pasting from other apps is unavailable	Вставлення з інших застосунків недоступне
-	LumaFoundry can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	У цьому сеансі LumaFoundry не має доступу до системного буфера обміну. У Wayland пісочниця Flatpak приховує протокол, через який читаються зображення з інших застосунків.
-	To paste from other apps, start LumaFoundry under XWayland: `{command}`	Щоб вставляти з інших застосунків, запустіть LumaFoundry під XWayland: `{command}`
-	Nothing to paste: LumaFoundry can't read the system clipboard here	Нічого вставити: тут LumaFoundry не може прочитати системний буфер обміну
+	Tavru Photo can't reach the system clipboard in this session. On Wayland, a Flatpak sandbox hides the protocol that images from other apps are read through.	У цьому сеансі Tavru Photo не має доступу до системного буфера обміну. У Wayland пісочниця Flatpak приховує протокол, через який читаються зображення з інших застосунків.
+	To paste from other apps, start Tavru Photo under XWayland: `{command}`	Щоб вставляти з інших застосунків, запустіть Tavru Photo під XWayland: `{command}`
+	Nothing to paste: Tavru Photo can't read the system clipboard here	Нічого вставити: тут Tavru Photo не може прочитати системний буфер обміну
 	Delete this set	Видалити цей набір
 	New Set…	Новий набір…
-	LumaFoundry Defaults	Стандартні LumaFoundry
+	Tavru Photo Defaults	Стандартні Tavru Photo
 	Save a list of these shortcuts as a web page	Зберегти список цих клавіатурних скорочень як вебсторінку
 	Save the changes to this set	Зберегти зміни в цьому наборі
 	Save these shortcuts as a .kys file	Зберегти ці клавіатурні скорочення як файл .kys

@@ -34,7 +34,7 @@ jobs:
     uses: tomblanchard312/craft-common-actions/.github/workflows/private-release.yml@44b245123b4e4dad896decb7e7689d887c57d95f
     with:
       app-name: photocraft
-      app-title: LumaFoundry
+      app-title: Tavru Photo
       craft-fonts-ref: b076417b5880bd4154bd22f00695b1d28c6bea83
       version: ${{ inputs.version }}
       validate-only: ${{ inputs.validate-only || false }}

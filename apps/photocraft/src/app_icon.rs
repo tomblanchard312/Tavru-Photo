@@ -77,7 +77,7 @@ mod tests {
     fn only_a_macos_app_bundle_skips_the_runtime_icon() {
         use std::path::Path;
         assert!(in_app_bundle(Path::new("/Applications/LumaFoundry.app/Contents/MacOS/photocraft")));
-        assert!(in_app_bundle(Path::new("/Users/a/Downloads/LumaFoundry Beta.APP/Contents/MacOS/photocraft")));
+        assert!(in_app_bundle(Path::new("/Users/a/Downloads/Tavru Photo Beta.APP/Contents/MacOS/photocraft")));
         assert!(!in_app_bundle(Path::new("/Users/a/src/photocraft/target/release/photocraft")));
         assert!(!in_app_bundle(Path::new("/opt/Contents/MacOS/photocraft")), "not inside a .app");
         assert!(!in_app_bundle(Path::new("/.app/Contents/MacOS/photocraft")), "a bare `.app` is no bundle name");

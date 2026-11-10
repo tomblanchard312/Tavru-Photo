@@ -575,7 +575,8 @@ fn preferences_interface_search_hides_rows_and_skips_empty_groups() {
         h.run_steps(4);
         h
     };
-    let shown = |h: &Harness<'_, PhotocraftApp>, label: &str| h.query_all_by_label(label).next().is_some();
+    // Search the preferences modal, not the editor toolbar's Options button.
+    let shown = |h: &Harness<'_, PhotocraftApp>, label: &str| h.get_by_role(egui::accesskit::Role::Dialog).query_all_by_label(label).next().is_some();
 
     let h = render("language");
     assert!(shown(&h, "Language") && shown(&h, "Presentation"));

@@ -61,7 +61,7 @@ fn run(s: &mut Session, p: &Value, remove: bool) -> Result<Value> {
             l.visible = true;
         }
     }
-    let label = if remove { "Remove Background with Enki" } else { "Select Subject with Enki" };
+    let label = if remove { "Remove Background with AI" } else { "Select Subject with AI" };
     crate::jobs::run(
         s,
         label,
@@ -69,7 +69,7 @@ fn run(s: &mut Session, p: &Value, remove: bool) -> Result<Value> {
         move |ctx| {
             let r = snapshot.bounds();
             let png = edits::subject_source(&snapshot, ctx)?;
-            ctx.progress(0.1, "Finding subject with Enki");
+            ctx.progress(0.1, "Finding subject");
             let (bytes, model) = transport::subject_mask(png, r.width(), r.height(), ctx)?;
             let image = photocraft_codecs::decode(&bytes).map_err(|e| bad(e.to_string()))?;
             if image.layout() != photocraft_codecs::ChannelLayout::Gray || image.sample_type() != photocraft_codecs::SampleType::U8 {
@@ -97,7 +97,7 @@ fn run(s: &mut Session, p: &Value, remove: bool) -> Result<Value> {
     )
 }
 fn apply(s: &mut Session, mask: Surface, target: Option<LayerId>, model: &str) -> Result<Value> {
-    s.edit(if target.is_some() { "Remove Background with Enki" } else { "Select Subject with Enki" }, move |doc, active| {
+    s.edit(if target.is_some() { "Remove Background with AI" } else { "Select Subject with AI" }, move |doc, active| {
         if let Some(id) = target {
             let src = doc.layer(id).ok_or(EngineError::NoLayer(id))?;
             let pixels = src.surface().ok_or_else(|| bad("subject layer no longer contains pixels"))?.clone();
@@ -116,7 +116,7 @@ fn apply(s: &mut Session, mask: Surface, target: Option<LayerId>, model: &str) -
     })
 }
 pub(super) fn specs() -> Vec<crate::CommandSpec> {
-    [(SELECT,"Subject with Enki",&["Select"][..],available as fn(&Session)->std::result::Result<(),String>,select as fn(&mut Session,&Value)->Result<Value>),(REMOVE,"Remove Background with Enki",&["Layer"][..],removable,remove)]
+    [(SELECT,"Subject with AI",&["Select"][..],available as fn(&Session)->std::result::Result<(),String>,select as fn(&mut Session,&Value)->Result<Value>),(REMOVE,"Remove Background with AI",&["Layer"][..],removable,remove)]
     .into_iter().map(|(id,label,menu,enabled,run)|crate::CommandSpec{id,label,menu,shortcut:None,params:r#"{"refineRadius":0..32=4,"document":id?,"dryRun":bool=false}. Learned subject mask, optional image-guided refinement. Remove creates a masked duplicate and hides the original in one undo."#,enabled,run,journal:true}).collect()
 }
 fn select(s: &mut Session, p: &Value) -> Result<Value> {

@@ -61,27 +61,26 @@ fn longest_run(flags: impl Iterator<Item = bool>) -> (usize, usize) {
     best
 }
 
-/// The black document's width and height in physical screen pixels, measured through the canvas
-/// centre (the longest dark run on the centre row and column; the pasteboard is lighter).
+/// The green document's physical size through the canvas centre. A saturated marker
+/// distinguishes document pixels from dark-theme pasteboard shadows.
 fn document_physical_size(h: &mut Harness) -> (i64, i64) {
     let ppp = h.ctx.pixels_per_point();
     let rendered = h.render().expect("render");
     let (w, height) = (rendered.width(), rendered.height());
     let px = rendered.into_raw();
-    let at = |x: u32, y: u32| -> u8 {
+    let on_doc = |x: u32, y: u32| {
         let i = ((y * w + x) * 4) as usize;
-        px[i]
+        px[i] < 12 && px[i + 1] > 240 && px[i + 2] < 12
     };
     let r = h.state().last_canvas_rect;
     let cx = ((r.center().x * ppp) as u32).min(w - 1);
     let cy = ((r.center().y * ppp) as u32).min(height - 1);
-    let on_doc = |x: u32, y: u32| at(x, y) < 12;
     let (_, dw) = longest_run((0..w).map(|x| on_doc(x, cy)));
     let (_, dh) = longest_run((0..height).map(|y| on_doc(cx, y)));
     (dw as i64, dh as i64)
 }
 
-/// One black `DOC`-square document at 100%/200% zoom at each UI scale, on the GPU or CPU canvas.
+/// One green `DOC`-square document at 100%/200% zoom at each UI scale, on the GPU or CPU canvas.
 fn assert_document_size_is_physical(gpu: bool) {
     let Some(mut h) = harness(gpu) else { return };
     h.run_steps(4);
@@ -94,7 +93,7 @@ fn assert_document_size_is_physical(gpu: bool) {
             }
             app.run("prefs.set", json!({"values": {"interface.uiScale": ui_scale}})).expect("ui scale");
             app.run("file.new", json!({"width": DOC, "height": DOC, "background": "white"})).expect("new");
-            app.run("edit.fill", json!({"color": "#000000"})).expect("fill");
+            app.run("edit.fill", json!({"color": "#00ff00"})).expect("fill");
             app.sync_views();
         }
         h.run_steps(6);

@@ -14,9 +14,9 @@ policy, licenses, updater policy, and Tavru Photo branding remain in place.
 - Preserve Tavru Photo's existing home screen and workspace chrome. Exclude the
   coupled upstream Home redesign from `51131b82c` and `aa08b4007`; keep existing
   project links. Unused translation additions remain harmless.
-- Adapt Enki subject refinement to the upstream sparse, interruptible matting API;
+- Adapt Oqelith subject refinement to the upstream sparse, interruptible matting API;
   forward job cancellation and progress instead of calling now test-only dense APIs.
-- Keep both Enki generation and upstream guide-edit dialogs. Rebalance the existing
+- Keep both Oqelith generation and upstream guide-edit dialogs. Rebalance the existing
   dialog routing functions to remain within the complexity gate.
 - Use Tavru Photo in new browser crash messages and new documentation prose.
 - PR #10 remains separate, stacked work for icons, fonts, and accessibility. Its
@@ -30,7 +30,7 @@ are reviewed. Previous PR #9 validation applies only to its previous head.
 
 - Native desktop and CLI build: pass with pinned craft-fonts input.
 - UI library: 5,128 passed, 22 ignored.
-- Enki command/transport regressions: 22 passed, 1 ignored (native loopback retry;
+- Oqelith command/transport regressions: 22 passed, 1 ignored (native loopback retry;
   sandbox blocked three socket-binding tests).
 - Matting: 28 passed, 2 ignored. Adversarial command panic-hunt: pass.
 - Engine/UI all-target Clippy with warnings denied: pass. Layering: 31 crates, pass.

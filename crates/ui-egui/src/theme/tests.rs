@@ -115,9 +115,7 @@ fn saved_ui_font_size_survives_first_frame_install() {
 #[test]
 fn pro_light_gray_and_light_themes() {
     // #2661: Photoshop's third and fourth brightness levels, with the Pro layout.
-    for (kind, panel, id, label) in
-        [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 255, "proLight", "Tavru Day")]
-    {
+    for (kind, panel, id, label) in [(ThemeKind::ProLightGray, 184, "proLightGray", "Pro (Light Gray)"), (ThemeKind::ProLight, 255, "proLight", "Tavru Day")] {
         let t = Tokens::for_kind(kind);
         assert!(t.pro && !t.dark() && !t.bevel && kind.is_pro(), "{kind:?}");
         assert_eq!((t.kind, t.card), (kind, Color32::from_gray(panel)));
@@ -397,11 +395,7 @@ fn eridu_palettes_use_semantic_action_and_surface_colors() {
     for palette in [light, dark] {
         assert_eq!(
             (palette.radius_sm, palette.radius, palette.radius_lg),
-            (
-                f32::from(eridu_style::radius::CONTROL),
-                f32::from(eridu_style::radius::CONTROL),
-                f32::from(eridu_style::radius::SURFACE),
-            )
+            (f32::from(eridu_style::radius::CONTROL), f32::from(eridu_style::radius::CONTROL), f32::from(eridu_style::radius::SURFACE),)
         );
     }
 }

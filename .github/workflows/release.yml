@@ -38,7 +38,7 @@ jobs:
       craft-fonts-ref: b076417b5880bd4154bd22f00695b1d28c6bea83
       version: ${{ inputs.version }}
       validate-only: ${{ inputs.validate-only || false }}
-      allowed-git-packages: "[[\"eridu-style\",\"git+https://github.com/tomblanchard312/eridu-style?rev=d3b4cdc03706ac100fae2de907282575652b76ad#d3b4cdc03706ac100fae2de907282575652b76ad\"]]"
+      allowed-git-packages: "[[\"eridu-style\",\"git+https://github.com/tomblanchard312/tavru-style?rev=97efe362bb37da690f58bc953fba03d4b9ba2c21#97efe362bb37da690f58bc953fba03d4b9ba2c21\"]]"
       contributors-artifact: ${{ needs.credits.outputs.artifact-name }}
     secrets:
       ERIDU_STYLE_DEPLOY_KEY: ${{ secrets.ERIDU_STYLE_DEPLOY_KEY }}

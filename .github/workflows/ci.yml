@@ -113,7 +113,7 @@ jobs:
           python3 - <<'PY'
           import sys, tomllib
           lock = tomllib.load(open("Cargo.lock", "rb"))
-          eridu_source = "git+https://github.com/tomblanchard312/eridu-style?rev=d3b4cdc03706ac100fae2de907282575652b76ad#d3b4cdc03706ac100fae2de907282575652b76ad"
+          eridu_source = "git+https://github.com/tomblanchard312/tavru-style?rev=97efe362bb37da690f58bc953fba03d4b9ba2c21#97efe362bb37da690f58bc953fba03d4b9ba2c21"
           bad = sorted({p["source"] for p in lock.get("package", [])
                         if p.get("source", "").startswith("git+")
                         and not p["source"].startswith("git+https://github.com/storytold/")

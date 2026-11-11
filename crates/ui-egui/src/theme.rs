@@ -789,7 +789,7 @@ impl Tokens {
             let p = if kind.is_dark() { eridu_style::DARK } else { eridu_style::LIGHT };
             t.chrome = p.chrome;
             t.canvas = p.background;
-            t.canvas_dot = p.background;
+            t.canvas_dot = if matches!(kind, ThemeKind::Studio | ThemeKind::StudioLight) { p.border } else { p.background };
             t.dock = p.background;
             t.card = p.surface;
             t.card_border = p.border;
@@ -804,7 +804,7 @@ impl Tokens {
             t.accent = p.accent;
             t.accent_soft = p.selected;
             t.accent_border = p.focus;
-            t.accent_text = p.accent_text;
+            t.accent_text = p.accent;
             t.separator = p.border;
             t.primary_bg = p.primary;
             t.primary_text = p.on_primary;

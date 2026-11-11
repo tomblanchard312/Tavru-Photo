@@ -143,9 +143,9 @@ pub fn quick_actions(content: &LayerContent) -> &'static [(&'static str, &'stati
             ("Remove Background", "layer.removeBackground"),
             ("Select Subject", "select.subject"),
             #[cfg(target_os = "linux")]
-            ("Subject with Enki", "select.subjectEnki"),
+            ("Subject with AI", "select.subjectEnki"),
             #[cfg(target_os = "linux")]
-            ("Remove Background with Enki", "layer.removeBackgroundEnki"),
+            ("Remove Background with AI", "layer.removeBackgroundEnki"),
             #[cfg(target_os = "linux")]
             ("Replace Background", "image.replaceBackground"),
             ("Background Fill…", "layer.backgroundFill"),

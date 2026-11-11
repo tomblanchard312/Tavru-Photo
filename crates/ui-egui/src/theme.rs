@@ -76,11 +76,11 @@ impl ThemeKind {
     pub fn label(self) -> &'static str {
         match self {
             ThemeKind::Pro => "Pro (Dark)",
-            ThemeKind::ProMedium => "Eridu (Dark)",
+            ThemeKind::ProMedium => "Tavru Night",
             ThemeKind::ProLightGray => "Pro (Light Gray)",
-            ThemeKind::ProLight => "Eridu (Light)",
-            ThemeKind::Studio => "Eridu Studio (Dark)",
-            ThemeKind::StudioLight => "Eridu Studio (Light)",
+            ThemeKind::ProLight => "Tavru Day",
+            ThemeKind::Studio => "Tavru Studio (Dark)",
+            ThemeKind::StudioLight => "Tavru Studio (Light)",
             ThemeKind::Classic => "Classic",
             ThemeKind::Adwaita => "Adwaita (Light)",
             ThemeKind::AdwaitaDark => "Adwaita (Dark)",
@@ -139,11 +139,11 @@ impl ThemeKind {
     pub fn from_name(s: &str) -> Option<Self> {
         match s.to_ascii_lowercase().replace([' ', '_', '-', '(', ')'], "").as_str() {
             "pro" | "prodark" | "photoshop" | "dark" => Some(ThemeKind::Pro),
-            "eridudark" | "promedium" | "promediumgray" | "medium" | "mediumgray" => Some(ThemeKind::ProMedium),
+            "tavrunight" | "eridudark" | "promedium" | "promediumgray" | "medium" | "mediumgray" => Some(ThemeKind::ProMedium),
             "prolightgray" | "lightgray" | "mediumlight" => Some(ThemeKind::ProLightGray),
-            "eridulight" | "prolight" | "prolightest" | "lightest" | "light" => Some(ThemeKind::ProLight),
-            "eridustudiodark" | "studio" | "studiodark" => Some(ThemeKind::Studio),
-            "eridustudiolight" | "studiolight" => Some(ThemeKind::StudioLight),
+            "tavruday" | "eridulight" | "prolight" | "prolightest" | "lightest" | "light" => Some(ThemeKind::ProLight),
+            "tavrustudiodark" | "eridustudiodark" | "studio" | "studiodark" => Some(ThemeKind::Studio),
+            "tavrustudiolight" | "eridustudiolight" | "studiolight" => Some(ThemeKind::StudioLight),
             "classic" | "win2000" | "retro" => Some(ThemeKind::Classic),
             "adwaita" | "adwaitalight" | "gnome" | "gnomelight" => Some(ThemeKind::Adwaita),
             "adwaitadark" | "gnomedark" => Some(ThemeKind::AdwaitaDark),
@@ -222,7 +222,7 @@ impl Tokens {
     }
 
     pub fn for_kind(kind: ThemeKind) -> Self {
-        match kind {
+        let mut t = match kind {
             // Sampled from Photoshop 2026's default brightness (raw display values).
             ThemeKind::ProMedium => Tokens {
                 kind,
@@ -784,7 +784,39 @@ impl Tokens {
                 caption_close_text: Color32::from_rgb(253, 246, 227),
                 scrim: Color32::from_black_alpha(110),
             },
+        };
+        if matches!(kind, ThemeKind::ProMedium | ThemeKind::ProLight | ThemeKind::Studio | ThemeKind::StudioLight) {
+            let p = if kind.is_dark() { eridu_style::DARK } else { eridu_style::LIGHT };
+            t.chrome = p.chrome;
+            t.canvas = p.background;
+            t.canvas_dot = p.background;
+            t.dock = p.background;
+            t.card = p.surface;
+            t.card_border = p.border;
+            t.field = p.surface_subtle;
+            t.field_border = p.border;
+            t.hover = p.surface_hover;
+            t.pressed = p.selected;
+            t.text = p.text;
+            t.text_dim = p.text_muted;
+            t.text_faint = p.text_muted;
+            t.icon = p.text;
+            t.accent = p.accent;
+            t.accent_soft = p.selected;
+            t.accent_border = p.focus;
+            t.accent_text = p.accent_text;
+            t.separator = p.border;
+            t.primary_bg = p.primary;
+            t.primary_text = p.on_primary;
+            t.danger = p.danger;
+            t.warning = p.warning;
+            t.radius = f32::from(eridu_style::radius::CONTROL);
+            t.radius_sm = t.radius;
+            t.radius_lg = f32::from(eridu_style::radius::SURFACE);
+            t.tab_strip = p.chrome;
+            t.row_selected = p.selected;
         }
+        t
     }
 
     /// Tokens for the active theme (stored in egui's context data by [`apply`]).

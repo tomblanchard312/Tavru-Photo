@@ -108,7 +108,7 @@ fn cancelling_generation_never_changes_the_document() {
 
 #[test]
 #[cfg(target_os = "linux")]
-#[ignore = "requires installed Enki runtime and an explicitly selected LUMA_LIVE_ENKI_MODEL"]
+#[ignore = "requires installed Oqelith runtime and an explicitly selected LUMA_LIVE_ENKI_MODEL"]
 fn live_generation_imports_a_new_layer_and_undo_restores_original() {
     let model = std::env::var("LUMA_LIVE_ENKI_MODEL").expect("choose an installed test model");
     let mut s = Session::new();

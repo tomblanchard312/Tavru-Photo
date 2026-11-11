@@ -17,10 +17,10 @@ The [Eridu interface brief](eridu-ui.md) defines the shared design baseline and 
 | Theme | Intent |
 |---|---|
 | Pro | Inherited flat charcoal panels (#323232), dark tab strips, blue accent (#378ef0), pill buttons, checkboxes, compact 12 px type; provenance and combined appearance require release review |
-| Eridu (Dark), stored as Pro Medium | Docked workspace with Eridu dark surfaces, River selection and Copper primary actions |
-| Eridu (Light), stored as Pro Light | Docked workspace with warm light surfaces and semantic actions |
-| Eridu Studio (Dark), stored as Studio | Eridu semantic dark surfaces, River selection, Copper primary actions and 4/8/12 px radii |
-| Eridu Studio (Light), stored as Studio Light | Warm light surfaces with accessible River and Copper actions |
+| Tavru Night, stored as Pro Medium | Docked workspace with TavruOS dark surfaces, purple selection and primary actions |
+| Tavru Day, stored as Pro Light | Docked workspace with warm light surfaces and semantic actions |
+| Tavru Studio (Dark), stored as Studio | TavruOS semantic dark surfaces, purple selection and primary actions and shared workspace radii |
+| Tavru Studio (Light), stored as Studio Light | Light purple surfaces with accessible purple actions |
 | Classic | Windows-2000 bevels, square corners, navy selection |
 | Adwaita | GNOME's libadwaita light palette on the Studio layout: white header bar and cards on a grey sidebar, GNOME blue accent (#3584e4), 6 / 9 / 12 px radii, grey (not red) close button |
 | Adwaita Dark | The libadwaita dark palette on the same layout |

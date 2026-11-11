@@ -18,8 +18,8 @@ runs:
         fi
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
-        repository: tomblanchard312/eridu-style
-        ref: d3b4cdc03706ac100fae2de907282575652b76ad
+        repository: tomblanchard312/tavru-style
+        ref: 97efe362bb37da690f58bc953fba03d4b9ba2c21
         path: .git/ci-eridu-style
         fetch-depth: 0
         ssh-key: ${{ inputs.ssh-key }}
@@ -36,7 +36,7 @@ runs:
           echo CARGO_NET_GIT_FETCH_WITH_CLI=true
           echo GIT_CONFIG_COUNT=2
           echo "GIT_CONFIG_KEY_0=url.file://$path.insteadOf"
-          echo GIT_CONFIG_VALUE_0=https://github.com/tomblanchard312/eridu-style.git
+          echo GIT_CONFIG_VALUE_0=https://github.com/tomblanchard312/tavru-style.git
           echo "GIT_CONFIG_KEY_1=url.file://$path.insteadOf"
-          echo GIT_CONFIG_VALUE_1=https://github.com/tomblanchard312/eridu-style
+          echo GIT_CONFIG_VALUE_1=https://github.com/tomblanchard312/tavru-style
         } >> "$GITHUB_ENV"

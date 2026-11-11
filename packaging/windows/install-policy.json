@@ -1,6 +1,7 @@
 {
   "id": "photocraft",
   "name": "Tavru Photo",
+  "installRegistryKey": "Software\\LumaFoundry",
   "upgradeCode": "D9660F32-2D0A-4ABE-B73D-17BE25F1542C",
   "sources": [
     "photocraft.wxs"

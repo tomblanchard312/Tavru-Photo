@@ -789,7 +789,7 @@ impl Tokens {
             let p = if kind.is_dark() { eridu_style::DARK } else { eridu_style::LIGHT };
             t.chrome = p.chrome;
             t.canvas = p.background;
-            t.canvas_dot = p.background;
+            t.canvas_dot = if matches!(kind, ThemeKind::Studio | ThemeKind::StudioLight) { p.border } else { p.background };
             t.dock = p.background;
             t.card = p.surface;
             t.card_border = p.border;
@@ -804,7 +804,7 @@ impl Tokens {
             t.accent = p.accent;
             t.accent_soft = p.selected;
             t.accent_border = p.focus;
-            t.accent_text = p.accent_text;
+            t.accent_text = p.accent;
             t.separator = p.border;
             t.primary_bg = p.primary;
             t.primary_text = p.on_primary;
@@ -958,7 +958,7 @@ pub fn install_fonts_with(ctx: &egui::Context, cjk: crate::cjk_fonts::Sources) {
     }
     let size = ui_font_size(ctx);
     let eridu = eridu_style::fonts::definitions();
-    for family in [eridu_style::fonts::display(), eridu_style::fonts::numeric(), eridu_style::fonts::numeric_semibold()] {
+    for family in [eridu_style::fonts::numeric(), eridu_style::fonts::numeric_semibold()] {
         if let Some(stack) = eridu.families.get(&family) {
             for name in stack {
                 if let Some(data) = eridu.font_data.get(name) {
@@ -1085,7 +1085,7 @@ pub fn semibold(size: f32) -> FontId {
     FontId::new(size, FontFamily::Name("semibold".into()))
 }
 pub fn display(size: f32) -> FontId {
-    FontId::new(size, eridu_style::fonts::display())
+    semibold(size)
 }
 pub fn numeric(ctx: &egui::Context, size: f32) -> FontId {
     let family = eridu_style::fonts::numeric();

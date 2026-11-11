@@ -820,7 +820,7 @@ The optional `layer` and `document` ids bind requests to the intended subject/do
 ## Source-aware image edits
 
 `image.fillSelection`, `image.removeObject` and `image.expandCanvas` are Linux-native engine
-commands, also available through Image-menu dialogs. They require Enki masked-edit revision 1;
+commands, also available through Image-menu dialogs. They require Oqelith masked-edit revision 1;
 an older runtime is rejected before receiving source image bytes. All results are new masked
 root layers with one undo step; original layers remain intact. Cancellation/error does not apply
 an edit. Start with `Session::start`/the UI job path for progress and cancellation.

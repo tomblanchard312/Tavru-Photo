@@ -367,7 +367,7 @@ fn deeply_nested_embedded_svg_is_dropped_not_a_stack_overflow() {
 }
 
 /// The embedded SVG is parsed on top of the drawing's own recursion, so the two depths share
-/// [`svg::MAX_XML_DEPTH`]: 511 + 511 groups, each fine alone, overflowed a 1 MB thread stack.
+/// [`svg::MAX_XML_DEPTH`]. The old 512-level budget overflowed a 1 MB thread stack.
 #[test]
 fn an_embedded_svg_gets_only_the_nesting_depth_the_drawing_left() {
     let embed = |outer: usize, inner: usize| {
@@ -377,10 +377,12 @@ fn an_embedded_svg_gets_only_the_nesting_depth_the_drawing_left() {
     std::thread::Builder::new()
         .stack_size(1 << 20)
         .spawn(move || {
+            assert!(import("deep.svg", embed(511, 511).as_bytes()).is_err());
             let r = open(&embed(svg::MAX_XML_DEPTH - 1, svg::MAX_XML_DEPTH - 1));
             assert!(px(&r.document, 4, 4)[3] < 0.01, "{:?}", px(&r.document, 4, 4));
             // Within the shared budget the embedded drawing renders (its rect is black).
-            let r = open(&embed(250, 250));
+            let within = svg::MAX_XML_DEPTH / 2 - 6;
+            let r = open(&embed(within, within));
             assert!(close(px(&r.document, 4, 4), [0.0, 0.0, 0.0, 1.0]), "{:?}", px(&r.document, 4, 4));
         })
         .unwrap()
@@ -615,11 +617,11 @@ fn a_costly_filter_past_the_pattern_recursion_cutoff_is_refused() {
     let e = import("x.svg", deep.as_bytes()).err().unwrap_or_else(|| panic!("opened a costly filter 210 patterns deep"));
     assert!(matches!(&e, IoError::Svg(m) if m.contains("too costly")), "{e}");
     assert!(svg::rasterize(deep.as_bytes(), 1.0).is_err());
-    // A short chain with an ordinary filter still opens, and so do groups nested past the cutoff.
+    // A short chain with an ordinary filter opens; deep XML groups hit the parser safety cap.
     assert!(!open(&chain(4, "<feGaussianBlur stdDeviation=\"2\"/>")).document.layers.is_empty());
     let groups =
         format!("<svg {NS} width=\"10\" height=\"10\">{}<rect width=\"10\" height=\"10\"/>{}</svg>", "<g opacity=\"0.99\">".repeat(250), "</g>".repeat(250));
-    assert!(!open(&groups).document.layers.is_empty());
+    assert!(import("deep.svg", groups.as_bytes()).is_err());
 }
 
 #[test]

@@ -180,5 +180,6 @@
   "vertical-align-top": "ALIGN_TOP",
   "vertical-align-bottom": "ALIGN_BOTTOM",
   "vertical-align-middle": "ALIGN_CENTER_VERTICAL",
-  "panel-left": "SIDEBAR"
+  "panel-left": "SIDEBAR",
+  "chat-text": "CHAT_TEXT"
 }

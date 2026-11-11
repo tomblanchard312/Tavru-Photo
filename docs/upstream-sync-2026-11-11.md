@@ -13,7 +13,7 @@ Status: blocked integration assessment; no upstream code imported by this PR.
 ## Material upstream changes
 
 - HEIC/HEIF moves from the local `photocraft-heif` crate to `craft-heif` in craft-libs at `081078bb1b44aeedfa5bef3d4f13d978dc77510a`; Cargo, corpus, wasm and CI selectors change together.
-- Translation catalogs move out of this repository into craft-i18n at `e02939ef009218e81c44e8ec001fbb7603461de4`. Builds without the catalog input become English-only. The upstream migration deletes locally branded translations in 35 conflicted catalogs.
+- Translation catalogs move out of this repository into craft-i18n at `e02939ef009218e81c44e8ec001fbb7603461de4`. Builds without the catalog input become English-only. The upstream migration deletes locally branded translations in 34 conflicted catalogs.
 - Security/work limits improve OpenEXR bookkeeping, TIFF parsing, font tables, stroke emission and automation authorization/control-token handling.
 - Editing improvements include missing-font preservation during Image Size, native XCF foundations, pen window controls, path selection and tool-state handling.
 

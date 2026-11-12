@@ -2,6 +2,31 @@
 
 Status: blocked integration assessment; no upstream code imported by this PR.
 
+## November 12 reassessment
+
+The existing draft remains an assessment, not an upstream integration. Current main
+`27a0afe1560d9185f3e3726b7c261b6e1c338197` includes PR #18's automatic image-model
+selection and neutral copy. This assessment branch incorporates that main; these
+changes must survive the eventual sync. PR #15 remains open.
+
+Upstream advanced by 677 commits to `21bb9fda63960af78e44af66857a6069c96a61af`,
+now 1,168 commits absent from main. A non-mutating `git merge-tree --write-tree`
+assessment reports 51 conflicted paths. The migration now also extracts raster
+codecs into shared crates, alongside the catalog/HEIF work described below.
+Additional changes harden sparse-to-dense allocation budgets, action playback,
+nested-session authorization, symlink handling, ICC CLUTs and text tile budgets;
+Flatpak updates advance upstream to 0.23.1. No upstream release was published by
+this automation and no upstream code was imported.
+
+Hosted checks on the previous assessment passed documentation, corpus, no-HEIF
+and static analysis. The Linux gate failed on
+`tooltip_text_fits_with_every_ui_font_size_in_a_narrow_scaled_bar`, the existing
+German/scaled toolbar regression fixed in pending #15. This is a source test
+failure, not an infrastructure failure or proof of the unimported upstream code.
+The translation ownership and pending-fix integration decisions remain unresolved.
+Native/wasm/regression validation is still deferred until an executable merge
+candidate exists; unchanged-main checks would not establish sync usability.
+
 ## Revisions and scope
 
 - Fork: `tomblanchard312/Tavru-Photo`, renamed from LumaFoundry in merged PR #16.

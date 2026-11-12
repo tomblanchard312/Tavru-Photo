@@ -13,7 +13,7 @@ const FRAME_LIMIT: usize = 8 * 1024 * 1024;
 const IDLE: Duration = Duration::from_secs(30 * 60);
 const WALL: Duration = Duration::from_secs(4 * 60 * 60);
 fn io(error: impl std::fmt::Display) -> EngineError {
-    EngineError::Other(format!("Enki: {error}"))
+    EngineError::Other(format!("On-device AI: {error}"))
 }
 
 struct Connection {
@@ -89,7 +89,7 @@ pub(super) fn generate(request: &Request, ctx: &JobCtx) -> Result<Output> {
 }
 
 fn generate_at(path: &std::path::Path, request: &Request, ctx: &JobCtx) -> Result<Output> {
-    ctx.progress(0.0, "Connecting to Enki");
+    ctx.progress(0.0, "Connecting to on-device AI");
     let mut model = request.model.clone();
     let mut steps = request.steps;
     let mut cfg = request.cfg;
@@ -101,7 +101,7 @@ fn generate_at(path: &std::path::Path, request: &Request, ctx: &JobCtx) -> Resul
         let profile = defaults
             .get("profile")
             .filter(|_| defaults["type"] == "image_defaults")
-            .ok_or_else(|| io("runtime did not supply a model recommendation; update Enki for editing support"))?;
+            .ok_or_else(|| io("runtime did not supply a model recommendation; update on-device AI for editing support"))?;
         model =
             profile.get("model").and_then(Value::as_str).filter(|s| !s.is_empty() && s.len() <= 1024).ok_or_else(|| io("invalid recommended model"))?.into();
         if steps.is_none() {
@@ -123,7 +123,7 @@ fn generate_at(path: &std::path::Path, request: &Request, ctx: &JobCtx) -> Resul
             || caps.get("masked_edit_revision").and_then(Value::as_u64) != Some(1)
             || caps.get("max_side").and_then(Value::as_u64).is_none_or(|n| n < u64::from(request.width.max(request.height)))
         {
-            return Err(io("this runtime does not support protected masked editing; update Enki before using this tool"));
+            return Err(io("this runtime does not support protected masked editing; update on-device AI before using this tool"));
         }
     }
     let mut params = json!({"width":request.width,"height":request.height,"seed":request.seed});
@@ -283,7 +283,7 @@ mod edit_tests {
         let mut request = Request::parse(&json!({"prompt":"test","width":64,"height":64,"model":"test"})).unwrap();
         request.edit = Some(super::super::EditInput { source_png: "must-not-send".into(), mask_png: "must-not-send".into() });
         let error = generate_at(&path, &request, &JobCtx::new()).err().unwrap();
-        assert!(error.to_string().contains("update Enki"));
+        assert!(error.to_string().contains("update on-device AI"));
         worker.join().unwrap();
     }
 }
@@ -293,13 +293,13 @@ pub(super) fn subject_mask(source_png: String, width: u32, height: u32, ctx: &Jo
         .filter(|s| !s.is_empty())
         .map(PathBuf::from)
         .or_else(|| std::env::var_os("XDG_RUNTIME_DIR").map(|s| PathBuf::from(s).join("sharedai/ipc.sock")))
-        .ok_or_else(|| io("start Enki before selecting a subject"))?;
+        .ok_or_else(|| io("On-device AI is unavailable for subject selection"))?;
     let mut connection = Connection::connect(&path)?;
     connection.handshake(ctx)?;
     connection.send(&json!({"type":"segmentation_capabilities"}))?;
     let caps = connection.receive(ctx)?;
     if caps.get("type").and_then(Value::as_str) != Some("segmentation_capabilities") || caps.get("available").and_then(Value::as_bool) != Some(true) {
-        return Err(io("install the Enki subject-mask worker and verified model before using learned selection"));
+        return Err(io("Subject selection requires on-device AI support for masks"));
     }
     connection.send(&json!({"type":"segment_image","source_png":source_png}))?;
     let reply = connection.receive(ctx)?;

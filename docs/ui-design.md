@@ -12,7 +12,7 @@ colour change or renamed theme alone would not establish clearance.
 
 ## Themes
 
-The [Eridu interface brief](eridu-ui.md) defines the shared design baseline and records adoption gaps.
+The [Tavru interface brief](tavru-ui.md) defines the shared design baseline and records adoption gaps.
 
 | Theme | Intent |
 |---|---|

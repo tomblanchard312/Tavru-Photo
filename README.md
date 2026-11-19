@@ -12,6 +12,11 @@
   in a native app written entirely in Rust. Open source, offline, and yours.
 </p>
 
+![Tavru Photo workspace in CPU rendering mode](docs/images/tavru-mvp-vm.png)
+
+*Captured from an installed TavruOS MVP in a disposable VM.*
+
+
 <p align="center">
   <img alt="100% Rust" src="https://img.shields.io/badge/100%25-Rust-b7410e?style=flat-square&logo=rust">
   <img alt="macOS · Windows · Linux · FreeBSD · Web" src="https://img.shields.io/badge/macOS%20%C2%B7%20Windows%20%C2%B7%20Linux%20%C2%B7%20FreeBSD%20%C2%B7%20Web-native-2f7bf5?style=flat-square">

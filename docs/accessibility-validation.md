@@ -1,7 +1,7 @@
-# Eridu UI migration validation
+# Tavru Photo interface validation
 
 Validation performed on 2026-11-06 against the icon/display-font follow-up to PR #9.
-This is an application validation record, not full EriduOS release certification.
+This is an application validation record, not full operating system release certification.
 
 ## Implemented and checked
 
@@ -35,7 +35,7 @@ AT-SPI exposed the Home heading, named controls, selected states and numeric-fie
 - Native keyboard-only New/Open, editing, undo/redo, Save/Export, dialog cancellation, unsaved-close and recovery workflows, with screen reader active.
 - Native status-change announcements and repeat suppression, dialog focus containment/restoration, and all auxiliary dialog names and states.
 - Speech-off/Braille-on operation on supported physical Braille hardware, including focus and status feedback.
-- Review by a screen-reader user; clean EriduOS Linux and FreeBSD runs; cross-application workflow testing and remaining adoption-checklist items.
+- Review by a screen-reader user; clean Linux and FreeBSD runs; cross-application workflow testing and remaining adoption-checklist items.
 - Hosted CI and browser release/size packaging for this follow-up branch. WebAssembly compilation alone does not establish those results.
 
-The maintainers own these remaining acceptance gates. Keep this record explicit rather than presenting the icon/font migration as full EDS compliance. The dark-first preference exception and dense-editor spacing review in [the interface brief](eridu-ui.md) remain in force.
+The maintainers own these remaining acceptance gates. Keep this record explicit rather than presenting the icon/font migration as full design-system compliance. The dark-first preference exception and dense-editor spacing review in [the interface brief](tavru-ui.md) remain in force.

@@ -325,7 +325,7 @@ emerge --ask media-gfx/photocraft-bin
 
 ## Documentation
 
-The [Eridu interface brief](docs/eridu-ui.md) records the design contract, workspace behavior and adoption gaps.
+The [Tavru interface brief](docs/tavru-ui.md) records the design contract, workspace behavior and adoption gaps.
 
 Developer, architecture, automation, format, and security documentation is maintained in the [Tavru Photo documentation book](book/).
 

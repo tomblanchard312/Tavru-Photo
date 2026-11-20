@@ -44,7 +44,7 @@
   <a href="#under-the-hood">Under the hood</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="#downloads">Downloads</a> ·
-  <a href="#tavru-photo-and-enki">Oqelith image tools</a> ·
+  <a href="#tavru-photo-and-oqelith">Oqelith image tools</a> ·
   <a href="https://github.com/tomblanchard312/Tavru-Photo/issues">Support</a>
 </p>
 
@@ -75,7 +75,7 @@
 
 ## Tavru Photo and Oqelith
 
-Tavru Photo is an independent fork of PhotoCraft with its own LF icon, dark blue branding and local Oqelith image tools. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
+Tavru Photo is an independent fork of PhotoCraft with local Oqelith image tools. The window title is Tavru Photo. The icon file is still the LF monogram. Workspace themes include Tavru Night, Tavru Day and Tavru Studio, alongside the inherited editor themes. Upstream editor improvements are integrated through reviewed merge branches. Rust crate names, executables and file identifiers retain the `photocraft` names used in the build and command examples.
 
 The Linux integration provides these editing workflows through native dialogs and engine commands.
 
@@ -88,7 +88,7 @@ The Linux integration provides these editing workflows through native dialogs an
 
 Oqelith and compatible models must be installed and configured separately. Learned subject selection requires the segmentation worker and its model. Native Oqelith transport currently supports Linux. Other desktop platforms and the web build do not yet provide these runtime-backed tools. Local CPU and Vulkan inference and native offscreen workflows have been exercised; broader image-quality and interactive desktop validation remain open. See the implementation notes and setup boundaries in [generative tools](docs/features/generative-tools.md).
 
-Tavru Photo is also registered in EriduOS's app catalog and FreeBSD installer. Native FreeBSD build, launch and Oqelith integration validation remain pending.
+Canvas rectangles are aligned with `tavru-layout-core` 0.2.0 so image edges land on device pixels. Tavru Photo is registered in the TavruOS app catalog and FreeBSD installer. Native FreeBSD build, launch and Oqelith integration validation remain pending.
 
 ## Features
 
@@ -325,7 +325,7 @@ emerge --ask media-gfx/photocraft-bin
 
 ## Documentation
 
-The [Eridu interface brief](docs/eridu-ui.md) records the design contract, workspace behavior and adoption gaps.
+The [Tavru interface brief](docs/tavru-ui.md) records the design contract, workspace behavior and adoption gaps.
 
 Developer, architecture, automation, format, and security documentation is maintained in the [Tavru Photo documentation book](book/).
 

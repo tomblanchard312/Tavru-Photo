@@ -12,15 +12,15 @@ colour change or renamed theme alone would not establish clearance.
 
 ## Themes
 
-The [Eridu interface brief](eridu-ui.md) defines the shared design baseline and records adoption gaps.
+The [Tavru interface brief](tavru-ui.md) defines the shared design baseline and records adoption gaps.
 
 | Theme | Intent |
 |---|---|
 | Pro | Inherited flat charcoal panels (#323232), dark tab strips, blue accent (#378ef0), pill buttons, checkboxes, compact 12 px type; provenance and combined appearance require release review |
-| Eridu (Dark), stored as Pro Medium | Docked workspace with Eridu dark surfaces, River selection and Copper primary actions |
-| Eridu (Light), stored as Pro Light | Docked workspace with warm light surfaces and semantic actions |
-| Eridu Studio (Dark), stored as Studio | Eridu semantic dark surfaces, River selection, Copper primary actions and 4/8/12 px radii |
-| Eridu Studio (Light), stored as Studio Light | Warm light surfaces with accessible River and Copper actions |
+| Tavru Night, stored as proMedium | Docked workspace with Tavru dark surfaces, River selection and Copper primary actions |
+| Tavru Day, stored as proLight | Docked workspace with warm light surfaces and semantic actions |
+| Tavru Studio (Dark), stored as studio | Tavru semantic dark surfaces, River selection, Copper primary actions and 4/8/12 px radii |
+| Tavru Studio (Light), stored as studioLight | Warm light surfaces with accessible River and Copper actions |
 | Classic | Windows-2000 bevels, square corners, navy selection |
 | Adwaita | GNOME's libadwaita light palette on the Studio layout: white header bar and cards on a grey sidebar, GNOME blue accent (#3584e4), 6 / 9 / 12 px radii, grey (not red) close button |
 | Adwaita Dark | The libadwaita dark palette on the same layout |
@@ -32,7 +32,7 @@ The [Eridu interface brief](eridu-ui.md) defines the shared design baseline and 
 
 Both Breeze themes are our own values close to Plasma's (not a copy of its colour schemes) and put text readability first: every text colour holds 4.5:1 on every surface and on hovered, pressed and selected states (`theme.rs` tests), so their secondary text, accent and status colours are darker (Light) or lighter (Dark) than Breeze's own, and the primary button is a deeper blue with white text.
 
-Edit → Preferences → Interface shows an Appearance Mode selector (Sync with system, Dark, Light) above separate light and dark theme cards with Tavru Photo editor previews and radio choices. Auto is opt-in and follows the operating system while the app is running. On Linux it reads the desktop portal once and then listens for its `SettingChanged` signal (no polling, and the UI repaints only when the value changes); `gsettings` runs at most once at start-up, by absolute path, when the portal gives no answer. A missing system appearance falls back to Dark. New installs use Eridu (Dark) in the docked workspace, retaining the project's dark-first preference; Eridu (Light) is the saved light theme. Existing saved single-theme preferences migrate to a fixed Dark or Light mode with their chosen theme. The header appearance button cycles Auto → Light → Dark; its icon shows a monitor, moon or sun for the selected mode. Window → Theme and `ui.set {"theme":"classic"}` select a theme and fix the mode to its light or dark family.
+Edit → Preferences → Interface shows an Appearance Mode selector (Sync with system, Dark, Light) above separate light and dark theme cards with Tavru Photo editor previews and radio choices. Auto is opt-in and follows the operating system while the app is running. On Linux it reads the desktop portal once and then listens for its `SettingChanged` signal (no polling, and the UI repaints only when the value changes); `gsettings` runs at most once at start-up, by absolute path, when the portal gives no answer. A missing system appearance falls back to Dark. New installs use Tavru Night in the docked workspace, retaining the project's dark-first preference; Tavru Day is the saved light theme. Existing saved single-theme preferences migrate to a fixed Dark or Light mode with their chosen theme. The header appearance button cycles Auto → Light → Dark; its icon shows a monitor, moon or sun for the selected mode. Window → Theme and `ui.set {"theme":"classic"}` select a theme and fix the mode to its light or dark family.
 
 Window → Theme and macOS Tavru Photo → Appearance also offer Sync with system. Its checkmark follows the saved Auto mode rather than the displayed palette; choosing a manual theme selects its fixed appearance mode.
 

@@ -14,6 +14,8 @@ mod subject;
 #[cfg(all(test, target_os = "linux"))]
 mod tests;
 #[cfg(target_os = "linux")]
+mod daemon;
+#[cfg(target_os = "linux")]
 mod transport;
 
 pub const COMMAND: &str = "image.generate";
@@ -98,7 +100,7 @@ impl Request {
 // shortcut: Linux peer verification only; add native transports before enabling other platforms.
 fn enabled(s: &Session) -> std::result::Result<(), String> {
     if !cfg!(target_os = "linux") {
-        return Err("Oqelith connection is currently available on Linux only".into());
+        return Err("On-device AI is currently available on Linux only".into());
     }
     let st = s.active().ok_or("open a document first")?;
     if !matches!(
@@ -112,7 +114,7 @@ fn enabled(s: &Session) -> std::result::Result<(), String> {
 
 #[cfg(not(target_os = "linux"))]
 fn run(_: &mut Session, _: &Value) -> Result<Value> {
-    Err(EngineError::Other("Oqelith connection is currently available on Linux only".into()))
+    Err(EngineError::Other("On-device AI is currently available on Linux only".into()))
 }
 
 #[cfg(target_os = "linux")]
@@ -208,12 +210,12 @@ struct Output {
 #[cfg(target_os = "linux")]
 fn validate_png(bytes: &[u8], width: u32, height: u32) -> Result<()> {
     if bytes.len() > 5 * 1024 * 1024 || !(64..=1024).contains(&width) || !(64..=1024).contains(&height) {
-        return Err(bad("Oqelith returned an oversized image"));
+        return Err(bad("On-device AI returned an oversized image"));
     }
     let size = bytes.get(16..24).and_then(|b| <[u8; 8]>::try_from(b).ok());
     let expected: Vec<u8> = width.to_be_bytes().into_iter().chain(height.to_be_bytes()).collect();
     if bytes.get(..16) != Some(&b"\x89PNG\r\n\x1a\n\0\0\0\rIHDR"[..]) || size.as_ref().map(|v| v.as_slice()) != Some(expected.as_slice()) {
-        return Err(bad("Oqelith returned invalid PNG dimensions"));
+        return Err(bad("On-device AI returned invalid PNG dimensions"));
     }
     Ok(())
 }

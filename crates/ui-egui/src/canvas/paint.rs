@@ -46,6 +46,16 @@ pub(super) fn pattern_xf(xf: &ViewXform, c: [i32; 2], size: [u32; 2]) -> ViewXfo
     ViewXform { center: [xf.center[0] - ox, xf.center[1] - oy], ..*xf }
 }
 
+/// The image rectangle with each edge on a device pixel. Tavru layout rounds the edges
+/// independently, so a picture that shares an edge with its frame still shares it.
+pub(super) fn pixel_screen_rect(rect: Rect, pixels_per_point: f32) -> Rect {
+    if !rect.is_finite() {
+        return rect;
+    }
+    let aligned = tavru_layout_core::Rect::new(rect.min.x, rect.min.y, rect.width(), rect.height()).pixel_aligned(pixels_per_point);
+    Rect::from_min_size(pos2(aligned.x, aligned.y), vec2(aligned.width, aligned.height))
+}
+
 /// CPU canvas: the transparency checkerboard (or white) and the display texture, for the
 /// document or one of its Pattern Preview copies (`xf` from [`pattern_xf`]).
 pub(super) fn paint_cpu_document(
@@ -56,10 +66,11 @@ pub(super) fn paint_cpu_document(
     checker: Option<(egui::TextureId, f32)>,
     tex: Option<egui::TextureId>,
     opaque: bool,
+    pixels_per_point: f32,
 ) {
     let size = [bounds.width() as f32, bounds.height() as f32];
     let origin = [bounds.x0 as f32, bounds.y0 as f32];
-    let img_rect = xf.doc_rect(bounds);
+    let img_rect = if rotated { xf.doc_rect(bounds) } else { pixel_screen_rect(xf.doc_rect(bounds), pixels_per_point) };
     match checker {
         Some((checker_id, square)) if !opaque || tex.is_none() => {
             if rotated {
@@ -102,10 +113,19 @@ pub(super) fn paint_cpu_detail(
     checker: Option<(egui::TextureId, f32)>,
     tex: egui::TextureId,
     area: [f32; 4],
+    pixels_per_point: f32,
 ) {
     let [x0, y0, x1, y1] = area;
     let corners = [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
-    let pts = corners.map(|[x, y]| xf.to_screen(x, y));
+    let mut pts = corners.map(|[x, y]| xf.to_screen(x, y));
+    if !rotated {
+        let aligned = pixel_screen_rect(Rect::from_min_max(pts[0].min(pts[2]), pts[0].max(pts[2])), pixels_per_point);
+        pts = if xf.flip {
+            [aligned.right_top(), aligned.left_top(), aligned.left_bottom(), aligned.right_bottom()]
+        } else {
+            [aligned.left_top(), aligned.right_top(), aligned.right_bottom(), aligned.left_bottom()]
+        };
+    }
     let quad = |tex: egui::TextureId, uvs: [Pos2; 4]| {
         let mut mesh = Mesh::with_texture(tex);
         for (pos, uv) in pts.into_iter().zip(uvs) {

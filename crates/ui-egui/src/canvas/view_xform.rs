@@ -58,11 +58,12 @@ impl ViewXform {
             return self;
         }
         let origin = self.to_screen(0.0, 0.0);
-        let physical = origin * ppp;
-        if !physical.is_finite() {
+        if !origin.is_finite() || !ppp.is_finite() || ppp <= 0.0 {
             return self;
         }
-        let aligned = pos2(physical.x.round(), physical.y.round()) / ppp;
+        // One device pixel, so Tavru layout's edge rounding lands on the same pixel as the image origin.
+        let cell = tavru_layout_core::Rect::new(origin.x, origin.y, 1.0 / ppp, 1.0 / ppp).pixel_aligned(ppp);
+        let aligned = pos2(cell.x, cell.y);
         let offset = self.unmap_vec((aligned - origin) / self.zoom);
         let center = [self.center[0] - offset.x, self.center[1] - offset.y];
         if center.iter().all(|v| v.is_finite()) {

@@ -5822,6 +5822,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sys-locale",
+ "tavru-layout-core",
  "tempfile",
  "toml",
  "unicode-bidi",
@@ -7864,6 +7865,14 @@ name = "target-lexicon"
 version = "0.13.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "adb6935a6f5c20170eeceb1a3835a49e12e19d792f6dd344ccc76a985ca5a6ca"
+
+[[package]]
+name = "tavru-layout-core"
+version = "0.2.0"
+source = "git+https://github.com/tomblanchard312/TavruLayout.git?rev=b7fe335f18a618bfbdc4d61df165a3c7a2cbec1c#b7fe335f18a618bfbdc4d61df165a3c7a2cbec1c"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "tempfile"

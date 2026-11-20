@@ -18,7 +18,7 @@ fn cpu_canvas_omits_only_a_checker_hidden_by_an_opaque_texture() {
                     rotation: if rotated { 23.0 } else { 0.0 },
                     aspect: 1.0,
                 };
-                paint_cpu_document(ui.painter(), &xf, DRect::new(0, 0, 100, 80), rotated, Some((checker.id(), 8.0)), texture, opaque);
+                paint_cpu_document(ui.painter(), &xf, DRect::new(0, 0, 100, 80), rotated, Some((checker.id(), 8.0)), texture, opaque, 1.0);
             });
             let drawn = output.shapes.iter().any(|s| matches!(&s.shape, egui::Shape::Mesh(m) if m.texture_id == checker.id()));
             assert_eq!(drawn, want_checker, "rotated={rotated}, opaque={opaque}, texture={texture:?}");

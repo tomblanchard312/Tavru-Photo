@@ -92,7 +92,7 @@ use paint::draw_tool_state;
 pub(crate) use paint::{clip_line, marching_ants_line_shapes, marching_ants_mapped};
 use paint::{
     draw_beyond_canvas, draw_drag_preview, marching_ants_segment_shapes, paint_cpu_detail, paint_cpu_document, paint_gpu_view, paint_mapped_image_at,
-    pattern_xf,
+    pattern_xf, pixel_screen_rect,
 };
 use selection::selection_shown_offset;
 pub use selection::{SelCursor, selection_cursor};
@@ -509,9 +509,9 @@ fn paint_canvas(
         // Repeated-quad coverage is not proven identical on all Pattern Preview adapters.
         // Retain its legacy checker submissions, including the central document's.
         let opaque = !app.ui.view.pattern_preview && app.canvases.get(&cache_key(doc.id, output)).is_some_and(|c| c.texture_opaque) && tex.is_some();
-        paint_cpu_document(painter, &xf, area, rotated, checkerboard, tex, opaque);
+        paint_cpu_document(painter, &xf, area, rotated, checkerboard, tex, opaque, ppp);
         if let Some((detail, area)) = textures.and_then(|t| t.detail) {
-            paint_cpu_detail(painter, &xf, doc.bounds(), rotated, checkerboard, detail, area);
+            paint_cpu_detail(painter, &xf, doc.bounds(), rotated, checkerboard, detail, area, ppp);
         }
         // Pattern Preview tiles what is shown: a size-changing preview's area, from its origin.
         let (tile, copies) = if area == doc.bounds() || !app.ui.view.pattern_preview {
@@ -522,7 +522,7 @@ fn paint_canvas(
             (tile, crate::pattern_preview::copies([v.x0, v.y0, v.x1, v.y1].map(f64::from), tile))
         };
         for &c in &copies {
-            paint_cpu_document(painter, &pattern_xf(&xf, c, tile), area, rotated, checkerboard, tex, opaque);
+            paint_cpu_document(painter, &pattern_xf(&xf, c, tile), area, rotated, checkerboard, tex, opaque, ppp);
         }
     }
     // Channels panel: alpha / Quick Mask overlays and single-channel views (channel_view.rs).
@@ -541,7 +541,7 @@ fn paint_canvas(
             );
         } else {
             let uv = if flip { Rect::from_min_max(pos2(1.0, 0.0), pos2(0.0, 1.0)) } else { Rect::from_min_max(Pos2::ZERO, pos2(1.0, 1.0)) };
-            painter.image(tex, xf.doc_rect(a), uv, Color32::WHITE);
+            painter.image(tex, pixel_screen_rect(xf.doc_rect(a), ppp), uv, Color32::WHITE);
         }
     }
     // Image › Adjustments › Levels: Alt-drag on the black / white Input slider (levels_clipping.rs).

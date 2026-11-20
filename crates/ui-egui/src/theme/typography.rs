@@ -1,5 +1,5 @@
-//! Eridu Typography v1, shared roles expressed in logical pixels (96 DPI).
-//! Canonical contract: tomblanchard312/TavruOS, packages/eridu-typography.
+//! Tavru typography v1, shared roles expressed in logical pixels (96 DPI).
+//! Canonical contract: tomblanchard312/TavruOS, packages/tavru-typography.
 use egui::{FontData, FontId, TextStyle};
 
 // Canonical EDS v1 sizes are already logical pixels.
@@ -16,7 +16,7 @@ pub(super) fn styles() -> std::collections::BTreeMap<TextStyle, FontId> {
     .into()
 }
 
-/// Use installed Eridu faces; an unrelated Fontconfig fallback must not replace bundled fonts.
+/// Use installed Inter and JetBrains Mono faces; an unrelated Fontconfig fallback must not replace bundled fonts.
 #[cfg(target_os = "linux")]
 fn load_system_font(mono: bool, weight: &str) -> Option<FontData> {
     use std::io::Read;
